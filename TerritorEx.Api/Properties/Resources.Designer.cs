@@ -95,5 +95,32 @@ namespace TerritorEx.Api.Properties {
                 return ResourceManager.GetString("NoTerritoryFoundByParentId", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Territory created successfully..
+        /// </summary>
+        internal static string TerritoryCreatedSuccessfully {
+            get {
+                return ResourceManager.GetString("TerritoryCreatedSuccessfully", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Territory updated successfully..
+        /// </summary>
+        internal static string TerritoryUpdatedSuccessfully {
+            get {
+                return ResourceManager.GetString("TerritoryUpdatedSuccessfully", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to There is already a territory registered with the id {0}..
+        /// </summary>
+        internal static string ThereIsAlreadyTerritoryRegisteredWithId {
+            get {
+                return ResourceManager.GetString("ThereIsAlreadyTerritoryRegisteredWithId", resourceCulture);
+            }
+        }
     }
 }

@@ -1,7 +1,7 @@
 ﻿namespace TerritorEx.Api.Helpers;
 
-using Microsoft.EntityFrameworkCore;
 using Entities;
+using Microsoft.EntityFrameworkCore;
 
 public class DataContext : DbContext
 {
@@ -14,6 +14,8 @@ public class DataContext : DbContext
 
     protected override void OnConfiguring(DbContextOptionsBuilder options)
     {
+        // Connect to sql server with connection string from app settings
+        options.UseSqlServer(Configuration.GetConnectionString("ApiDatabase"));
     }
 
     public DbSet<TerritoryEntity> Territories { get; set; }

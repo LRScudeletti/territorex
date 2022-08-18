@@ -129,4 +129,13 @@
   <data name="NoTerritoryFoundByParentId" xml:space="preserve">
     <value>No territory found by parent id {0}.</value>
   </data>
+  <data name="TerritoryCreatedSuccessfully" xml:space="preserve">
+    <value>Territory created successfully.</value>
+  </data>
+  <data name="TerritoryUpdatedSuccessfully" xml:space="preserve">
+    <value>Territory updated successfully.</value>
+  </data>
+  <data name="ThereIsAlreadyTerritoryRegisteredWithId" xml:space="preserve">
+    <value>There is already a territory registered with the id {0}.</value>
+  </data>
 </root>

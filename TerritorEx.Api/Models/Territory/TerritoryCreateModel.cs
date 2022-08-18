@@ -1,10 +1,10 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿namespace TerritorEx.Api.Models.Territory;
 
-namespace TerritorEx.Api.Entities;
+using System.ComponentModel.DataAnnotations;
 
-public class TerritoryEntity
+public class TerritoryCreateModel
 {
-    [Key]
+    [Required]
     public int TerritoryId { get; set; }
 
     [Required]
@@ -21,10 +21,4 @@ public class TerritoryEntity
 
     [Required]
     public double Longitude { get; set; }
-
-    [Required]
-    public string UpdateUser { get; set; }
-
-    [Required]
-    public DateTime UpdateDate { get; set; } = DateTime.Now;
 }

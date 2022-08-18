@@ -1,77 +1,119 @@
-﻿using AutoMapper;
-using TerritorEx.Api.Entities;
-using TerritorEx.Api.Helpers;
+﻿namespace TerritorEx.Api.Services;
 
-namespace TerritorEx.Api.Services
+using AutoMapper;
+using Entities;
+using Helpers;
+using Models.Territory;
+
+public interface ITerritoryService
 {
-    public interface ITerritoryService
+    void Create(TerritoryCreateModel territoryCreateModel);
+    IEnumerable<TerritoryEntity> ReadAll();
+    TerritoryEntity ReadByTerritoryId(int territoryId);
+    IEnumerable<TerritoryEntity> ReadByContainsName(string territoryName);
+    IEnumerable<TerritoryEntity> ReadByParentId(int territoryParentId);
+    IEnumerable<TerritoryEntity> ReadByLevelId(int levelId);
+    void Update(TerritoryUpdateModel territoryUpdateModel);
+    void Delete(int territoryId);
+}
+
+public class TerritoryService : ITerritoryService
+{
+    private readonly DataContext _context;
+    private readonly IMapper _mapper;
+
+    public TerritoryService(DataContext context, IMapper mapper)
     {
+        _context = context;
+        _mapper = mapper;
     }
 
-    public class TerritoryService : ITerritoryService
+    public void Create(TerritoryCreateModel territoryCreateModel)
     {
-        private readonly DataContext _context;
-        private readonly IMapper _mapper;
+        if (_context.Territories.Any(x => x.TerritoryId == territoryCreateModel.TerritoryId))
+            throw new AppException(string.Format(
+                Properties.Resources.ThereIsAlreadyTerritoryRegisteredWithId, territoryCreateModel.TerritoryId));
 
-        public TerritoryService(DataContext context, IMapper mapper)
-        {
-            _context = context;
-            _mapper = mapper;
-        }
+        var territory = _mapper.Map<TerritoryEntity>(territoryCreateModel);
 
-        public IEnumerable<TerritoryEntity> ReadAll()
-        {
-            return _context.Territories;
-        }
+        _context.Territories.Add(territory);
+        _context.SaveChanges();
+    }
 
-        public TerritoryEntity ReadByTerritoryId(int territoryId)
-        {
-            return GetTerritory(territoryId);
-        }
+    public IEnumerable<TerritoryEntity> ReadAll()
+    {
+        return _context.Territories;
+    }
 
-        public TerritoryEntity ReadByContainsName(string territoryName)
-        {
-            var territory = _context.Territories.FirstOrDefault(x => x.TerritoryName == territoryName);
+    public TerritoryEntity ReadByTerritoryId(int territoryId)
+    {
+        return GetTerritory(territoryId);
+    }
 
-            if (territory == null)
-                throw new KeyNotFoundException(string.Format(
-                        Properties.Resources.NoTerritoryFoundByName, territoryName));
+    public IEnumerable<TerritoryEntity> ReadByContainsName(string territoryName)
+    {
+        var territory = _context.Territories.Where(
+            x => x.TerritoryName.Contains(territoryName));
 
-            return territory;
-        }
+        if (territory == null)
+            throw new KeyNotFoundException(string.Format(
+                Properties.Resources.NoTerritoryFoundByName, territoryName));
 
-        public IEnumerable<TerritoryEntity> ReadByParentId(int territoryParentId)
-        {
-            var territory = _context.Territories.Where(x => x.TerritoryParentId == territoryParentId);
+        return territory;
+    }
 
-            if (territory == null)
-                throw new KeyNotFoundException(string.Format(
-                    Properties.Resources.NoTerritoryFoundByParentId, territoryParentId));
+    public IEnumerable<TerritoryEntity> ReadByParentId(int territoryParentId)
+    {
+        var territory = _context.Territories.Where(x => x.TerritoryParentId == territoryParentId);
 
-            return territory;
-        }
+        if (territory == null)
+            throw new KeyNotFoundException(string.Format(
+                Properties.Resources.NoTerritoryFoundByParentId, territoryParentId));
 
-        public IEnumerable<TerritoryEntity> ReadByLevelId(int levelId)
-        {
-            var territory = _context.Territories.Where(x => x.LevelId == levelId);
+        return territory;
+    }
 
-            if (territory == null)
-                throw new KeyNotFoundException(string.Format(
-                    Properties.Resources.NoTerritoryFoundByLevelId, levelId));
+    public IEnumerable<TerritoryEntity> ReadByLevelId(int levelId)
+    {
+        var territory = _context.Territories.Where(x => x.LevelId == levelId);
 
-            return territory;
-        }
+        if (territory == null)
+            throw new KeyNotFoundException(string.Format(
+                Properties.Resources.NoTerritoryFoundByLevelId, levelId));
 
-        // Helper methods
-        private TerritoryEntity GetTerritory(int territoryId)
-        {
-            var territory = _context.Territories.FirstOrDefault(x => x.TerritoryId == territoryId);
+        return territory;
+    }
 
-            if (territory == null)
-                throw new KeyNotFoundException(string.Format(
-                    Properties.Resources.NoTerritoryFoundById, territoryId));
+    public void Update(TerritoryUpdateModel territoryUpdateModel)
+    {
+        var territory = GetTerritory(territoryUpdateModel.TerritoryId);
 
-            return territory;
-        }
+        if (territory == null)
+            throw new KeyNotFoundException(string.Format(
+                Properties.Resources.NoTerritoryFoundById, territoryUpdateModel.TerritoryId));
+
+        _mapper.Map(territoryUpdateModel, territory);
+
+        _context.Territories.Update(territory);
+        _context.SaveChanges();
+    }
+
+    public void Delete(int territoryId)
+    {
+        var territory = GetTerritory(territoryId);
+        _context.Territories.Remove(territory);
+        _context.SaveChanges();
+    }
+
+    // Helper method
+    private TerritoryEntity GetTerritory(int territoryId)
+    {
+        var territory = _context.Territories.FirstOrDefault(x => x.TerritoryId == territoryId);
+
+        if (territory == null)
+            throw new KeyNotFoundException(string.Format(
+                Properties.Resources.NoTerritoryFoundById, territoryId));
+
+        return territory;
     }
 }
