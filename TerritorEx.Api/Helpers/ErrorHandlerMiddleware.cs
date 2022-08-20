@@ -1,7 +1,7 @@
-﻿namespace TerritorEx.Api.Helpers;
-
-using System.Net;
+﻿using System.Net;
 using System.Text.Json;
+
+namespace TerritorEx.Api.Helpers;
 
 public class ErrorHandlerMiddleware
 {

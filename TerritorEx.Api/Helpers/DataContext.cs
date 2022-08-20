@@ -1,7 +1,7 @@
-﻿namespace TerritorEx.Api.Helpers;
+﻿using Microsoft.EntityFrameworkCore;
+using TerritorEx.Api.Entities;
 
-using Entities;
-using Microsoft.EntityFrameworkCore;
+namespace TerritorEx.Api.Helpers;
 
 public class DataContext : DbContext
 {

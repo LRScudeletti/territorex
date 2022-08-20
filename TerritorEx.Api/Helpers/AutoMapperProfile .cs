@@ -1,8 +1,8 @@
-﻿namespace TerritorEx.Api.Helpers;
+﻿using AutoMapper;
+using TerritorEx.Api.Entities;
+using TerritorEx.Api.Models.Territory;
 
-using AutoMapper;
-using Entities;
-using Models.Territory;
+namespace TerritorEx.Api.Helpers;
 
 public class AutoMapperProfile : Profile
 {

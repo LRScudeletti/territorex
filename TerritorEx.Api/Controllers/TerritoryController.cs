@@ -1,8 +1,8 @@
-﻿namespace TerritorEx.Api.Controllers;
+﻿using Microsoft.AspNetCore.Mvc;
+using TerritorEx.Api.Models.Territory;
+using TerritorEx.Api.Services;
 
-using Microsoft.AspNetCore.Mvc;
-using Models.Territory;
-using Services;
+namespace TerritorEx.Api.Controllers;
 
 [ApiController]
 [Route("[controller]")]

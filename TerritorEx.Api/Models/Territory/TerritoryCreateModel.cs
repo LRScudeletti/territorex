@@ -1,6 +1,7 @@
-﻿namespace TerritorEx.Api.Models.Territory;
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
-using System.ComponentModel.DataAnnotations;
+namespace TerritorEx.Api.Models.Territory;
 
 public class TerritoryCreateModel
 {
@@ -8,6 +9,7 @@ public class TerritoryCreateModel
     public int TerritoryId { get; set; }
 
     [Required]
+    [Column(TypeName = "varchar(50)")]
     public string TerritoryName { get; set; }
 
     [Required]
@@ -17,8 +19,13 @@ public class TerritoryCreateModel
     public int LevelId { get; set; }
 
     [Required]
+    [Column(TypeName = "double(38,18)")]
     public double Latitude { get; set; }
 
     [Required]
+    [Column(TypeName = "double(38,18)")]
     public double Longitude { get; set; }
+
+    [Required]
+    public byte[] Shape { get; set; }
 }

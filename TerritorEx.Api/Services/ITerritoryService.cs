@@ -1,9 +1,9 @@
-﻿namespace TerritorEx.Api.Services;
+﻿using AutoMapper;
+using TerritorEx.Api.Entities;
+using TerritorEx.Api.Helpers;
+using TerritorEx.Api.Models.Territory;
 
-using AutoMapper;
-using Entities;
-using Helpers;
-using Models.Territory;
+namespace TerritorEx.Api.Services;
 
 public interface ITerritoryService
 {
