@@ -7,13 +7,13 @@ namespace TerritorEx.Api.Services;
 
 public interface ITerritoryService
 {
-    void Create(TerritoryCreateModel territoryCreateModel);
-    IEnumerable<TerritoryEntity> ReadAll();
-    TerritoryEntity ReadByTerritoryId(int territoryId);
-    IEnumerable<TerritoryEntity> ReadByContainsName(string territoryName);
-    IEnumerable<TerritoryEntity> ReadByParentId(int territoryParentId);
-    IEnumerable<TerritoryEntity> ReadByLevelId(int levelId);
-    void Update(TerritoryUpdateModel territoryUpdateModel);
+    void Create(TerritoryCreate territoryCreateModel);
+    IEnumerable<Territories> ReadAll();
+    Territories ReadByTerritoryId(int territoryId);
+    IEnumerable<Territories> ReadByContainsName(string territoryName);
+    IEnumerable<Territories> ReadByParentId(int territoryParentId);
+    IEnumerable<Territories> ReadByLevelId(int levelId);
+    void Update(TerritoryUpdate territoryUpdateModel);
     void Delete(int territoryId);
 }
 
@@ -28,29 +28,29 @@ public class TerritoryService : ITerritoryService
         _mapper = mapper;
     }
 
-    public void Create(TerritoryCreateModel territoryCreateModel)
+    public void Create(TerritoryCreate territoryCreateModel)
     {
         if (_context.Territories.Any(x => x.TerritoryId == territoryCreateModel.TerritoryId))
             throw new AppException(string.Format(
                 Properties.Resources.ThereIsAlreadyTerritoryRegisteredWithId, territoryCreateModel.TerritoryId));
 
-        var territory = _mapper.Map<TerritoryEntity>(territoryCreateModel);
+        var territory = _mapper.Map<Territories>(territoryCreateModel);
 
         _context.Territories.Add(territory);
         _context.SaveChanges();
     }
 
-    public IEnumerable<TerritoryEntity> ReadAll()
+    public IEnumerable<Territories> ReadAll()
     {
         return _context.Territories;
     }
 
-    public TerritoryEntity ReadByTerritoryId(int territoryId)
+    public Territories ReadByTerritoryId(int territoryId)
     {
         return GetTerritory(territoryId);
     }
 
-    public IEnumerable<TerritoryEntity> ReadByContainsName(string territoryName)
+    public IEnumerable<Territories> ReadByContainsName(string territoryName)
     {
         var territory = _context.Territories.Where(
             x => x.TerritoryName.Contains(territoryName));
@@ -62,7 +62,7 @@ public class TerritoryService : ITerritoryService
         return territory;
     }
 
-    public IEnumerable<TerritoryEntity> ReadByParentId(int territoryParentId)
+    public IEnumerable<Territories> ReadByParentId(int territoryParentId)
     {
         var territory = _context.Territories.Where(x => x.TerritoryParentId == territoryParentId);
 
@@ -73,7 +73,7 @@ public class TerritoryService : ITerritoryService
         return territory;
     }
 
-    public IEnumerable<TerritoryEntity> ReadByLevelId(int levelId)
+    public IEnumerable<Territories> ReadByLevelId(int levelId)
     {
         var territory = _context.Territories.Where(x => x.LevelId == levelId);
 
@@ -84,7 +84,7 @@ public class TerritoryService : ITerritoryService
         return territory;
     }
 
-    public void Update(TerritoryUpdateModel territoryUpdateModel)
+    public void Update(TerritoryUpdate territoryUpdateModel)
     {
         var territory = GetTerritory(territoryUpdateModel.TerritoryId);
 
@@ -106,7 +106,7 @@ public class TerritoryService : ITerritoryService
     }
 
     // Helper method
-    private TerritoryEntity GetTerritory(int territoryId)
+    private Territories GetTerritory(int territoryId)
     {
         var territory = _context.Territories.FirstOrDefault(x => x.TerritoryId == territoryId);
 

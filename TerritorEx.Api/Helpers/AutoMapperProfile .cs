@@ -8,9 +8,9 @@ public class AutoMapperProfile : Profile
 {
     public AutoMapperProfile()
     {
-        CreateMap<TerritoryCreateModel, TerritoryEntity>();
+        CreateMap<TerritoryCreate, Territories>();
 
-        CreateMap<TerritoryUpdateModel, TerritoryEntity>()
+        CreateMap<TerritoryUpdate, Territories>()
             .ForAllMembers(x => x.Condition(
                 (_, _, prop) =>
                 {

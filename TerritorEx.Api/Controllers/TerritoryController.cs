@@ -16,7 +16,7 @@ public class TerritoryController : ControllerBase
     }
 
     [HttpPost("create")]
-    public IActionResult Create(TerritoryCreateModel territoryCreateModel)
+    public IActionResult Create(TerritoryCreate territoryCreateModel)
     {
         _territoryService.Create(territoryCreateModel);
         return Ok(new { message = Properties.Resources.TerritoryCreatedSuccessfully });
@@ -58,7 +58,7 @@ public class TerritoryController : ControllerBase
     }
 
     [HttpPut("update")]
-    public IActionResult Update(TerritoryUpdateModel territoryUpdateModel)
+    public IActionResult Update(TerritoryUpdate territoryUpdateModel)
     {
         _territoryService.Update(territoryUpdateModel);
         return Ok(new { message = Properties.Resources.TerritoryUpdatedSuccessfully });

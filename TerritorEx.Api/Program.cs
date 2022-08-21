@@ -1,4 +1,5 @@
 using System.Text.Json.Serialization;
+using Microsoft.EntityFrameworkCore;
 using TerritorEx.Api.Helpers;
 using TerritorEx.Api.Services;
 
@@ -26,12 +27,20 @@ var builder = WebApplication.CreateBuilder(args);
 
     services.AddRouting(x => x.LowercaseUrls = true);
 
+
     // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
     services.AddEndpointsApiExplorer();
     services.AddSwaggerGen();
 }
 
 var app = builder.Build();
+
+// Migrate any database changes on startup (includes initial db creation)
+using (var scope = app.Services.CreateScope())
+{
+    var dataContext = scope.ServiceProvider.GetRequiredService<DataContext>();
+    dataContext.Database.Migrate();
+}
 
 // Configure the HTTP request pipeline.
 {
@@ -56,5 +65,6 @@ var app = builder.Build();
 
     app.MapControllers();
 }
+
 
 app.Run();
