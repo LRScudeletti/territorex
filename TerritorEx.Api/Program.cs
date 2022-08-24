@@ -1,5 +1,6 @@
 using System.Text.Json.Serialization;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Options;
 using TerritorEx.Api.Helpers;
 using TerritorEx.Api.Services;
 
@@ -18,6 +19,9 @@ var builder = WebApplication.CreateBuilder(args);
 
         // Ignore omitted parameters on models to enable optional params (e.g. User update)
         x.JsonSerializerOptions.DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull;
+
+        // NetTopologySuite
+        x.JsonSerializerOptions.Converters.Add(new NetTopologySuite.IO.Converters.GeoJsonConverterFactory());
     });
 
     services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());

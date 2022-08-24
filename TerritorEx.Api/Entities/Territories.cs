@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using NetTopologySuite.Geometries;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -35,7 +36,8 @@ public class Territories
     public double Longitude { get; set; }
 
     [Required]
-    public byte[] Shape { get; set; }
+    [Column(TypeName = "geometry")]
+    public Geometry Shape { get; set; }
 
     [Required]
     [Column(TypeName = "VARCHAR(50)")]

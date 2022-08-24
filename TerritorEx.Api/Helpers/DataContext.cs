@@ -15,7 +15,8 @@ public class DataContext : DbContext
     protected override void OnConfiguring(DbContextOptionsBuilder options)
     {
         // Connect to sql server with connection string from app settings
-       options.UseSqlServer(Configuration.GetConnectionString("ApiDatabase"));
+       options.UseSqlServer(Configuration.GetConnectionString("ApiDatabase"), 
+           x => x.UseNetTopologySuite());
     }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)

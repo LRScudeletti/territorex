@@ -5,6 +5,7 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
+using NetTopologySuite.Geometries;
 using TerritorEx.Api.Helpers;
 
 #nullable disable
@@ -12,8 +13,8 @@ using TerritorEx.Api.Helpers;
 namespace TerritorEx.Api.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20220821142927_Version_1.0.0.1")]
-    partial class Version_1001
+    [Migration("20220824000946_V1.00.00.01")]
+    partial class V1000001
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -59,15 +60,12 @@ namespace TerritorEx.Api.Migrations
                     b.Property<int>("LevelId")
                         .HasColumnType("int");
 
-                    b.Property<int?>("LevelsLevelId")
-                        .HasColumnType("int");
-
                     b.Property<decimal>("Longitude")
                         .HasColumnType("DECIMAL(38,18)");
 
-                    b.Property<byte[]>("Shape")
+                    b.Property<Geometry>("Shape")
                         .IsRequired()
-                        .HasColumnType("varbinary(max)");
+                        .HasColumnType("geometry");
 
                     b.Property<string>("TerritoryName")
                         .IsRequired()
@@ -85,7 +83,7 @@ namespace TerritorEx.Api.Migrations
 
                     b.HasKey("TerritoryId");
 
-                    b.HasIndex("LevelsLevelId");
+                    b.HasIndex("LevelId");
 
                     b.HasIndex(new[] { "TerritoryParentId" }, "IX_Territories_TerritoryParentId");
 
@@ -96,7 +94,9 @@ namespace TerritorEx.Api.Migrations
                 {
                     b.HasOne("TerritorEx.Api.Entities.Levels", "Levels")
                         .WithMany("Territories")
-                        .HasForeignKey("LevelsLevelId");
+                        .HasForeignKey("LevelId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
 
                     b.Navigation("Levels");
                 });
