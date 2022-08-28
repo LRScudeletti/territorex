@@ -97,11 +97,29 @@ namespace TerritorEx.Api.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        internal static string String1 {
+            get {
+                return ResourceManager.GetString("String1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Territory created successfully..
         /// </summary>
         internal static string TerritoryCreatedSuccessfully {
             get {
                 return ResourceManager.GetString("TerritoryCreatedSuccessfully", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Territory deleted successfully..
+        /// </summary>
+        internal static string TerritoryDeletedSuccessfully {
+            get {
+                return ResourceManager.GetString("TerritoryDeletedSuccessfully", resourceCulture);
             }
         }
         

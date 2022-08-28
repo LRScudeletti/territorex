@@ -1,5 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using TerritorEx.Api.Models.Territory;
+using TerritorEx.Api.Models;
 using TerritorEx.Api.Services;
 
 namespace TerritorEx.Api.Controllers;
@@ -16,7 +16,7 @@ public class TerritoryController : ControllerBase
     }
 
     [HttpPost("create")]
-    public IActionResult Create(TerritoryCreate territoryCreateModel)
+    public IActionResult Create(TerritoryModel territoryCreateModel)
     {
         _territoryService.Create(territoryCreateModel);
         return Ok(new { message = Properties.Resources.TerritoryCreatedSuccessfully });
@@ -58,7 +58,7 @@ public class TerritoryController : ControllerBase
     }
 
     [HttpPut("update")]
-    public IActionResult Update(TerritoryUpdate territoryUpdateModel)
+    public IActionResult Update(TerritoryModel territoryUpdateModel)
     {
         _territoryService.Update(territoryUpdateModel);
         return Ok(new { message = Properties.Resources.TerritoryUpdatedSuccessfully });
@@ -68,6 +68,6 @@ public class TerritoryController : ControllerBase
     public IActionResult Delete(int territoryId)
     {
         _territoryService.Delete(territoryId);
-        return Ok(new { message = "User deleted" });
+        return Ok(new { message = Properties.Resources.TerritoryDeletedSuccessfully });
     }
 }

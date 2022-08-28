@@ -1,10 +1,7 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿namespace TerritorEx.Api.Models;
 
-namespace TerritorEx.Api.Models.Territory;
-
-public class TerritoryUpdate
+public class TerritoryModel
 {
-    [Required]
     public int TerritoryId { get; set; }
 
     public string TerritoryName { get; set; }
@@ -19,9 +16,7 @@ public class TerritoryUpdate
 
     public byte[] Shape { get; set; }
 
-    [Required]
     public string UpdateUser { get; set; }
 
-    [Required]
-    public DateTime UpdateDate { get; set; } = DateTime.Now;
+    public DateTime UpdateDate { get; set; }
 }
