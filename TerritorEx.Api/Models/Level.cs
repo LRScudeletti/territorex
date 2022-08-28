@@ -1,6 +1,6 @@
 ﻿namespace TerritorEx.Api.Models;
 
-public class LevelModel
+public class Level
 {
     public int LevelId { get; set; }
 

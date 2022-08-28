@@ -61,6 +61,15 @@ namespace TerritorEx.Api.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Could not connect to database..
+        /// </summary>
+        internal static string CouldNotConnectToSatabase {
+            get {
+                return ResourceManager.GetString("CouldNotConnectToSatabase", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to No territory found by id {0}..
         /// </summary>
         internal static string NoTerritoryFoundById {

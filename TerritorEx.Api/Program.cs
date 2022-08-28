@@ -1,13 +1,15 @@
 using TerritorEx.Api.Helpers;
+using TerritorEx.Api.Interfaces;
 using TerritorEx.Api.Services;
 
 var builder = WebApplication.CreateBuilder(args);
+SqlHelper.ConnectionString = builder.Configuration.GetConnectionString("ApiDatabase");
 
 # region [ Services ]
 
 var services = builder.Services;
 
-services.AddScoped<ITerritoryService, TerritoryService>();
+services.AddScoped<ITerritory, TerritoryService>();
 
 services.AddControllers();
 services.AddRouting(x => x.LowercaseUrls = true);
@@ -26,7 +28,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-app.UseMiddleware<ErrorHandlerMiddleware>();
+app.UseMiddleware<ErrorHandlerHelper>();
 app.UseHttpsRedirection();
 app.UseAuthorization();
 app.MapControllers();

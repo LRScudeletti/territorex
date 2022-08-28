@@ -3,12 +3,12 @@ using System.Text.Json;
 
 namespace TerritorEx.Api.Helpers;
 
-public class ErrorHandlerMiddleware
+public class ErrorHandlerHelper
 {
     private readonly RequestDelegate _next;
     private readonly ILogger _logger;
 
-    public ErrorHandlerMiddleware(RequestDelegate next, ILogger<ErrorHandlerMiddleware> logger)
+    public ErrorHandlerHelper(RequestDelegate next, ILogger<ErrorHandlerHelper> logger)
     {
         _next = next;
         _logger = logger;
@@ -27,7 +27,7 @@ public class ErrorHandlerMiddleware
 
             switch (error)
             {
-                case AppException:
+                case ExceptionHelper:
                     // Custom application error
                     response.StatusCode = (int)HttpStatusCode.BadRequest;
                     break;

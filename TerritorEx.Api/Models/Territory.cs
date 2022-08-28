@@ -1,6 +1,8 @@
-﻿namespace TerritorEx.Api.Models;
+﻿using System.Text.Json.Serialization;
 
-public class TerritoryModel
+namespace TerritorEx.Api.Models;
+
+public class Territory
 {
     public int TerritoryId { get; set; }
 
@@ -16,7 +18,9 @@ public class TerritoryModel
 
     public byte[] Shape { get; set; }
 
+    [JsonIgnore]
     public string UpdateUser { get; set; }
 
+    [JsonIgnore]
     public DateTime UpdateDate { get; set; }
 }
