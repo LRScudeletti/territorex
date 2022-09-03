@@ -21,11 +21,4 @@ public class TerritoryController : ControllerBase
         var territories = _territory.ReadAll();
         return Ok(territories);
     }
-
-    [HttpGet("read/{territoryId:int}")]
-    public IActionResult ReadByTerritoryId(int territoryId)
-    {
-        var territory = _territory.ReadByTerritoryId(territoryId);
-        return Ok(territory);
-    }
 }
