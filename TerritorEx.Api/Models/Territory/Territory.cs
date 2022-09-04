@@ -1,6 +1,6 @@
 ﻿using System.Text.Json.Serialization;
 
-namespace TerritorEx.Api.Models;
+namespace TerritorEx.Api.Models.Territory;
 
 public class Territory
 {

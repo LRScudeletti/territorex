@@ -3,7 +3,7 @@ using TerritorEx.Api.Interfaces;
 using TerritorEx.Api.Services;
 
 var builder = WebApplication.CreateBuilder(args);
-SqlHelper.ConnectionString = builder.Configuration.GetConnectionString("ApiDatabase");
+Utils.ConnectionString = builder.Configuration.GetConnectionString("ApiDatabase");
 
 # region [ Services ]
 
@@ -31,7 +31,7 @@ if (app.Environment.IsDevelopment())
     });
 }
 
-app.UseMiddleware<ErrorHandlerHelper>();
+app.UseMiddleware<ErrorHandler>();
 app.UseHttpsRedirection();
 app.UseAuthorization();
 app.MapControllers();

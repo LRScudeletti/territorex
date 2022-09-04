@@ -2,7 +2,7 @@
 
 namespace TerritorEx.Api.Helpers;
 
-public class SqlHelper
+public class Utils
 {
     public static string ConnectionString;
 
@@ -12,11 +12,9 @@ public class SqlHelper
         {
             return new SqlConnection(ConnectionString);
         }
-        catch (Exception exception)
+        catch (System.Exception)
         {
-            Console.WriteLine(string.Concat(
-                Properties.Resources.CouldNotConnectToSatabase), Environment.NewLine, exception);
-            throw;
+            return null;
         }
     }
 }

@@ -117,34 +117,7 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="CouldNotConnectToSatabase" xml:space="preserve">
-    <value>Could not connect to database.</value>
-  </data>
-  <data name="NoTerritoryFoundById" xml:space="preserve">
-    <value>No territory found by id {0}.</value>
-  </data>
-  <data name="NoTerritoryFoundByLevelId" xml:space="preserve">
-    <value>No territory found by level id {0}.</value>
-  </data>
-  <data name="NoTerritoryFoundByName" xml:space="preserve">
-    <value>No territory found by name {0}.</value>
-  </data>
-  <data name="NoTerritoryFoundByParentId" xml:space="preserve">
-    <value>No territory found by parent id {0}.</value>
-  </data>
-  <data name="String1" xml:space="preserve">
-    <value />
-  </data>
-  <data name="TerritoryCreatedSuccessfully" xml:space="preserve">
-    <value>Territory created successfully.</value>
-  </data>
-  <data name="TerritoryDeletedSuccessfully" xml:space="preserve">
-    <value>Territory deleted successfully.</value>
-  </data>
-  <data name="TerritoryUpdatedSuccessfully" xml:space="preserve">
-    <value>Territory updated successfully.</value>
-  </data>
-  <data name="ThereIsAlreadyTerritoryRegisteredWithId" xml:space="preserve">
-    <value>There is already a territory registered with the id {0}.</value>
+  <data name="TerritoryNotFound" xml:space="preserve">
+    <value>Territory not found.</value>
   </data>
 </root>

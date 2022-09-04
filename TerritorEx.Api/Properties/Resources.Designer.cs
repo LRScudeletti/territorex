@@ -61,92 +61,11 @@ namespace TerritorEx.Api.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Could not connect to database..
+        ///   Looks up a localized string similar to Territory not found..
         /// </summary>
-        internal static string CouldNotConnectToSatabase {
+        internal static string TerritoryNotFound {
             get {
-                return ResourceManager.GetString("CouldNotConnectToSatabase", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to No territory found by id {0}..
-        /// </summary>
-        internal static string NoTerritoryFoundById {
-            get {
-                return ResourceManager.GetString("NoTerritoryFoundById", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to No territory found by level id {0}..
-        /// </summary>
-        internal static string NoTerritoryFoundByLevelId {
-            get {
-                return ResourceManager.GetString("NoTerritoryFoundByLevelId", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to No territory found by name {0}..
-        /// </summary>
-        internal static string NoTerritoryFoundByName {
-            get {
-                return ResourceManager.GetString("NoTerritoryFoundByName", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to No territory found by parent id {0}..
-        /// </summary>
-        internal static string NoTerritoryFoundByParentId {
-            get {
-                return ResourceManager.GetString("NoTerritoryFoundByParentId", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to .
-        /// </summary>
-        internal static string String1 {
-            get {
-                return ResourceManager.GetString("String1", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Territory created successfully..
-        /// </summary>
-        internal static string TerritoryCreatedSuccessfully {
-            get {
-                return ResourceManager.GetString("TerritoryCreatedSuccessfully", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Territory deleted successfully..
-        /// </summary>
-        internal static string TerritoryDeletedSuccessfully {
-            get {
-                return ResourceManager.GetString("TerritoryDeletedSuccessfully", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Territory updated successfully..
-        /// </summary>
-        internal static string TerritoryUpdatedSuccessfully {
-            get {
-                return ResourceManager.GetString("TerritoryUpdatedSuccessfully", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to There is already a territory registered with the id {0}..
-        /// </summary>
-        internal static string ThereIsAlreadyTerritoryRegisteredWithId {
-            get {
-                return ResourceManager.GetString("ThereIsAlreadyTerritoryRegisteredWithId", resourceCulture);
+                return ResourceManager.GetString("TerritoryNotFound", resourceCulture);
             }
         }
     }
