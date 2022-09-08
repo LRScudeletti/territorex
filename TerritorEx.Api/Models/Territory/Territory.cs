@@ -1,6 +1,4 @@
-﻿using System.Text.Json.Serialization;
-
-namespace TerritorEx.Api.Models.Territory;
+﻿namespace TerritorEx.Api.Models.Territory;
 
 public class Territory
 {
@@ -17,10 +15,4 @@ public class Territory
     public double Longitude { get; set; }
 
     public byte[] Shape { get; set; }
-
-    [JsonIgnore]
-    public string UpdateUser { get; set; }
-
-    [JsonIgnore]
-    public DateTime UpdateDate { get; set; }
 }

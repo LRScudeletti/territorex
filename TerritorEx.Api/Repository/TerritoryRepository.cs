@@ -1,5 +1,4 @@
 ﻿using Dapper;
-using System.Text;
 using TerritorEx.Api.Helpers;
 using TerritorEx.Api.Models.Territory;
 
@@ -11,108 +10,103 @@ public class TerritoryRepository
     {
         using var sqlConnection = Utils.GetConnection();
 
-        var query = new StringBuilder();
-        query.AppendLine("SELECT TER.TerritoryId,");
-        query.AppendLine("       TER.TerritoryName,");
-        query.AppendLine("       TER.TerritoryParentId,");
-        query.AppendLine("       TER.LevelId,");
-        query.AppendLine("       TER.Latitude,");
-        query.AppendLine("       TER.Latitude,");
-        query.AppendLine("       TER.Longitude,");
-        query.AppendLine("       TER.Shape");
-        query.AppendLine("  FROM Territory AS TER;");
+        const string query = @"SELECT TerritoryId,
+                                      TerritoryName,
+                                      TerritoryParentId,
+                                      LevelId,
+                                      Latitude,
+                                      Latitude,
+                                      Longitude,
+                                      Shape
+                                 FROM Territory;";
 
-        return sqlConnection.Query<Territory>(query.ToString());
+        return sqlConnection.Query<Territory>(query);
     }
 
     public Territory ReadById(int territoryId)
     {
         using var connection = Utils.GetConnection();
 
-        var query = new StringBuilder();
-        query.AppendLine("SELECT TER.TerritoryId,");
-        query.AppendLine("       TER.TerritoryName,");
-        query.AppendLine("       TER.TerritoryParentId,");
-        query.AppendLine("       TER.LevelId,");
-        query.AppendLine("       TER.Latitude,");
-        query.AppendLine("       TER.Latitude,");
-        query.AppendLine("       TER.Longitude,");
-        query.AppendLine("       TER.Shape");
-        query.AppendLine("  FROM Territory AS TER");
-        query.AppendLine(" WHERE TER.TerritoryId = @TerritoryId;");
+        const string query = @"SELECT TerritoryId,
+                                      TerritoryName,
+                                      TerritoryParentId,
+                                      LevelId,
+                                      Latitude,
+                                      Latitude,
+                                      Longitude,
+                                      Shape
+                                 FROM Territory
+                                WHERE TerritoryId = @territoryId;";
 
-        return connection.QueryFirstOrDefault<Territory>(
-            query.ToString(), new { territoryId });
+        return connection.QueryFirstOrDefault<Territory>(query, new { territoryId });
     }
 
     public IEnumerable<Territory> ReadByName(string territoryName)
     {
         using var sqlConnection = Utils.GetConnection();
 
-        var query = new StringBuilder();
-        query.AppendLine("SELECT TER.TerritoryId,");
-        query.AppendLine("       TER.TerritoryName,");
-        query.AppendLine("       TER.TerritoryParentId,");
-        query.AppendLine("       TER.LevelId,");
-        query.AppendLine("       TER.Latitude,");
-        query.AppendLine("       TER.Latitude,");
-        query.AppendLine("       TER.Longitude,");
-        query.AppendLine("       TER.Shape");
-        query.AppendLine("  FROM Territory AS TER");
-        query.AppendLine(" WHERE TER.TerritoryName LIKE '%@TerritoryName%';");
+        const string query = @"SELECT TerritoryId,
+                                      TerritoryName,
+                                      TerritoryParentId,
+                                      LevelId,
+                                      Latitude,
+                                      Latitude,
+                                      Longitude,
+                                      Shape
+                                 FROM Territory
+                                WHERE UPPER(TerritoryName) LIKE UPPER(@territoryName);";
 
-        return sqlConnection.Query<Territory>(query.ToString(), new { territoryName });
+        return sqlConnection.Query<Territory>(query, new
+        {
+            territoryName = string.Concat("%", territoryName, "%")
+        });
     }
 
     public IEnumerable<Territory> ReadByParentId(int territoryParentId)
     {
         using var sqlConnection = Utils.GetConnection();
 
-        var query = new StringBuilder();
-        query.AppendLine("SELECT TER.TerritoryId,");
-        query.AppendLine("       TER.TerritoryName,");
-        query.AppendLine("       TER.TerritoryParentId,");
-        query.AppendLine("       TER.LevelId,");
-        query.AppendLine("       TER.Latitude,");
-        query.AppendLine("       TER.Latitude,");
-        query.AppendLine("       TER.Longitude,");
-        query.AppendLine("       TER.Shape");
-        query.AppendLine("  FROM Territory AS TER");
-        query.AppendLine(" WHERE TER.TerritoryParentId = @TerritoryParentId;");
+        const string query = @"SELECT TerritoryId,
+                                      TerritoryName,
+                                      TerritoryParentId,
+                                      LevelId,
+                                      Latitude,
+                                      Latitude,
+                                      Longitude,
+                                      Shape
+                                 FROM Territory
+                                WHERE TerritoryParentId = @territoryParentId;";
 
-        return sqlConnection.Query<Territory>(query.ToString(), new { territoryParentId });
+        return sqlConnection.Query<Territory>(query, new { territoryParentId });
     }
 
     public IEnumerable<Territory> ReadByLevelId(int levelId)
     {
         using var sqlConnection = Utils.GetConnection();
 
-        var query = new StringBuilder();
-        query.AppendLine("SELECT TER.TerritoryId,");
-        query.AppendLine("       TER.TerritoryName,");
-        query.AppendLine("       TER.TerritoryParentId,");
-        query.AppendLine("       TER.LevelId,");
-        query.AppendLine("       TER.Latitude,");
-        query.AppendLine("       TER.Latitude,");
-        query.AppendLine("       TER.Longitude,");
-        query.AppendLine("       TER.Shape");
-        query.AppendLine("  FROM Territory AS TER");
-        query.AppendLine(" WHERE TER.LevelId = @LevelId;");
+        const string query = @"SELECT TerritoryId,
+                                      TerritoryName,
+                                      TerritoryParentId,
+                                      LevelId,
+                                      Latitude,
+                                      Latitude,
+                                      Longitude,
+                                      Shape
+                                 FROM Territory
+                                WHERE LevelId = @levelId;";
 
-        return sqlConnection.Query<Territory>(query.ToString(), new { levelId });
+        return sqlConnection.Query<Territory>(query, new { levelId });
     }
 
     public TerritoryHierarchy ReadHierarchy(int territoryId)
     {
         using var sqlConnection = Utils.GetConnection();
 
-        var query = new StringBuilder();
-        query.AppendLine("SELECT * ");
-        query.AppendLine("  FROM ViewTerritoryHierarchy VTH");
-        query.AppendLine(" WHERE VTH.TerritoryId = @TerritoryId;");
+        const string query = @"SELECT * 
+                                 FROM ViewTerritoryHierarchy
+                                WHERE TerritoryId = @territoryId;";
 
-        return sqlConnection.QueryFirstOrDefault<TerritoryHierarchy>(
-            query.ToString(), new { territoryId });
+        return sqlConnection.QueryFirstOrDefault<TerritoryHierarchy>(query, new { territoryId });
     }
 }
 

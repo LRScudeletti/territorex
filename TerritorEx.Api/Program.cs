@@ -10,6 +10,7 @@ Utils.ConnectionString = builder.Configuration.GetConnectionString("ApiDatabase"
 var services = builder.Services;
 
 services.AddScoped<ITerritory, TerritoryService>();
+services.AddScoped<ILevel, LevelService>();
 
 services.AddControllers();
 services.AddRouting(x => x.LowercaseUrls = true);

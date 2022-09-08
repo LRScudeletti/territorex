@@ -61,6 +61,15 @@ namespace TerritorEx.Api.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Level not found..
+        /// </summary>
+        internal static string LevelNotFound {
+            get {
+                return ResourceManager.GetString("LevelNotFound", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Territory not found..
         /// </summary>
         internal static string TerritoryNotFound {
