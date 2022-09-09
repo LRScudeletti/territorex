@@ -12,7 +12,7 @@ public class Utils
         {
             return new SqlConnection(ConnectionString);
         }
-        catch (System.Exception)
+        catch (Exception)
         {
             return null;
         }
