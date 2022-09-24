@@ -61,6 +61,15 @@ namespace TerritorEx.Api.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Level name is required..
+        /// </summary>
+        internal static string LevelNameIsRequired {
+            get {
+                return ResourceManager.GetString("LevelNameIsRequired", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Level not found..
         /// </summary>
         internal static string LevelNotFound {

@@ -2,7 +2,7 @@
 
 namespace TerritorEx.Api.Helpers;
 
-public class Utils
+public static class Utils
 {
     public static string ConnectionString;
 
