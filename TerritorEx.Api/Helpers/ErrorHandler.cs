@@ -1,5 +1,6 @@
 ﻿using System.Net;
 using System.Text.Json;
+using TerritorEx.Api.Models.Log;
 
 namespace TerritorEx.Api.Helpers;
 
@@ -20,12 +21,12 @@ public class ErrorHandler
         {
             await _next(context);
         }
-        catch (Exception error)
+        catch (Exception exception)
         {
             var response = context.Response;
             response.ContentType = "application/json";
 
-            switch (error)
+            switch (exception)
             {
                 case AppException:
                     // Custom application error
@@ -37,14 +38,25 @@ public class ErrorHandler
                     break;
                 default:
                     // Unhandled error
-                    _logger.LogError(error, error.Message);
+                    _logger.LogError(exception, exception.Message);
                     response.StatusCode = (int)HttpStatusCode.InternalServerError;
                     break;
             }
 
-            var result = JsonSerializer.Serialize(new { message = error.Message });
+            if (!string.IsNullOrEmpty(exception.Message))
+            {
+                var result = JsonSerializer.Serialize(new { message = exception.Message });
 
-            await response.WriteAsync(result);
+                var erro = new LogErro
+                {
+                    Mensagem = exception.Message,
+                    StackTrace = exception.ToString()
+                };
+
+                Utils.CriarLogErro(erro);
+
+                await response.WriteAsync(result);
+            }
         }
     }
 }

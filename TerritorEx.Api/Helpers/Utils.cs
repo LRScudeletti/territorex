@@ -1,4 +1,6 @@
 ﻿using Microsoft.Data.SqlClient;
+using TerritorEx.Api.Models.Log;
+using TerritorEx.Api.Repository;
 
 namespace TerritorEx.Api.Helpers;
 
@@ -16,6 +18,11 @@ public static class Utils
         {
             return null;
         }
+    }
+
+    public static void CriarLogErro(LogErro erro)
+    {
+       LogRepository.CriarLogErro(erro);
     }
 }
 
