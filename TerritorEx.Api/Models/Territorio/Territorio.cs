@@ -1,12 +1,15 @@
-﻿namespace TerritorEx.Api.Models.Territorio;
+﻿using Dapper.Contrib.Extensions;
+
+namespace TerritorEx.Api.Models.Territorio;
 
 public class Territorio
 {
-    public int Id { get; set; }
+    [Key]
+    public int TerritorioId { get; set; }
 
-    public string Nome { get; set; }
+    public string TerritorioNome { get; set; }
 
-    public int PaiId { get; set; }
+    public int TerritorioPaiId { get; set; }
 
     public int NivelId { get; set; }
 

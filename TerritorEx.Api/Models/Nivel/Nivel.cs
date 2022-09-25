@@ -1,9 +1,12 @@
-﻿namespace TerritorEx.Api.Models.Nivel;
+﻿using Dapper.Contrib.Extensions;
+
+namespace TerritorEx.Api.Models.Nivel;
 
 public class Nivel
 {
-    public int Id { get; set; }
+    [Key]
+    public int NivelId { get; set; }
 
-    public string Nome { get; set; }
+    public string NivelNome { get; set; }
 }
 
