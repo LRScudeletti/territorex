@@ -5,7 +5,7 @@ namespace TerritorEx.Api.Models.Nivel;
 
 public class CriarNivel
 {
-    [Required(ErrorMessageResourceName = "LevelNameIsRequired",
+    [Required(ErrorMessageResourceName = "NomeNivelObrigatorio",
         ErrorMessageResourceType = typeof(Properties.Resources))]
     public string LevelNome { get; set; }
 

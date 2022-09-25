@@ -2,8 +2,8 @@
 
 public class Nivel
 {
-    public int NivelId { get; set; }
+    public int Id { get; set; }
 
-    public string NivelNome { get; set; }
+    public string Nome { get; set; }
 }
 

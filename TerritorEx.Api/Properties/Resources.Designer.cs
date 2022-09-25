@@ -61,29 +61,29 @@ namespace TerritorEx.Api.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Level name is required..
+        ///   Looks up a localized string similar to Nível não encontrado..
         /// </summary>
-        internal static string LevelNameIsRequired {
+        internal static string NivelNaoEncontrado {
             get {
-                return ResourceManager.GetString("LevelNameIsRequired", resourceCulture);
+                return ResourceManager.GetString("NivelNaoEncontrado", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Level not found..
+        ///   Looks up a localized string similar to O nome do nível é obrigatório..
         /// </summary>
-        internal static string LevelNotFound {
+        internal static string NomeNivelObrigatorio {
             get {
-                return ResourceManager.GetString("LevelNotFound", resourceCulture);
+                return ResourceManager.GetString("NomeNivelObrigatorio", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Territory not found..
+        ///   Looks up a localized string similar to Território não encontrado..
         /// </summary>
-        internal static string TerritoryNotFound {
+        internal static string TerritorioNaoEncontrado {
             get {
-                return ResourceManager.GetString("TerritoryNotFound", resourceCulture);
+                return ResourceManager.GetString("TerritorioNaoEncontrado", resourceCulture);
             }
         }
     }

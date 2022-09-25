@@ -6,17 +6,12 @@ namespace TerritorEx.Api.Services;
 
 public class NivelService : INivel
 {
-    public Nivel Criar(CriarNivel criarNivel)
-    {
-        return NivelRepository.Criar(criarNivel);
-    }
-
     public IEnumerable<Nivel> RecuperarTodos()
     {
         var nivel = NivelRepository.RecuperarTodos();
 
         if (nivel == null)
-            throw new KeyNotFoundException(Properties.Resources.LevelNotFound);
+            throw new KeyNotFoundException(Properties.Resources.NivelNaoEncontrado);
 
         return nivel;
     }
@@ -26,7 +21,7 @@ public class NivelService : INivel
         var nivel = NivelRepository.RecuperarPorId(nivelId);
 
         if (nivel == null)
-            throw new KeyNotFoundException(Properties.Resources.LevelNotFound);
+            throw new KeyNotFoundException(Properties.Resources.NivelNaoEncontrado);
 
         return nivel;
     }

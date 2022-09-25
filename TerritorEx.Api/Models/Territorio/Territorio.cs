@@ -2,11 +2,11 @@
 
 public class Territorio
 {
-    public int TerritorioId { get; set; }
+    public int Id { get; set; }
 
-    public string TerritorioNome { get; set; }
+    public string Nome { get; set; }
 
-    public int TerritorioPaiId { get; set; }
+    public int PaiId { get; set; }
 
     public int NivelId { get; set; }
 

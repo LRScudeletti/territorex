@@ -11,7 +11,7 @@ public class TerritorioService : ITerritorio
         var territorio = TerritorioRepository.RecuperarTodos();
 
         if (territorio == null)
-            throw new KeyNotFoundException(Properties.Resources.TerritoryNotFound);
+            throw new KeyNotFoundException(Properties.Resources.TerritorioNaoEncontrado);
 
         return territorio;
     }
@@ -21,7 +21,7 @@ public class TerritorioService : ITerritorio
         var territorio = TerritorioRepository.RecuperarPorId(territorioId);
 
         if (territorio == null)
-            throw new KeyNotFoundException(Properties.Resources.TerritoryNotFound);
+            throw new KeyNotFoundException(Properties.Resources.TerritorioNaoEncontrado);
 
         return territorio;
     }
@@ -31,7 +31,7 @@ public class TerritorioService : ITerritorio
         var territorio = TerritorioRepository.RecuperarPorNome(territorioNome);
 
         if (territorio == null)
-            throw new KeyNotFoundException(Properties.Resources.TerritoryNotFound);
+            throw new KeyNotFoundException(Properties.Resources.TerritorioNaoEncontrado);
 
         return territorio;
     }
@@ -41,17 +41,17 @@ public class TerritorioService : ITerritorio
         var territorio = TerritorioRepository.RecuperarPorPaiId(territorioPaiId);
 
         if (territorio == null)
-            throw new KeyNotFoundException(Properties.Resources.TerritoryNotFound);
+            throw new KeyNotFoundException(Properties.Resources.TerritorioNaoEncontrado);
 
         return territorio;
     }
 
-    public IEnumerable<Territorio> RecuperarPorNivelId(int levelId)
+    public IEnumerable<Territorio> RecuperarPorNivelId(int nivelId)
     {
-        var territorio = TerritorioRepository.RecuperarPorNivelId(levelId);
+        var territorio = TerritorioRepository.RecuperarPorNivelId(nivelId);
 
         if (territorio == null)
-            throw new KeyNotFoundException(Properties.Resources.TerritoryNotFound);
+            throw new KeyNotFoundException(Properties.Resources.TerritorioNaoEncontrado);
 
         return territorio;
     }
@@ -61,7 +61,7 @@ public class TerritorioService : ITerritorio
         var territorio = TerritorioRepository.RecuperarHierarquia(territoryId);
 
         if (territorio == null)
-            throw new KeyNotFoundException(Properties.Resources.TerritoryNotFound);
+            throw new KeyNotFoundException(Properties.Resources.TerritorioNaoEncontrado);
 
         return territorio;
     }
