@@ -1,6 +1,4 @@
 ﻿using Microsoft.Data.SqlClient;
-using TerritorEx.Api.Models.Log;
-using TerritorEx.Api.Repository;
 
 namespace TerritorEx.Api.Helpers;
 
@@ -18,7 +16,7 @@ public static class Utils
         }
         catch (Exception exception)
         {
-            CriarLogErroArquivo(exception.ToString());
+            CriarLogErro(exception.ToString());
             return null;
         }
     }
@@ -28,29 +26,34 @@ public static class Utils
         var builder = new ConfigurationBuilder().SetBasePath(Directory.GetCurrentDirectory()).AddJsonFile($"appsettings.json");
         _configuration = builder.Build();
 
-        return _configuration.GetSection(string.Concat("Selenium:", nomeparametro)).Value;
+        return _configuration.GetSection(string.Concat(nomeparametro)).Value;
     }
 
-    public static void CriarLogErroDatabase(LogErro erro)
+    public static void CriarLogErro(string erro)
     {
-       LogRepository.CriarLogErro(erro);
-    }
-
-    private static void CriarLogErroArquivo(string erro)
-    {
-        var basePath = RecuperarParametroAppSettings("LogErroPath");
+        var basePath = RecuperarParametroAppSettings("Paths:ErroPath");
 
         if (!Directory.Exists(basePath))
             if (basePath != null)
                 Directory.CreateDirectory(basePath);
 
-        var pathLogs = string.Concat(basePath, "\\log-", DateTime.Now, ".txt");
+        var pathLogs = string.Concat(basePath, "\\log-", ConverterData(DateTime.Now, "log"), ".txt");
         var logFileInfo = new FileInfo(pathLogs);
 
         var fileStream = logFileInfo.Create();
         var streamWriter = new StreamWriter(fileStream);
         streamWriter.WriteLine(erro);
         streamWriter.Close();
+    }
+
+    private static string ConverterData(DateTime dataHora, string padrao)
+    {
+        return padrao switch
+        {
+            "pt-BR" => dataHora.ToString("dd/MM/yyyy HH:mm:ss"),
+            "log" => dataHora.ToString("dd-MM-yyyy HH-mm-ss"),
+            _ => dataHora.ToString("dd/MM/yyyy HH:mm:ss"),
+        };
     }
 }
 

@@ -1,6 +1,5 @@
 ﻿using System.Net;
 using System.Text.Json;
-using TerritorEx.Api.Models.Log;
 
 namespace TerritorEx.Api.Helpers;
 
@@ -43,20 +42,11 @@ public class ErrorHandler
                     break;
             }
 
-            if (!string.IsNullOrEmpty(exception.Message))
-            {
-                var result = JsonSerializer.Serialize(new { message = exception.Message });
+            var result = JsonSerializer.Serialize(new { message = exception.Message });
 
-                var erro = new LogErro
-                {
-                    Mensagem = exception.Message,
-                    StackTrace = exception.ToString()
-                };
+            Utils.CriarLogErro(exception.ToString());
 
-                Utils.CriarLogErroDatabase(erro);
-
-                await response.WriteAsync(result);
-            }
+            await response.WriteAsync(result);
         }
     }
 }
