@@ -53,7 +53,7 @@ public class ErrorHandler
                     StackTrace = exception.ToString()
                 };
 
-                Utils.CriarLogErro(erro);
+                Utils.CriarLogErroDatabase(erro);
 
                 await response.WriteAsync(result);
             }

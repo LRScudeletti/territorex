@@ -8,14 +8,14 @@ public static class NivelRepository
 {
     public static IEnumerable<Nivel> RecuperarTodos()
     {
-        using var sqlConnection = Utils.GetConnection();
+        using var sqlConnection = Utils.RecuperarConexao();
 
         return sqlConnection.GetAll<Nivel>();
     }
 
     public static Nivel RecuperarPorId(int nivelId)
     {
-        using var connection = Utils.GetConnection();
+        using var connection = Utils.RecuperarConexao();
 
         return connection.Get<Nivel>(nivelId);
     }

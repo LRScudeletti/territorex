@@ -8,7 +8,7 @@ public static class LogRepository
 {
     public static void CriarLogErro(LogErro erro)
     {
-        using var sqlConnection = Utils.GetConnection();
+        using var sqlConnection = Utils.RecuperarConexao();
 
         sqlConnection.Insert(erro);
     }

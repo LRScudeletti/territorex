@@ -9,21 +9,21 @@ public static class TerritorioRepository
 {
     public static IEnumerable<Territorio> RecuperarTodos()
     {
-        using var sqlConnection = Utils.GetConnection();
+        using var sqlConnection = Utils.RecuperarConexao();
 
         return sqlConnection.GetAll<Territorio>();
     }
 
     public static Territorio RecuperarPorId(int territorioId)
     {
-        using var connection = Utils.GetConnection();
+        using var connection = Utils.RecuperarConexao();
 
         return connection.Get<Territorio>(territorioId);
     }
 
     public static IEnumerable<Territorio> RecuperarPorNome(string territorioNome)
     {
-        using var sqlConnection = Utils.GetConnection();
+        using var sqlConnection = Utils.RecuperarConexao();
 
         const string query = @"SELECT Id,
                                       Nome,
@@ -43,7 +43,7 @@ public static class TerritorioRepository
 
     public static IEnumerable<Territorio> RecuperarPorPaiId(int territorioPaiId)
     {
-        using var sqlConnection = Utils.GetConnection();
+        using var sqlConnection = Utils.RecuperarConexao();
 
         const string query = @"SELECT Id,
                                       Nome,
@@ -60,7 +60,7 @@ public static class TerritorioRepository
 
     public static IEnumerable<Territorio> RecuperarPorNivelId(int nivelId)
     {
-        using var sqlConnection = Utils.GetConnection();
+        using var sqlConnection = Utils.RecuperarConexao();
 
         const string query = @"SELECT Id,
                                       Nome,
@@ -77,7 +77,7 @@ public static class TerritorioRepository
 
     public static TerritorioHierarquia RecuperarHierarquia(int territorioId)
     {
-        using var sqlConnection = Utils.GetConnection();
+        using var sqlConnection = Utils.RecuperarConexao();
 
         const string query = @"SELECT * 
                                  FROM ViewTerritorioHierarquia
