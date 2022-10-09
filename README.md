@@ -1,1 +1,1 @@
-# :earth_americas: Brazilian territory exploration system.
+# :earth_americas: Sistema para exploração do território brasileiro.

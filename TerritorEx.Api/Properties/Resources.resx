@@ -117,11 +117,11 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="NivelNaoEncontrado" xml:space="preserve">
-    <value>Nível não encontrado.</value>
+  <data name="DescricaoNivelTerritorioObrigatoria" xml:space="preserve">
+    <value>A descrição do nível de território é obrigatória.</value>
   </data>
-  <data name="NomeNivelObrigatorio" xml:space="preserve">
-    <value>O nome do nível é obrigatório.</value>
+  <data name="NivelTerritorioNaoEncontrado" xml:space="preserve">
+    <value>Nível do território não encontrado.</value>
   </data>
   <data name="TerritorioNaoEncontrado" xml:space="preserve">
     <value>Território não encontrado.</value>

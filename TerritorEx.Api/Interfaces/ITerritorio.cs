@@ -12,7 +12,7 @@ public interface ITerritorio
 
     IEnumerable<Territorio> RecuperarPorPaiId(int territorioPaiId);
 
-    IEnumerable<Territorio> RecuperarPorNivelId(int nivelId);
+    IEnumerable<Territorio> RecuperarPorNivelTerritorioId(int nivelTerritorioId);
 
     TerritorioHierarquia RecuperarHierarquia(int territorioId);
 }

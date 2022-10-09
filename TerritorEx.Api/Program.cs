@@ -1,22 +1,19 @@
 using Dapper.Contrib.Extensions;
 using TerritorEx.Api.Helpers;
-using TerritorEx.Api.Interfaces;
-using TerritorEx.Api.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
 Utils.ConnectionString = builder.Configuration.GetConnectionString("ApiDatabase");
 
 // Essa linha altera a característica do Dapper 
-// que coloca 's' no mapping das entidades.
+// de colocar 's' no nome das entidades mapeadas
 SqlMapperExtensions.TableNameMapper = (type) => type.Name;
 
 # region [ Services ]
 
 var services = builder.Services;
 
-services.AddScoped<ITerritorio, TerritorioService>();
-services.AddScoped<INivel, NivelService>();
+AddScoped.AdicionarInterface(services);
 
 services.AddControllers();
 services.AddRouting(x => x.LowercaseUrls = true);

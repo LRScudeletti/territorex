@@ -11,7 +11,7 @@ public class Territorio
 
     public int TerritorioPaiId { get; set; }
 
-    public int NivelId { get; set; }
+    public int NivelTerritorioId { get; set; }
 
     public double Latitude { get; set; }
 

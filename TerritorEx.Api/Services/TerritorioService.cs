@@ -1,6 +1,6 @@
 ﻿using TerritorEx.Api.Interfaces;
 using TerritorEx.Api.Models.Territorio;
-using TerritorEx.Api.Repository;
+using TerritorEx.Api.Repositories;
 
 namespace TerritorEx.Api.Services;
 
@@ -46,9 +46,9 @@ public class TerritorioService : ITerritorio
         return territorio;
     }
 
-    public IEnumerable<Territorio> RecuperarPorNivelId(int nivelId)
+    public IEnumerable<Territorio> RecuperarPorNivelTerritorioId(int nivelTerritorioId)
     {
-        var territorio = TerritorioRepository.RecuperarPorNivelId(nivelId);
+        var territorio = TerritorioRepository.RecuperarPorNivelTerritorioId(nivelTerritorioId);
 
         if (territorio == null)
             throw new KeyNotFoundException(Properties.Resources.TerritorioNaoEncontrado);

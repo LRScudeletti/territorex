@@ -3,7 +3,7 @@ using Dapper.Contrib.Extensions;
 using TerritorEx.Api.Helpers;
 using TerritorEx.Api.Models.Territorio;
 
-namespace TerritorEx.Api.Repository;
+namespace TerritorEx.Api.Repositories;
 
 public static class TerritorioRepository
 {
@@ -25,15 +25,15 @@ public static class TerritorioRepository
     {
         using var sqlConnection = Utils.RecuperarConexao();
 
-        const string query = @"SELECT Id,
-                                      Nome,
-                                      PaiId,
-                                      NivelId,
+        const string query = @"SELECT TerritorioId,
+                                      TerritorioNome,
+                                      TerritorioPaiId,
+                                      NivelTerritorioId,
                                       Latitude,
                                       Longitude,
                                       Shape
                                  FROM Territorio
-                                WHERE UPPER(Nome) LIKE UPPER(@territorioNome);";
+                                WHERE UPPER(TerritorioNome) LIKE UPPER(@territorioNome);";
 
         return sqlConnection.Query<Territorio>(query, new
         {
@@ -45,34 +45,34 @@ public static class TerritorioRepository
     {
         using var sqlConnection = Utils.RecuperarConexao();
 
-        const string query = @"SELECT Id,
-                                      Nome,
-                                      PaiId,
-                                      NivelId,
+        const string query = @"SELECT TerritorioId,
+                                      TerritorioNome,
+                                      TerritorioPaiId,
+                                      NivelTerritorioId,
                                       Latitude,
                                       Longitude,
                                       Shape
                                  FROM Territorio
-                                WHERE PaiId = @territorioPaiId;";
+                                WHERE TerritorioPaiId = @territorioPaiId;";
 
         return sqlConnection.Query<Territorio>(query, new { territorioPaiId });
     }
 
-    public static IEnumerable<Territorio> RecuperarPorNivelId(int nivelId)
+    public static IEnumerable<Territorio> RecuperarPorNivelTerritorioId(int nivelTerritorioId)
     {
         using var sqlConnection = Utils.RecuperarConexao();
 
-        const string query = @"SELECT Id,
-                                      Nome,
-                                      PaiId,
-                                      NivelId,
+        const string query = @"SELECT TerritorioId,
+                                      TerritorioNome,
+                                      TerritorioPaiId,
+                                      NivelTerritorioId,
                                       Latitude,
                                       Longitude,
                                       Shape
                                  FROM Territorio
-                                WHERE NivelId = @nivelId;";
+                                WHERE NivelTerritorioId = @nivelTerritorioId;";
 
-        return sqlConnection.Query<Territorio>(query, new { nivelId });
+        return sqlConnection.Query<Territorio>(query, new { nivelTerritorioId });
     }
 
     public static TerritorioHierarquia RecuperarHierarquia(int territorioId)

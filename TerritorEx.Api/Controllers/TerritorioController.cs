@@ -42,10 +42,10 @@ public class TerritorioController : ControllerBase
         return Ok(territorio);
     }
 
-    [HttpGet("recuperarnivel/{nivelId:int}")]
-    public IActionResult RecuperarPorNivel(int nivelId)
+    [HttpGet("recuperarnivel/{nivelTerritorioId:int}")]
+    public IActionResult RecuperarPorNivelTerritorioId(int nivelTerritorioId)
     {
-        var territorio = _territorio.RecuperarPorNivelId(nivelId);
+        var territorio = _territorio.RecuperarPorNivelTerritorioId(nivelTerritorioId);
         return Ok(territorio);
     }
 
