@@ -20,4 +20,11 @@ public class AreaAltitudeSuperior1800Controller : ControllerBase
         var area = _area.RecuperarTodos();
         return Ok(area);
     }
+
+    [HttpGet("recuperar/{territorioId:int}")]
+    public IActionResult RecuperarPorId(int territorioId)
+    {
+        var area = _area.RecuperarPorTerritorioId(territorioId);
+        return Ok(area);
+    }
 }

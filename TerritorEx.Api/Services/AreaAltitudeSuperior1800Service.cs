@@ -15,4 +15,14 @@ public class AreaAltitudeSuperior1800Service : IAreaAltitudeSuperior1800
 
         return area;
     }
+
+    public IEnumerable<AreaAltitudeSuperior1800> RecuperarPorTerritorioId(int territorioId)
+    {
+        var area = AreaAltitudeSuperior1800Repository.RecuperarPorTerritorioId(territorioId);
+
+        if (area == null)
+            throw new KeyNotFoundException(Properties.Resources.NivelTerritorioNaoEncontrado);
+
+        return area;
+    }
 }
