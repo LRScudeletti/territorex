@@ -10,6 +10,7 @@ public static class AddScoped
         services.AddScoped<IAreaAltitudeSuperior1800, AreaAltitudeSuperior1800Service>();
         services.AddScoped<IAreaBanhado, AreaBanhadoService>();
         services.AddScoped<IAreaBordaChapada, AreaBordaChapadaService>();
+        services.AddScoped<IAreaConsolidada, AreaConsolidadaService>();
 
         services.AddScoped<INivelTerritorio, NivelTerritorioService>();
 
