@@ -6,11 +6,11 @@ namespace TerritorEx.Api.Services;
 
 public class TerritorioService : ITerritorio
 {
-    public IEnumerable<Territorio> RecuperarTodos()
+    public IReadOnlyList<Territorio> RecuperarTodos()
     {
         var territorio = TerritorioRepository.RecuperarTodos();
 
-        if (territorio == null)
+        if (!territorio.Any())
             throw new KeyNotFoundException(Properties.Resources.TerritorioNaoEncontrado);
 
         return territorio;
@@ -26,31 +26,31 @@ public class TerritorioService : ITerritorio
         return territorio;
     }
 
-    public IEnumerable<Territorio> RecuperarPorNome(string territorioNome)
+    public IReadOnlyList<Territorio> RecuperarPorNome(string territorioNome)
     {
         var territorio = TerritorioRepository.RecuperarPorNome(territorioNome);
 
-        if (territorio == null)
+        if (!territorio.Any())
             throw new KeyNotFoundException(Properties.Resources.TerritorioNaoEncontrado);
 
         return territorio;
     }
 
-    public IEnumerable<Territorio> RecuperarPorPaiId(int territorioPaiId)
+    public IReadOnlyList<Territorio> RecuperarPorPaiId(int territorioPaiId)
     {
         var territorio = TerritorioRepository.RecuperarPorPaiId(territorioPaiId);
 
-        if (territorio == null)
+        if (!territorio.Any())
             throw new KeyNotFoundException(Properties.Resources.TerritorioNaoEncontrado);
 
         return territorio;
     }
 
-    public IEnumerable<Territorio> RecuperarPorNivelTerritorioId(int nivelTerritorioId)
+    public IReadOnlyList<Territorio> RecuperarPorNivelTerritorioId(int nivelTerritorioId)
     {
         var territorio = TerritorioRepository.RecuperarPorNivelTerritorioId(nivelTerritorioId);
 
-        if (territorio == null)
+        if (!territorio.Any())
             throw new KeyNotFoundException(Properties.Resources.TerritorioNaoEncontrado);
 
         return territorio;

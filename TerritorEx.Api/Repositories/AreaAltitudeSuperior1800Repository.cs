@@ -7,14 +7,14 @@ namespace TerritorEx.Api.Repositories;
 
 public static class AreaAltitudeSuperior1800Repository
 {
-    public static IEnumerable<AreaAltitudeSuperior1800> RecuperarTodos()
+    public static IReadOnlyList<AreaAltitudeSuperior1800> RecuperarTodos()
     {
         using var sqlConnection = Utils.RecuperarConexao();
 
-        return sqlConnection.GetAll<AreaAltitudeSuperior1800>();
+        return (IReadOnlyList<AreaAltitudeSuperior1800>)sqlConnection.GetAll<AreaAltitudeSuperior1800>();
     }
 
-    public static IEnumerable<AreaAltitudeSuperior1800> RecuperarPorTerritorioId(int territorioId)
+    public static IReadOnlyList<AreaAltitudeSuperior1800> RecuperarPorTerritorioId(int territorioId)
     {
         using var sqlConnection = Utils.RecuperarConexao();
 
@@ -27,6 +27,6 @@ public static class AreaAltitudeSuperior1800Repository
                                  FROM AreaAltitudeSuperior1800
                                 WHERE TerritorioId = @territorioId;";
 
-        return sqlConnection.Query<AreaAltitudeSuperior1800>(query, new { territorioId });
+        return (IReadOnlyList<AreaAltitudeSuperior1800>)sqlConnection.Query<AreaAltitudeSuperior1800>(query, new { territorioId });
     }
 }

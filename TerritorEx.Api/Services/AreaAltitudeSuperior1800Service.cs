@@ -6,21 +6,21 @@ namespace TerritorEx.Api.Services;
 
 public class AreaAltitudeSuperior1800Service : IAreaAltitudeSuperior1800
 {
-    public IEnumerable<AreaAltitudeSuperior1800> RecuperarTodos()
+    public IReadOnlyList<AreaAltitudeSuperior1800> RecuperarTodos()
     {
         var area = AreaAltitudeSuperior1800Repository.RecuperarTodos();
 
-        if (area == null)
+        if (!area.Any())
             throw new KeyNotFoundException(Properties.Resources.AreaNaoEncontrada);
 
         return area;
     }
 
-    public IEnumerable<AreaAltitudeSuperior1800> RecuperarPorTerritorioId(int territorioId)
+    public IReadOnlyList<AreaAltitudeSuperior1800> RecuperarPorTerritorioId(int territorioId)
     {
         var area = AreaAltitudeSuperior1800Repository.RecuperarPorTerritorioId(territorioId);
 
-        if (area == null)
+        if (!area.Any())
             throw new KeyNotFoundException(Properties.Resources.AreaNaoEncontrada);
 
         return area;

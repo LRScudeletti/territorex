@@ -7,11 +7,11 @@ namespace TerritorEx.Api.Repositories;
 
 public static class TerritorioRepository
 {
-    public static IEnumerable<Territorio> RecuperarTodos()
+    public static IReadOnlyList<Territorio> RecuperarTodos()
     {
         using var sqlConnection = Utils.RecuperarConexao();
 
-        return sqlConnection.GetAll<Territorio>();
+        return (IReadOnlyList<Territorio>)sqlConnection.GetAll<Territorio>();
     }
 
     public static Territorio RecuperarPorId(int territorioId)
@@ -21,7 +21,7 @@ public static class TerritorioRepository
         return connection.Get<Territorio>(territorioId);
     }
 
-    public static IEnumerable<Territorio> RecuperarPorNome(string territorioNome)
+    public static IReadOnlyList<Territorio> RecuperarPorNome(string territorioNome)
     {
         using var sqlConnection = Utils.RecuperarConexao();
 
@@ -35,13 +35,13 @@ public static class TerritorioRepository
                                  FROM Territorio
                                 WHERE UPPER(TerritorioNome) LIKE UPPER(@territorioNome);";
 
-        return sqlConnection.Query<Territorio>(query, new
+        return (IReadOnlyList<Territorio>)sqlConnection.Query<Territorio>(query, new
         {
             territorioNome = string.Concat("%", territorioNome, "%")
         });
     }
 
-    public static IEnumerable<Territorio> RecuperarPorPaiId(int territorioPaiId)
+    public static IReadOnlyList<Territorio> RecuperarPorPaiId(int territorioPaiId)
     {
         using var sqlConnection = Utils.RecuperarConexao();
 
@@ -55,10 +55,10 @@ public static class TerritorioRepository
                                  FROM Territorio
                                 WHERE TerritorioPaiId = @territorioPaiId;";
 
-        return sqlConnection.Query<Territorio>(query, new { territorioPaiId });
+        return (IReadOnlyList<Territorio>)sqlConnection.Query<Territorio>(query, new { territorioPaiId });
     }
 
-    public static IEnumerable<Territorio> RecuperarPorNivelTerritorioId(int nivelTerritorioId)
+    public static IReadOnlyList<Territorio> RecuperarPorNivelTerritorioId(int nivelTerritorioId)
     {
         using var sqlConnection = Utils.RecuperarConexao();
 
@@ -72,7 +72,7 @@ public static class TerritorioRepository
                                  FROM Territorio
                                 WHERE NivelTerritorioId = @nivelTerritorioId;";
 
-        return sqlConnection.Query<Territorio>(query, new { nivelTerritorioId });
+        return (IReadOnlyList<Territorio>)sqlConnection.Query<Territorio>(query, new { nivelTerritorioId });
     }
 
     public static TerritorioHierarquia RecuperarHierarquia(int territorioId)

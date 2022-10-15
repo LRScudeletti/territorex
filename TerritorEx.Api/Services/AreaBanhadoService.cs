@@ -6,21 +6,21 @@ namespace TerritorEx.Api.Services;
 
 public class AreaBanhadoService : IAreaBanhado
 {
-    public IEnumerable<AreaBanhado> RecuperarTodos()
+    public IReadOnlyList<AreaBanhado> RecuperarTodos()
     {
         var area = AreaBanhadoRepository.RecuperarTodos();
 
-        if (area == null)
+        if (!area.Any())
             throw new KeyNotFoundException(Properties.Resources.AreaNaoEncontrada);
 
         return area;
     }
 
-    public IEnumerable<AreaBanhado> RecuperarPorTerritorioId(int territorioId)
+    public IReadOnlyList<AreaBanhado> RecuperarPorTerritorioId(int territorioId)
     {
         var area = AreaBanhadoRepository.RecuperarPorTerritorioId(territorioId);
 
-        if (area == null)
+        if (!area.Any())
             throw new KeyNotFoundException(Properties.Resources.AreaNaoEncontrada);
 
         return area;

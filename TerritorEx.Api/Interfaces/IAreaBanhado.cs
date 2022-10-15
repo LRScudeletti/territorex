@@ -4,7 +4,7 @@ namespace TerritorEx.Api.Interfaces;
 
 public interface IAreaBanhado
 {
-    IEnumerable<AreaBanhado> RecuperarTodos();
+    IReadOnlyList<AreaBanhado> RecuperarTodos();
 
-    IEnumerable<AreaBanhado> RecuperarPorTerritorioId(int territorioId);
+    IReadOnlyList<AreaBanhado> RecuperarPorTerritorioId(int territorioId);
 }

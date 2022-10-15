@@ -4,7 +4,7 @@ namespace TerritorEx.Api.Interfaces;
 
 public interface IAreaAltitudeSuperior1800
 {
-    IEnumerable<AreaAltitudeSuperior1800> RecuperarTodos();
+    IReadOnlyList<AreaAltitudeSuperior1800> RecuperarTodos();
 
-    IEnumerable<AreaAltitudeSuperior1800> RecuperarPorTerritorioId(int territorioId);
+    IReadOnlyList<AreaAltitudeSuperior1800> RecuperarPorTerritorioId(int territorioId);
 }

@@ -4,7 +4,7 @@ namespace TerritorEx.Api.Interfaces;
 
 public interface IAreaBordaChapada
 {
-    IEnumerable<AreaBordaChapada> RecuperarTodos();
+    IReadOnlyList<AreaBordaChapada> RecuperarTodos();
 
-    IEnumerable<AreaBordaChapada> RecuperarPorTerritorioId(int territorioId);
+    IReadOnlyList<AreaBordaChapada> RecuperarPorTerritorioId(int territorioId);
 }

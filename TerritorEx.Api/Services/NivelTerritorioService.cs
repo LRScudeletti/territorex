@@ -6,11 +6,11 @@ namespace TerritorEx.Api.Services;
 
 public class NivelTerritorioService : INivelTerritorio
 {
-    public IEnumerable<NivelTerritorio> RecuperarTodos()
+    public IReadOnlyList<NivelTerritorio> RecuperarTodos()
     {
         var nivelTerritorio = NivelTerritorioRepository.RecuperarTodos();
 
-        if (nivelTerritorio == null)
+        if (!nivelTerritorio.Any())
             throw new KeyNotFoundException(Properties.Resources.NivelTerritorioNaoEncontrado);
 
         return nivelTerritorio;

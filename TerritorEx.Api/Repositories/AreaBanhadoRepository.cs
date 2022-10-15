@@ -7,14 +7,14 @@ namespace TerritorEx.Api.Repositories;
 
 public static class AreaBanhadoRepository
 {
-    public static IEnumerable<AreaBanhado> RecuperarTodos()
+    public static IReadOnlyList<AreaBanhado> RecuperarTodos()
     {
         using var sqlConnection = Utils.RecuperarConexao();
 
-        return sqlConnection.GetAll<AreaBanhado>();
+        return (IReadOnlyList<AreaBanhado>)sqlConnection.GetAll<AreaBanhado>();
     }
 
-    public static IEnumerable<AreaBanhado> RecuperarPorTerritorioId(int territorioId)
+    public static IReadOnlyList<AreaBanhado> RecuperarPorTerritorioId(int territorioId)
     {
         using var sqlConnection = Utils.RecuperarConexao();
 
@@ -27,6 +27,6 @@ public static class AreaBanhadoRepository
                                  FROM AreaBanhado
                                 WHERE TerritorioId = @territorioId;";
 
-        return sqlConnection.Query<AreaBanhado>(query, new { territorioId });
+        return (IReadOnlyList<AreaBanhado>)sqlConnection.Query<AreaBanhado>(query, new { territorioId });
     }
 }

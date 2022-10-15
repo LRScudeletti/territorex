@@ -4,7 +4,7 @@ namespace TerritorEx.Api.Interfaces;
 
 public interface INivelTerritorio
 {
-    IEnumerable<NivelTerritorio> RecuperarTodos();
+    IReadOnlyList<NivelTerritorio> RecuperarTodos();
 
     NivelTerritorio RecuperarPorId(int territorioId);
 }
