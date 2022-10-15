@@ -12,6 +12,7 @@ public static class AddScoped
         services.AddScoped<IAreaBordaChapada, AreaBordaChapadaService>();
         services.AddScoped<IAreaConsolidada, AreaConsolidadaService>();
         services.AddScoped<IAreaDeclividadeMaior45, AreaDeclividadeMaior45Service>();
+        services.AddScoped<IAreaHidrografia, AreaHidrografiaService>();
 
         services.AddScoped<INivelTerritorio, NivelTerritorioService>();
 
