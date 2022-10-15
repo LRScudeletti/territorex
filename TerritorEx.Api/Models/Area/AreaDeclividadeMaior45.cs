@@ -2,7 +2,7 @@
 
 namespace TerritorEx.Api.Models.Area;
 
-public class AreaBanhado
+public class AreaDeclividadeMaior45
 {
     [Key]
     public int AreaId { get; set; }

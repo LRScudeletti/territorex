@@ -1,20 +1,19 @@
 ﻿using Dapper.Contrib.Extensions;
 
-namespace TerritorEx.Api.Models.Area
+namespace TerritorEx.Api.Models.Area;
+
+public class AreaBordaChapada
 {
-    public class AreaBordaChapada
-    {
-        [Key]
-        public int AreaId { get; set; }
+    [Key]
+    public int AreaId { get; set; }
 
-        public int TerritorioId { get; set; }
+    public int TerritorioId { get; set; }
 
-        public int SicarId { get; set; }
+    public int SicarId { get; set; }
 
-        public string Descricao { get; set; }
+    public string Descricao { get; set; }
 
-        public double AreaHectare { get; set; }
+    public double AreaHectare { get; set; }
 
-        public byte[] Shape { get; set; }
-    }
+    public byte[] Shape { get; set; }
 }
