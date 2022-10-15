@@ -28,15 +28,15 @@ public class ErrorHandler
             switch (exception)
             {
                 case AppException:
-                    // Custom application error
+                    // Erro de aplicativo personalizado
                     response.StatusCode = (int)HttpStatusCode.BadRequest;
                     break;
                 case KeyNotFoundException:
-                    // Not found error
-                    response.StatusCode = (int)HttpStatusCode.NotFound;
+                    // Não encontrado
+                    response.StatusCode = (int)HttpStatusCode.NoContent;
                     break;
                 default:
-                    // Unhandled error
+                    // Erro não tratado
                     _logger.LogError(exception, exception.Message);
                     response.StatusCode = (int)HttpStatusCode.InternalServerError;
                     break;
