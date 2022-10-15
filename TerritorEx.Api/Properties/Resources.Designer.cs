@@ -61,6 +61,15 @@ namespace TerritorEx.Api.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Área não encontrada..
+        /// </summary>
+        internal static string AreaNaoEncontrada {
+            get {
+                return ResourceManager.GetString("AreaNaoEncontrada", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to A descrição do nível de território é obrigatória..
         /// </summary>
         internal static string DescricaoNivelTerritorioObrigatoria {

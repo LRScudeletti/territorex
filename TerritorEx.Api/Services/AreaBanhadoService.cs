@@ -4,11 +4,11 @@ using TerritorEx.Api.Repositories;
 
 namespace TerritorEx.Api.Services;
 
-public class AreaAltitudeSuperior1800Service : IAreaAltitudeSuperior1800
+public class AreaBanhadoService : IAreaBanhado
 {
-    public IEnumerable<AreaAltitudeSuperior1800> RecuperarTodos()
+    public IEnumerable<AreaBanhado> RecuperarTodos()
     {
-        var area = AreaAltitudeSuperior1800Repository.RecuperarTodos();
+        var area = AreaBanhadoRepository.RecuperarTodos();
 
         if (area == null)
             throw new KeyNotFoundException(Properties.Resources.AreaNaoEncontrada);
@@ -16,9 +16,9 @@ public class AreaAltitudeSuperior1800Service : IAreaAltitudeSuperior1800
         return area;
     }
 
-    public IEnumerable<AreaAltitudeSuperior1800> RecuperarPorTerritorioId(int territorioId)
+    public IEnumerable<AreaBanhado> RecuperarPorTerritorioId(int territorioId)
     {
-        var area = AreaAltitudeSuperior1800Repository.RecuperarPorTerritorioId(territorioId);
+        var area = AreaBanhadoRepository.RecuperarPorTerritorioId(territorioId);
 
         if (area == null)
             throw new KeyNotFoundException(Properties.Resources.AreaNaoEncontrada);

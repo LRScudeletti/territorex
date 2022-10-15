@@ -9,6 +9,7 @@ public static class AddScoped
     {
         services.AddScoped<ITerritorio, TerritorioService>();
         services.AddScoped<INivelTerritorio, NivelTerritorioService>();
-        services.AddScoped<IAreaAltitudeSuperior1800, AreaAltitudeSuperior1800Service>();
+        services.AddScoped<IAreaAltitudeSuperior1800, AreaAltitudeSuperior1800Service>(); 
+        services.AddScoped<IAreaBanhado, AreaBanhadoService>();
     }
 }
