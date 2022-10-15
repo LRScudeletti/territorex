@@ -7,9 +7,12 @@ public static class AddScoped
 {
     public static void AdicionarInterface(IServiceCollection services)
     {
-        services.AddScoped<ITerritorio, TerritorioService>();
-        services.AddScoped<INivelTerritorio, NivelTerritorioService>();
-        services.AddScoped<IAreaAltitudeSuperior1800, AreaAltitudeSuperior1800Service>(); 
+        services.AddScoped<IAreaAltitudeSuperior1800, AreaAltitudeSuperior1800Service>();
         services.AddScoped<IAreaBanhado, AreaBanhadoService>();
+        services.AddScoped<IAreaBordaChapada, AreaBordaChapadaService>();
+
+        services.AddScoped<INivelTerritorio, NivelTerritorioService>();
+
+        services.AddScoped<ITerritorio, TerritorioService>();
     }
 }
