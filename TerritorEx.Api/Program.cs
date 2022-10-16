@@ -2,8 +2,7 @@ using Dapper.Contrib.Extensions;
 using TerritorEx.Api.Helpers;
 
 var builder = WebApplication.CreateBuilder(args);
-
-Utils.ConnectionString = builder.Configuration.GetConnectionString("ApiDatabase");
+Connection.ConnectionString = builder.Configuration.GetConnectionString("ApiDatabase");
 
 // Essa linha altera a característica do Dapper 
 // de colocar 's' no nome das entidades mapeadas

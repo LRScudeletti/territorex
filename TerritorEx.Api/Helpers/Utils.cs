@@ -4,15 +4,13 @@ namespace TerritorEx.Api.Helpers;
 
 public static class Utils
 {
-    public static string ConnectionString;
-
     private static IConfiguration _configuration;
 
     public static SqlConnection RecuperarConexao()
     {
         try
         {
-            return new SqlConnection(ConnectionString);
+            return new SqlConnection(Connection.ConnectionString);
         }
         catch (Exception exception)
         {
