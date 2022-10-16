@@ -20,9 +20,12 @@ public static class AreaImovelRepository
 
         const string query = @"SELECT AreaId,
                                       TerritorioId,
-                                      SicarId,
-                                      Descricao,
+                                      ImovelId,
+                                      TipoImovelId,
+                                      SituacaoImovelId,
+                                      Condicao,
                                       AreaHectare,
+                                      AreaHectareFiscal,
                                       Shape
                                  FROM AreaImovel
                                 WHERE TerritorioId = @territorioId;";
@@ -40,7 +43,7 @@ public static class AreaImovelRepository
                                       TipoImovelId,
                                       SituacaoImovelId,
                                       Condicao,
-                                      AreaHectare
+                                      AreaHectare,
                                       AreaHectareFiscal,
                                       Shape
                                  FROM AreaImovel
@@ -59,7 +62,7 @@ public static class AreaImovelRepository
                                       TipoImovelId,
                                       SituacaoImovelId,
                                       Condicao,
-                                      AreaHectare
+                                      AreaHectare,
                                       AreaHectareFiscal,
                                       Shape
                                  FROM AreaImovel
@@ -78,7 +81,7 @@ public static class AreaImovelRepository
                                       TipoImovelId,
                                       SituacaoImovelId,
                                       Condicao,
-                                      AreaHectare
+                                      AreaHectare,
                                       AreaHectareFiscal,
                                       Shape
                                  FROM AreaImovel
