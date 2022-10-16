@@ -4,7 +4,7 @@ using TerritorEx.Api.Interfaces;
 namespace TerritorEx.Api.Controllers;
 
 [ApiController]
-[Route("[controller]")]
+[Route("[controller]/recuperar")]
 public class TerritorioController : ControllerBase
 {
     private readonly ITerritorio _territorio;
@@ -14,42 +14,42 @@ public class TerritorioController : ControllerBase
         _territorio = territorio;
     }
 
-    [HttpGet("recuperartodos")]
+    [HttpGet]
     public ActionResult RecuperarTodos()
     {
         var territorio = _territorio.RecuperarTodos();
         return Ok(territorio);
     }
 
-    [HttpGet("recuperar/{territorioId:int}")]
+    [HttpGet("territorio={territorioId:int}")]
     public IActionResult RecuperarPorId(int territorioId)
     {
         var territorio = _territorio.RecuperarPorId(territorioId);
         return Ok(territorio);
     }
 
-    [HttpGet("recuperarnome/{territorioNome}")]
+    [HttpGet("nome={territorioNome}")]
     public ActionResult RecuperarPorNome(string territorioNome)
     {
         var territorio = _territorio.RecuperarPorNome(territorioNome);
         return Ok(territorio);
     }
 
-    [HttpGet("recuperarpai/{territorioPaiId:int}")]
+    [HttpGet("pai={territorioPaiId:int}")]
     public IActionResult RecuperarPorPaiId(int territorioPaiId)
     {
         var territorio = _territorio.RecuperarPorPaiId(territorioPaiId);
         return Ok(territorio);
     }
 
-    [HttpGet("recuperarnivel/{nivelTerritorioId:int}")]
+    [HttpGet("nivel={nivelTerritorioId:int}")]
     public IActionResult RecuperarPorNivelTerritorioId(int nivelTerritorioId)
     {
         var territorio = _territorio.RecuperarPorNivelTerritorioId(nivelTerritorioId);
         return Ok(territorio);
     }
 
-    [HttpGet("recuperarhierarquia/{territorioId:int}")]
+    [HttpGet("hierarquia/territorio={territorioId:int}")]
     public IActionResult RecuperarHierarquia(int territorioId)
     {
         var territorio = _territorio.RecuperarHierarquia(territorioId);

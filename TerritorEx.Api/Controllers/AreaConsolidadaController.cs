@@ -4,7 +4,7 @@ using TerritorEx.Api.Interfaces;
 namespace TerritorEx.Api.Controllers;
 
 [ApiController]
-[Route("[controller]")]
+[Route("[controller]/recuperar")]
 public class AreaConsolidadaController : ControllerBase
 {
     private readonly IAreaConsolidada _area;
@@ -14,15 +14,15 @@ public class AreaConsolidadaController : ControllerBase
         _area = area;
     }
 
-    [HttpGet("recuperartodos")]
+    [HttpGet]
     public ActionResult RecuperarTodos()
     {
         var area = _area.RecuperarTodos();
         return Ok(area);
     }
 
-    [HttpGet("recuperarterritorioid/{territorioId:int}")]
-    public IActionResult RecuperarPorId(int territorioId)
+    [HttpGet("territorio={territorioId:int}")]
+    public IActionResult RecuperarPorTerritorioId(int territorioId)
     {
         var area = _area.RecuperarPorTerritorioId(territorioId);
         return Ok(area);

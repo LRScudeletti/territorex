@@ -4,7 +4,7 @@ using TerritorEx.Api.Interfaces;
 namespace TerritorEx.Api.Controllers;
 
 [ApiController]
-[Route("[controller]")]
+[Route("[controller]/recuperar")]
 public class NivelTerritorioController : ControllerBase
 {
     private readonly INivelTerritorio _nivelTerritorio;
@@ -14,14 +14,14 @@ public class NivelTerritorioController : ControllerBase
         _nivelTerritorio = nivelTerritorio;
     }
 
-    [HttpGet("recuperartodos")]
+    [HttpGet]
     public ActionResult RecuperarTodos()
     {
         var nivelTerritorio = _nivelTerritorio.RecuperarTodos();
         return Ok(nivelTerritorio);
     }
 
-    [HttpGet("recuperar/{nivelTerritorioId:int}")]
+    [HttpGet("nivel={nivelTerritorioId:int}")]
     public IActionResult RecuperarPorId(int nivelTerritorioId)
     {
         var nivelTerritorio = _nivelTerritorio.RecuperarPorId(nivelTerritorioId);
