@@ -16,6 +16,7 @@ public static class AddScoped
         services.AddScoped<IAreaImovel, AreaImovelService>();
         services.AddScoped<IAreaManguezal, AreaManguezalService>();
         services.AddScoped<IAreaNascenteOlhoDAgua, AreaNascenteOlhoDAguaService>();
+        services.AddScoped<IAreaPousio, AreaPousioService>();
 
         services.AddScoped<INivelTerritorio, NivelTerritorioService>();
 

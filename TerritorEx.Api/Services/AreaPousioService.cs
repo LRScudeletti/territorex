@@ -4,7 +4,7 @@ using TerritorEx.Api.Repositories;
 
 namespace TerritorEx.Api.Services;
 
-public class AreaAreaPousio : IAreaPousio
+public class AreaPousioService : IAreaPousio
 {
     public IReadOnlyList<AreaPousio> RecuperarTodos()
     {
