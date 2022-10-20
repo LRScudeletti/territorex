@@ -18,6 +18,7 @@ public static class AddScoped
         services.AddScoped<IAreaNascenteOlhoDAgua, AreaNascenteOlhoDAguaService>();
         services.AddScoped<IAreaPousio, AreaPousioService>();
         services.AddScoped<IAreaPreservacaoPermanente, AreaPreservacaoPermanenteService>();
+        services.AddScoped<IAreaReservaLegal, AreaReservaLegalService>();
 
         services.AddScoped<INivelTerritorio, NivelTerritorioService>();
 
