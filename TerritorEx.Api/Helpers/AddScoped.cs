@@ -20,6 +20,7 @@ public static class AddScoped
         services.AddScoped<IAreaPreservacaoPermanente, AreaPreservacaoPermanenteService>();
         services.AddScoped<IAreaReservaLegal, AreaReservaLegalService>();
         services.AddScoped<IAreaRestinga, AreaRestingaService>();
+        services.AddScoped<IAreaServidaoAdministrativa, AreaServidaoAdministrativaService>();
 
         services.AddScoped<INivelTerritorio, NivelTerritorioService>();
 
