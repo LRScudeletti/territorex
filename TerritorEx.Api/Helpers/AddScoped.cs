@@ -1,7 +1,5 @@
-﻿using TerritorEx.Api.Interfaces.Area;
-using TerritorEx.Api.Interfaces.AreaTerritorial;
-using TerritorEx.Api.Services.Area;
-using TerritorEx.Api.Services.AreaTerritorial;
+﻿using TerritorEx.Api.Interfaces;
+using TerritorEx.Api.Services;
 
 namespace TerritorEx.Api.Helpers;
 
