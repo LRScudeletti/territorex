@@ -1,6 +1,6 @@
-﻿using TerritorEx.Api.Models;
+﻿using TerritorEx.Api.Models.AreaTerritorial;
 
-namespace TerritorEx.Api.Interfaces;
+namespace TerritorEx.Api.Interfaces.AreaTerritorial;
 
 public interface INivelTerritorio
 {

@@ -1,4 +1,4 @@
-﻿using TerritorEx.Api.Models.Area;
+﻿using TerritorEx.Api.Models.AreaPropriedade;
 
 namespace TerritorEx.Api.Interfaces.Area;
 

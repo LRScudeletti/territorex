@@ -1,9 +1,9 @@
 ﻿using Dapper;
 using Dapper.Contrib.Extensions;
 using TerritorEx.Api.Helpers;
-using TerritorEx.Api.Models.Area;
+using TerritorEx.Api.Models.AreaPropriedade;
 
-namespace TerritorEx.Api.Repositories.Area;
+namespace TerritorEx.Api.Repositories.AreaPropriedade;
 
 public static class AreaImovelRepository
 {

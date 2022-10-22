@@ -1,6 +1,6 @@
 ﻿using TerritorEx.Api.Interfaces.Area;
-using TerritorEx.Api.Models.Area;
-using TerritorEx.Api.Repositories.Area;
+using TerritorEx.Api.Models.AreaPropriedade;
+using TerritorEx.Api.Repositories.AreaPropriedade;
 
 namespace TerritorEx.Api.Services.Area;
 

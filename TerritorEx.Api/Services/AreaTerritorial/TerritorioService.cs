@@ -1,8 +1,8 @@
-﻿using TerritorEx.Api.Interfaces;
-using TerritorEx.Api.Models;
-using TerritorEx.Api.Repositories;
+﻿using TerritorEx.Api.Interfaces.AreaTerritorial;
+using TerritorEx.Api.Models.AreaTerritorial;
+using TerritorEx.Api.Repositories.AreaTerritorial;
 
-namespace TerritorEx.Api.Services;
+namespace TerritorEx.Api.Services.AreaTerritorial;
 
 public class TerritorioService : ITerritorio
 {

@@ -1,8 +1,8 @@
 ﻿using Dapper.Contrib.Extensions;
 using TerritorEx.Api.Helpers;
-using TerritorEx.Api.Models;
+using TerritorEx.Api.Models.AreaTerritorial;
 
-namespace TerritorEx.Api.Repositories;
+namespace TerritorEx.Api.Repositories.AreaTerritorial;
 
 public static class NivelTerritorioRepository
 {

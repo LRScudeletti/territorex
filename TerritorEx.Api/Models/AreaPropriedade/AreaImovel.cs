@@ -1,6 +1,6 @@
 ﻿using Dapper.Contrib.Extensions;
 
-namespace TerritorEx.Api.Models.Area;
+namespace TerritorEx.Api.Models.AreaPropriedade;
 
 public class AreaImovel
 {

@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using TerritorEx.Api.Interfaces;
+using TerritorEx.Api.Interfaces.AreaTerritorial;
 
-namespace TerritorEx.Api.Controllers;
+namespace TerritorEx.Api.Controllers.AreaTerritorial;
 
 [ApiController]
 [Route("[controller]/recuperar")]

@@ -1,4 +1,4 @@
-﻿namespace TerritorEx.Api.Models;
+﻿namespace TerritorEx.Api.Models.AreaTerritorial;
 
 public class TerritorioHierarquia
 {

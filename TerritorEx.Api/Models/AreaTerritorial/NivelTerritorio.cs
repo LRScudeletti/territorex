@@ -1,6 +1,6 @@
 ﻿using Dapper.Contrib.Extensions;
 
-namespace TerritorEx.Api.Models;
+namespace TerritorEx.Api.Models.AreaTerritorial;
 
 public class NivelTerritorio
 {
