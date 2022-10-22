@@ -1,4 +1,5 @@
 using Dapper.Contrib.Extensions;
+using Swashbuckle.AspNetCore.SwaggerUI;
 using TerritorEx.Api.Helpers;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -31,6 +32,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI(options =>
     {
         options.SupportedSubmitMethods();
+        options.DocExpansion(DocExpansion.None);
     });
 }
 
