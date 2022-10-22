@@ -24,6 +24,7 @@ public static class AddScoped
         services.AddScoped<IAreaTopoMorro, AreaTopoMorroService>();
         services.AddScoped<IAreaUsoRestrito, AreaUsoRestritoService>();
         services.AddScoped<IAreaVegetacaoNativa, AreaVegetacaoNativaService>();
+        services.AddScoped<IAreaVereda, AreaVeredaService>();
 
         services.AddScoped<INivelTerritorio, NivelTerritorioService>();
 
