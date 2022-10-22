@@ -1,7 +1,7 @@
 ﻿using Dapper;
 using Dapper.Contrib.Extensions;
 using TerritorEx.Api.Helpers;
-using TerritorEx.Api.Models.Territorio;
+using TerritorEx.Api.Models;
 
 namespace TerritorEx.Api.Repositories;
 

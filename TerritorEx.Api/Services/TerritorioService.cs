@@ -1,5 +1,5 @@
 ﻿using TerritorEx.Api.Interfaces;
-using TerritorEx.Api.Models.Territorio;
+using TerritorEx.Api.Models;
 using TerritorEx.Api.Repositories;
 
 namespace TerritorEx.Api.Services;

@@ -1,4 +1,4 @@
-﻿using TerritorEx.Api.Models.Territorio;
+﻿using TerritorEx.Api.Models;
 
 namespace TerritorEx.Api.Interfaces;
 
