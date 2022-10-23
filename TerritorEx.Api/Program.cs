@@ -1,17 +1,10 @@
-using Dapper.Contrib.Extensions;
-using Swashbuckle.AspNetCore.SwaggerUI;
-using System.Reflection;
-using Microsoft.OpenApi.Models;
+using TerritorEx.Api.Dapper;
 using TerritorEx.Api.Helpers;
+using TerritorEx.Api.Swagger;
 
 var builder = WebApplication.CreateBuilder(args);
-Connection.ConnectionString = builder.Configuration.GetConnectionString("ApiDatabase");
 
-// Essa linha altera a característica do Dapper 
-// de colocar 's' no nome das entidades mapeadas
-SqlMapperExtensions.TableNameMapper = (type) => type.Name;
-
-# region [ Services ]
+DapperConfiguration.ConnectionString(builder);
 
 var services = builder.Services;
 
@@ -20,34 +13,15 @@ AddScoped.AdicionarInterface(services);
 services.AddControllers();
 services.AddRouting(x => x.LowercaseUrls = true);
 services.AddEndpointsApiExplorer();
-services.AddSwaggerGen(options =>
-{
-    // Esse código faz com que o swagger interprete os comentários dos controllers
-    var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
-    var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
-    options.IncludeXmlComments(xmlPath);
-});
 
-#endregion
-
-# region [ App ]
+SwaggerConfiguration.Service(services);
 
 var app = builder.Build();
 
-if (app.Environment.IsDevelopment())
-{
-    app.UseSwagger();
-    app.UseSwaggerUI(options =>
-    {
-        // options.SupportedSubmitMethods();
-        options.DocExpansion(DocExpansion.None);
-    });
-}
+SwaggerConfiguration.App(app);
 
 app.UseMiddleware<ErrorHandler>();
 app.UseHttpsRedirection();
 app.UseAuthorization();
 app.MapControllers();
 app.Run();
-
-#endregion
