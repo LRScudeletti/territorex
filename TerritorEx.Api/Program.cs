@@ -1,5 +1,7 @@
 using Dapper.Contrib.Extensions;
 using Swashbuckle.AspNetCore.SwaggerUI;
+using System.Reflection;
+using Microsoft.OpenApi.Models;
 using TerritorEx.Api.Helpers;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -18,7 +20,13 @@ AddScoped.AdicionarInterface(services);
 services.AddControllers();
 services.AddRouting(x => x.LowercaseUrls = true);
 services.AddEndpointsApiExplorer();
-services.AddSwaggerGen();
+services.AddSwaggerGen(options =>
+{
+    // Esse código faz com que o swagger interprete os comentários dos controllers
+    var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+    var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
+    options.IncludeXmlComments(xmlPath);
+});
 
 #endregion
 
@@ -31,7 +39,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI(options =>
     {
-        options.SupportedSubmitMethods();
+        // options.SupportedSubmitMethods();
         options.DocExpansion(DocExpansion.None);
     });
 }

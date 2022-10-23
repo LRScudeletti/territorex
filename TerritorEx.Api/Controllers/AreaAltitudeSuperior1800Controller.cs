@@ -14,6 +14,27 @@ public class AreaAltitudeSuperior1800Controller : ControllerBase
         _area = area;
     }
 
+    /// <summary>
+    /// Lista áreas com altitude superior a 1800 metros.
+    /// </summary>
+    /// <remarks>
+    /// Exemplo:
+    /// 
+    ///     [ 
+    ///      {
+    ///       "areaId": 1,
+    ///       "territorioId": 5100102,
+    ///       "sicarId": 1241435,
+    ///       "descricao": "Manguezal",
+    ///       "areaHectare": 1.51817264092565
+    ///      }
+    ///     ]
+    /// 
+    /// </remarks>
+    /// <returns>Teste</returns>
+    /// <response code="200">Requisição realizada com sucedida.</response>
+    /// <response code="400">Erro no servidor.</response>  
+    /// <response code="404">Área não encontrada.</response>
     [HttpGet]
     public ActionResult RecuperarTodos()
     {

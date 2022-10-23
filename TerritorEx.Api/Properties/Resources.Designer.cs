@@ -88,11 +88,29 @@ namespace TerritorEx.Api.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Situação do imóvel não encontrada..
+        /// </summary>
+        internal static string SituacaoImovelnaoEncontrada {
+            get {
+                return ResourceManager.GetString("SituacaoImovelnaoEncontrada", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Território não encontrado..
         /// </summary>
         internal static string TerritorioNaoEncontrado {
             get {
                 return ResourceManager.GetString("TerritorioNaoEncontrado", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tipo de imóvel não encontrado..
+        /// </summary>
+        internal static string TipoImovelnaoEncontrado {
+            get {
+                return ResourceManager.GetString("TipoImovelnaoEncontrado", resourceCulture);
             }
         }
     }

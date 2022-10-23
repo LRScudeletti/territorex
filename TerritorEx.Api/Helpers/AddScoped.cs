@@ -25,9 +25,9 @@ public static class AddScoped
         services.AddScoped<IAreaUsoRestrito, AreaUsoRestritoService>();
         services.AddScoped<IAreaVegetacaoNativa, AreaVegetacaoNativaService>();
         services.AddScoped<IAreaVereda, AreaVeredaService>();
-
         services.AddScoped<INivelTerritorio, NivelTerritorioService>();
-
+        services.AddScoped<ISituacaoImovel, SituacaoImovelService>();
         services.AddScoped<ITerritorio, TerritorioService>();
+        services.AddScoped<ITipoImovel, TipoImovelService>();
     }
 }
