@@ -6,7 +6,7 @@ namespace TerritorEx.Api.Helpers;
 public class ErrorHandler
 {
     private readonly RequestDelegate _next;
-    private readonly ILogger _logger;
+    private readonly ILogger<ErrorHandler> _logger;
 
     public ErrorHandler(RequestDelegate next, ILogger<ErrorHandler> logger)
     {
@@ -33,20 +33,21 @@ public class ErrorHandler
                     break;
                 case KeyNotFoundException:
                     // Não encontrado
-                    response.StatusCode = (int)HttpStatusCode.NotFound;
+                    response.StatusCode = (int)HttpStatusCode.NoContent;
                     break;
                 default:
                     // Erro não tratado
-                    _logger.LogError(exception, exception.Message);
+                    _logger.LogError(exception, message: exception.Message);
                     response.StatusCode = (int)HttpStatusCode.InternalServerError;
                     break;
             }
 
-            var result = JsonSerializer.Serialize(new { message = exception.Message });
+            var result = JsonSerializer.Serialize(new { errorMessage = exception.Message });
 
             Utils.CriarLogErro(exception.ToString());
 
-            await response.WriteAsync(result);
+            if (response.StatusCode != (int)HttpStatusCode.InternalServerError)
+                await response.WriteAsync(result);
         }
     }
 }
