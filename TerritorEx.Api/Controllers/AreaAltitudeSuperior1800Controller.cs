@@ -1,5 +1,9 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using System.Net;
+using Microsoft.AspNetCore.Mvc;
+using Swashbuckle.AspNetCore.Annotations;
+using TerritorEx.Api.Helpers;
 using TerritorEx.Api.Interfaces;
+using TerritorEx.Api.Models;
 
 namespace TerritorEx.Api.Controllers;
 
@@ -14,34 +18,23 @@ public class AreaAltitudeSuperior1800Controller : ControllerBase
         _area = area;
     }
 
-    /// <summary>
-    /// Lista áreas com altitude superior a 1800 metros.
-    /// </summary>
-    /// <remarks>
-    /// Exemplo:
-    /// 
-    ///     [ 
-    ///      {
-    ///       "areaId": 1,
-    ///       "territorioId": 5100102,
-    ///       "sicarId": 1241435,
-    ///       "descricao": "Manguezal",
-    ///       "areaHectare": 1.51817264092565
-    ///      }
-    ///     ]
-    /// 
-    /// </remarks>
-    /// <returns>Teste</returns>
-    /// <response code="200">Requisição realizada com sucedida.</response>
-    /// <response code="400">Erro no servidor.</response>  
-    /// <response code="404">Área não encontrada.</response>
     [HttpGet]
+    [SwaggerOperation(Summary = "Lista as áreas com altitude superior a 1.800 metros.")]
+    [SwaggerResponse((int)HttpStatusCode.OK, "Requisição realizada com sucesso.", typeof(AreaAltitudeSuperior1800))]
+    [SwaggerResponse((int)HttpStatusCode.NoContent, "Nenhuma área encontrada.")]
+    [SwaggerResponse((int)HttpStatusCode.BadRequest, "Ocorreu um erro com a requisição.", typeof(Message))]
+    [SwaggerResponse((int)HttpStatusCode.InternalServerError, "Erro interno no servidor.")]
     public ActionResult RecuperarTodos()
     {
         var area = _area.RecuperarTodos();
         return Ok(area);
     }
 
+    [SwaggerOperation(Summary = "Lista as áreas com altitude superior a 1.800 metros do território informado.")]
+    [SwaggerResponse((int)HttpStatusCode.NoContent, "Nenhuma área encontrada.")]
+    [SwaggerResponse((int)HttpStatusCode.OK, "Requisição realizada com sucesso.", typeof(AreaAltitudeSuperior1800))]
+    [SwaggerResponse((int)HttpStatusCode.BadRequest, "Ocorreu um erro com a requisição.", typeof(Message))]
+    [SwaggerResponse((int)HttpStatusCode.InternalServerError, "Erro interno no servidor.")]
     [HttpGet("territorio={territorioId:int}")]
     public IActionResult RecuperarPorTerritorioId(int territorioId)
     {
