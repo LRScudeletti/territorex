@@ -97,7 +97,7 @@ namespace TerritorEx.Api.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Documentação das APIs do sistema TerritorEx - Sistema de Exploração do Território Rural Brasileiro..
+        ///   Looks up a localized string similar to Documentação da API do sistema TerritorEx - Sistema de Exploração do Território Rural Brasileiro..
         /// </summary>
         internal static string SwaggerDocDocumentacaoAPITerritorEx {
             get {
