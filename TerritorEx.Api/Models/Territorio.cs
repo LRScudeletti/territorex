@@ -9,7 +9,7 @@ public class Territorio
 
     public string TerritorioNome { get; set; }
 
-    public int TerritorioPaiId { get; set; }
+    public int TerritorioSuperiorId { get; set; }
 
     public int NivelTerritorioId { get; set; }
 

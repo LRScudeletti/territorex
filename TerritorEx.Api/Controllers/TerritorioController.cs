@@ -54,15 +54,15 @@ public class TerritorioController : ControllerBase
         return Ok(territorio);
     }
 
-    [HttpGet("pai={territorioPaiId:int}")]
+    [HttpGet("pai={territorioSuperiorId:int}")]
     [SwaggerOperation(Summary = "Lista os territórios de acordo com o território superior informado.")]
     [SwaggerResponse((int)HttpStatusCode.OK, "Requisição realizada com sucesso.", typeof(Territorio))]
     [SwaggerResponse((int)HttpStatusCode.NoContent, "Nenhuma área encontrada.")]
     [SwaggerResponse((int)HttpStatusCode.BadRequest, "Ocorreu um erro com a requisição.", typeof(Message))]
     [SwaggerResponse((int)HttpStatusCode.InternalServerError, "Erro interno no servidor.")]
-    public IActionResult RecuperarPorPaiId(int territorioPaiId)
+    public IActionResult RecuperarPorTerritorioSuperiorId(int territorioSuperiorId)
     {
-        var territorio = _territorio.RecuperarPorPaiId(territorioPaiId);
+        var territorio = _territorio.RecuperarPorTerritorioSuperiorId(territorioSuperiorId);
         return Ok(territorio);
     }
 

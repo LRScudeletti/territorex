@@ -41,21 +41,21 @@ public static class TerritorioRepository
         });
     }
 
-    public static IReadOnlyList<Territorio> RecuperarPorPaiId(int territorioPaiId)
+    public static IReadOnlyList<Territorio> RecuperarPorTerritorioSuperiorId(int territorioSuperiotId)
     {
         using var sqlConnection = Utils.RecuperarConexao();
 
         const string query = @"SELECT TerritorioId,
                                       TerritorioNome,
-                                      TerritorioPaiId,
+                                      TerritorioSuperiorId,
                                       NivelTerritorioId,
                                       Latitude,
                                       Longitude,
                                       Shape
                                  FROM Territorio
-                                WHERE TerritorioPaiId = @territorioPaiId;";
+                                WHERE TerritorioSuperiorId = @territorioSuperiotId;";
 
-        return (IReadOnlyList<Territorio>)sqlConnection.Query<Territorio>(query, new { territorioPaiId });
+        return (IReadOnlyList<Territorio>)sqlConnection.Query<Territorio>(query, new { territorioSuperiotId });
     }
 
     public static IReadOnlyList<Territorio> RecuperarPorNivelTerritorioId(int nivelTerritorioId)

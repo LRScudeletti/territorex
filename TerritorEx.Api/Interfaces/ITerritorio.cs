@@ -10,7 +10,7 @@ public interface ITerritorio
 
     IReadOnlyList<Territorio> RecuperarPorNome(string territorioNome);
 
-    IReadOnlyList<Territorio> RecuperarPorPaiId(int territorioPaiId);
+    IReadOnlyList<Territorio> RecuperarPorTerritorioSuperiorId(int territorioSuperiorId);
 
     IReadOnlyList<Territorio> RecuperarPorNivelTerritorioId(int nivelTerritorioId);
 

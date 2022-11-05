@@ -36,9 +36,9 @@ public class TerritorioService : ITerritorio
         return territorio;
     }
 
-    public IReadOnlyList<Territorio> RecuperarPorPaiId(int territorioPaiId)
+    public IReadOnlyList<Territorio> RecuperarPorTerritorioSuperiorId(int territorioSuperiorId)
     {
-        var territorio = TerritorioRepository.RecuperarPorPaiId(territorioPaiId);
+        var territorio = TerritorioRepository.RecuperarPorTerritorioSuperiorId(territorioSuperiorId);
 
         if (!territorio.Any())
             throw new KeyNotFoundException(Properties.Resources.TerritorioNaoEncontrado);
