@@ -1,8 +1,7 @@
 ﻿using Microsoft.OpenApi.Models;
 using Swashbuckle.AspNetCore.SwaggerUI;
-using TerritorEx.Api.Properties;
 
-namespace TerritorEx.Api.Swagger;
+namespace TerritorEx.Api.Helpers.Swagger;
 
 public static class SwaggerConfiguration
 {
@@ -15,7 +14,7 @@ public static class SwaggerConfiguration
             {
                 Version = "v1",
                 Title = "TerritorEX API",
-                Description = Resources.SwaggerDocDocumentacaoAPITerritorEx,
+                //Description = Resources.SwaggerDocDocumentacaoAPITerritorEx,
                 //Contact = new OpenApiContact
                 //{
                 //    Name = "Luiz Rogério Scudeletti",
