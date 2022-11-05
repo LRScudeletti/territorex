@@ -18,7 +18,7 @@ public static class AreaAltitudeSuperior1800Repository
     {
         using var sqlConnection = Utils.RecuperarConexao();
 
-        const string query = @"SELECT AreaI,
+        const string query = @"SELECT AreaId,
                                       TerritorioId,
                                       SicarId,
                                       Descricao,
