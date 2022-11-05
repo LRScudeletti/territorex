@@ -1,7 +1,7 @@
 ﻿using System.Net;
 using System.Text.Json;
 
-namespace TerritorEx.Api.Helpers;
+namespace TerritorEx.Api.Helpers.Error;
 
 public class ErrorHandler
 {

@@ -1,4 +1,4 @@
-﻿namespace TerritorEx.Api.Helpers
+﻿namespace TerritorEx.Api.Helpers.Error
 {
     public class Message
     {

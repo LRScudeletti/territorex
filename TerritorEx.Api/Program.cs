@@ -1,5 +1,6 @@
 using TerritorEx.Api.Dapper;
 using TerritorEx.Api.Helpers;
+using TerritorEx.Api.Helpers.Error;
 using TerritorEx.Api.Swagger;
 
 var builder = WebApplication.CreateBuilder(args);

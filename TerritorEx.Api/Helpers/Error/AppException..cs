@@ -1,6 +1,6 @@
 ﻿using System.Globalization;
 
-namespace TerritorEx.Api.Helpers;
+namespace TerritorEx.Api.Helpers.Error;
 
 public abstract class AppException : Exception
 {
