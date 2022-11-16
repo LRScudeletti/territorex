@@ -15,6 +15,14 @@
 	</PropertyGroup>
 
 	<ItemGroup>
+	  <None Remove="Infra\Scripts\1.0.0.00.sql" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <EmbeddedResource Include="Infra\Scripts\1.0.0.00.sql" />
+	</ItemGroup>
+
+	<ItemGroup>
 		<PackageReference Include="Dapper" Version="2.0.123" />
 		<PackageReference Include="Dapper.Contrib" Version="2.0.78" />
 		<PackageReference Include="Microsoft.Data.SqlClient" Version="5.0.1" />
@@ -36,10 +44,6 @@
 			<Generator>ResXFileCodeGenerator</Generator>
 			<LastGenOutput>Api-pt_BR.Designer.cs</LastGenOutput>
 		</EmbeddedResource>
-	</ItemGroup>
-
-	<ItemGroup>
-	  <Folder Include="Scripts\" />
 	</ItemGroup>
 
 </Project>
