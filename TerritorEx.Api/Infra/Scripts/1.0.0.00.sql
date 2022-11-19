@@ -19,6 +19,35 @@ GO
 
 ----------------------------
 -- Data alteração | Usuário | Nº Card | Descrição
+-- 19/11/2022 | Luiz Rogério Scudeletti | Sem card | Criando tabela: VersaoBanco
+----------------------------
+
+PRINT 'Criando tabela: VersaoBanco'
+
+IF NOT EXISTS (SELECT 1 FROM SYS.TABLES WHERE OBJECT_ID = OBJECT_ID('VersaoBanco'))
+BEGIN
+   CREATE TABLE VersaoBanco (
+       Sistema            VARCHAR (50) NOT NULL,
+       Versao             VARCHAR (10) NOT NULL,
+       UsuarioAtualizacao VARCHAR (50) NOT NULL,
+       DataAtualizacao    DATETIME     NOT NULL,
+       CONSTRAINT PK_VersaoBanco PRIMARY KEY CLUSTERED (Sistema ASC, Versao ASC)
+   );
+END
+GO
+
+----------------------------
+-- Data alteração | Usuário | Nº Card | Descrição
+-- 19/11/2022 | Luiz Rogério Scudeletti | Sem card | Inserindo script 1.0.0.00 na VersaoBanco
+----------------------------
+
+INSERT INTO VersaoBanco (Sistema, Versao, UsuarioAtualizacao, DataAtualizacao)
+SELECT 'TerritorEX' AS Sistema, '1.0.0.00' AS Versao, 'SCUDX' AS UsuarioAtualizacao, GETDATE() AS DataAtualizacao
+ WHERE NOT EXISTS (SELECT 1 FROM VersaoBanco WHERE Sistema = 'TerritorEX' AND Versao = '1.0.0.00');
+GO
+
+----------------------------
+-- Data alteração | Usuário | Nº Card | Descrição
 -- 19/11/2022 | Luiz Rogério Scudeletti | Sem card | Criando tabela: NivelTerritorio
 ----------------------------
 
@@ -837,7 +866,7 @@ BEGIN
 END
 GO
 
-CREATE VIEW [dbo].[ViewTerritorioHierarquia] AS
+CREATE VIEW dbo.ViewTerritorioHierarquia AS
    SELECT TER.TerritorioId AS TerritorioId, TER.TerritorioNome AS TerritorioNome,
           MIC.TerritorioId AS MicroregiaoId, MIC.TerritorioNome AS MicroregiaoNome,
           MES.TerritorioId AS MesoregiaoId, MES.TerritorioNome AS MesoregiaoNome,
