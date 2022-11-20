@@ -1,9 +1,9 @@
 ﻿using TerritorEx.Api.Interfaces;
 using TerritorEx.Api.Services;
 
-namespace TerritorEx.Api.Helpers;
+namespace TerritorEx.Api.Helpers.Configuration;
 
-public static class AddScoped
+public static class ScopedConfiguration
 {
     public static void AdicionarInterface(IServiceCollection services)
     {

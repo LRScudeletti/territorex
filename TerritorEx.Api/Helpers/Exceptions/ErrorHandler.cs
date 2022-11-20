@@ -1,7 +1,7 @@
 ﻿using System.Net;
 using System.Text.Json;
 
-namespace TerritorEx.Api.Helpers.Error;
+namespace TerritorEx.Api.Helpers.Exceptions;
 
 public class ErrorHandler
 {
@@ -33,7 +33,7 @@ public class ErrorHandler
                     break;
                 case KeyNotFoundException:
                     // Não encontrado
-                    response.StatusCode = (int)HttpStatusCode.NoContent;
+                    response.StatusCode = (int)HttpStatusCode.NotFound;
                     break;
                 default:
                     // Erro não tratado

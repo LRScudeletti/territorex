@@ -1,8 +1,6 @@
 using Microsoft.Extensions.Options;
-using TerritorEx.Api.Helpers;
-using TerritorEx.Api.Helpers.Dapper;
-using TerritorEx.Api.Helpers.Error;
-using TerritorEx.Api.Helpers.Swagger;
+using TerritorEx.Api.Helpers.Configuration;
+using TerritorEx.Api.Helpers.Exceptions;
 using TerritorEx.Api.Localize;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -13,7 +11,7 @@ var services = builder.Services;
 
 Localization.AdicionarLocalization(services);
 
-AddScoped.AdicionarInterface(services);
+ScopedConfiguration.AdicionarInterface(services);
 
 services.AddControllers();
 services.AddRouting(x => x.LowercaseUrls = true);

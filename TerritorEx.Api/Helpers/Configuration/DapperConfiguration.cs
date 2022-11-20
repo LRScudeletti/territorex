@@ -1,6 +1,6 @@
 ﻿using Dapper.Contrib.Extensions;
 
-namespace TerritorEx.Api.Helpers.Dapper;
+namespace TerritorEx.Api.Helpers.Configuration;
 
 public static class DapperConfiguration
 {

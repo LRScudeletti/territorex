@@ -1,7 +1,7 @@
 ﻿using System.Net;
 using Microsoft.AspNetCore.Mvc;
 using Swashbuckle.AspNetCore.Annotations;
-using TerritorEx.Api.Helpers.Error;
+using TerritorEx.Api.Helpers.Exceptions;
 using TerritorEx.Api.Interfaces;
 using TerritorEx.Api.Models;
 
