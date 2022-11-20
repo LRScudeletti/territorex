@@ -1,28 +1,9 @@
 ----------------------------
 -- Data alteração | Usuário | Nº Card | Descrição
--- 19/11/2022 | Luiz Rogério Scudeletti | Sem card | Criando banco de dados: TerritorEX 
+-- 19/11/2022 | Luiz Rogério Scudeletti | Sem card | Criando tabela VersaoBanco
 ----------------------------
 
-PRINT 'Criando banco de dados: TerritorEX'
-
-IF NOT EXISTS (SELECT 1 FROM SYS.DATABASES WHERE NAME = 'TerritorEX')
-BEGIN
-   CREATE DATABASE TerritorEX;
-END
-GO
-
-IF EXISTS (SELECT 1 FROM SYS.DATABASES WHERE NAME = 'TerritorEX')
-BEGIN
-   USE TerritorEX;
-END
-GO
-
-----------------------------
--- Data alteração | Usuário | Nº Card | Descrição
--- 19/11/2022 | Luiz Rogério Scudeletti | Sem card | Criando tabela: VersaoBanco
-----------------------------
-
-PRINT 'Criando tabela: VersaoBanco'
+PRINT 'Criando tabela VersaoBanco'
 
 IF NOT EXISTS (SELECT 1 FROM SYS.TABLES WHERE OBJECT_ID = OBJECT_ID('VersaoBanco'))
 BEGIN
@@ -41,6 +22,8 @@ GO
 -- 19/11/2022 | Luiz Rogério Scudeletti | Sem card | Inserindo script 1.0.0.00 na VersaoBanco
 ----------------------------
 
+PRINT 'Inserindo script 1.0.0.00 na VersaoBanco'
+
 INSERT INTO VersaoBanco (Sistema, Versao, UsuarioAtualizacao, DataAtualizacao)
 SELECT 'TerritorEX' AS Sistema, '1.0.0.00' AS Versao, 'SCUDX' AS UsuarioAtualizacao, GETDATE() AS DataAtualizacao
  WHERE NOT EXISTS (SELECT 1 FROM VersaoBanco WHERE Sistema = 'TerritorEX' AND Versao = '1.0.0.00');
@@ -48,10 +31,10 @@ GO
 
 ----------------------------
 -- Data alteração | Usuário | Nº Card | Descrição
--- 19/11/2022 | Luiz Rogério Scudeletti | Sem card | Criando tabela: NivelTerritorio
+-- 19/11/2022 | Luiz Rogério Scudeletti | Sem card | Criando tabela NivelTerritorio
 ----------------------------
 
-PRINT 'Criando tabela: NivelTerritorio'
+PRINT 'Criando tabela NivelTerritorio'
 
 IF NOT EXISTS (SELECT 1 FROM SYS.TABLES WHERE OBJECT_ID = OBJECT_ID('NivelTerritorio'))
 BEGIN
@@ -68,10 +51,10 @@ GO
 
 ----------------------------
 -- Data alteração | Usuário | Nº Card | Descrição
--- 19/11/2022 | Luiz Rogério Scudeletti | Sem card | Criando tabela: Territorio
+-- 19/11/2022 | Luiz Rogério Scudeletti | Sem card | Criando tabela Territorio
 ----------------------------
 
-PRINT 'Criando tabela: Territorio'
+PRINT 'Criando tabela Territorio'
 
 IF NOT EXISTS (SELECT 1 FROM SYS.TABLES WHERE OBJECT_ID = OBJECT_ID('Territorio'))
 BEGIN
@@ -93,10 +76,10 @@ GO
 
 ----------------------------
 -- Data alteração | Usuário | Nº Card | Descrição
--- 19/11/2022 | Luiz Rogério Scudeletti | Sem card | Criando índice: IX_Territorio_NivelId
+-- 19/11/2022 | Luiz Rogério Scudeletti | Sem card | Criando índiceIX_Territorio_NivelId
 ----------------------------
 
-PRINT 'Criando índice: IX_Territorio_NivelId'
+PRINT 'Criando índiceIX_Territorio_NivelId'
 
 IF NOT EXISTS (SELECT 1 FROM SYS.INDEXES WHERE OBJECT_ID = OBJECT_ID('Territorio') AND NAME = 'IX_Territorio_NivelId')
 BEGIN
@@ -106,10 +89,10 @@ GO
 
 ----------------------------
 -- Data alteração | Usuário | Nº Card | Descrição
--- 19/11/2022 | Luiz Rogério Scudeletti | Sem card | Criando índice: IX_Territorio_TerritorioSuperiorId
+-- 19/11/2022 | Luiz Rogério Scudeletti | Sem card | Criando índiceIX_Territorio_TerritorioSuperiorId
 ----------------------------
 
-PRINT 'Criando índice: IX_Territorio_TerritorioSuperiorId'
+PRINT 'Criando índiceIX_Territorio_TerritorioSuperiorId'
 
 IF NOT EXISTS (SELECT 1 FROM SYS.INDEXES WHERE OBJECT_ID = OBJECT_ID('Territorio') AND NAME = 'IX_Territorio_TerritorioSuperiorId')
 BEGIN
@@ -119,10 +102,10 @@ GO
 
 ----------------------------
 -- Data alteração | Usuário | Nº Card | Descrição
--- 19/11/2022 | Luiz Rogério Scudeletti | Sem card | Criando tabela: AreaAltitudeSuperior1800
+-- 19/11/2022 | Luiz Rogério Scudeletti | Sem card | Criando tabela AreaAltitudeSuperior1800
 ----------------------------
 
-PRINT 'Criando tabela: AreaAltitudeSuperior1800'
+PRINT 'Criando tabela AreaAltitudeSuperior1800'
 
 IF NOT EXISTS (SELECT 1 FROM SYS.TABLES WHERE OBJECT_ID = OBJECT_ID('AreaAltitudeSuperior1800'))
 BEGIN
@@ -132,7 +115,7 @@ BEGIN
        SicarId            INT             NOT NULL,
        Descricao          VARCHAR (500)   NOT NULL,
        AreaHectare        FLOAT (53)      NULL,
-       Shape              VARBINARY (MAX) NOT NULL,
+       Shape              VARBINARY (MAX) NULL,
        UsuarioAtualizacao VARCHAR (50)    NOT NULL,
        DataAtualizacao    DATETIME        NOT NULL,
        CONSTRAINT PK_AreaAltitudeSuperior1800 PRIMARY KEY CLUSTERED (AreaId ASC),
@@ -143,10 +126,10 @@ GO
 
 ----------------------------
 -- Data alteração | Usuário | Nº Card | Descrição
--- 19/11/2022 | Luiz Rogério Scudeletti | Sem card | Criando índice: IX_AreaAltitudeSuperior1800_TerritorioId
+-- 19/11/2022 | Luiz Rogério Scudeletti | Sem card | Criando índiceIX_AreaAltitudeSuperior1800_TerritorioId
 ----------------------------
 
-PRINT 'Criando índice: IX_AreaAltitudeSuperior1800_TerritorioId'
+PRINT 'Criando índiceIX_AreaAltitudeSuperior1800_TerritorioId'
 
 IF NOT EXISTS (SELECT 1 FROM SYS.INDEXES WHERE OBJECT_ID = OBJECT_ID('AreaAltitudeSuperior1800') AND NAME = 'IX_AreaAltitudeSuperior1800_TerritorioId')
 BEGIN
@@ -156,10 +139,10 @@ GO
 
 ----------------------------
 -- Data alteração | Usuário | Nº Card | Descrição
--- 19/11/2022 | Luiz Rogério Scudeletti | Sem card | Criando tabela: AreaBanhado
+-- 19/11/2022 | Luiz Rogério Scudeletti | Sem card | Criando tabela AreaBanhado
 ----------------------------
 
-PRINT 'Criando tabela: AreaBanhado'
+PRINT 'Criando tabela AreaBanhado'
 
 IF NOT EXISTS (SELECT 1 FROM SYS.TABLES WHERE OBJECT_ID = OBJECT_ID('AreaBanhado'))
 BEGIN
@@ -169,7 +152,7 @@ BEGIN
        SicarId            INT             NOT NULL,
        Descricao          VARCHAR (500)   NOT NULL,
        AreaHectare        FLOAT (53)      NULL,
-       Shape              VARBINARY (MAX) NOT NULL,
+       Shape              VARBINARY (MAX) NULL,
        UsuarioAtualizacao VARCHAR (50)    NOT NULL,
        DataAtualizacao    DATETIME        NOT NULL,
        CONSTRAINT PK_AreaBanhado PRIMARY KEY CLUSTERED (AreaId ASC),
@@ -180,10 +163,10 @@ GO
 
 ----------------------------
 -- Data alteração | Usuário | Nº Card | Descrição
--- 19/11/2022 | Luiz Rogério Scudeletti | Sem card | Criando índice: IX_AreaBanhado_TerritorioId
+-- 19/11/2022 | Luiz Rogério Scudeletti | Sem card | Criando índiceIX_AreaBanhado_TerritorioId
 ----------------------------
 
-PRINT 'Criando índice: IX_AreaBanhado_TerritorioId'
+PRINT 'Criando índiceIX_AreaBanhado_TerritorioId'
 
 IF NOT EXISTS (SELECT 1 FROM SYS.INDEXES WHERE OBJECT_ID = OBJECT_ID('AreaBanhado') AND NAME = 'IX_AreaBanhado_TerritorioId')
 BEGIN
@@ -193,10 +176,10 @@ GO
 
 ----------------------------
 -- Data alteração | Usuário | Nº Card | Descrição
--- 19/11/2022 | Luiz Rogério Scudeletti | Sem card | Criando tabela: AreaBordaChapada
+-- 19/11/2022 | Luiz Rogério Scudeletti | Sem card | Criando tabela AreaBordaChapada
 ----------------------------
 
-PRINT 'Criando tabela: AreaBordaChapada'
+PRINT 'Criando tabela AreaBordaChapada'
 
 IF NOT EXISTS (SELECT 1 FROM SYS.TABLES WHERE OBJECT_ID = OBJECT_ID('AreaBordaChapada'))
 BEGIN
@@ -206,7 +189,7 @@ BEGIN
        SicarId            INT             NOT NULL,
        Descricao          VARCHAR (500)   NOT NULL,
        AreaHectare        FLOAT (53)      NULL,
-       Shape              VARBINARY (MAX) NOT NULL,
+       Shape              VARBINARY (MAX) NULL,
        UsuarioAtualizacao VARCHAR (50)    NOT NULL,
        DataAtualizacao    DATETIME        NOT NULL,
        CONSTRAINT PK_AreaBordaChapada PRIMARY KEY CLUSTERED (AreaId ASC),
@@ -217,10 +200,10 @@ GO
 
 ----------------------------
 -- Data alteração | Usuário | Nº Card | Descrição
--- 19/11/2022 | Luiz Rogério Scudeletti | Sem card | Criando índice: IX_AreaBordaChapada_TerritorioId
+-- 19/11/2022 | Luiz Rogério Scudeletti | Sem card | Criando índiceIX_AreaBordaChapada_TerritorioId
 ----------------------------
 
-PRINT 'Criando índice: IX_AreaBordaChapada_TerritorioId'
+PRINT 'Criando índiceIX_AreaBordaChapada_TerritorioId'
 
 IF NOT EXISTS (SELECT 1 FROM SYS.INDEXES WHERE OBJECT_ID = OBJECT_ID('AreaBordaChapada') AND NAME = 'IX_AreaBordaChapada_TerritorioId')
 BEGIN
@@ -230,10 +213,10 @@ GO
 
 ----------------------------
 -- Data alteração | Usuário | Nº Card | Descrição
--- 19/11/2022 | Luiz Rogério Scudeletti | Sem card | Criando tabela: AreaConsolidada
+-- 19/11/2022 | Luiz Rogério Scudeletti | Sem card | Criando tabela AreaConsolidada
 ----------------------------
 
-PRINT 'Criando tabela: AreaConsolidada'
+PRINT 'Criando tabela AreaConsolidada'
 
 IF NOT EXISTS (SELECT 1 FROM SYS.TABLES WHERE OBJECT_ID = OBJECT_ID('AreaConsolidada'))
 BEGIN
@@ -243,7 +226,7 @@ BEGIN
        SicarId            INT             NOT NULL,
        Descricao          VARCHAR (500)   NOT NULL,
        AreaHectare        FLOAT (53)      NULL,
-       Shape              VARBINARY (MAX) NOT NULL,
+       Shape              VARBINARY (MAX) NULL,
        UsuarioAtualizacao VARCHAR (50)    NOT NULL,
        DataAtualizacao    DATETIME        NOT NULL,
        CONSTRAINT PK_AreaConsolidada PRIMARY KEY CLUSTERED (AreaId ASC),
@@ -254,10 +237,10 @@ GO
 
 ----------------------------
 -- Data alteração | Usuário | Nº Card | Descrição
--- 19/11/2022 | Luiz Rogério Scudeletti | Sem card | Criando índice: IX_AreaConsolidada_TerritorioId
+-- 19/11/2022 | Luiz Rogério Scudeletti | Sem card | Criando índiceIX_AreaConsolidada_TerritorioId
 ----------------------------
 
-PRINT 'Criando índice: IX_AreaConsolidada_TerritorioId'
+PRINT 'Criando índiceIX_AreaConsolidada_TerritorioId'
 
 IF NOT EXISTS (SELECT 1 FROM SYS.INDEXES WHERE OBJECT_ID = OBJECT_ID('AreaConsolidada') AND NAME = 'IX_AreaConsolidada_TerritorioId')
 BEGIN
@@ -267,10 +250,10 @@ GO
 
 ----------------------------
 -- Data alteração | Usuário | Nº Card | Descrição
--- 19/11/2022 | Luiz Rogério Scudeletti | Sem card | Criando tabela: AreaDeclividadeMaior45
+-- 19/11/2022 | Luiz Rogério Scudeletti | Sem card | Criando tabela AreaDeclividadeMaior45
 ----------------------------
 
-PRINT 'Criando tabela: AreaDeclividadeMaior45'
+PRINT 'Criando tabela AreaDeclividadeMaior45'
 
 IF NOT EXISTS (SELECT 1 FROM SYS.TABLES WHERE OBJECT_ID = OBJECT_ID('AreaDeclividadeMaior45'))
 BEGIN
@@ -280,7 +263,7 @@ BEGIN
        SicarId            INT             NOT NULL,
        Descricao          VARCHAR (500)   NOT NULL,
        AreaHectare        FLOAT (53)      NULL,
-       Shape              VARBINARY (MAX) NOT NULL,
+       Shape              VARBINARY (MAX) NULL,
        UsuarioAtualizacao VARCHAR (50)    NOT NULL,
        DataAtualizacao    DATETIME        NOT NULL,
        CONSTRAINT PK_AreaDeclividadeMaior45 PRIMARY KEY CLUSTERED (AreaId ASC),
@@ -291,10 +274,10 @@ GO
 
 ----------------------------
 -- Data alteração | Usuário | Nº Card | Descrição
--- 19/11/2022 | Luiz Rogério Scudeletti | Sem card | Criando índice: IX_AreaDeclividadeMaior45_TerritorioId
+-- 19/11/2022 | Luiz Rogério Scudeletti | Sem card | Criando índiceIX_AreaDeclividadeMaior45_TerritorioId
 ----------------------------
 
-PRINT 'Criando índice: IX_AreaDeclividadeMaior45_TerritorioId'
+PRINT 'Criando índiceIX_AreaDeclividadeMaior45_TerritorioId'
 
 IF NOT EXISTS (SELECT 1 FROM SYS.INDEXES WHERE OBJECT_ID = OBJECT_ID('AreaDeclividadeMaior45') AND NAME = 'IX_AreaDeclividadeMaior45_TerritorioId')
 BEGIN
@@ -304,10 +287,10 @@ GO
 
 ----------------------------
 -- Data alteração | Usuário | Nº Card | Descrição
--- 19/11/2022 | Luiz Rogério Scudeletti | Sem card | Criando tabela: AreaHidrografia
+-- 19/11/2022 | Luiz Rogério Scudeletti | Sem card | Criando tabela AreaHidrografia
 ----------------------------
 
-PRINT 'Criando tabela: AreaHidrografia'
+PRINT 'Criando tabela AreaHidrografia'
 
 IF NOT EXISTS (SELECT 1 FROM SYS.TABLES WHERE OBJECT_ID = OBJECT_ID('AreaHidrografia'))
 BEGIN
@@ -317,7 +300,7 @@ BEGIN
        SicarId            INT             NOT NULL,
        Descricao          VARCHAR (500)   NOT NULL,
        AreaHectare        FLOAT (53)      NULL,
-       Shape              VARBINARY (MAX) NOT NULL,
+       Shape              VARBINARY (MAX) NULL,
        UsuarioAtualizacao VARCHAR (50)    NOT NULL,
        DataAtualizacao    DATETIME        NOT NULL,
        CONSTRAINT PK_AreaHidrografia PRIMARY KEY CLUSTERED (AreaId ASC),
@@ -328,10 +311,10 @@ GO
 
 ----------------------------
 -- Data alteração | Usuário | Nº Card | Descrição
--- 19/11/2022 | Luiz Rogério Scudeletti | Sem card | Criando índice: IX_AreaHidrografia_TerritorioId
+-- 19/11/2022 | Luiz Rogério Scudeletti | Sem card | Criando índiceIX_AreaHidrografia_TerritorioId
 ----------------------------
 
-PRINT 'Criando índice: IX_AreaHidrografia_TerritorioId'
+PRINT 'Criando índiceIX_AreaHidrografia_TerritorioId'
 
 IF NOT EXISTS (SELECT 1 FROM SYS.INDEXES WHERE OBJECT_ID = OBJECT_ID('AreaHidrografia') AND NAME = 'IX_AreaHidrografia_TerritorioId')
 BEGIN
@@ -341,10 +324,10 @@ GO
 
 ----------------------------
 -- Data alteração | Usuário | Nº Card | Descrição
--- 19/11/2022 | Luiz Rogério Scudeletti | Sem card | Criando tabela: SituacaoImovel
+-- 19/11/2022 | Luiz Rogério Scudeletti | Sem card | Criando tabela SituacaoImovel
 ----------------------------
 
-PRINT 'Criando tabela: SituacaoImovel'
+PRINT 'Criando tabela SituacaoImovel'
 
 IF NOT EXISTS (SELECT 1 FROM SYS.TABLES WHERE OBJECT_ID = OBJECT_ID('SituacaoImovel'))
 BEGIN
@@ -361,10 +344,10 @@ GO
 
 ----------------------------
 -- Data alteração | Usuário | Nº Card | Descrição
--- 19/11/2022 | Luiz Rogério Scudeletti | Sem card | Criando tabela: TipoImovel
+-- 19/11/2022 | Luiz Rogério Scudeletti | Sem card | Criando tabela TipoImovel
 ----------------------------
 
-PRINT 'Criando tabela: TipoImovel'
+PRINT 'Criando tabela TipoImovel'
 
 IF NOT EXISTS (SELECT 1 FROM SYS.TABLES WHERE OBJECT_ID = OBJECT_ID('TipoImovel'))
 BEGIN
@@ -381,10 +364,10 @@ GO
 
 ----------------------------
 -- Data alteração | Usuário | Nº Card | Descrição
--- 19/11/2022 | Luiz Rogério Scudeletti | Sem card | Criando tabela: AreaImovel
+-- 19/11/2022 | Luiz Rogério Scudeletti | Sem card | Criando tabela AreaImovel
 ----------------------------
 
-PRINT 'Criando tabela: AreaImovel'
+PRINT 'Criando tabela AreaImovel'
 
 IF NOT EXISTS (SELECT 1 FROM SYS.TABLES WHERE OBJECT_ID = OBJECT_ID('AreaImovel'))
 BEGIN
@@ -397,7 +380,7 @@ BEGIN
        Condicao           VARCHAR (300)   NULL,
        AreaHectare        FLOAT (53)      NULL,
        AreaHectareFiscal  FLOAT (53)      NULL,
-       Shape              VARBINARY (MAX) NOT NULL,
+       Shape              VARBINARY (MAX) NULL,
        UsuarioAtualizacao VARCHAR (50)    NOT NULL,
        DataAtualizacao    DATETIME        NOT NULL,
        CONSTRAINT PK_AreaImovel PRIMARY KEY CLUSTERED (AreaId ASC),
@@ -410,10 +393,10 @@ GO
 
 ----------------------------
 -- Data alteração | Usuário | Nº Card | Descrição
--- 19/11/2022 | Luiz Rogério Scudeletti | Sem card | Criando índice: IX_AreaImovel_ImovelId
+-- 19/11/2022 | Luiz Rogério Scudeletti | Sem card | Criando índiceIX_AreaImovel_ImovelId
 ----------------------------
 
-PRINT 'Criando índice: IX_AreaImovel_ImovelId'
+PRINT 'Criando índiceIX_AreaImovel_ImovelId'
 
 IF NOT EXISTS (SELECT 1 FROM SYS.INDEXES WHERE OBJECT_ID = OBJECT_ID('AreaImovel') AND NAME = 'IX_AreaImovel_ImovelId')
 BEGIN
@@ -423,10 +406,10 @@ GO
 
 ----------------------------
 -- Data alteração | Usuário | Nº Card | Descrição
--- 19/11/2022 | Luiz Rogério Scudeletti | Sem card | Criando índice: IX_AreaImovel_SituacaoImovelId
+-- 19/11/2022 | Luiz Rogério Scudeletti | Sem card | Criando índiceIX_AreaImovel_SituacaoImovelId
 ----------------------------
 
-PRINT 'Criando índice: IX_AreaImovel_SituacaoImovelId'
+PRINT 'Criando índiceIX_AreaImovel_SituacaoImovelId'
 
 IF NOT EXISTS (SELECT 1 FROM SYS.INDEXES WHERE OBJECT_ID = OBJECT_ID('AreaImovel') AND NAME = 'IX_AreaImovel_SituacaoImovelId')
 BEGIN
@@ -436,10 +419,10 @@ GO
 
 ----------------------------
 -- Data alteração | Usuário | Nº Card | Descrição
--- 19/11/2022 | Luiz Rogério Scudeletti | Sem card | Criando índice: IX_AreaImovel_TerritorioId
+-- 19/11/2022 | Luiz Rogério Scudeletti | Sem card | Criando índiceIX_AreaImovel_TerritorioId
 ----------------------------
 
-PRINT 'Criando índice: IX_AreaImovel_TerritorioId'
+PRINT 'Criando índiceIX_AreaImovel_TerritorioId'
 
 IF NOT EXISTS (SELECT 1 FROM SYS.INDEXES WHERE OBJECT_ID = OBJECT_ID('AreaImovel') AND NAME = 'IX_AreaImovel_TerritorioId')
 BEGIN
@@ -449,10 +432,10 @@ GO
 
 ----------------------------
 -- Data alteração | Usuário | Nº Card | Descrição
--- 19/11/2022 | Luiz Rogério Scudeletti | Sem card | Criando tabela: AreaManguezal
+-- 19/11/2022 | Luiz Rogério Scudeletti | Sem card | Criando tabela AreaManguezal
 ----------------------------
 
-PRINT 'Criando tabela: AreaManguezal'
+PRINT 'Criando tabela AreaManguezal'
 
 IF NOT EXISTS (SELECT 1 FROM SYS.TABLES WHERE OBJECT_ID = OBJECT_ID('AreaManguezal'))
 BEGIN
@@ -462,7 +445,7 @@ BEGIN
        SicarId            INT             NOT NULL,
        Descricao          VARCHAR (500)   NOT NULL,
        AreaHectare        FLOAT (53)      NULL,
-       Shape              VARBINARY (MAX) NOT NULL,
+       Shape              VARBINARY (MAX) NULL,
        UsuarioAtualizacao VARCHAR (50)    NOT NULL,
        DataAtualizacao    DATETIME        NOT NULL,
        CONSTRAINT PK_AreaManguezal PRIMARY KEY CLUSTERED (AreaId ASC),
@@ -473,10 +456,10 @@ GO
 
 ----------------------------
 -- Data alteração | Usuário | Nº Card | Descrição
--- 19/11/2022 | Luiz Rogério Scudeletti | Sem card | Criando índice: IX_AreaManguezal_TerritorioId
+-- 19/11/2022 | Luiz Rogério Scudeletti | Sem card | Criando índiceIX_AreaManguezal_TerritorioId
 ----------------------------
 
-PRINT 'Criando índice: IX_AreaManguezal_TerritorioId'
+PRINT 'Criando índiceIX_AreaManguezal_TerritorioId'
 
 IF NOT EXISTS (SELECT 1 FROM SYS.INDEXES WHERE OBJECT_ID = OBJECT_ID('AreaManguezal') AND NAME = 'IX_AreaManguezal_TerritorioId')
 BEGIN
@@ -486,10 +469,10 @@ GO
 
 ----------------------------
 -- Data alteração | Usuário | Nº Card | Descrição
--- 19/11/2022 | Luiz Rogério Scudeletti | Sem card | Criando tabela: AreaNascenteOlhoDAgua
+-- 19/11/2022 | Luiz Rogério Scudeletti | Sem card | Criando tabela AreaNascenteOlhoDAgua
 ----------------------------
 
-PRINT 'Criando tabela: AreaNascenteOlhoDAgua'
+PRINT 'Criando tabela AreaNascenteOlhoDAgua'
 
 IF NOT EXISTS (SELECT 1 FROM SYS.TABLES WHERE OBJECT_ID = OBJECT_ID('AreaNascenteOlhoDAgua'))
 BEGIN
@@ -499,7 +482,7 @@ BEGIN
        SicarId            INT             NOT NULL,
        Descricao          VARCHAR (500)   NOT NULL,
        AreaHectare        FLOAT (53)      NULL,
-       Shape              VARBINARY (MAX) NOT NULL,
+       Shape              VARBINARY (MAX) NULL,
        UsuarioAtualizacao VARCHAR (50)    NOT NULL,
        DataAtualizacao    DATETIME        NOT NULL,
        CONSTRAINT PK_AreaNascenteOlhoDAgual PRIMARY KEY CLUSTERED (AreaId ASC),
@@ -510,10 +493,10 @@ GO
 
 ----------------------------
 -- Data alteração | Usuário | Nº Card | Descrição
--- 19/11/2022 | Luiz Rogério Scudeletti | Sem card | Criando índice: IX_AreaNascenteOlhoDAgua_TerritorioId
+-- 19/11/2022 | Luiz Rogério Scudeletti | Sem card | Criando índiceIX_AreaNascenteOlhoDAgua_TerritorioId
 ----------------------------
 
-PRINT 'Criando índice: IX_AreaNascenteOlhoDAgua_TerritorioId'
+PRINT 'Criando índiceIX_AreaNascenteOlhoDAgua_TerritorioId'
 
 IF NOT EXISTS (SELECT 1 FROM SYS.INDEXES WHERE OBJECT_ID = OBJECT_ID('AreaNascenteOlhoDAgua') AND NAME = 'IX_AreaNascenteOlhoDAgua_TerritorioId')
 BEGIN
@@ -523,10 +506,10 @@ GO
 
 ----------------------------
 -- Data alteração | Usuário | Nº Card | Descrição
--- 19/11/2022 | Luiz Rogério Scudeletti | Sem card | Criando tabela: AreaPousio
+-- 19/11/2022 | Luiz Rogério Scudeletti | Sem card | Criando tabela AreaPousio
 ----------------------------
 
-PRINT 'Criando tabela: AreaPousio'
+PRINT 'Criando tabela AreaPousio'
 
 IF NOT EXISTS (SELECT 1 FROM SYS.TABLES WHERE OBJECT_ID = OBJECT_ID('AreaPousio'))
 BEGIN
@@ -536,7 +519,7 @@ BEGIN
        SicarId            INT             NOT NULL,
        Descricao          VARCHAR (500)   NOT NULL,
        AreaHectare        FLOAT (53)      NULL,
-       Shape              VARBINARY (MAX) NOT NULL,
+       Shape              VARBINARY (MAX) NULL,
        UsuarioAtualizacao VARCHAR (50)    NOT NULL,
        DataAtualizacao    DATETIME        NOT NULL,
        CONSTRAINT PK_AreaPousio PRIMARY KEY CLUSTERED (AreaId ASC),
@@ -547,10 +530,10 @@ GO
 
 ----------------------------
 -- Data alteração | Usuário | Nº Card | Descrição
--- 19/11/2022 | Luiz Rogério Scudeletti | Sem card | Criando índice: IX_AreaPousio_TerritorioId
+-- 19/11/2022 | Luiz Rogério Scudeletti | Sem card | Criando índiceIX_AreaPousio_TerritorioId
 ----------------------------
 
-PRINT 'Criando índice: IX_AreaPousio_TerritorioId'
+PRINT 'Criando índiceIX_AreaPousio_TerritorioId'
 
 IF NOT EXISTS (SELECT 1 FROM SYS.INDEXES WHERE OBJECT_ID = OBJECT_ID('AreaPousio') AND NAME = 'IX_AreaPousio_TerritorioId')
 BEGIN
@@ -560,10 +543,10 @@ GO
 
 ----------------------------
 -- Data alteração | Usuário | Nº Card | Descrição
--- 19/11/2022 | Luiz Rogério Scudeletti | Sem card | Criando tabela: AreaPreservacaoPermanente
+-- 19/11/2022 | Luiz Rogério Scudeletti | Sem card | Criando tabela AreaPreservacaoPermanente
 ----------------------------
 
-PRINT 'Criando tabela: AreaPreservacaoPermanente'
+PRINT 'Criando tabela AreaPreservacaoPermanente'
 
 IF NOT EXISTS (SELECT 1 FROM SYS.TABLES WHERE OBJECT_ID = OBJECT_ID('AreaPreservacaoPermanente'))
 BEGIN
@@ -573,7 +556,7 @@ BEGIN
        SicarId            INT             NOT NULL,
        Descricao          VARCHAR (500)   NOT NULL,
        AreaHectare        FLOAT (53)      NULL,
-       Shape              VARBINARY (MAX) NOT NULL,
+       Shape              VARBINARY (MAX) NULL,
        UsuarioAtualizacao VARCHAR (50)    NOT NULL,
        DataAtualizacao    DATETIME        NOT NULL,
        CONSTRAINT PK_AreaPreservacaoPermanente PRIMARY KEY CLUSTERED (AreaId ASC),
@@ -584,10 +567,10 @@ GO
 
 ----------------------------
 -- Data alteração | Usuário | Nº Card | Descrição
--- 19/11/2022 | Luiz Rogério Scudeletti | Sem card | Criando índice: IX_AreaPreservacaoPermanente_TerritorioId
+-- 19/11/2022 | Luiz Rogério Scudeletti | Sem card | Criando índiceIX_AreaPreservacaoPermanente_TerritorioId
 ----------------------------
 
-PRINT 'Criando índice: IX_AreaPreservacaoPermanente_TerritorioId'
+PRINT 'Criando índiceIX_AreaPreservacaoPermanente_TerritorioId'
 
 IF NOT EXISTS (SELECT 1 FROM SYS.INDEXES WHERE OBJECT_ID = OBJECT_ID('AreaPreservacaoPermanente') AND NAME = 'IX_AreaPreservacaoPermanente_TerritorioId')
 BEGIN
@@ -597,10 +580,10 @@ GO
 
 ----------------------------
 -- Data alteração | Usuário | Nº Card | Descrição
--- 19/11/2022 | Luiz Rogério Scudeletti | Sem card | Criando tabela: AreaReservaLegal
+-- 19/11/2022 | Luiz Rogério Scudeletti | Sem card | Criando tabela AreaReservaLegal
 ----------------------------
 
-PRINT 'Criando tabela: AreaReservaLegal'
+PRINT 'Criando tabela AreaReservaLegal'
 
 IF NOT EXISTS (SELECT 1 FROM SYS.TABLES WHERE OBJECT_ID = OBJECT_ID('AreaReservaLegal'))
 BEGIN
@@ -610,7 +593,7 @@ BEGIN
        SicarId            INT             NOT NULL,
        Descricao          VARCHAR (500)   NOT NULL,
        AreaHectare        FLOAT (53)      NULL,
-       Shape              VARBINARY (MAX) NOT NULL,
+       Shape              VARBINARY (MAX) NULL,
        UsuarioAtualizacao VARCHAR (50)    NOT NULL,
        DataAtualizacao    DATETIME        NOT NULL,
        CONSTRAINT PK_AreaReservaLegal PRIMARY KEY CLUSTERED (AreaId ASC),
@@ -621,10 +604,10 @@ GO
 
 ----------------------------
 -- Data alteração | Usuário | Nº Card | Descrição
--- 19/11/2022 | Luiz Rogério Scudeletti | Sem card | Criando índice: IX_AreaReservaLegal_TerritorioId
+-- 19/11/2022 | Luiz Rogério Scudeletti | Sem card | Criando índiceIX_AreaReservaLegal_TerritorioId
 ----------------------------
 
-PRINT 'Criando índice: IX_AreaReservaLegal_TerritorioId'
+PRINT 'Criando índiceIX_AreaReservaLegal_TerritorioId'
 
 IF NOT EXISTS (SELECT 1 FROM SYS.INDEXES WHERE OBJECT_ID = OBJECT_ID('AreaReservaLegal') AND NAME = 'IX_AreaReservaLegal_TerritorioId')
 BEGIN
@@ -633,10 +616,10 @@ END
 
 ----------------------------
 -- Data alteração | Usuário | Nº Card | Descrição
--- 19/11/2022 | Luiz Rogério Scudeletti | Sem card | Criando tabela: AreaRestinga
+-- 19/11/2022 | Luiz Rogério Scudeletti | Sem card | Criando tabela AreaRestinga
 ----------------------------
 
-PRINT 'Criando tabela: AreaRestinga'
+PRINT 'Criando tabela AreaRestinga'
 
 IF NOT EXISTS (SELECT 1 FROM SYS.TABLES WHERE OBJECT_ID = OBJECT_ID('AreaRestinga'))
 BEGIN
@@ -646,7 +629,7 @@ BEGIN
        SicarId            INT             NOT NULL,
        Descricao          VARCHAR (500)   NOT NULL,
        AreaHectare        FLOAT (53)      NULL,
-       Shape              VARBINARY (MAX) NOT NULL,
+       Shape              VARBINARY (MAX) NULL,
        UsuarioAtualizacao VARCHAR (50)    NOT NULL,
        DataAtualizacao    DATETIME        NOT NULL,
        CONSTRAINT PK_AreaRestinga PRIMARY KEY CLUSTERED (AreaId ASC),
@@ -657,10 +640,10 @@ GO
 
 ----------------------------
 -- Data alteração | Usuário | Nº Card | Descrição
--- 19/11/2022 | Luiz Rogério Scudeletti | Sem card | Criando índice: IX_AreaRestinga_TerritorioId
+-- 19/11/2022 | Luiz Rogério Scudeletti | Sem card | Criando índiceIX_AreaRestinga_TerritorioId
 ----------------------------
 
-PRINT 'Criando índice: IX_AreaRestinga_TerritorioId'
+PRINT 'Criando índiceIX_AreaRestinga_TerritorioId'
 
 IF NOT EXISTS (SELECT 1 FROM SYS.INDEXES WHERE OBJECT_ID = OBJECT_ID('AreaRestinga') AND NAME = 'IX_AreaRestinga_TerritorioId')
 BEGIN
@@ -670,10 +653,10 @@ GO
 
 ----------------------------
 -- Data alteração | Usuário | Nº Card | Descrição
--- 19/11/2022 | Luiz Rogério Scudeletti | Sem card | Criando tabela: AreaServidaoAdministrativa
+-- 19/11/2022 | Luiz Rogério Scudeletti | Sem card | Criando tabela AreaServidaoAdministrativa
 ----------------------------
 
-PRINT 'Criando tabela: AreaServidaoAdministrativa'
+PRINT 'Criando tabela AreaServidaoAdministrativa'
 
 IF NOT EXISTS (SELECT 1 FROM SYS.TABLES WHERE OBJECT_ID = OBJECT_ID('AreaServidaoAdministrativa'))
 BEGIN
@@ -683,7 +666,7 @@ BEGIN
        SicarId            INT             NOT NULL,
        Descricao          VARCHAR (500)   NOT NULL,
        AreaHectare        FLOAT (53)      NULL,
-       Shape              VARBINARY (MAX) NOT NULL,
+       Shape              VARBINARY (MAX) NULL,
        UsuarioAtualizacao VARCHAR (50)    NOT NULL,
        DataAtualizacao    DATETIME        NOT NULL,
        CONSTRAINT PK_AreaServidaoAdministrativa PRIMARY KEY CLUSTERED (AreaId ASC),
@@ -694,10 +677,10 @@ GO
 
 ----------------------------
 -- Data alteração | Usuário | Nº Card | Descrição
--- 19/11/2022 | Luiz Rogério Scudeletti | Sem card | Criando índice: IX_AreaServidaoAdministrativa_TerritorioId
+-- 19/11/2022 | Luiz Rogério Scudeletti | Sem card | Criando índiceIX_AreaServidaoAdministrativa_TerritorioId
 ----------------------------
 
-PRINT 'Criando índice: IX_AreaServidaoAdministrativa_TerritorioId'
+PRINT 'Criando índiceIX_AreaServidaoAdministrativa_TerritorioId'
 
 IF NOT EXISTS (SELECT 1 FROM SYS.INDEXES WHERE OBJECT_ID = OBJECT_ID('AreaServidaoAdministrativa') AND NAME = 'IX_AreaServidaoAdministrativa_TerritorioId')
 BEGIN
@@ -707,10 +690,10 @@ GO
 
 ----------------------------
 -- Data alteração | Usuário | Nº Card | Descrição
--- 19/11/2022 | Luiz Rogério Scudeletti | Sem card | Criando tabela: AreaTopoMorro
+-- 19/11/2022 | Luiz Rogério Scudeletti | Sem card | Criando tabela AreaTopoMorro
 ----------------------------
 
-PRINT 'Criando tabela: AreaTopoMorro'
+PRINT 'Criando tabela AreaTopoMorro'
 
 IF NOT EXISTS (SELECT 1 FROM SYS.TABLES WHERE OBJECT_ID = OBJECT_ID('AreaTopoMorro'))
 BEGIN
@@ -720,7 +703,7 @@ BEGIN
        SicarId            INT             NOT NULL,
        Descricao          VARCHAR (500)   NOT NULL,
        AreaHectare        FLOAT (53)      NULL,
-       Shape              VARBINARY (MAX) NOT NULL,
+       Shape              VARBINARY (MAX) NULL,
        UsuarioAtualizacao VARCHAR (50)    NOT NULL,
        DataAtualizacao    DATETIME        NOT NULL,
        CONSTRAINT PK_AreaTopoMorro PRIMARY KEY CLUSTERED (AreaId ASC),
@@ -731,10 +714,10 @@ GO
 
 ----------------------------
 -- Data alteração | Usuário | Nº Card | Descrição
--- 19/11/2022 | Luiz Rogério Scudeletti | Sem card | Criando índice: IX_AreaTopoMorro_TerritorioId
+-- 19/11/2022 | Luiz Rogério Scudeletti | Sem card | Criando índiceIX_AreaTopoMorro_TerritorioId
 ----------------------------
 
-PRINT 'Criando índice: IX_AreaTopoMorro_TerritorioId'
+PRINT 'Criando índiceIX_AreaTopoMorro_TerritorioId'
 
 IF NOT EXISTS (SELECT 1 FROM SYS.INDEXES WHERE OBJECT_ID = OBJECT_ID('AreaTopoMorro') AND NAME = 'IX_AreaTopoMorro_TerritorioId')
 BEGIN
@@ -744,10 +727,10 @@ GO
 
 ----------------------------
 -- Data alteração | Usuário | Nº Card | Descrição
--- 19/11/2022 | Luiz Rogério Scudeletti | Sem card | Criando tabela: AreaUsoRestrito
+-- 19/11/2022 | Luiz Rogério Scudeletti | Sem card | Criando tabela AreaUsoRestrito
 ----------------------------
 
-PRINT 'Criando tabela: AreaUsoRestrito'
+PRINT 'Criando tabela AreaUsoRestrito'
 
 IF NOT EXISTS (SELECT 1 FROM SYS.TABLES WHERE OBJECT_ID = OBJECT_ID('AreaUsoRestrito'))
 BEGIN
@@ -757,7 +740,7 @@ BEGIN
        SicarId            INT             NOT NULL,
        Descricao          VARCHAR (500)   NOT NULL,
        AreaHectare        FLOAT (53)      NULL,
-       Shape              VARBINARY (MAX) NOT NULL,
+       Shape              VARBINARY (MAX) NULL,
        UsuarioAtualizacao VARCHAR (50)    NOT NULL,
        DataAtualizacao    DATETIME        NOT NULL,
        CONSTRAINT PK_AreaUsoRestrito PRIMARY KEY CLUSTERED (AreaId ASC),
@@ -768,10 +751,10 @@ GO
 
 ----------------------------
 -- Data alteração | Usuário | Nº Card | Descrição
--- 19/11/2022 | Luiz Rogério Scudeletti | Sem card | Criando índice: IX_AreaUsoRestrito_TerritorioId
+-- 19/11/2022 | Luiz Rogério Scudeletti | Sem card | Criando índiceIX_AreaUsoRestrito_TerritorioId
 ----------------------------
 
-PRINT 'Criando índice: IX_AreaUsoRestrito_TerritorioId'
+PRINT 'Criando índiceIX_AreaUsoRestrito_TerritorioId'
 
 IF NOT EXISTS (SELECT 1 FROM SYS.INDEXES WHERE OBJECT_ID = OBJECT_ID('AreaUsoRestrito') AND NAME = 'IX_AreaUsoRestrito_TerritorioId')
 BEGIN
@@ -781,10 +764,10 @@ GO
 
 ----------------------------
 -- Data alteração | Usuário | Nº Card | Descrição
--- 19/11/2022 | Luiz Rogério Scudeletti | Sem card | Criando tabela: AreaVegetacaoNativa
+-- 19/11/2022 | Luiz Rogério Scudeletti | Sem card | Criando tabela AreaVegetacaoNativa
 ----------------------------
 
-PRINT 'Criando tabela: AreaVegetacaoNativa'
+PRINT 'Criando tabela AreaVegetacaoNativa'
 
 IF NOT EXISTS (SELECT 1 FROM SYS.TABLES WHERE OBJECT_ID = OBJECT_ID('AreaVegetacaoNativa'))
 BEGIN
@@ -794,7 +777,7 @@ BEGIN
        SicarId            INT             NOT NULL,
        Descricao          VARCHAR (500)   NOT NULL,
        AreaHectare        FLOAT (53)      NULL,
-       Shape              VARBINARY (MAX) NOT NULL,
+       Shape              VARBINARY (MAX) NULL,
        UsuarioAtualizacao VARCHAR (50)    NOT NULL,
        DataAtualizacao    DATETIME        NOT NULL,
        CONSTRAINT PK_AreaVegetacaoNativa PRIMARY KEY CLUSTERED (AreaId ASC),
@@ -805,10 +788,10 @@ GO
 
 ----------------------------
 -- Data alteração | Usuário | Nº Card | Descrição
--- 19/11/2022 | Luiz Rogério Scudeletti | Sem card | Criando índice: IX_AreaVegetacaoNativa_TerritorioId
+-- 19/11/2022 | Luiz Rogério Scudeletti | Sem card | Criando índiceIX_AreaVegetacaoNativa_TerritorioId
 ----------------------------
 
-PRINT 'Criando índice: IX_AreaVegetacaoNativa_TerritorioId'
+PRINT 'Criando índiceIX_AreaVegetacaoNativa_TerritorioId'
 
 IF NOT EXISTS (SELECT 1 FROM SYS.INDEXES WHERE OBJECT_ID = OBJECT_ID('AreaVegetacaoNativa') AND NAME = 'IX_AreaVegetacaoNativa_TerritorioId')
 BEGIN
@@ -818,10 +801,10 @@ GO
 
 ----------------------------
 -- Data alteração | Usuário | Nº Card | Descrição
--- 19/11/2022 | Luiz Rogério Scudeletti | Sem card | Criando tabela: AreaVereda
+-- 19/11/2022 | Luiz Rogério Scudeletti | Sem card | Criando tabela AreaVereda
 ----------------------------
 
-PRINT 'Criando tabela: AreaVereda'
+PRINT 'Criando tabela AreaVereda'
 
 IF NOT EXISTS (SELECT 1 FROM SYS.TABLES WHERE OBJECT_ID = OBJECT_ID('AreaVereda'))
 BEGIN
@@ -831,7 +814,7 @@ BEGIN
        SicarId            INT             NOT NULL,
        Descricao          VARCHAR (500)   NOT NULL,
        AreaHectare        FLOAT (53)      NULL,
-       Shape              VARBINARY (MAX) NOT NULL,
+       Shape              VARBINARY (MAX) NULL,
        UsuarioAtualizacao VARCHAR (50)    NOT NULL,
        DataAtualizacao    DATETIME        NOT NULL,
        CONSTRAINT PK_AreaVereda PRIMARY KEY CLUSTERED (AreaId ASC),
@@ -842,10 +825,10 @@ GO
 
 ----------------------------
 -- Data alteração | Usuário | Nº Card | Descrição
--- 19/11/2022 | Luiz Rogério Scudeletti | Sem card | Criando índice: IX_AreaVereda_TerritorioId
+-- 19/11/2022 | Luiz Rogério Scudeletti | Sem card | Criando índiceIX_AreaVereda_TerritorioId
 ----------------------------
 
-PRINT 'Criando índice: IX_AreaVereda_TerritorioId'
+PRINT 'Criando índiceIX_AreaVereda_TerritorioId'
 
 IF NOT EXISTS (SELECT 1 FROM SYS.INDEXES WHERE OBJECT_ID = OBJECT_ID('AreaVereda') AND NAME = 'IX_AreaVereda_TerritorioId')
 BEGIN
@@ -855,10 +838,10 @@ GO
 
 ----------------------------
 -- Data alteração | Usuário | Nº Card | Descrição
--- 19/11/2022 | Luiz Rogério Scudeletti | Sem card | Criando view: ViewTerritorioHierarquia
+-- 19/11/2022 | Luiz Rogério Scudeletti | Sem card | Criando view ViewTerritorioHierarquia
 ----------------------------
 
-PRINT 'Criando view: ViewTerritorioHierarquia'
+PRINT 'Criando view ViewTerritorioHierarquia'
 
 IF EXISTS (SELECT 1 FROM SYS.OBJECTS WHERE OBJECT_ID = OBJECT_ID(N'ViewTerritorioHierarquia') AND TYPE IN (N'V'))
 BEGIN

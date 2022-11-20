@@ -6,23 +6,16 @@
 		<ImplicitUsings>enable</ImplicitUsings>
 		<UserSecretsId>1cf76a74-dc7c-48e5-a84d-3fc64538989f</UserSecretsId>
 		<DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
-
-		<!-- O <NoWarn> é definido para que a IDE não exiba um alerta sobre
-		     os códigos que não possuírem comentários de documentação. -->
-		<GenerateDocumentationFile>true</GenerateDocumentationFile>
-		<NoWarn>$(NoWarn);1591</NoWarn>
-		<DocumentationFile></DocumentationFile>
 	</PropertyGroup>
 
 	<ItemGroup>
 	  <None Remove="Infra\Scripts\1.0.0.00.sql" />
 	  <None Remove="Infra\Scripts\1.0.0.01.sql" />
-	  <None Remove="Infra\Scripts\1.0.0.01.sql~RF17d4b63.TMP" />
 	</ItemGroup>
 
 	<ItemGroup>
-	  <EmbeddedResource Include="Infra\Scripts\1.0.0.01.sql" />
 	  <EmbeddedResource Include="Infra\Scripts\1.0.0.00.sql" />
+	  <EmbeddedResource Include="Infra\Scripts\1.0.0.01.sql" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -34,20 +27,4 @@
 		<PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
 		<PackageReference Include="Swashbuckle.AspNetCore.Annotations" Version="6.4.0" />
 	</ItemGroup>
-
-	<ItemGroup>
-		<Compile Update="Properties\Api-pt_BR.Designer.cs">
-			<DesignTime>True</DesignTime>
-			<AutoGen>True</AutoGen>
-			<DependentUpon>Api-pt_BR.resx</DependentUpon>
-		</Compile>
-	</ItemGroup>
-
-	<ItemGroup>
-		<EmbeddedResource Update="Properties\Api-pt_BR.resx">
-			<Generator>ResXFileCodeGenerator</Generator>
-			<LastGenOutput>Api-pt_BR.Designer.cs</LastGenOutput>
-		</EmbeddedResource>
-	</ItemGroup>
-
 </Project>
