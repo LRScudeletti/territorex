@@ -1,13 +1,17 @@
-using TerritorEx.Api.Dapper;
+using Microsoft.Extensions.Options;
 using TerritorEx.Api.Helpers;
+using TerritorEx.Api.Helpers.Dapper;
 using TerritorEx.Api.Helpers.Error;
-using TerritorEx.Api.Swagger;
+using TerritorEx.Api.Helpers.Swagger;
+using TerritorEx.Api.Localize;
 
 var builder = WebApplication.CreateBuilder(args);
 
 DapperConfiguration.ConnectionString(builder);
 
 var services = builder.Services;
+
+Localization.AdicionarLocalization(services);
 
 AddScoped.AdicionarInterface(services);
 
@@ -18,6 +22,10 @@ services.AddEndpointsApiExplorer();
 SwaggerConfiguration.Service(services);
 
 var app = builder.Build();
+
+var localizationOptions = app.Services.GetService<IOptions<RequestLocalizationOptions>>();
+if (localizationOptions != null) 
+    app.UseRequestLocalization(localizationOptions.Value);
 
 SwaggerConfiguration.App(app);
 
