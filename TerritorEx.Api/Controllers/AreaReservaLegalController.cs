@@ -21,7 +21,7 @@ public class AreaReservaLegalController : ControllerBase
     [HttpGet]
     [SwaggerOperation(Summary = "Lista as áreas de reserva legal.")]
     [SwaggerResponse((int)HttpStatusCode.OK, "Requisição realizada com sucesso.", typeof(AreaReservaLegal))]
-    [SwaggerResponse((int)HttpStatusCode.NoContent, "Nenhuma área encontrada.")]
+    [SwaggerResponse((int)HttpStatusCode.NotFound, "Nenhuma área encontrada.", typeof(AreaReservaLegal))]
     [SwaggerResponse((int)HttpStatusCode.BadRequest, "Ocorreu um erro com a requisição.", typeof(Message))]
     [SwaggerResponse((int)HttpStatusCode.InternalServerError, "Erro interno no servidor.")]
     public ActionResult RecuperarTodos()
@@ -33,7 +33,7 @@ public class AreaReservaLegalController : ControllerBase
     [HttpGet("territorio={territorioId:int}")]
     [SwaggerOperation(Summary = "Lista as áreas de reserva legal do território informado.")]
     [SwaggerResponse((int)HttpStatusCode.OK, "Requisição realizada com sucesso.", typeof(AreaReservaLegal))]
-    [SwaggerResponse((int)HttpStatusCode.NoContent, "Nenhuma área encontrada.")]
+    [SwaggerResponse((int)HttpStatusCode.NotFound, "Nenhuma área encontrada.", typeof(AreaReservaLegal))]
     [SwaggerResponse((int)HttpStatusCode.BadRequest, "Ocorreu um erro com a requisição.", typeof(Message))]
     [SwaggerResponse((int)HttpStatusCode.InternalServerError, "Erro interno no servidor.")]
     public IActionResult RecuperarPorTerritorioId(int territorioId)

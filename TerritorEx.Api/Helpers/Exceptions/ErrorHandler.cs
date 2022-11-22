@@ -1,5 +1,6 @@
 ﻿using System.Net;
 using System.Text.Json;
+using TerritorEx.Api.Enums;
 
 namespace TerritorEx.Api.Helpers.Exceptions;
 
@@ -44,7 +45,7 @@ public class ErrorHandler
 
             var result = JsonSerializer.Serialize(new { errorMessage = exception.Message });
 
-            Utils.CriarLogErro(exception.ToString());
+            Utils.CriarLog(TipoLog.Error, exception.ToString(), false);
 
             if (response.StatusCode != (int)HttpStatusCode.InternalServerError)
                 await response.WriteAsync(result);

@@ -21,7 +21,7 @@ public class AreaDeclividadeMaior45Controller : ControllerBase
     [HttpGet]
     [SwaggerOperation(Summary = "Lista as áreas com declividade maior que 45 graus.")]
     [SwaggerResponse((int)HttpStatusCode.OK, "Requisição realizada com sucesso.", typeof(AreaDeclividadeMaior45))]
-    [SwaggerResponse((int)HttpStatusCode.NoContent, "Nenhuma área encontrada.")]
+    [SwaggerResponse((int)HttpStatusCode.NotFound, "Nenhuma área encontrada.", typeof(AreaDeclividadeMaior45))]
     [SwaggerResponse((int)HttpStatusCode.BadRequest, "Ocorreu um erro com a requisição.", typeof(Message))]
     [SwaggerResponse((int)HttpStatusCode.InternalServerError, "Erro interno no servidor.")]
     public ActionResult RecuperarTodos()
@@ -33,7 +33,7 @@ public class AreaDeclividadeMaior45Controller : ControllerBase
     [HttpGet("territorio={territorioId:int}")]
     [SwaggerOperation(Summary = "Lista as áreas com declividade maior que 45 graus do território informado.")]
     [SwaggerResponse((int)HttpStatusCode.OK, "Requisição realizada com sucesso.", typeof(AreaDeclividadeMaior45))]
-    [SwaggerResponse((int)HttpStatusCode.NoContent, "Nenhuma área encontrada.")]
+    [SwaggerResponse((int)HttpStatusCode.NotFound, "Nenhuma área encontrada.", typeof(AreaDeclividadeMaior45))]
     [SwaggerResponse((int)HttpStatusCode.BadRequest, "Ocorreu um erro com a requisição.", typeof(Message))]
     [SwaggerResponse((int)HttpStatusCode.InternalServerError, "Erro interno no servidor.")]
     public IActionResult RecuperarPorTerritorioId(int territorioId)
