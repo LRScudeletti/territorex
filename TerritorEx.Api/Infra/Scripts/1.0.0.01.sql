@@ -1,16 +1,4 @@
-﻿----------------------------
--- Data alteração | Usuário | Nº Card | Descrição
--- 19/11/2022 | Luiz Rogério Scudeletti | Sem card | Inserindo script 1.0.0.01 na VersaoBanco
-----------------------------
-
-PRINT 'Inserindo script 1.0.0.01 na VersaoBanco'
-
-INSERT INTO VersaoBanco (Sistema,Versao,UsuarioAtualizacao,DataAtualizacao)
-SELECT 'TerritorEX' AS Sistema, '1.0.0.01' AS Versao, 'SCUDX' AS UsuarioAtualizacao, GETDATE() AS DataAtualizacao
- WHERE NOT EXISTS (SELECT 1 FROM VersaoBanco WHERE Sistema = 'TerritorEX' AND Versao = '1.0.0.01');
-GO
-
-----------------------------]
+﻿----------------------------]
 -- Data alteração | Usuário | Nº Card | Descrição
 -- 19/11/2022 | Luiz Rogério Scudeletti | Sem card | Inserindo dados na tabela NivelTerritorio
 ----------------------------

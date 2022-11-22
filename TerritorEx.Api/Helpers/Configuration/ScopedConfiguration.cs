@@ -5,7 +5,7 @@ namespace TerritorEx.Api.Helpers.Configuration;
 
 public static class ScopedConfiguration
 {
-    public static void AdicionarInterface(IServiceCollection services)
+    public static void AddInterface(IServiceCollection services)
     {
         services.AddScoped<IAreaAltitudeSuperior1800, AreaAltitudeSuperior1800Service>();
         services.AddScoped<IAreaBanhado, AreaBanhadoService>();

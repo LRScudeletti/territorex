@@ -5,7 +5,7 @@ namespace TerritorEx.Api.Localize;
 
 public static class Localization
 {
-    public static void AdicionarLocalization(IServiceCollection services)
+    public static void AddLocalization(IServiceCollection services)
     {
         services.AddLocalization(x =>
         {
