@@ -1,4 +1,6 @@
-﻿using TerritorEx.Api.Interfaces;
+﻿using Microsoft.Extensions.Localization;
+using TerritorEx.Api.Interfaces;
+using TerritorEx.Api.Localize;
 using TerritorEx.Api.Models;
 using TerritorEx.Api.Repositories;
 
@@ -6,12 +8,19 @@ namespace TerritorEx.Api.Services;
 
 public class AreaImovelService : IAreaImovel
 {
+    private readonly IStringLocalizer<Resource> _localizer;
+
+    public AreaImovelService(IStringLocalizer<Resource> localizer)
+    {
+        _localizer = localizer;
+    }
+
     public IReadOnlyList<AreaImovel> RecuperarTodos()
     {
         var area = AreaImovelRepository.RecuperarTodos();
 
         if (!area.Any())
-            throw new KeyNotFoundException(Properties.Resources.AreaNaoEncontrada);
+            throw new KeyNotFoundException(_localizer["AreaNaoEncontrada"]);
 
         return area;
     }
@@ -21,7 +30,7 @@ public class AreaImovelService : IAreaImovel
         var area = AreaImovelRepository.RecuperarPorTerritorioId(territorioId);
 
         if (!area.Any())
-            throw new KeyNotFoundException(Properties.Resources.AreaNaoEncontrada);
+            throw new KeyNotFoundException(_localizer["AreaNaoEncontrada"]);
 
         return area;
     }
@@ -31,7 +40,7 @@ public class AreaImovelService : IAreaImovel
         var area = AreaImovelRepository.RecuperarPorImovelId(imovelId);
 
         if (!area.Any())
-            throw new KeyNotFoundException(Properties.Resources.AreaNaoEncontrada);
+            throw new KeyNotFoundException(_localizer["AreaNaoEncontrada"]);
 
         return area;
     }
@@ -41,7 +50,7 @@ public class AreaImovelService : IAreaImovel
         var area = AreaImovelRepository.RecuperarPorTipoImovelId(tipoImovelId);
 
         if (!area.Any())
-            throw new KeyNotFoundException(Properties.Resources.AreaNaoEncontrada);
+            throw new KeyNotFoundException(_localizer["AreaNaoEncontrada"]);
 
         return area;
     }
@@ -51,7 +60,7 @@ public class AreaImovelService : IAreaImovel
         var area = AreaImovelRepository.RecuperarPorSituacaoImovelId(situacaoImovelId);
 
         if (!area.Any())
-            throw new KeyNotFoundException(Properties.Resources.AreaNaoEncontrada);
+            throw new KeyNotFoundException(_localizer["AreaNaoEncontrada"]);
 
         return area;
     }

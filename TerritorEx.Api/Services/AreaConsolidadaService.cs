@@ -1,4 +1,6 @@
-﻿using TerritorEx.Api.Interfaces;
+﻿using Microsoft.Extensions.Localization;
+using TerritorEx.Api.Interfaces;
+using TerritorEx.Api.Localize;
 using TerritorEx.Api.Models;
 using TerritorEx.Api.Repositories;
 
@@ -6,12 +8,19 @@ namespace TerritorEx.Api.Services;
 
 public class AreaConsolidadaService : IAreaConsolidada
 {
+    private readonly IStringLocalizer<Resource> _localizer;
+
+    public AreaConsolidadaService(IStringLocalizer<Resource> localizer)
+    {
+        _localizer = localizer;
+    }
+
     public IReadOnlyList<AreaConsolidada> RecuperarTodos()
     {
         var area = AreaConsolidadaRepository.RecuperarTodos();
 
         if (!area.Any())
-            throw new KeyNotFoundException(Properties.Resources.AreaNaoEncontrada);
+            throw new KeyNotFoundException(_localizer["AreaNaoEncontrada"]);
 
         return area;
     }
@@ -21,7 +30,7 @@ public class AreaConsolidadaService : IAreaConsolidada
         var area = AreaConsolidadaRepository.RecuperarPorTerritorioId(territorioId);
 
         if (!area.Any())
-            throw new KeyNotFoundException(Properties.Resources.AreaNaoEncontrada);
+            throw new KeyNotFoundException(_localizer["AreaNaoEncontrada"]);
 
         return area;
     }
