@@ -21,8 +21,8 @@ public class TipoImovelController : ControllerBase
     [HttpGet]
     [SwaggerOperation(Summary = "Lista os tipos de imóveis.")]
     [SwaggerResponse((int)HttpStatusCode.OK, "Requisição realizada com sucesso.", typeof(TipoImovel))]
-    [SwaggerResponse((int)HttpStatusCode.NoContent, "Nenhuma área encontrada.")]
-    [SwaggerResponse((int)HttpStatusCode.BadRequest, "Ocorreu um erro com a requisição.", typeof(Message))]
+    [SwaggerResponse((int)HttpStatusCode.NotFound, "Nenhuma área encontrada.", typeof(Mensagem.MensagemInfo))]
+    [SwaggerResponse((int)HttpStatusCode.BadRequest, "Ocorreu um erro com a requisição.", typeof(Mensagem.MensagemErro))]
     [SwaggerResponse((int)HttpStatusCode.InternalServerError, "Erro interno no servidor.")]
     public ActionResult RecuperarTodos()
     {
@@ -33,8 +33,8 @@ public class TipoImovelController : ControllerBase
     [HttpGet("tipo={tipoImovelId:int}")]
     [SwaggerOperation(Summary = "Carrega os dados do tipo informado.")]
     [SwaggerResponse((int)HttpStatusCode.OK, "Requisição realizada com sucesso.", typeof(TipoImovel))]
-    [SwaggerResponse((int)HttpStatusCode.NoContent, "Nenhuma área encontrada.")]
-    [SwaggerResponse((int)HttpStatusCode.BadRequest, "Ocorreu um erro com a requisição.", typeof(Message))]
+    [SwaggerResponse((int)HttpStatusCode.NotFound, "Nenhuma área encontrada.", typeof(Mensagem.MensagemInfo))]
+    [SwaggerResponse((int)HttpStatusCode.BadRequest, "Ocorreu um erro com a requisição.", typeof(Mensagem.MensagemErro))]
     [SwaggerResponse((int)HttpStatusCode.InternalServerError, "Erro interno no servidor.")]
     public IActionResult RecuperarPorId(int tipoImovelId)
     {

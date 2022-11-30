@@ -21,8 +21,8 @@ public class TerritorioController : ControllerBase
     [HttpGet]
     [SwaggerOperation(Summary = "Lista os territórios.")]
     [SwaggerResponse((int)HttpStatusCode.OK, "Requisição realizada com sucesso.", typeof(Territorio))]
-    [SwaggerResponse((int)HttpStatusCode.NoContent, "Nenhuma área encontrada.")]
-    [SwaggerResponse((int)HttpStatusCode.BadRequest, "Ocorreu um erro com a requisição.", typeof(Message))]
+    [SwaggerResponse((int)HttpStatusCode.NotFound, "Nenhum território encontrado.", typeof(Mensagem.MensagemInfo))]
+    [SwaggerResponse((int)HttpStatusCode.BadRequest, "Ocorreu um erro com a requisição.", typeof(Mensagem.MensagemErro))]
     [SwaggerResponse((int)HttpStatusCode.InternalServerError, "Erro interno no servidor.")]
     public ActionResult RecuperarTodos()
     {
@@ -33,8 +33,8 @@ public class TerritorioController : ControllerBase
     [HttpGet("territorio={territorioId:int}")]
     [SwaggerOperation(Summary = "Carrega as informações do território informado.")]
     [SwaggerResponse((int)HttpStatusCode.OK, "Requisição realizada com sucesso.", typeof(Territorio))]
-    [SwaggerResponse((int)HttpStatusCode.NoContent, "Nenhuma área encontrada.")]
-    [SwaggerResponse((int)HttpStatusCode.BadRequest, "Ocorreu um erro com a requisição.", typeof(Message))]
+    [SwaggerResponse((int)HttpStatusCode.NotFound, "Nenhum território encontrado.", typeof(Mensagem.MensagemInfo))]
+    [SwaggerResponse((int)HttpStatusCode.BadRequest, "Ocorreu um erro com a requisição.", typeof(Mensagem.MensagemErro))]
     [SwaggerResponse((int)HttpStatusCode.InternalServerError, "Erro interno no servidor.")]
     public IActionResult RecuperarPorId(int territorioId)
     {
@@ -45,8 +45,8 @@ public class TerritorioController : ControllerBase
     [HttpGet("nome={territorioNome}")]
     [SwaggerOperation(Summary = "Lista os territórios de acordo com o nome informado.")]
     [SwaggerResponse((int)HttpStatusCode.OK, "Requisição realizada com sucesso.", typeof(Territorio))]
-    [SwaggerResponse((int)HttpStatusCode.NoContent, "Nenhuma área encontrada.")]
-    [SwaggerResponse((int)HttpStatusCode.BadRequest, "Ocorreu um erro com a requisição.", typeof(Message))]
+    [SwaggerResponse((int)HttpStatusCode.NotFound, "Nenhum território encontrado.", typeof(Mensagem.MensagemInfo))]
+    [SwaggerResponse((int)HttpStatusCode.BadRequest, "Ocorreu um erro com a requisição.", typeof(Mensagem.MensagemErro))]
     [SwaggerResponse((int)HttpStatusCode.InternalServerError, "Erro interno no servidor.")]
     public ActionResult RecuperarPorNome(string territorioNome)
     {
@@ -57,8 +57,8 @@ public class TerritorioController : ControllerBase
     [HttpGet("pai={territorioSuperiorId:int}")]
     [SwaggerOperation(Summary = "Lista os territórios de acordo com o território superior informado.")]
     [SwaggerResponse((int)HttpStatusCode.OK, "Requisição realizada com sucesso.", typeof(Territorio))]
-    [SwaggerResponse((int)HttpStatusCode.NoContent, "Nenhuma área encontrada.")]
-    [SwaggerResponse((int)HttpStatusCode.BadRequest, "Ocorreu um erro com a requisição.", typeof(Message))]
+    [SwaggerResponse((int)HttpStatusCode.NotFound, "Nenhum território encontrado.", typeof(Mensagem.MensagemInfo))]
+    [SwaggerResponse((int)HttpStatusCode.BadRequest, "Ocorreu um erro com a requisição.", typeof(Mensagem.MensagemErro))]
     [SwaggerResponse((int)HttpStatusCode.InternalServerError, "Erro interno no servidor.")]
     public IActionResult RecuperarPorTerritorioSuperiorId(int territorioSuperiorId)
     {
@@ -69,8 +69,8 @@ public class TerritorioController : ControllerBase
     [HttpGet("nivel={nivelTerritorioId:int}")]
     [SwaggerOperation(Summary = "Lista os territórios de acordo com o nível informado.")]
     [SwaggerResponse((int)HttpStatusCode.OK, "Requisição realizada com sucesso.", typeof(Territorio))]
-    [SwaggerResponse((int)HttpStatusCode.NoContent, "Nenhuma área encontrada.")]
-    [SwaggerResponse((int)HttpStatusCode.BadRequest, "Ocorreu um erro com a requisição.", typeof(Message))]
+    [SwaggerResponse((int)HttpStatusCode.NotFound, "Nenhum território encontrado.", typeof(Mensagem.MensagemInfo))]
+    [SwaggerResponse((int)HttpStatusCode.BadRequest, "Ocorreu um erro com a requisição.", typeof(Mensagem.MensagemErro))]
     [SwaggerResponse((int)HttpStatusCode.InternalServerError, "Erro interno no servidor.")]
     public IActionResult RecuperarPorNivelTerritorioId(int nivelTerritorioId)
     {
@@ -81,8 +81,8 @@ public class TerritorioController : ControllerBase
     [HttpGet("hierarquia/territorio={territorioId:int}")]
     [SwaggerOperation(Summary = "Lista o hierarquia do território informado.")]
     [SwaggerResponse((int)HttpStatusCode.OK, "Requisição realizada com sucesso.", typeof(Territorio))]
-    [SwaggerResponse((int)HttpStatusCode.NoContent, "Nenhuma área encontrada.")]
-    [SwaggerResponse((int)HttpStatusCode.BadRequest, "Ocorreu um erro com a requisição.", typeof(Message))]
+    [SwaggerResponse((int)HttpStatusCode.NotFound, "Nenhum território encontrado.", typeof(Mensagem.MensagemInfo))]
+    [SwaggerResponse((int)HttpStatusCode.BadRequest, "Ocorreu um erro com a requisição.", typeof(Mensagem.MensagemErro))]
     [SwaggerResponse((int)HttpStatusCode.InternalServerError, "Erro interno no servidor.")]
     public IActionResult RecuperarHierarquia(int territorioId)
     {

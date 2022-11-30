@@ -21,8 +21,8 @@ public class AreaAltitudeSuperior1800Controller : ControllerBase
     [HttpGet]
     [SwaggerOperation(Summary = "Lista as áreas com altitude superior a 1.800 metros.")]
     [SwaggerResponse((int)HttpStatusCode.OK, "Requisição realizada com sucesso.", typeof(AreaAltitudeSuperior1800))]
-    [SwaggerResponse((int)HttpStatusCode.NotFound, "Nenhuma área encontrada.", typeof(AreaAltitudeSuperior1800))]
-    [SwaggerResponse((int)HttpStatusCode.BadRequest, "Ocorreu um erro com a requisição.", typeof(Message))]
+    [SwaggerResponse((int)HttpStatusCode.NotFound, "Nenhuma área encontrada.", typeof(Mensagem.MensagemInfo))]
+    [SwaggerResponse((int)HttpStatusCode.BadRequest, "Ocorreu um erro com a requisição.", typeof(Mensagem.MensagemErro))]
     [SwaggerResponse((int)HttpStatusCode.InternalServerError, "Erro interno no servidor.")]
     public ActionResult RecuperarTodos()
     {
@@ -32,8 +32,8 @@ public class AreaAltitudeSuperior1800Controller : ControllerBase
 
     [SwaggerOperation(Summary = "Lista as áreas com altitude superior a 1.800 metros do território informado.")]
     [SwaggerResponse((int)HttpStatusCode.OK, "Requisição realizada com sucesso.", typeof(AreaAltitudeSuperior1800))]
-    [SwaggerResponse((int)HttpStatusCode.NotFound, "Nenhuma área encontrada.", typeof(AreaAltitudeSuperior1800))]
-    [SwaggerResponse((int)HttpStatusCode.BadRequest, "Ocorreu um erro com a requisição.", typeof(Message))]
+    [SwaggerResponse((int)HttpStatusCode.NotFound, "Nenhuma área encontrada.", typeof(Mensagem.MensagemInfo))]
+    [SwaggerResponse((int)HttpStatusCode.BadRequest, "Ocorreu um erro com a requisição.", typeof(Mensagem.MensagemErro))]
     [SwaggerResponse((int)HttpStatusCode.InternalServerError, "Erro interno no servidor.")]
     [HttpGet("territorio={territorioId:int}")]
     public IActionResult RecuperarPorTerritorioId(int territorioId)
