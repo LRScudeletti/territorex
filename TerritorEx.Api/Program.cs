@@ -19,10 +19,7 @@ var app = builder.Build();
 
 Connection.AddConnectionString(builder);
 
-var dbUpSuccess = true;
-
-if (!app.Environment.IsDevelopment())
-    dbUpSuccess = DbUpConfiguration.AtualizarBancoDados();
+var dbUpSuccess = DbUpConfiguration.AtualizarBancoDados();
 
 DapperConfiguration.Configure();
 SwaggerConfiguration.App(app);
