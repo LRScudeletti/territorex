@@ -6,16 +6,26 @@
 		<ImplicitUsings>enable</ImplicitUsings>
 		<UserSecretsId>1cf76a74-dc7c-48e5-a84d-3fc64538989f</UserSecretsId>
 		<DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+		<Title>TerritorEX</Title>
+		<Authors>Luiz Rogério Scudeletti</Authors>
+		<Company>ScudX</Company>
+		<Description>Brazilian territory exploration system</Description>
+		<Copyright>Copyright © 2022</Copyright>
+		<RepositoryUrl>https://github.com/LRScudeletti/territorex</RepositoryUrl>
+		<AssemblyVersion>1.0.0.02</AssemblyVersion>
+		<FileVersion>1.0.0.02</FileVersion>
 	</PropertyGroup>
 
 	<ItemGroup>
 	  <None Remove="Infra\Scripts\1.0.0.00.sql" />
 	  <None Remove="Infra\Scripts\1.0.0.01.sql" />
+	  <None Remove="Infra\Scripts\1.0.0.02.sql" />
 	</ItemGroup>
 
 	<ItemGroup>
 	  <EmbeddedResource Include="Infra\Scripts\1.0.0.00.sql" />
 	  <EmbeddedResource Include="Infra\Scripts\1.0.0.01.sql" />
+	  <EmbeddedResource Include="Infra\Scripts\1.0.0.02.sql" />
 	</ItemGroup>
 
 	<ItemGroup>

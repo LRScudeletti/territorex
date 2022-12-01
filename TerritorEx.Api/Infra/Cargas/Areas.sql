@@ -204,8 +204,18 @@ INSERT INTO AreaImovel(
        DataAtualizacao) 
 SELECT TERRITORIOID,
        COD_IMOVEL,
-       TIPO_IMOVE,
-       SITUACAO,
+       CASE 
+	     WHEN TIPO_IMOVE = 'IRU' THEN 1
+		 WHEN TIPO_IMOVE = 'AST' THEN 2
+		 WHEN TIPO_IMOVE = 'PCT' THEN 3
+		 WHEN TIPO_IMOVE = 'CNFP' THEN 4
+	   END AS TIPO_IMOVE,
+       CASE 
+	     WHEN SITUACAO = 'AT' THEN 1
+		 WHEN SITUACAO = 'PE' THEN 2
+		 WHEN SITUACAO = 'CA' THEN 3
+		 WHEN SITUACAO = 'SU' THEN 4
+	   END AS SITUACAO,
        CONDICAO_I,
        try_convert(float(53),REPLACE(NUM_AREA,',','.')),
        try_convert(float(53),REPLACE(NUM_MODULO,',','.')),
@@ -268,8 +278,8 @@ INSERT INTO AreaNascenteOlhoDAgua(
        DataAtualizacao)
 SELECT TERRITORIOID,
        IDF,
-       NOM_TEMA,
-       try_convert(float(53),REPLACE(NUM_AREA,',','.')),
+       TEMA,
+       0,
        GEO.STAsBinary(),
        'SCUDX',
        GETDATE()
@@ -278,7 +288,7 @@ SELECT TERRITORIOID,
                      FROM AreaNascenteOlhoDAgua B
                     WHERE B.TerritorioId = A.TERRITORIOID 
                       AND B.SicarId = A.IDF
-                      AND B.Descricao = A.NOM_TEMA
+                      AND B.Descricao = A.TEMA
                       AND B.SHAPE = A.GEO.STAsBinary());
 GO
 
