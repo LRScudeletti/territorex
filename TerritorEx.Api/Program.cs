@@ -19,7 +19,10 @@ var app = builder.Build();
 
 Connection.AddConnectionString(builder);
 
-var dbUpSuccess = DbUpConfiguration.AtualizarBancoDados();
+// Só vai executar scripts se o ambiente for produção
+var dbUpSuccess = true;
+if (!app.Environment.IsDevelopment())
+    dbUpSuccess = DbUpConfiguration.AtualizarBancoDados();
 
 DapperConfiguration.Configure();
 SwaggerConfiguration.App(app);
@@ -33,5 +36,7 @@ app.UseHttpsRedirection();
 app.UseAuthorization();
 app.MapControllers();
 
-if (dbUpSuccess) 
+// Caso ocorra algum erro de script
+// a execução da api é interrompida
+if (dbUpSuccess)
     app.Run();
