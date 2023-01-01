@@ -16,9 +16,9 @@ public static class TerritorioRepository
 
     public static Territorio RecuperarPorId(int territorioId)
     {
-        using var connection = Utils.RecuperarConexao();
+        using var sqlConnection = Utils.RecuperarConexao();
 
-        return connection.Get<Territorio>(territorioId);
+        return sqlConnection.Get<Territorio>(territorioId);
     }
 
     public static IReadOnlyList<Territorio> RecuperarPorNome(string territorioNome)

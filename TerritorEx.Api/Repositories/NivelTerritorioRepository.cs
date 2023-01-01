@@ -15,9 +15,9 @@ public static class NivelTerritorioRepository
 
     public static NivelTerritorio RecuperarPorId(int nivelTerritorioId)
     {
-        using var connection = Utils.RecuperarConexao();
+        using var sqlConnection = Utils.RecuperarConexao();
 
-        return connection.Get<NivelTerritorio>(nivelTerritorioId);
+        return sqlConnection.Get<NivelTerritorio>(nivelTerritorioId);
     }
 }
 

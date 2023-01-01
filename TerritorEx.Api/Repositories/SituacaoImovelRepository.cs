@@ -15,9 +15,9 @@ public static class SituacaoImovelRepository
 
     public static SituacaoImovel RecuperarPorId(int situacaoImovelId)
     {
-        using var connection = Utils.RecuperarConexao();
+        using var sqlConnection = Utils.RecuperarConexao();
 
-        return connection.Get<SituacaoImovel>(situacaoImovelId);
+        return sqlConnection.Get<SituacaoImovel>(situacaoImovelId);
     }
 }
 

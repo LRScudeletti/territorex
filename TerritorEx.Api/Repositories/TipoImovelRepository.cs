@@ -15,9 +15,9 @@ public static class TipoImovelRepository
 
     public static TipoImovel RecuperarPorId(int tipoImovelId)
     {
-        using var connection = Utils.RecuperarConexao();
+        using var sqlConnection = Utils.RecuperarConexao();
 
-        return connection.Get<TipoImovel>(tipoImovelId);
+        return sqlConnection.Get<TipoImovel>(tipoImovelId);
     }
 }
 
