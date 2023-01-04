@@ -37,12 +37,11 @@ public static class Utils
             TipoLog.Error => RecuperarParametroAppSettings("Paths:LogError"),
             TipoLog.Warning => RecuperarParametroAppSettings("Paths:LogWarning"),
             TipoLog.Information => RecuperarParametroAppSettings("Paths:LogInformation"),
-            _ => "C:"
+            _ => @"C:\TerritorEx\Api\Logs"
         };
 
         if (!Directory.Exists(basePath))
-            if (basePath != null)
-                Directory.CreateDirectory(basePath);
+            Directory.CreateDirectory(basePath!);
 
         var pathLogs = string.Concat(basePath, "\\", ConverterData(DateTime.Now, "log"), ".txt");
         var logFileInfo = new FileInfo(pathLogs);
