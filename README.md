@@ -1,1 +1,1 @@
-# :earth_americas: Sistema para exploração do território brasileiro.
+# :earth_americas: Sistema para exploraÃ§Ã£o do territÃ³rio rural brasileiro.
