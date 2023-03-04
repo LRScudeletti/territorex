@@ -9,8 +9,8 @@ public static class InjectorConfiguration
     {
         services.AddScoped<IAreaAltitudeSuperior1800, AreaAltitudeSuperior1800Service>();
         services.AddScoped<IAreaBanhado, AreaBanhadoService>();
-        // services.AddScoped<IAreaBordaChapada, AreaBordaChapadaService>();
-        // services.AddScoped<IAreaConsolidada, AreaConsolidadaService>();
+        services.AddScoped<IAreaBordaChapada, AreaBordaChapadaService>();
+        services.AddScoped<IAreaConsolidada, AreaConsolidadaService>();
         // services.AddScoped<IAreaDeclividadeMaior45, AreaDeclividadeMaior45Service>();
         // services.AddScoped<IAreaHidrografia, AreaHidrografiaService>();
         // services.AddScoped<IAreaImovel, AreaImovelService>();

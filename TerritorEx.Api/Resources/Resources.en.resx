@@ -153,4 +153,10 @@
   <data name="swagger_summary_area_banhado_id" xml:space="preserve">
     <value>Lists the swamp areas of the informed territory.</value>
   </data>
+  <data name="swagger_summary_area_borda_chapada" xml:space="preserve">
+    <value>List areas with flat terrain</value>
+  </data>
+  <data name="swagger_summary_area_borda_chapada_id" xml:space="preserve">
+    <value>List areas with flat terrain of the informed territory.</value>
+  </data>
 </root>

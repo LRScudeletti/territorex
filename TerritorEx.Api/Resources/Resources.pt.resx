@@ -153,4 +153,10 @@
   <data name="swagger_summary_area_banhado_id" xml:space="preserve">
     <value>Lista as áreas com banhados do território informado.</value>
   </data>
+  <data name="swagger_summary_area_borda_chapada" xml:space="preserve">
+    <value>Lista as áreas com bordas chapadas.</value>
+  </data>
+  <data name="swagger_summary_area_borda_chapada_id" xml:space="preserve">
+    <value>Lista as áreas com bordas chapadas do território informado.</value>
+  </data>
 </root>
