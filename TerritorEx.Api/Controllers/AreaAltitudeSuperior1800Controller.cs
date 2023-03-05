@@ -18,7 +18,7 @@ public class AreaAltitudeSuperior1800Controller : ControllerBase
         _area = area;
     }
 
-    #region [ Swagger RecuperarTodos ]
+    #region [ Documentação Swagger RecuperarTodos ]
     [SwaggerOperation(Summary = "swagger_summary_area_altitude_superior_1800")]
     [SwaggerResponse((int)HttpStatusCode.OK, "swagger_response_200", typeof(Area))]
     [SwaggerResponse((int)HttpStatusCode.BadRequest, "swagger_response_400", typeof(Message.MessageError))]
@@ -33,7 +33,7 @@ public class AreaAltitudeSuperior1800Controller : ControllerBase
         return Ok(area);
     }
 
-    #region [ Swagger RecuperarPorTerritorioId ]
+    #region [ Documentação Swagger RecuperarPorTerritorioId ]
     [SwaggerOperation(Summary = "swagger_summary_area_altitude_superior_1800_id")]
     [SwaggerResponse((int)HttpStatusCode.OK, "swagger_response_200", typeof(Area))]
     [SwaggerResponse((int)HttpStatusCode.BadRequest, "swagger_response_400", typeof(Message.MessageError))]

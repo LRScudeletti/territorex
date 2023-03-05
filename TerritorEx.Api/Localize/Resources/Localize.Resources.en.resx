@@ -118,45 +118,51 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="area_nao_encontrada" xml:space="preserve">
-    <value>Área não encontrada.</value>
+    <value>Area not found.</value>
   </data>
   <data name="model_area_id" xml:space="preserve">
-    <value>ID interno da área</value>
+    <value>Area internal ID</value>
   </data>
   <data name="supported_languages" xml:space="preserve">
-    <value>Idiomas suportados</value>
+    <value>Supported languages</value>
   </data>
   <data name="swagger_description" xml:space="preserve">
-    <value>Documentação da API do sistema TerritorEx - Sistema de Análise do Território Rural Brasileiro.</value>
+    <value>TerritorEx system API documentation - Brazilian Rural Territory Analysis System.</value>
   </data>
   <data name="swagger_response_200" xml:space="preserve">
-    <value>Requisição realizada com sucesso.</value>
+    <value>Request successfully completed.</value>
   </data>
   <data name="swagger_response_400" xml:space="preserve">
-    <value>Ocorreu um erro com a requisição.</value>
+    <value>An error occurred with the request.</value>
   </data>
   <data name="swagger_response_404" xml:space="preserve">
-    <value>Nenhuma área encontrada.</value>
+    <value>No areas found.</value>
   </data>
   <data name="swagger_response_500" xml:space="preserve">
-    <value>Erro interno no servidor.</value>
+    <value>Internal server error.</value>
   </data>
   <data name="swagger_summary_area_altitude_superior_1800" xml:space="preserve">
-    <value>Lista as áreas com altitude superior a 1.800 metros.</value>
+    <value>Lists areas with an altitude greater than 1,800 meters.</value>
   </data>
   <data name="swagger_summary_area_altitude_superior_1800_id" xml:space="preserve">
-    <value>Lista as áreas com altitude superior a 1.800 metros do território informado.</value>
+    <value>Lists the areas with an altitude greater than 1,800 meters from the informed territory.</value>
   </data>
   <data name="swagger_summary_area_banhado" xml:space="preserve">
-    <value>Lista as áreas com banhados.</value>
+    <value>Lists areas with swamps.</value>
   </data>
   <data name="swagger_summary_area_banhado_id" xml:space="preserve">
-    <value>Lista as áreas com banhados do território informado.</value>
+    <value>Lists the swamp areas of the informed territory.</value>
   </data>
   <data name="swagger_summary_area_borda_chapada" xml:space="preserve">
-    <value>Lista as áreas com bordas chapadas.</value>
+    <value>List areas with flat terrain.</value>
   </data>
   <data name="swagger_summary_area_borda_chapada_id" xml:space="preserve">
-    <value>Lista as áreas com bordas chapadas do território informado.</value>
+    <value>List areas with flat terrain of the informed territory.</value>
+  </data>
+  <data name="swagger_summary_area_consolidada" xml:space="preserve">
+    <value>Lists the consolidated areas.</value>
+  </data>
+  <data name="swagger_summary_area_consolidada_id" xml:space="preserve">
+    <value>Lists the consolidated areas of the informed territory.</value>
   </data>
 </root>

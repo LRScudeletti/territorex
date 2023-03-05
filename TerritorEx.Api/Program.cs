@@ -3,15 +3,17 @@ using TerritorEx.Api.Helpers;
 using TerritorEx.Api.Middlewares;
 
 var builder = WebApplication.CreateBuilder(args);
+var configuration = builder.Configuration;
 
 { // Services
-    builder.Services.AddControllers();
-    builder.Services.Register();
+    var services = builder.Services;
+    services.AddControllers();
+    services.Register();
 
-    builder.Services.AddLocalization(options => { options.ResourcesPath = "Resources"; });
-    builder.Services.AddSwaggerGen(builder.Configuration);
-    builder.Services.AddHttpContextAccessor();
-    builder.Services.AddRouting(x => x.LowercaseUrls = true);
+    services.AddLocalization(x => { x.ResourcesPath = @"Localize\Resources"; });
+    services.AddSwaggerGen(configuration);
+    services.AddHttpContextAccessor();
+    services.AddRouting(x => x.LowercaseUrls = true);
 
     // Configurações do banco de dados
     Connection.AddConnectionString(builder);
@@ -20,12 +22,14 @@ var builder = WebApplication.CreateBuilder(args);
 { // Application
     var app = builder.Build();
 
+    app.UseLocalizationMiddleware(configuration);
+
     // Só vai executar os scripts se o ambiente for produção
     var dbUpSuccess = true;
     if (!app.Environment.IsDevelopment())
         dbUpSuccess = DbUpConfiguration.AtualizarBancoDados();
 
-    SwaggerConfiguration.UseSwaggerUi(app);
+    app.UseSwaggerUi();
 
     app.UseStaticFiles();
     app.UseMiddleware<ErrorHandlerMiddleware>();

@@ -9,6 +9,7 @@ var resource_globalization = {
     "AvailableValues": "Valores disponíveis",
     "ExampleValue": "Valor de exemplo",
     "Schema": "Esquema",
+    "Schemas": "Esquemas",
     "Responses": "Respostas",
     "RequestUrl": "URL da solicitação",
     "ServerResponse": "Resposta do servidor",
@@ -17,7 +18,6 @@ var resource_globalization = {
     "RequestBody": "Corpo da solicitação",
     "ResponseBody": "Corpo da resposta",
     "ResponseHeaders": "Cabeçalhos da resposta",
-    "Schemas": "Esquemas",
     "Authorize": "Autorizar",
     "MediaType": "Tipo de mídia",
     "Download": "Baixar",
@@ -26,5 +26,7 @@ var resource_globalization = {
     "Links": "Links",
     "NoLinks": "Sem links",
     "SendEmptyValue": "Enviar valor vazio",
-    "ValidationsErrors": "Por favor, Corrija os seguintes erros de validação e tente novamente.",
+    "ResponseStatusId": "Erro: o status da resposta é",
+    "ValidationErrors": "Por favor, corrija os seguintes erros de validação e tente novamente.",
+    "RequiredField": "Campo obrigatório não foi preenchido."
 };

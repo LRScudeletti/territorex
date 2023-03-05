@@ -9,6 +9,7 @@ var resource_globalization = {
     "AvailableValues": "Available values",
     "ExampleValue": "Example value",
     "Schema": "Schema",
+    "Schemas": "Schemas",
     "Responses": "Responses",
     "RequestUrl": "Request URL",
     "ServerResponse": "Server response",
@@ -17,7 +18,6 @@ var resource_globalization = {
     "RequestBody": "Request body",
     "ResponseBody": "Response body",
     "ResponseHeaders": "Response headers",
-    "Schemas": "Schemas",
     "Authorize": "Authorize",
     "MediaType": "Media type",
     "Download": "Download",
@@ -26,5 +26,7 @@ var resource_globalization = {
     "Links": "Links",
     "NoLinks": "No links",
     "SendEmptyValue": "Send empty value",
-    "ValidationsErrors": "Please, correct the following validation errors and try again.",
+    "ResponseStatusId": "Error: response status is",
+    "ValidationErrors": "Please correct the following validation errors and try again.",
+    "RequiredField": "Required field is not provided"
 };

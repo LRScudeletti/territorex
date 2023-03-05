@@ -5,6 +5,7 @@ using Microsoft.OpenApi.Models;
 using Swashbuckle.AspNetCore.SwaggerGen;
 using Swashbuckle.AspNetCore.SwaggerUI;
 using TerritorEx.Api.Extensions;
+using TerritorEx.Api.Localize;
 
 namespace TerritorEx.Api.Configurations;
 
@@ -51,7 +52,7 @@ public static class SwaggerConfiguration
         });
     }
 
-    public static void UseSwaggerUi(WebApplication app)
+    public static void UseSwaggerUi(this WebApplication app)
     {
         if (!app.Environment.IsDevelopment()) return;
 

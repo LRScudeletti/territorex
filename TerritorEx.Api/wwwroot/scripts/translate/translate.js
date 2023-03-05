@@ -33,7 +33,6 @@ function allTranslation() {
     });
 
     $.initialize('table.parameters', function () {
-
         $(this).find('th.parameters-col_name').html(resource_globalization["Name"]);
         $(this).find('th.parameters-col_description').html(resource_globalization["Description"]);
     });
@@ -42,7 +41,36 @@ function allTranslation() {
         $(this).html(resource_globalization["TryItOut"]);
     });
 
-    $(document).click(function () {
+    $.initialize('button.try-out__btn.cancel', function () {
+        $(this).html(resource_globalization["Cancel"]);
+    });
+
+    $.initialize('button.models-control > span', function () {
+        $(this).html(resource_globalization["Schemas"]);
+    });
+
+    // Feio, mas sem alternativa
+    $.initialize('.renderedMarkdown > p', function () {
+        if ($(this).html().startsWith("Error: response status is")) {
+            $(this).html($(this).html().replace("Error: response status is", resource_globalization["ResponseStatusId"]));
+        }
+    });
+
+    $.initialize('div.validation-errors.errors-wrapper', function () {
+        if ($(this).html().startsWith("Please correct the following validation errors and try again.")) {
+            $(this).html($(this).html().replace("Please correct the following validation errors and try again.", resource_globalization["ValidationErrors"]));
+
+            var p = $(this).find('ul > li');
+            p.each(function () {
+                if ($(this).html().includes("Required field is not provided")) {
+                    $(this).html($(this).html().replace("Required field is not provided", resource_globalization["RequiredField"]));
+                }
+            });
+        }
+    });
+    //
+
+    $(document).click(function (event) {
         var targ = $(event.target);
 
         if (targ.is(".btn.try-out__btn.cancel")) {
@@ -95,14 +123,20 @@ function allTranslation() {
         $(this).prev('h4').html(resource_globalization["RequestUrl"]);
     });
 
+    $.initialize("button[data-name='example']", function () {
+        $(this).html(resource_globalization["ExampleValue"]);
+    });
+
+    $.initialize("button[data-name='model']", function () {
+        $(this).html(resource_globalization["Schema"]);
+    });
+
     $.initialize('table.responses-table.live-responses-table', function () {
         $(this).prev('h4').html(resource_globalization["ServerResponse"]);
         $(this).find('tr.responses-header > td.response-col_status').html(resource_globalization["Code"]);
         $(this).find('tr.responses-header > td.response-col_description').html(resource_globalization["Details"]);
-
         $(this).find('tr.response > td.response-col_description').find('h5:first').html(resource_globalization["ResponseBody"]);
         $(this).find('tr.response > td.response-col_description').find('h5').eq(1).html(resource_globalization["ResponseHeaders"]);
-
         $(this).parent('div').next('h4').html(resource_globalization["Responses"]);
     });
 
@@ -139,8 +173,8 @@ $(document).ready(function () {
 
             var sel = $(this).find("#select");
             var lang = getQueryStringParams(sel.val(), 'lang');
-            if (lang != null && lang != "") {
 
+            if (lang != null && lang != "") {
                 var lbl = $(this);
                 var script = loadjs('./scripts/translate/' + lang + '.js')
                 script.onload = function () {
@@ -152,6 +186,7 @@ $(document).ready(function () {
             $(sel).change(function () {
                 $('script[id="languagefile"]').remove();
                 var lang = getQueryStringParams($(this).val(), 'lang');
+
                 if (lang != null && lang != "") {
                     var script = loadjs('./scripts/translate/' + lang + '.js')
                     script.onload = function () {

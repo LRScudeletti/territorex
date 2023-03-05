@@ -18,7 +18,7 @@ public class AreaBanhadoController : ControllerBase
         _area = area;
     }
 
-    #region [ Documentação RecuperarTodos ]
+    #region [ Documentação Swagger RecuperarTodos ]
     [SwaggerOperation(Summary = "swagger_summary_area_banhado")]
     [SwaggerResponse((int)HttpStatusCode.OK, "swagger_response_200", typeof(Area))]
     [SwaggerResponse((int)HttpStatusCode.BadRequest, "swagger_response_400", typeof(Message.MessageError))]
@@ -33,7 +33,7 @@ public class AreaBanhadoController : ControllerBase
         return Ok(area);
     }
 
-    #region [ Documentação RecuperarPorTerritorioId ]
+    #region [ Documentação Swagger RecuperarPorTerritorioId ]
     [SwaggerOperation(Summary = "swagger_summary_area_banhado_id")]
     [SwaggerResponse((int)HttpStatusCode.OK, "swagger_response_200", typeof(Area))]
     [SwaggerResponse((int)HttpStatusCode.BadRequest, "swagger_response_400", typeof(Message.MessageError))]

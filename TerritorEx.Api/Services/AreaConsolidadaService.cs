@@ -1,5 +1,6 @@
 ﻿using Microsoft.Extensions.Localization;
 using TerritorEx.Api.Interfaces;
+using TerritorEx.Api.Localize;
 using TerritorEx.Api.Models;
 using TerritorEx.Api.Repositories;
 

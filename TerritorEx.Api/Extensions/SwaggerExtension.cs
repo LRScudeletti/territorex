@@ -2,6 +2,7 @@
 using Microsoft.OpenApi.Any;
 using Microsoft.OpenApi.Models;
 using Swashbuckle.AspNetCore.SwaggerGen;
+using TerritorEx.Api.Localize;
 
 namespace TerritorEx.Api.Extensions;
 
@@ -9,7 +10,7 @@ public class CustomOperationFilter : IOperationFilter
 {
     private readonly IConfiguration _configuration;
     private readonly IHttpContextAccessor _httpContextAccessor;
-    private readonly IStringLocalizer _localizer;
+    private readonly IStringLocalizer<Resources> _localizer;
 
     public CustomOperationFilter(IConfiguration configuration, IHttpContextAccessor httpContextAccessor, IStringLocalizer<Resources> localizer)
     {

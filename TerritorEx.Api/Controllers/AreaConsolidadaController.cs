@@ -8,7 +8,7 @@ using TerritorEx.Api.Models;
 namespace TerritorEx.Api.Controllers;
 
 [ApiController]
-[Route("[controller]/recuperar")]
+[Route("[controller]")]
 public class AreaConsolidadaController : ControllerBase
 {
     private readonly IAreaConsolidada _area;
@@ -18,24 +18,30 @@ public class AreaConsolidadaController : ControllerBase
         _area = area;
     }
 
+    #region [ Documentação Swagger RecuperarTodos ]
+    [SwaggerOperation(Summary = "swagger_summary_area_consolidada")]
+    [SwaggerResponse((int)HttpStatusCode.OK, "swagger_response_200", typeof(Area))]
+    [SwaggerResponse((int)HttpStatusCode.BadRequest, "swagger_response_400", typeof(Message.MessageError))]
+    [SwaggerResponse((int)HttpStatusCode.NotFound, "swagger_response_404", typeof(Message.MessageInfo))]
+    [SwaggerResponse((int)HttpStatusCode.InternalServerError, "swagger_response_500")]
+    #endregion
+
     [HttpGet]
-    [SwaggerOperation(Summary = "Lista as áreas consolidadas.")]
-    [SwaggerResponse((int)HttpStatusCode.OK, "Requisição realizada com sucesso.", typeof(Area))]
-    [SwaggerResponse((int)HttpStatusCode.NotFound, "Nenhuma área encontrada.", typeof(Message.MessageInfo))]
-    [SwaggerResponse((int)HttpStatusCode.BadRequest, "Ocorreu um erro com a requisição.", typeof(Message.MessageError))]
-    [SwaggerResponse((int)HttpStatusCode.InternalServerError, "Erro interno no servidor.")]
     public ActionResult RecuperarTodos()
     {
         var area = _area.RecuperarTodos();
         return Ok(area);
     }
 
+    #region [ Documentação Swagger RecuperarPorTerritorioId ]
+    [SwaggerOperation(Summary = "swagger_summary_area_consolidada_id")]
+    [SwaggerResponse((int)HttpStatusCode.OK, "swagger_response_200", typeof(Area))]
+    [SwaggerResponse((int)HttpStatusCode.BadRequest, "swagger_response_400", typeof(Message.MessageError))]
+    [SwaggerResponse((int)HttpStatusCode.NotFound, "swagger_response_404", typeof(Message.MessageInfo))]
+    [SwaggerResponse((int)HttpStatusCode.InternalServerError, "swagger_response_500")]
+    #endregion
+
     [HttpGet("territorio={territorioId:int}")]
-    [SwaggerOperation(Summary = "Lista as áreas consolidadas do território informado.")]
-    [SwaggerResponse((int)HttpStatusCode.OK, "Requisição realizada com sucesso.", typeof(Area))]
-    [SwaggerResponse((int)HttpStatusCode.NotFound, "Nenhuma área encontrada.", typeof(Message.MessageInfo))]
-    [SwaggerResponse((int)HttpStatusCode.BadRequest, "Ocorreu um erro com a requisição.", typeof(Message.MessageError))]
-    [SwaggerResponse((int)HttpStatusCode.InternalServerError, "Erro interno no servidor.")]
     public IActionResult RecuperarPorTerritorioId(int territorioId)
     {
         var area = _area.RecuperarPorTerritorioId(territorioId);
