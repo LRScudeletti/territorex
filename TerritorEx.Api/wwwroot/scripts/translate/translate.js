@@ -45,6 +45,17 @@ function allTranslation() {
         $(this).html(resource_globalization["Cancel"]);
     });
 
+    $(document).click(function (event) {
+        var target = $(event.target);
+
+        if (target.is(".btn.try-out__btn.cancel")) {
+            target.text(resource_globalization["Cancel"]);
+        }
+        else if (target.is(".btn.try-out__btn") && !target.hasClass("cancel")) {
+            targ.text(resource_globalization["TryItOut"]);
+        }
+    });
+
     $.initialize('button.models-control > span', function () {
         $(this).html(resource_globalization["Schemas"]);
     });
@@ -69,18 +80,6 @@ function allTranslation() {
         }
     });
     //
-
-    $(document).click(function (event) {
-        var targ = $(event.target);
-
-        if (targ.is(".btn.try-out__btn.cancel")) {
-            targ.text(resource_globalization["Cancel"]);
-        }
-
-        if (targ.is(".btn.try-out__btn") && !targ.hasClass("cancel")) {
-            targ.text(resource_globalization["TryItOut"]);
-        }
-    });
 
     $.initialize('button.execute', function () {
         $(this).html(resource_globalization["Execute"]);
@@ -120,7 +119,11 @@ function allTranslation() {
     });
 
     $.initialize('.request-url', function () {
-        $(this).prev('h4').html(resource_globalization["RequestUrl"]);
+        $(this).children().first().html(resource_globalization["RequestUrl"]);
+    });
+
+    $.initialize('.view-line-link.copy-to-clipboard', function () {
+        $(this).attr("title", resource_globalization["CopyClipboard"]);
     });
 
     $.initialize("button[data-name='example']", function () {

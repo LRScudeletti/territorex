@@ -43,14 +43,14 @@
 	</ItemGroup>
 
 	<ItemGroup>
+		<EmbeddedResource Include="wwwroot\scripts\jquery-3.6.3.min.js" />
+		<EmbeddedResource Include="wwwroot\scripts\jquery.initialize.min.js" />
+		<EmbeddedResource Include="wwwroot\scripts\translate\translate.js" />
+		<EmbeddedResource Include="wwwroot\scripts\translate\en.js" />
+		<EmbeddedResource Include="wwwroot\scripts\translate\pt.js" />
 		<EmbeddedResource Include="Infrastructure\Scripts\1.0.0.0.sql" />
 		<EmbeddedResource Include="Infrastructure\Scripts\1.0.0.1.sql" />
 		<EmbeddedResource Include="Infrastructure\Scripts\1.0.0.2.sql" />
-		<EmbeddedResource Include="wwwroot\scripts\jquery-3.6.3.min.js" />
-		<EmbeddedResource Include="wwwroot\scripts\jquery.initialize.min.js" />
-		<EmbeddedResource Include="wwwroot\scripts\translate\en.js" />
-		<EmbeddedResource Include="wwwroot\scripts\translate\pt.js" />
-		<EmbeddedResource Include="wwwroot\scripts\translate\translate.js" />
 	</ItemGroup>
 
 	<ItemGroup>

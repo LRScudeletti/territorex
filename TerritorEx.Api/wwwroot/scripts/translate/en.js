@@ -4,7 +4,7 @@ var resource_globalization = {
     "SelectDefinition": "Select a definition",
     "TryItOut": "Try it out",
     "Cancel": "Cancel",
-    "Execute:": "Esegui",
+    "Execute:": "Execute",
     "Clear": "Clear",
     "AvailableValues": "Available values",
     "ExampleValue": "Example value",
@@ -28,5 +28,8 @@ var resource_globalization = {
     "SendEmptyValue": "Send empty value",
     "ResponseStatusId": "Error: response status is",
     "ValidationErrors": "Please correct the following validation errors and try again.",
-    "RequiredField": "Required field is not provided"
+    "RequiredField": "Required field is not provided.",
+    "CollapseOperation": "Collapse operation",
+    "ExpandOperation": "Expand operation",
+    "CopyClipboard": "Copy to clipboard"
 };
