@@ -162,7 +162,19 @@
   <data name="swagger_summary_area_consolidada" xml:space="preserve">
     <value>Lista as áreas consolidadas.</value>
   </data>
+  <data name="swagger_summary_area_consolidada_declividade_maior_45" xml:space="preserve">
+    <value>Lista as áreas com declividade maior que 45 graus.</value>
+  </data>
+  <data name="swagger_summary_area_consolidada_declividade_maior_45_id" xml:space="preserve">
+    <value>Lista as áreas com declividade maior que 45 graus do território informado.</value>
+  </data>
   <data name="swagger_summary_area_consolidada_id" xml:space="preserve">
     <value>Lista as áreas consolidadas do território informado.</value>
+  </data>
+  <data name="swagger_summary_area_hidrografia" xml:space="preserve">
+    <value>Lista as áreas de hidrografia.</value>
+  </data>
+  <data name="swagger_summary_area_hidrografia_id" xml:space="preserve">
+    <value>Lista as áreas de hidrografia do território informado.</value>
   </data>
 </root>

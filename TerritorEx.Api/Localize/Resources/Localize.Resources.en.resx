@@ -165,4 +165,16 @@
   <data name="swagger_summary_area_consolidada_id" xml:space="preserve">
     <value>Lists the consolidated areas of the informed territory.</value>
   </data>
+  <data name="swagger_summary_area_declividade_maior_45" xml:space="preserve">
+    <value>Lists areas with a slope greater than 45 degrees.</value>
+  </data>
+  <data name="swagger_summary_area_declividade_maior_45_id" xml:space="preserve">
+    <value>Lists areas with a slope greater than 45 degrees of the informed territory.</value>
+  </data>
+  <data name="swagger_summary_area_hidrografia" xml:space="preserve">
+    <value>Lists hydrographic areas.</value>
+  </data>
+  <data name="swagger_summary_area_hidrografia_id" xml:space="preserve">
+    <value>Lists the hydrographic areas of the informed territory.</value>
+  </data>
 </root>
