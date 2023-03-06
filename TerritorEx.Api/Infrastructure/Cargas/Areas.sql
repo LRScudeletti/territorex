@@ -198,7 +198,7 @@ INSERT INTO AreaImovel(
        SituacaoImovelId,
        Condicao,
        AreaHectare,
-       AreaHectareFiscal,
+       ModuloFiscal,
        Shape,
        UsuarioAtualizacao,
        DataAtualizacao) 

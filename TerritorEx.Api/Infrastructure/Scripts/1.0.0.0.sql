@@ -348,7 +348,7 @@ BEGIN
        SituacaoImovelId   INT             NULL,
        Condicao           VARCHAR (300)   NULL,
        AreaHectare        FLOAT (53)      NULL,
-       AreaHectareFiscal  FLOAT (53)      NULL,
+       ModuloFiscal       FLOAT (53)      NULL,
        Shape              VARBINARY (MAX) NULL,
        UsuarioAtualizacao VARCHAR (50)    NOT NULL,
        DataAtualizacao    DATETIME        NOT NULL,
