@@ -13,7 +13,7 @@ public static class InjectorConfiguration
         services.AddScoped<IAreaConsolidada, AreaConsolidadaService>();
         services.AddScoped<IAreaDeclividadeMaior45, AreaDeclividadeMaior45Service>();
         services.AddScoped<IAreaHidrografia, AreaHidrografiaService>();
-        // services.AddScoped<IAreaImovel, AreaImovelService>();
+        services.AddScoped<IAreaImovel, AreaImovelService>();
         // services.AddScoped<IAreaManguezal, AreaManguezalService>();
         // services.AddScoped<IAreaNascenteOlhoDAgua, AreaNascenteOlhoDAguaService>();
         // services.AddScoped<IAreaPousio, AreaPousioService>();
