@@ -177,4 +177,19 @@
   <data name="swagger_summary_area_hidrografia_id" xml:space="preserve">
     <value>Lists the hydrographic areas of the informed territory.</value>
   </data>
+  <data name="swagger_summary_area_imovel" xml:space="preserve">
+    <value>Lists the areas with properties.</value>
+  </data>
+  <data name="swagger_summary_area_imovel_id" xml:space="preserve">
+    <value>Lists the areas with properties of the informed territory.</value>
+  </data>
+  <data name="swagger_summary_area_imovel_imovel" xml:space="preserve">
+    <value>Lists the area of the property according to the informed CAR code.</value>
+  </data>
+  <data name="swagger_summary_area_situacao" xml:space="preserve">
+    <value>Lists the areas with properties with the informed situation.</value>
+  </data>
+  <data name="swagger_summary_area_tipo" xml:space="preserve">
+    <value>Lists the areas with properties with the informed type.</value>
+  </data>
 </root>
