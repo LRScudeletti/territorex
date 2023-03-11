@@ -45,17 +45,6 @@ function allTranslation() {
         $(this).html(resource_globalization["Cancel"]);
     });
 
-    $(document).click(function (event) {
-        var target = $(event.target);
-
-        if (target.is(".btn.try-out__btn.cancel")) {
-            target.text(resource_globalization["Cancel"]);
-        }
-        else if (target.is(".btn.try-out__btn") && !target.hasClass("cancel")) {
-            targ.text(resource_globalization["TryItOut"]);
-        }
-    });
-
     $.initialize('button.models-control > span', function () {
         $(this).html(resource_globalization["Schemas"]);
     });
@@ -126,6 +115,10 @@ function allTranslation() {
         $(this).attr("title", resource_globalization["CopyClipboard"]);
     });
 
+    $.initialize('.expand-operation', function () {
+        $(this).attr("title", resource_globalization["ExpandCollapseOperation"]);
+    });
+
     $.initialize("button[data-name='example']", function () {
         $(this).html(resource_globalization["ExampleValue"]);
     });
@@ -166,6 +159,19 @@ function allTranslation() {
 
     $.initialize('.response-col_links:not(.col_header)', function () {
         $(this).find('i').html(resource_globalization["NoLinks"]);
+    });
+
+    $(document).click(function (event) {
+        var target = $(event.target);
+
+        if (target.is(".btn.try-out__btn.cancel")) {
+            target.text(resource_globalization["Cancel"]);
+        }
+        else if (target.is(".btn.try-out__btn") && !target.hasClass("cancel")) {
+            targ.text(resource_globalization["TryItOut"]);
+        } else if (target.is("svg.arrow")) {
+            $('.expand-operation').attr("title", resource_globalization["ExpandCollapseOperation"]);
+        }
     });
 }
 

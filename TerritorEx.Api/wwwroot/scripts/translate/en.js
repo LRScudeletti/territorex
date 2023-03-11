@@ -29,7 +29,6 @@ var resource_globalization = {
     "ResponseStatusId": "Error: response status is",
     "ValidationErrors": "Please correct the following validation errors and try again.",
     "RequiredField": "Required field is not provided.",
-    "CollapseOperation": "Collapse operation",
-    "ExpandOperation": "Expand operation",
+    "ExpandCollapseOperation": "Expand or collapse operation",
     "CopyClipboard": "Copy to clipboard"
 };

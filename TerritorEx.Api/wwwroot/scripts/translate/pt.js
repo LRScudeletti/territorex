@@ -29,7 +29,6 @@ var resource_globalization = {
     "ResponseStatusId": "Erro: o status da resposta é",
     "ValidationErrors": "Por favor, corrija os seguintes erros de validação e tente novamente.",
     "RequiredField": "Um campo obrigatório não foi preenchido.",
-    "ExpandOperation": "Exibir operação",
-    "CollapseOperation": "Esconder operação",
+    "ExpandCollapseOperation": "Exibir ou esconder operação",
     "CopyClipboard": "Copiar para área de transferência"
 };
