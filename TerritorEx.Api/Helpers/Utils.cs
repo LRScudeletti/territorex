@@ -17,7 +17,7 @@ public static class Utils
         }
         catch (Exception exception)
         {
-            CriarLog(TipoLog.Error, exception.ToString(), false);
+            CriarLog(TipoLogEnum.Error, exception.ToString(), false);
             return null;
         }
     }
@@ -30,13 +30,13 @@ public static class Utils
         return _configuration.GetSection(string.Concat(nomeparametro)).Value;
     }
 
-    public static void CriarLog(TipoLog tipoLog, string mensagem, bool enviarEmail)
+    public static void CriarLog(TipoLogEnum tipoLog, string mensagem, bool enviarEmail)
     {
         var basePath = tipoLog switch
         {
-            TipoLog.Error => RecuperarParametroAppSettings("Paths:LogError"),
-            TipoLog.Warning => RecuperarParametroAppSettings("Paths:LogWarning"),
-            TipoLog.Information => RecuperarParametroAppSettings("Paths:LogInformation"),
+            TipoLogEnum.Error => RecuperarParametroAppSettings("Paths:LogError"),
+            TipoLogEnum.Warning => RecuperarParametroAppSettings("Paths:LogWarning"),
+            TipoLogEnum.Information => RecuperarParametroAppSettings("Paths:LogInformation"),
             _ => @"C:\TerritorEx\Api\Logs"
         };
 

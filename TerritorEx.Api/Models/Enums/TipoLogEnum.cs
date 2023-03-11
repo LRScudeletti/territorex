@@ -1,6 +1,6 @@
 ﻿namespace TerritorEx.Api.Models.Enums;
 
-public enum TipoLog
+public enum TipoLogEnum
 {
     Error,
     Warning,

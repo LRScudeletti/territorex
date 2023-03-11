@@ -45,12 +45,15 @@ public class ErrorHandlerMiddleware
                     break;
             }
 
-            var result = JsonSerializer.Serialize(new { errorMessage = exception.Message });
+            var result = JsonSerializer.Serialize(new Mensagem
+            {
+                Codigo = response.StatusCode,
+                Descricao = exception.Message,
+                Rastro = exception.StackTrace
+            });
 
-            Utils.CriarLog(TipoLog.Error, exception.ToString(), false);
-
-            if (response.StatusCode != (int)HttpStatusCode.InternalServerError)
-                await response.WriteAsync(result);
+            Utils.CriarLog(TipoLogEnum.Error, exception.ToString(), false);
+            await response.WriteAsync(result);
         }
     }
 }

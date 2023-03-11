@@ -21,9 +21,9 @@ public class AreaImovelController : ControllerBase
     #region [ Documentação Swagger RecuperarTodos ]
     [SwaggerOperation(Summary = "swagger_summary_area_imovel")]
     [SwaggerResponse((int)HttpStatusCode.OK, "swagger_response_200", typeof(Area))]
-    [SwaggerResponse((int)HttpStatusCode.BadRequest, "swagger_response_400", typeof(Message.MessageError))]
-    [SwaggerResponse((int)HttpStatusCode.NotFound, "swagger_response_404", typeof(Message.MessageInfo))]
-    [SwaggerResponse((int)HttpStatusCode.InternalServerError, "swagger_response_500")]
+    [SwaggerResponse((int)HttpStatusCode.BadRequest, "swagger_response_400", typeof(Mensagem))]
+    [SwaggerResponse((int)HttpStatusCode.NotFound, "swagger_response_404", typeof(Mensagem))]
+    [SwaggerResponse((int)HttpStatusCode.InternalServerError, "swagger_response_500", typeof(Mensagem))]
     #endregion
 
     [HttpGet]
@@ -37,9 +37,9 @@ public class AreaImovelController : ControllerBase
     #region [ Documentação Swagger RecuperarPorTerritorioId ]
     [SwaggerOperation(Summary = "swagger_summary_area_imovel_id")]
     [SwaggerResponse((int)HttpStatusCode.OK, "swagger_response_200", typeof(Area))]
-    [SwaggerResponse((int)HttpStatusCode.BadRequest, "swagger_response_400", typeof(Message.MessageError))]
-    [SwaggerResponse((int)HttpStatusCode.NotFound, "swagger_response_404", typeof(Message.MessageInfo))]
-    [SwaggerResponse((int)HttpStatusCode.InternalServerError, "swagger_response_500")]
+    [SwaggerResponse((int)HttpStatusCode.BadRequest, "swagger_response_400", typeof(Mensagem))]
+    [SwaggerResponse((int)HttpStatusCode.NotFound, "swagger_response_404", typeof(Mensagem))]
+    [SwaggerResponse((int)HttpStatusCode.InternalServerError, "swagger_response_500", typeof(Mensagem))]
     #endregion
 
     [HttpGet("territorio={territorioId:int}")]
@@ -52,9 +52,9 @@ public class AreaImovelController : ControllerBase
     #region [ Documentação Swagger RecuperarPorImovelId ]
     [SwaggerOperation(Summary = "swagger_summary_area_imovel_imovel")]
     [SwaggerResponse((int)HttpStatusCode.OK, "swagger_response_200", typeof(Area))]
-    [SwaggerResponse((int)HttpStatusCode.BadRequest, "swagger_response_400", typeof(Message.MessageError))]
-    [SwaggerResponse((int)HttpStatusCode.NotFound, "swagger_response_404", typeof(Message.MessageInfo))]
-    [SwaggerResponse((int)HttpStatusCode.InternalServerError, "swagger_response_500")]
+    [SwaggerResponse((int)HttpStatusCode.BadRequest, "swagger_response_400", typeof(Mensagem))]
+    [SwaggerResponse((int)HttpStatusCode.NotFound, "swagger_response_404", typeof(Mensagem))]
+    [SwaggerResponse((int)HttpStatusCode.InternalServerError, "swagger_response_500", typeof(Mensagem))]
     #endregion
 
     [HttpGet("imovel={imovelId}")]
@@ -67,9 +67,9 @@ public class AreaImovelController : ControllerBase
     #region [ Documentação Swagger RecuperarPorTipoImovelId ]
     [SwaggerOperation(Summary = "swagger_summary_area_imovel_tipo")]
     [SwaggerResponse((int)HttpStatusCode.OK, "swagger_response_200", typeof(Area))]
-    [SwaggerResponse((int)HttpStatusCode.BadRequest, "swagger_response_400", typeof(Message.MessageError))]
-    [SwaggerResponse((int)HttpStatusCode.NotFound, "swagger_response_404", typeof(Message.MessageInfo))]
-    [SwaggerResponse((int)HttpStatusCode.InternalServerError, "swagger_response_500")]
+    [SwaggerResponse((int)HttpStatusCode.BadRequest, "swagger_response_400", typeof(Mensagem))]
+    [SwaggerResponse((int)HttpStatusCode.NotFound, "swagger_response_404", typeof(Mensagem))]
+    [SwaggerResponse((int)HttpStatusCode.InternalServerError, "swagger_response_500", typeof(Mensagem))]
     #endregion
 
     [HttpGet("tipo={tipoImovelId:int}")]
@@ -82,9 +82,9 @@ public class AreaImovelController : ControllerBase
     #region [ Documentação Swagger RecuperarPorSituacaoImovelId ]
     [SwaggerOperation(Summary = "swagger_summary_area_imovel_situacao")]
     [SwaggerResponse((int)HttpStatusCode.OK, "swagger_response_200", typeof(Area))]
-    [SwaggerResponse((int)HttpStatusCode.BadRequest, "swagger_response_400", typeof(Message.MessageError))]
-    [SwaggerResponse((int)HttpStatusCode.NotFound, "swagger_response_404", typeof(Message.MessageInfo))]
-    [SwaggerResponse((int)HttpStatusCode.InternalServerError, "swagger_response_500")]
+    [SwaggerResponse((int)HttpStatusCode.BadRequest, "swagger_response_400", typeof(Mensagem))]
+    [SwaggerResponse((int)HttpStatusCode.NotFound, "swagger_response_404", typeof(Mensagem))]
+    [SwaggerResponse((int)HttpStatusCode.InternalServerError, "swagger_response_500", typeof(Mensagem))]
     #endregion
 
     [HttpGet("situacao={situacaoImovelId:int}")]

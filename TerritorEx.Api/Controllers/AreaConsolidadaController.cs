@@ -21,9 +21,9 @@ public class AreaConsolidadaController : ControllerBase
     #region [ Documentação Swagger RecuperarTodos ]
     [SwaggerOperation(Summary = "swagger_summary_area_consolidada")]
     [SwaggerResponse((int)HttpStatusCode.OK, "swagger_response_200", typeof(Area))]
-    [SwaggerResponse((int)HttpStatusCode.BadRequest, "swagger_response_400", typeof(Message.MessageError))]
-    [SwaggerResponse((int)HttpStatusCode.NotFound, "swagger_response_404", typeof(Message.MessageInfo))]
-    [SwaggerResponse((int)HttpStatusCode.InternalServerError, "swagger_response_500")]
+    [SwaggerResponse((int)HttpStatusCode.BadRequest, "swagger_response_400", typeof(Mensagem))]
+    [SwaggerResponse((int)HttpStatusCode.NotFound, "swagger_response_404", typeof(Mensagem))]
+    [SwaggerResponse((int)HttpStatusCode.InternalServerError, "swagger_response_500", typeof(Mensagem))]
     #endregion
 
     [HttpGet]
@@ -36,9 +36,9 @@ public class AreaConsolidadaController : ControllerBase
     #region [ Documentação Swagger RecuperarPorTerritorioId ]
     [SwaggerOperation(Summary = "swagger_summary_area_consolidada_id")]
     [SwaggerResponse((int)HttpStatusCode.OK, "swagger_response_200", typeof(Area))]
-    [SwaggerResponse((int)HttpStatusCode.BadRequest, "swagger_response_400", typeof(Message.MessageError))]
-    [SwaggerResponse((int)HttpStatusCode.NotFound, "swagger_response_404", typeof(Message.MessageInfo))]
-    [SwaggerResponse((int)HttpStatusCode.InternalServerError, "swagger_response_500")]
+    [SwaggerResponse((int)HttpStatusCode.BadRequest, "swagger_response_400", typeof(Mensagem))]
+    [SwaggerResponse((int)HttpStatusCode.NotFound, "swagger_response_404", typeof(Mensagem))]
+    [SwaggerResponse((int)HttpStatusCode.InternalServerError, "swagger_response_500", typeof(Mensagem))]
     #endregion
 
     [HttpGet("territorio={territorioId:int}")]

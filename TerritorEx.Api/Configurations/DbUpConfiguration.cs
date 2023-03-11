@@ -20,7 +20,7 @@ public static class DbUpConfiguration
 
         if (result.Successful) return true;
 
-        Utils.CriarLog(TipoLog.Error, result.ToString(), true);
+        Utils.CriarLog(TipoLogEnum.Error, result.ToString(), true);
         return false;
     }
 }
