@@ -2,8 +2,8 @@
 using Swashbuckle.AspNetCore.Annotations;
 using System.Net;
 using TerritorEx.Api.Helpers.Exceptions;
-using TerritorEx.Api.Interfaces;
 using TerritorEx.Api.Models;
+using TerritorEx.Api.Services;
 
 namespace TerritorEx.Api.Controllers;
 
@@ -11,11 +11,11 @@ namespace TerritorEx.Api.Controllers;
 [Route("[controller]")]
 public class AreaDeclividadeMaior45Controller : ControllerBase
 {
-    private readonly IAreaDeclividadeMaior45 _area;
+    private readonly IAreaDeclividadeMaior45Service _areaDeclividadeMaior45Service;
 
-    public AreaDeclividadeMaior45Controller(IAreaDeclividadeMaior45 area)
+    public AreaDeclividadeMaior45Controller(IAreaDeclividadeMaior45Service areaDeclividadeMaior45Service)
     {
-        _area = area;
+        _areaDeclividadeMaior45Service = areaDeclividadeMaior45Service;
     }
 
     #region [ Documentação Swagger RecuperarTodos ]
@@ -27,9 +27,9 @@ public class AreaDeclividadeMaior45Controller : ControllerBase
     #endregion
 
     [HttpGet]
-    public ActionResult RecuperarTodos()
+    public async Task<ActionResult> RecuperarTodos()
     {
-        var area = _area.RecuperarTodos();
+        var area = await _areaDeclividadeMaior45Service.RecuperarTodos();
         return Ok(area);
     }
 
@@ -42,9 +42,9 @@ public class AreaDeclividadeMaior45Controller : ControllerBase
     #endregion
 
     [HttpGet("territorio={territorioId:int}")]
-    public IActionResult RecuperarPorTerritorioId(int territorioId)
+    public async Task<ActionResult> RecuperarPorTerritorioId(int territorioId)
     {
-        var area = _area.RecuperarPorTerritorioId(territorioId);
+        var area = await _areaDeclividadeMaior45Service.RecuperarPorTerritorioId(territorioId);
         return Ok(area);
     }
 }

@@ -1,5 +1,4 @@
-﻿using TerritorEx.Api.Interfaces;
-using TerritorEx.Api.Repositories;
+﻿using TerritorEx.Api.Repositories;
 using TerritorEx.Api.Services;
 
 namespace TerritorEx.Api.Configurations;
@@ -13,6 +12,8 @@ public static class InjectorConfiguration
         services.AddScoped<IAreaBanhadoRepository, AreaBanhadoRepository>();
         services.AddScoped<IAreaBordaChapadaRepository, AreaBordaChapadaRepository>();
         services.AddScoped<IAreaConsolidadaRepository, AreaConsolidadaRepository>();
+        services.AddScoped<IAreaDeclividadeMaior45Repository, AreaDeclividadeMaior45Repository>();
+        services.AddScoped<IAreaHidrografiaRepository, AreaHidrografiaRepository>();
         services.AddScoped<IAreaImovelRepository, AreaImovelRepository>();
         #endregion
 
@@ -21,26 +22,9 @@ public static class InjectorConfiguration
         services.AddScoped<IAreaBanhadoService, AreaBanhadoService>();
         services.AddScoped<IAreaBordaChapadaService, AreaBordaChapadaService>();
         services.AddScoped<IAreaConsolidadaService, AreaConsolidadaService>();
+        services.AddScoped<IAreaDeclividadeMaior45Service, AreaDeclividadeMaior45Service>();
+        services.AddScoped<IAreaHidrografiaService, AreaHidrografiaService>();
         services.AddScoped<IAreaImovelService, AreaImovelService>();
         #endregion
-
-        services.AddScoped<IAreaDeclividadeMaior45, AreaDeclividadeMaior45Service>();
-        services.AddScoped<IAreaHidrografia, AreaHidrografiaService>();
-
-        // services.AddScoped<IAreaManguezal, AreaManguezalService>();
-        // services.AddScoped<IAreaNascenteOlhoDAgua, AreaNascenteOlhoDAguaService>();
-        // services.AddScoped<IAreaPousio, AreaPousioService>();
-        // services.AddScoped<IAreaPreservacaoPermanente, AreaPreservacaoPermanenteService>();
-        // services.AddScoped<IAreaReservaLegal, AreaReservaLegalService>();
-        // services.AddScoped<IAreaRestinga, AreaRestingaService>();
-        // services.AddScoped<IAreaServidaoAdministrativa, AreaServidaoAdministrativaService>();
-        // services.AddScoped<IAreaTopoMorro, AreaTopoMorroService>();
-        // services.AddScoped<IAreaUsoRestrito, AreaUsoRestritoService>();
-        // services.AddScoped<IAreaVegetacaoNativa, AreaVegetacaoNativaService>();
-        // services.AddScoped<IAreaVereda, AreaVeredaService>();
-        // services.AddScoped<INivelTerritorio, NivelTerritorioService>();
-        // services.AddScoped<ISituacaoImovel, SituacaoImovelService>();
-        // services.AddScoped<ITerritorio, TerritorioService>();
-        // services.AddScoped<ITipoImovel, TipoImovelService>();
     }
 }

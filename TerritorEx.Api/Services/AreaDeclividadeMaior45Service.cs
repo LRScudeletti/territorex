@@ -1,37 +1,50 @@
 ﻿using Microsoft.Extensions.Localization;
-using TerritorEx.Api.Interfaces;
+using TerritorEx.Api.Entities;
 using TerritorEx.Api.Localize;
-using TerritorEx.Api.Models;
 using TerritorEx.Api.Repositories;
 
 namespace TerritorEx.Api.Services;
 
-public class AreaDeclividadeMaior45Service : IAreaDeclividadeMaior45
+#region [ Interfaces ]
+public interface IAreaDeclividadeMaior45Service
 {
+    Task<IEnumerable<AreaDeclividadeMaior45>> RecuperarTodos();
+    Task<IEnumerable<AreaDeclividadeMaior45>> RecuperarPorTerritorioId(int territorioId);
+}
+#endregion
+
+#region [ Services ]
+public class AreaDeclividadeMaior45Service : IAreaDeclividadeMaior45Service
+{
+    private readonly IAreaDeclividadeMaior45Repository _areaDeclividadeMaior45Repository;
     private readonly IStringLocalizer<Resources> _localizer;
 
-    public AreaDeclividadeMaior45Service(IStringLocalizer<Resources> localizer)
+    public AreaDeclividadeMaior45Service(
+        IAreaDeclividadeMaior45Repository areaDeclividadeMaior45Repository,
+        IStringLocalizer<Resources> localizer)
     {
+        _areaDeclividadeMaior45Repository = areaDeclividadeMaior45Repository;
         _localizer = localizer;
     }
 
-    public IReadOnlyList<Area> RecuperarTodos()
+    public async Task<IEnumerable<AreaDeclividadeMaior45>> RecuperarTodos()
     {
-        var area = AreaDeclividadeMaior45Repository.RecuperarTodos();
+        var area = await _areaDeclividadeMaior45Repository.RecuperarTodos();
 
-        if (!area.Any())
+        if (area == null)
             throw new KeyNotFoundException(_localizer["area_nao_encontrada"]);
 
         return area;
     }
 
-    public IReadOnlyList<Area> RecuperarPorTerritorioId(int territorioId)
+    public async Task<IEnumerable<AreaDeclividadeMaior45>> RecuperarPorTerritorioId(int territorioId)
     {
-        var area = AreaDeclividadeMaior45Repository.RecuperarPorTerritorioId(territorioId);
+        var area = await _areaDeclividadeMaior45Repository.RecuperarPorTerritorioId(territorioId);
 
-        if (!area.Any())
+        if (area == null)
             throw new KeyNotFoundException(_localizer["area_nao_encontrada"]);
 
         return area;
     }
 }
+#endregion

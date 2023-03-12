@@ -22,7 +22,9 @@ public class AreaImovelService : IAreaImovelService
     private readonly IAreaImovelRepository _areaImovelRepository;
     private readonly IStringLocalizer<Resources> _localizer;
 
-    public AreaImovelService(IAreaImovelRepository areaImovelRepository, IStringLocalizer<Resources> localizer)
+    public AreaImovelService(
+        IAreaImovelRepository areaImovelRepository, 
+        IStringLocalizer<Resources> localizer)
     {
         _areaImovelRepository = areaImovelRepository;
         _localizer = localizer;

@@ -1,39 +1,49 @@
 ﻿using Dapper;
+using TerritorEx.Api.Entities;
 using TerritorEx.Api.Helpers;
-using TerritorEx.Api.Models;
 
 namespace TerritorEx.Api.Repositories;
 
-public static class AreaHidrografiaRepository
+#region [ Interfaces ]
+public interface IAreaHidrografiaRepository
 {
-    public static IReadOnlyList<Area> RecuperarTodos()
+    Task<IEnumerable<AreaHidrografia>> RecuperarTodos();
+    Task<IEnumerable<AreaHidrografia>> RecuperarPorTerritorioId(int territorioId);
+}
+#endregion
+
+#region [ Repositories ]
+public class AreaHidrografiaRepository : IAreaHidrografiaRepository
+{
+    public async Task<IEnumerable<AreaHidrografia>> RecuperarTodos()
     {
-        using var sqlConnection = Utils.RecuperarConexao();
+        await using var sqlConnection = Utils.RecuperarConexao();
 
-        const string query = @"SELECT AreaId,
-                                      TerritorioId,
-                                      SicarId,
-                                      Descricao,
-                                      AreaHectare,
-                                      Shape
-                                 FROM AreaHidrografia;";
+        const string sql = @"SELECT AreaId,
+                                    TerritorioId,
+                                    SicarId,
+                                    Descricao,
+                                    AreaHectare,
+                                    Shape
+                               FROM AreaHidrografia;";
 
-        return (IReadOnlyList<Area>)sqlConnection.Query<Area>(query);
+        return await sqlConnection.QueryAsync<AreaHidrografia>(sql);
     }
 
-    public static IReadOnlyList<Area> RecuperarPorTerritorioId(int territorioId)
+    public async Task<IEnumerable<AreaHidrografia>> RecuperarPorTerritorioId(int territorioId)
     {
-        using var sqlConnection = Utils.RecuperarConexao();
+        await using var sqlConnection = Utils.RecuperarConexao();
 
-        const string query = @"SELECT AreaId,
-                                      TerritorioId,
-                                      SicarId,
-                                      Descricao,
-                                      AreaHectare,
-                                      Shape
-                                 FROM AreaHidrografia
-                                WHERE TerritorioId = @territorioId;";
+        const string sql = @"SELECT AreaId,
+                                    TerritorioId,
+                                    SicarId,
+                                    Descricao,
+                                    AreaHectare,
+                                    Shape
+                               FROM AreaHidrografia
+                              WHERE TerritorioId = @territorioId;";
 
-        return (IReadOnlyList<Area>)sqlConnection.Query<Area>(query, new { territorioId });
+        return await sqlConnection.QueryAsync<AreaHidrografia>(sql, new { territorioId });
     }
 }
+#endregion
