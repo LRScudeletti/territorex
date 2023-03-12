@@ -1,37 +1,50 @@
 ﻿using Microsoft.Extensions.Localization;
-using TerritorEx.Api.Interfaces;
+using TerritorEx.Api.Entities;
 using TerritorEx.Api.Localize;
-using TerritorEx.Api.Models;
 using TerritorEx.Api.Repositories;
 
 namespace TerritorEx.Api.Services;
 
-public class AreaConsolidadaService : IAreaConsolidada
+#region [ Interfaces ]
+public interface IAreaConsolidadaService
 {
+    Task<IEnumerable<AreaConsolidada>> RecuperarTodos();
+    Task<IEnumerable<AreaConsolidada>> RecuperarPorTerritorioId(int territorioId);
+}
+#endregion
+
+#region [ Services ]
+public class AreaConsolidadaService : IAreaConsolidadaService
+{
+    private readonly IAreaConsolidadaRepository _areaConsolidadaRepository;
     private readonly IStringLocalizer<Resources> _localizer;
 
-    public AreaConsolidadaService(IStringLocalizer<Resources> localizer)
+    public AreaConsolidadaService(
+        IAreaConsolidadaRepository areaConsolidadaRepository,
+        IStringLocalizer<Resources> localizer)
     {
+        _areaConsolidadaRepository = areaConsolidadaRepository;
         _localizer = localizer;
     }
 
-    public IReadOnlyList<Area> RecuperarTodos()
+    public async Task<IEnumerable<AreaConsolidada>> RecuperarTodos()
     {
-        var area = AreaConsolidadaRepository.RecuperarTodos();
+        var area = await _areaConsolidadaRepository.RecuperarTodos();
 
-        if (!area.Any())
+        if (area == null)
             throw new KeyNotFoundException(_localizer["area_nao_encontrada"]);
 
         return area;
     }
 
-    public IReadOnlyList<Area> RecuperarPorTerritorioId(int territorioId)
+    public async Task<IEnumerable<AreaConsolidada>> RecuperarPorTerritorioId(int territorioId)
     {
-        var area = AreaConsolidadaRepository.RecuperarPorTerritorioId(territorioId);
+        var area = await _areaConsolidadaRepository.RecuperarPorTerritorioId(territorioId);
 
-        if (!area.Any())
+        if (area == null)
             throw new KeyNotFoundException(_localizer["area_nao_encontrada"]);
 
         return area;
     }
 }
+#endregion
