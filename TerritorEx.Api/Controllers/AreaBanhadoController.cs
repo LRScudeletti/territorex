@@ -2,8 +2,8 @@
 using Swashbuckle.AspNetCore.Annotations;
 using System.Net;
 using TerritorEx.Api.Helpers.Exceptions;
-using TerritorEx.Api.Interfaces;
 using TerritorEx.Api.Models;
+using TerritorEx.Api.Services;
 
 namespace TerritorEx.Api.Controllers;
 
@@ -11,11 +11,11 @@ namespace TerritorEx.Api.Controllers;
 [Route("[controller]")]
 public class AreaBanhadoController : ControllerBase
 {
-    private readonly IAreaBanhado _area;
+    private readonly IAreaBanhadoService _areabanhadoService;
 
-    public AreaBanhadoController(IAreaBanhado area)
+    public AreaBanhadoController(IAreaBanhadoService areabanhadoService)
     {
-        _area = area;
+        _areabanhadoService = areabanhadoService;
     }
 
     #region [ Documentação Swagger RecuperarTodos ]
@@ -27,9 +27,9 @@ public class AreaBanhadoController : ControllerBase
     #endregion
 
     [HttpGet]
-    public ActionResult RecuperarTodos()
+    public async Task<ActionResult> RecuperarTodos()
     {
-        var area = _area.RecuperarTodos();
+        var area = await _areabanhadoService.RecuperarTodos();
         return Ok(area);
     }
 
@@ -42,9 +42,9 @@ public class AreaBanhadoController : ControllerBase
     #endregion
 
     [HttpGet("territorio={territorioId:int}")]
-    public IActionResult RecuperarPorTerritorioId(int territorioId)
+    public async Task<IActionResult> RecuperarPorTerritorioId(int territorioId)
     {
-        var area = _area.RecuperarPorTerritorioId(territorioId);
+        var area = await _areabanhadoService.RecuperarPorTerritorioId(territorioId);
         return Ok(area);
     }
 }

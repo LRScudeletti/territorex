@@ -9,15 +9,17 @@ public static class InjectorConfiguration
     public static void Register(this IServiceCollection services)
     {
         #region [ Repository ]
+        services.AddScoped<IAreaAltitudeSuperior1800Repository, AreaAltitudeSuperior1800Repository>();
+        services.AddScoped<IAreaBanhadoRepository, AreaBanhadoRepository>();
         services.AddScoped<IAreaImovelRepository, AreaImovelRepository>();
         #endregion
 
         #region [ Services ]
+        services.AddScoped<IAreaAltitudeSuperior1800Service, AreaAltitudeSuperior1800Service>();
+        services.AddScoped<IAreaBanhadoService, AreaBanhadoService>();
         services.AddScoped<IAreaImovelService, AreaImovelService>();
         #endregion
 
-        services.AddScoped<IAreaAltitudeSuperior1800, AreaAltitudeSuperior1800Service>();
-        services.AddScoped<IAreaBanhado, AreaBanhadoService>();
         services.AddScoped<IAreaBordaChapada, AreaBordaChapadaService>();
         services.AddScoped<IAreaConsolidada, AreaConsolidadaService>();
         services.AddScoped<IAreaDeclividadeMaior45, AreaDeclividadeMaior45Service>();

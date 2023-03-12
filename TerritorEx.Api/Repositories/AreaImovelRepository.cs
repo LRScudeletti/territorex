@@ -5,7 +5,6 @@ using TerritorEx.Api.Helpers;
 namespace TerritorEx.Api.Repositories;
 
 #region [ Interfaces ]
-
 public interface IAreaImovelRepository
 {
     Task<IEnumerable<AreaImovel>> RecuperarTodos();

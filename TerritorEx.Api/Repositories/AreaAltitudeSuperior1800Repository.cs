@@ -1,14 +1,23 @@
 ﻿using Dapper;
+using TerritorEx.Api.Entities;
 using TerritorEx.Api.Helpers;
-using TerritorEx.Api.Models;
 
 namespace TerritorEx.Api.Repositories;
 
-public static class AreaAltitudeSuperior1800Repository
+#region [ Interfaces ]
+public interface IAreaAltitudeSuperior1800Repository
 {
-    public static IReadOnlyList<Area> RecuperarTodos()
+    Task<IEnumerable<AreaAltitudeSuperior1800>> RecuperarTodos();
+    Task<IEnumerable<AreaAltitudeSuperior1800>> RecuperarPorTerritorioId(int territorioId);
+}
+#endregion
+
+#region [ Repositories ]
+public class AreaAltitudeSuperior1800Repository : IAreaAltitudeSuperior1800Repository
+{
+    public async Task<IEnumerable<AreaAltitudeSuperior1800>> RecuperarTodos()
     {
-        using var sqlConnection = Utils.RecuperarConexao();
+        await using var sqlConnection = Utils.RecuperarConexao();
 
         const string sql = @"SELECT AreaId,
                                     TerritorioId,
@@ -18,12 +27,12 @@ public static class AreaAltitudeSuperior1800Repository
                                     Shape
                                FROM AreaAltitudeSuperior1800;";
 
-        return (IReadOnlyList<Area>)sqlConnection.Query<Area>(sql);
+        return await sqlConnection.QueryAsync<AreaAltitudeSuperior1800>(sql);
     }
 
-    public static IReadOnlyList<Area> RecuperarPorTerritorioId(int territorioId)
+    public async Task<IEnumerable<AreaAltitudeSuperior1800>> RecuperarPorTerritorioId(int territorioId)
     {
-        using var sqlConnection = Utils.RecuperarConexao();
+        await using var sqlConnection = Utils.RecuperarConexao();
 
         const string sql = @"SELECT AreaId,
                                     TerritorioId,
@@ -34,6 +43,7 @@ public static class AreaAltitudeSuperior1800Repository
                                FROM AreaAltitudeSuperior1800
                               WHERE TerritorioId = @territorioId;";
 
-        return (IReadOnlyList<Area>)sqlConnection.Query<Area>(sql, new { territorioId });
+        return await sqlConnection.QueryAsync<AreaAltitudeSuperior1800>(sql, new { territorioId });
     }
 }
+#endregion

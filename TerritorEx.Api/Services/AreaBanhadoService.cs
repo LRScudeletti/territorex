@@ -1,37 +1,50 @@
 ﻿using Microsoft.Extensions.Localization;
-using TerritorEx.Api.Interfaces;
+using TerritorEx.Api.Entities;
 using TerritorEx.Api.Localize;
-using TerritorEx.Api.Models;
 using TerritorEx.Api.Repositories;
 
 namespace TerritorEx.Api.Services;
 
-public class AreaBanhadoService : IAreaBanhado
+#region [ Interfaces ]
+public interface IAreaBanhadoService
 {
+    Task<IEnumerable<AreaBanhado>> RecuperarTodos();
+    Task<IEnumerable<AreaBanhado>> RecuperarPorTerritorioId(int territorioId);
+}
+#endregion
+
+#region [ Services ]
+public class AreaBanhadoService : IAreaBanhadoService
+{
+    private readonly IAreaBanhadoRepository _areaBanhadoRepository;
     private readonly IStringLocalizer<Resources> _localizer;
 
-    public AreaBanhadoService(IStringLocalizer<Resources> localizer)
+    public AreaBanhadoService(
+        IAreaBanhadoRepository areaBanhadoRepository,
+        IStringLocalizer<Resources> localizer)
     {
+        _areaBanhadoRepository = areaBanhadoRepository;
         _localizer = localizer;
     }
 
-    public IReadOnlyList<Area> RecuperarTodos()
+    public async Task<IEnumerable<AreaBanhado>> RecuperarTodos()
     {
-        var area = AreaBanhadoRepository.RecuperarTodos();
+        var area = await _areaBanhadoRepository.RecuperarTodos();
 
-        if (!area.Any())
+        if (area == null)
             throw new KeyNotFoundException(_localizer["area_nao_encontrada"]);
 
         return area;
     }
 
-    public IReadOnlyList<Area> RecuperarPorTerritorioId(int territorioId)
+    public async Task<IEnumerable<AreaBanhado>> RecuperarPorTerritorioId(int territorioId)
     {
-        var area = AreaBanhadoRepository.RecuperarPorTerritorioId(territorioId);
+        var area = await _areaBanhadoRepository.RecuperarPorTerritorioId(territorioId);
 
-        if (!area.Any())
+        if (area == null)
             throw new KeyNotFoundException(_localizer["area_nao_encontrada"]);
 
         return area;
     }
 }
+#endregion
