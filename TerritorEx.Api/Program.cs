@@ -1,3 +1,4 @@
+using System.Text.Json.Serialization;
 using TerritorEx.Api.Configurations;
 using TerritorEx.Api.Helpers;
 using TerritorEx.Api.Middlewares;
@@ -6,8 +7,17 @@ var builder = WebApplication.CreateBuilder(args);
 var configuration = builder.Configuration;
 
 { // Services
-    var services = builder.Services;
-    services.AddControllers();
+    var services = builder.Services; 
+    
+    services.AddControllers().AddJsonOptions(x =>
+    {
+        x.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter());
+        x.JsonSerializerOptions.DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull;
+    });
+
+    services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+
+    // Adicionando ao escopo
     services.Register();
 
     services.AddLocalization(x => { x.ResourcesPath = @"Localize\Resources"; });

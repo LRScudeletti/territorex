@@ -1,6 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.Text.Json.Serialization;
 
-namespace TerritorEx.Api.Models;
+namespace TerritorEx.Api.Entities;
 
 public class AreaImovel
 {
@@ -19,7 +20,13 @@ public class AreaImovel
 
     public double AreaHectare { get; set; }
 
-    public double AreaHectareFiscal { get; set; }
+    public double ModuloFiscal { get; set; }
 
     public byte[] Shape { get; set; }
+
+    [JsonIgnore]
+    public string UsuarioAtualizacao { get; set; }
+
+    [JsonIgnore]
+    public DateTime DataAtualizacao { get; set; }
 }

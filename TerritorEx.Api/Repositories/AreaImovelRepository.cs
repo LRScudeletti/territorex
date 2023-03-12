@@ -1,14 +1,27 @@
 ﻿using Dapper;
+using TerritorEx.Api.Entities;
 using TerritorEx.Api.Helpers;
-using TerritorEx.Api.Models;
 
 namespace TerritorEx.Api.Repositories;
 
-public static class AreaImovelRepository
+#region [ Interfaces ]
+
+public interface IAreaImovelRepository
 {
-    public static IReadOnlyList<AreaImovel> RecuperarTodos()
+    Task<IEnumerable<AreaImovel>> RecuperarTodos();
+    Task<IEnumerable<AreaImovel>> RecuperarPorTerritorioId(int territorioId);
+    Task<AreaImovel> RecuperarPorImovelId(string imovelId);
+    Task<IEnumerable<AreaImovel>> RecuperarPorTipoImovelId(int tipoImovelId);
+    Task<IEnumerable<AreaImovel>> RecuperarPorSituacaoImovelId(int situacaoImovelId);
+}
+#endregion
+
+#region [ Repositories ]
+public class AreaImovelRepository : IAreaImovelRepository
+{
+    public async Task<IEnumerable<AreaImovel>> RecuperarTodos()
     {
-        using var sqlConnection = Utils.RecuperarConexao();
+        await using var sqlConnection = Utils.RecuperarConexao();
 
         const string query = @"SELECT AreaId,
                                       TerritorioId,
@@ -17,16 +30,16 @@ public static class AreaImovelRepository
                                       SituacaoImovelId,
                                       Condicao,
                                       AreaHectare,
-                                      AreaHectareFiscal,
+                                      ModuloFiscal,
                                       Shape
                                  FROM AreaImovel;";
 
-        return (IReadOnlyList<AreaImovel>)sqlConnection.Query<AreaImovel>(query);
+        return await sqlConnection.QueryAsync<AreaImovel>(query);
     }
 
-    public static IReadOnlyList<AreaImovel> RecuperarPorTerritorioId(int territorioId)
+    public async Task<IEnumerable<AreaImovel>> RecuperarPorTerritorioId(int territorioId)
     {
-        using var sqlConnection = Utils.RecuperarConexao();
+        await using var sqlConnection = Utils.RecuperarConexao();
 
         const string query = @"SELECT AreaId,
                                       TerritorioId,
@@ -35,17 +48,17 @@ public static class AreaImovelRepository
                                       SituacaoImovelId,
                                       Condicao,
                                       AreaHectare,
-                                      AreaHectareFiscal,
+                                      ModuloFiscal,
                                       Shape
                                  FROM AreaImovel
                                 WHERE TerritorioId = @territorioId;";
 
-        return (IReadOnlyList<AreaImovel>)sqlConnection.Query<AreaImovel>(query, new { territorioId });
+        return await sqlConnection.QueryAsync<AreaImovel>(query, new { territorioId });
     }
 
-    public static IReadOnlyList<AreaImovel> RecuperarPorImovelId(string imovelId)
+    public async Task<AreaImovel> RecuperarPorImovelId(string imovelId)
     {
-        using var sqlConnection = Utils.RecuperarConexao();
+        await using var sqlConnection = Utils.RecuperarConexao();
 
         const string query = @"SELECT AreaId,
                                       TerritorioId,
@@ -54,17 +67,17 @@ public static class AreaImovelRepository
                                       SituacaoImovelId,
                                       Condicao,
                                       AreaHectare,
-                                      AreaHectareFiscal,
+                                      ModuloFiscal,
                                       Shape
                                  FROM AreaImovel
                                 WHERE ImovelId = @imovelId;";
 
-        return (IReadOnlyList<AreaImovel>)sqlConnection.Query<AreaImovel>(query, new { imovelId });
+        return await sqlConnection.QuerySingleOrDefaultAsync<AreaImovel>(query, new { imovelId });
     }
 
-    public static IReadOnlyList<AreaImovel> RecuperarPorTipoImovelId(int tipoImovelId)
+    public async Task<IEnumerable<AreaImovel>> RecuperarPorTipoImovelId(int tipoImovelId)
     {
-        using var sqlConnection = Utils.RecuperarConexao();
+        await using var sqlConnection = Utils.RecuperarConexao();
 
         const string query = @"SELECT AreaId,
                                       TerritorioId,
@@ -73,17 +86,17 @@ public static class AreaImovelRepository
                                       SituacaoImovelId,
                                       Condicao,
                                       AreaHectare,
-                                      AreaHectareFiscal,
+                                      ModuloFiscal,
                                       Shape
                                  FROM AreaImovel
                                 WHERE TipoImovelId = @tipoImovelId;";
 
-        return (IReadOnlyList<AreaImovel>)sqlConnection.Query<AreaImovel>(query, new { tipoImovelId });
+        return await sqlConnection.QueryAsync<AreaImovel>(query, new { tipoImovelId });
     }
 
-    public static IReadOnlyList<AreaImovel> RecuperarPorSituacaoImovelId(int situacaoImovelId)
+    public async Task<IEnumerable<AreaImovel>> RecuperarPorSituacaoImovelId(int situacaoImovelId)
     {
-        using var sqlConnection = Utils.RecuperarConexao();
+        await using var sqlConnection = Utils.RecuperarConexao();
 
         const string query = @"SELECT AreaId,
                                       TerritorioId,
@@ -92,11 +105,12 @@ public static class AreaImovelRepository
                                       SituacaoImovelId,
                                       Condicao,
                                       AreaHectare,
-                                      AreaHectareFiscal,
+                                      ModuloFiscal,
                                       Shape
                                  FROM AreaImovel
                                 WHERE SituacaoImovelId = @situacaoImovelId;";
 
-        return (IReadOnlyList<AreaImovel>)sqlConnection.Query<AreaImovel>(query, new { situacaoImovelId });
+        return await sqlConnection.QueryAsync<AreaImovel>(query, new { situacaoImovelId });
     }
 }
+#endregion
