@@ -1,37 +1,50 @@
 ﻿using Microsoft.Extensions.Localization;
-using TerritorEx.Api.Interfaces;
+using TerritorEx.Api.Entities;
 using TerritorEx.Api.Localize;
-using TerritorEx.Api.Models;
 using TerritorEx.Api.Repositories;
 
 namespace TerritorEx.Api.Services;
 
-public class AreaBordaChapadaService : IAreaBordaChapada
+#region [ Interfaces ]
+public interface IAreaBordaChapadaService
 {
+    Task<IEnumerable<AreaBordaChapada>> RecuperarTodos();
+    Task<IEnumerable<AreaBordaChapada>> RecuperarPorTerritorioId(int territorioId);
+}
+#endregion
+
+#region [ Services ]
+public class AreaBordaChapadaService : IAreaBordaChapadaService
+{
+    private readonly IAreaBordaChapadaRepository _areaBordaChapadaRepository;
     private readonly IStringLocalizer<Resources> _localizer;
-    
-    public AreaBordaChapadaService(IStringLocalizer<Resources> localizer)
+
+    public AreaBordaChapadaService(
+        IAreaBordaChapadaRepository areaBordaChapadaRepository,
+        IStringLocalizer<Resources> localizer)
     {
+        _areaBordaChapadaRepository = areaBordaChapadaRepository;
         _localizer = localizer;
     }
 
-    public IReadOnlyList<Area> RecuperarTodos()
+    public async Task<IEnumerable<AreaBordaChapada>> RecuperarTodos()
     {
-        var area = AreaBordaChapadaRepository.RecuperarTodos();
+        var area = await _areaBordaChapadaRepository.RecuperarTodos();
 
-        if (!area.Any())
+        if (area == null)
             throw new KeyNotFoundException(_localizer["area_nao_encontrada"]);
 
         return area;
     }
 
-    public IReadOnlyList<Area> RecuperarPorTerritorioId(int territorioId)
+    public async Task<IEnumerable<AreaBordaChapada>> RecuperarPorTerritorioId(int territorioId)
     {
-        var area = AreaBordaChapadaRepository.RecuperarPorTerritorioId(territorioId);
+        var area = await _areaBordaChapadaRepository.RecuperarPorTerritorioId(territorioId);
 
-        if (!area.Any())
+        if (area == null)
             throw new KeyNotFoundException(_localizer["area_nao_encontrada"]);
 
         return area;
     }
 }
+#endregion

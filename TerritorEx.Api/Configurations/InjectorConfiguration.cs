@@ -11,16 +11,17 @@ public static class InjectorConfiguration
         #region [ Repository ]
         services.AddScoped<IAreaAltitudeSuperior1800Repository, AreaAltitudeSuperior1800Repository>();
         services.AddScoped<IAreaBanhadoRepository, AreaBanhadoRepository>();
+        services.AddScoped<IAreaBordaChapadaRepository, AreaBordaChapadaRepository>();
         services.AddScoped<IAreaImovelRepository, AreaImovelRepository>();
         #endregion
 
         #region [ Services ]
         services.AddScoped<IAreaAltitudeSuperior1800Service, AreaAltitudeSuperior1800Service>();
         services.AddScoped<IAreaBanhadoService, AreaBanhadoService>();
+        services.AddScoped<IAreaBordaChapadaService, AreaBordaChapadaService>();
         services.AddScoped<IAreaImovelService, AreaImovelService>();
         #endregion
 
-        services.AddScoped<IAreaBordaChapada, AreaBordaChapadaService>();
         services.AddScoped<IAreaConsolidada, AreaConsolidadaService>();
         services.AddScoped<IAreaDeclividadeMaior45, AreaDeclividadeMaior45Service>();
         services.AddScoped<IAreaHidrografia, AreaHidrografiaService>();
