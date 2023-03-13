@@ -1,7 +1,7 @@
 ﻿using System.Reflection;
 using DbUp;
+using TerritorEx.Api.Enums;
 using TerritorEx.Api.Helpers;
-using TerritorEx.Api.Models.Enums;
 
 namespace TerritorEx.Api.Configurations;
 

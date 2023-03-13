@@ -1,8 +1,8 @@
 ﻿using System.Net;
 using System.Text.Json;
+using TerritorEx.Api.Enums;
 using TerritorEx.Api.Helpers;
 using TerritorEx.Api.Helpers.Exceptions;
-using TerritorEx.Api.Models.Enums;
 
 namespace TerritorEx.Api.Middlewares;
 

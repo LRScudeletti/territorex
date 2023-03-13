@@ -1,4 +1,4 @@
-﻿namespace TerritorEx.Api.Models.Enums;
+﻿namespace TerritorEx.Api.Enums;
 
 public enum TipoLogEnum
 {

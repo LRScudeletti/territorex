@@ -3,7 +3,6 @@ using Swashbuckle.AspNetCore.Annotations;
 using System.Net;
 using TerritorEx.Api.Entities;
 using TerritorEx.Api.Helpers.Exceptions;
-using TerritorEx.Api.Models;
 using TerritorEx.Api.Services;
 
 namespace TerritorEx.Api.Controllers;

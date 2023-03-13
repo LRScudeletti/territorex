@@ -1,7 +1,7 @@
 ﻿using Microsoft.Data.SqlClient;
 using System.Net.Mail;
 using System.Net;
-using TerritorEx.Api.Models.Enums;
+using TerritorEx.Api.Enums;
 
 namespace TerritorEx.Api.Helpers;
 
@@ -24,7 +24,7 @@ public static class Utils
 
     private static string RecuperarParametroAppSettings(string nomeparametro)
     {
-        var builder = new ConfigurationBuilder().SetBasePath(Directory.GetCurrentDirectory()).AddJsonFile($"appsettings.json");
+        var builder = new ConfigurationBuilder().SetBasePath(Directory.GetCurrentDirectory()).AddJsonFile("appsettings.json");
         _configuration = builder.Build();
 
         return _configuration.GetSection(string.Concat(nomeparametro)).Value;
