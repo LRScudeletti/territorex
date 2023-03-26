@@ -186,6 +186,12 @@
   <data name="swagger_summary_area_imovel_imovel" xml:space="preserve">
     <value>Lists the area of the property according to the informed CAR code.</value>
   </data>
+  <data name="swagger_summary_area_manguezal" xml:space="preserve">
+    <value>List the areas with mangrove.</value>
+  </data>
+  <data name="swagger_summary_area_manguezal_id" xml:space="preserve">
+    <value>List the areas with mangrove of the informed territory.</value>
+  </data>
   <data name="swagger_summary_area_situacao" xml:space="preserve">
     <value>Lists the areas with properties with the informed situation.</value>
   </data>
