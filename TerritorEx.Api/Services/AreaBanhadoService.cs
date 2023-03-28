@@ -29,12 +29,7 @@ public class AreaBanhadoService : IAreaBanhadoService
 
     public async Task<IEnumerable<AreaBanhado>> RecuperarTodos()
     {
-        var area = await _areaBanhadoRepository.RecuperarTodos();
-
-        if (area == null)
-            throw new KeyNotFoundException(_localizer["area_nao_encontrada"]);
-
-        return area;
+        return await _areaBanhadoRepository.RecuperarTodos();
     }
 
     public async Task<IEnumerable<AreaBanhado>> RecuperarPorTerritorioId(int territorioId)

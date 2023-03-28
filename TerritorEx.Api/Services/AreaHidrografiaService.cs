@@ -29,12 +29,7 @@ public class AreaHidrografiaService : IAreaHidrografiaService
 
     public async Task<IEnumerable<AreaHidrografia>> RecuperarTodos()
     {
-        var area = await _areaHidrografiaRepository.RecuperarTodos();
-
-        if (area == null)
-            throw new KeyNotFoundException(_localizer["area_nao_encontrada"]);
-
-        return area;
+        return await _areaHidrografiaRepository.RecuperarTodos();
     }
 
     public async Task<IEnumerable<AreaHidrografia>> RecuperarPorTerritorioId(int territorioId)

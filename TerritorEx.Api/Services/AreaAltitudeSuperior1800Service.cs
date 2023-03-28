@@ -29,12 +29,7 @@ public class AreaAltitudeSuperior1800Service : IAreaAltitudeSuperior1800Service
 
     public async Task<IEnumerable<AreaAltitudeSuperior1800>> RecuperarTodos()
     {
-        var area = await _areaAltitudeSuperior1800Repository.RecuperarTodos();
-
-        if (area == null)
-            throw new KeyNotFoundException(_localizer["area_nao_encontrada"]);
-
-        return area;
+        return await _areaAltitudeSuperior1800Repository.RecuperarTodos();
     }
 
     public async Task<IEnumerable<AreaAltitudeSuperior1800>> RecuperarPorTerritorioId(int territorioId)

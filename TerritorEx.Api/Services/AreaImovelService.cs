@@ -32,12 +32,7 @@ public class AreaImovelService : IAreaImovelService
 
     public async Task<IEnumerable<AreaImovel>> RecuperarTodos()
     {
-        var area = await _areaImovelRepository.RecuperarTodos();
-
-        if (area == null)
-            throw new KeyNotFoundException(_localizer["area_nao_encontrada"]);
-
-        return area;
+        return await _areaImovelRepository.RecuperarTodos();
     }
 
     public async Task<IEnumerable<AreaImovel>> RecuperarPorTerritorioId(int territorioId)

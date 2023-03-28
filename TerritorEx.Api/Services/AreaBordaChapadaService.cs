@@ -29,12 +29,7 @@ public class AreaBordaChapadaService : IAreaBordaChapadaService
 
     public async Task<IEnumerable<AreaBordaChapada>> RecuperarTodos()
     {
-        var area = await _areaBordaChapadaRepository.RecuperarTodos();
-
-        if (area == null)
-            throw new KeyNotFoundException(_localizer["area_nao_encontrada"]);
-
-        return area;
+        return await _areaBordaChapadaRepository.RecuperarTodos();
     }
 
     public async Task<IEnumerable<AreaBordaChapada>> RecuperarPorTerritorioId(int territorioId)

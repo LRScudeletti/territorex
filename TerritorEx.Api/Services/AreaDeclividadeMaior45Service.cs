@@ -29,12 +29,7 @@ public class AreaDeclividadeMaior45Service : IAreaDeclividadeMaior45Service
 
     public async Task<IEnumerable<AreaDeclividadeMaior45>> RecuperarTodos()
     {
-        var area = await _areaDeclividadeMaior45Repository.RecuperarTodos();
-
-        if (area == null)
-            throw new KeyNotFoundException(_localizer["area_nao_encontrada"]);
-
-        return area;
+        return await _areaDeclividadeMaior45Repository.RecuperarTodos();
     }
 
     public async Task<IEnumerable<AreaDeclividadeMaior45>> RecuperarPorTerritorioId(int territorioId)

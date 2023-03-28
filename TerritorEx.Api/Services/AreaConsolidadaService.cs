@@ -29,12 +29,7 @@ public class AreaConsolidadaService : IAreaConsolidadaService
 
     public async Task<IEnumerable<AreaConsolidada>> RecuperarTodos()
     {
-        var area = await _areaConsolidadaRepository.RecuperarTodos();
-
-        if (area == null)
-            throw new KeyNotFoundException(_localizer["area_nao_encontrada"]);
-
-        return area;
+        return await _areaConsolidadaRepository.RecuperarTodos();
     }
 
     public async Task<IEnumerable<AreaConsolidada>> RecuperarPorTerritorioId(int territorioId)
