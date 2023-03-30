@@ -9,17 +9,17 @@ namespace TerritorEx.Api.Controllers;
 
 [ApiController]
 [Route("[controller]")]
-public class AreaManguezalController : ControllerBase
+public class AreaNascenteOlhoDAguaController : ControllerBase
 {
-    private readonly IAreaManguezalService _areaManguezalService;
+    private readonly IAreaNascenteOlhoDAguaService _areaNascenteOlhoDAguaService;
 
-    public AreaManguezalController(IAreaManguezalService areaManguezalService)
+    public AreaNascenteOlhoDAguaController(IAreaNascenteOlhoDAguaService areaNascenteOlhoDAguaService)
     {
-        _areaManguezalService = areaManguezalService;
+        _areaNascenteOlhoDAguaService = areaNascenteOlhoDAguaService;
     }
 
     #region [ Documentação Swagger RecuperarTodos ]
-    [SwaggerOperation(Summary = "swagger_summary_area_manguezal")]
+    [SwaggerOperation(Summary = "swagger_summary_area_nascente_olho_dagua")]
     [SwaggerResponse((int)HttpStatusCode.OK, "swagger_response_200", typeof(AreaManguezal))]
     [SwaggerResponse((int)HttpStatusCode.BadRequest, "swagger_response_400", typeof(Mensagem))]
     [SwaggerResponse((int)HttpStatusCode.NotFound, "swagger_response_404", typeof(Mensagem))]
@@ -29,12 +29,12 @@ public class AreaManguezalController : ControllerBase
     [HttpGet]
     public async Task<ActionResult> RecuperarTodos()
     {
-        var area = await _areaManguezalService.RecuperarTodos();
+        var area = await _areaNascenteOlhoDAguaService.RecuperarTodos();
         return Ok(area);
     }
 
     #region [ Documentação Swagger RecuperarTodos ]
-    [SwaggerOperation(Summary = "swagger_summary_area_manguezal_id")]
+    [SwaggerOperation(Summary = "swagger_summary_area_nascente_olho_dagua_id")]
     [SwaggerResponse((int)HttpStatusCode.OK, "swagger_response_200", typeof(AreaManguezal))]
     [SwaggerResponse((int)HttpStatusCode.BadRequest, "swagger_response_400", typeof(Mensagem))]
     [SwaggerResponse((int)HttpStatusCode.NotFound, "swagger_response_404", typeof(Mensagem))]
@@ -44,7 +44,7 @@ public class AreaManguezalController : ControllerBase
     [HttpGet("territorio={territorioId:int}")]
     public async Task<ActionResult> RecuperarPorTerritorioId(int territorioId)
     {
-        var area = await _areaManguezalService.RecuperarPorTerritorioId(territorioId);
+        var area = await _areaNascenteOlhoDAguaService.RecuperarPorTerritorioId(territorioId);
         return Ok(area);
     }
 }
