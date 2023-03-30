@@ -19,9 +19,7 @@ public class AreaManguezalService : IAreaManguezalService
     private readonly IAreaManguezalRepository _areaManguezalRepository;
     private readonly IStringLocalizer<Resources> _localizer;
 
-    public AreaManguezalService(
-        IAreaManguezalRepository areaManguezalRepository,
-        IStringLocalizer<Resources> localizer)
+    public AreaManguezalService(IAreaManguezalRepository areaManguezalRepository, IStringLocalizer<Resources> localizer)
     {
         _areaManguezalRepository = areaManguezalRepository;
         _localizer = localizer;

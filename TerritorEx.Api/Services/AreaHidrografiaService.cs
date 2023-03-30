@@ -9,7 +9,7 @@ namespace TerritorEx.Api.Services;
 public interface IAreaHidrografiaService
 {
     Task<IEnumerable<AreaHidrografia>> RecuperarTodos();
-    Task<IEnumerable<AreaHidrografia>> RecuperarPorTerritorioId(int territorioId);
+    Task<IReadOnlyCollection<AreaHidrografia>> RecuperarPorTerritorioId(int territorioId);
 }
 #endregion
 
@@ -19,9 +19,7 @@ public class AreaHidrografiaService : IAreaHidrografiaService
     private readonly IAreaHidrografiaRepository _areaHidrografiaRepository;
     private readonly IStringLocalizer<Resources> _localizer;
 
-    public AreaHidrografiaService(
-        IAreaHidrografiaRepository areaHidrografiaRepository,
-        IStringLocalizer<Resources> localizer)
+    public AreaHidrografiaService(IAreaHidrografiaRepository areaHidrografiaRepository, IStringLocalizer<Resources> localizer)
     {
         _areaHidrografiaRepository = areaHidrografiaRepository;
         _localizer = localizer;
@@ -32,11 +30,11 @@ public class AreaHidrografiaService : IAreaHidrografiaService
         return await _areaHidrografiaRepository.RecuperarTodos();
     }
 
-    public async Task<IEnumerable<AreaHidrografia>> RecuperarPorTerritorioId(int territorioId)
+    public async Task<IReadOnlyCollection<AreaHidrografia>> RecuperarPorTerritorioId(int territorioId)
     {
         var area = await _areaHidrografiaRepository.RecuperarPorTerritorioId(territorioId);
 
-        if (area == null)
+        if (!area.Any())
             throw new KeyNotFoundException(_localizer["area_nao_encontrada"]);
 
         return area;

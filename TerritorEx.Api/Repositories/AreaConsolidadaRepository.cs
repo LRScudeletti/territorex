@@ -8,7 +8,7 @@ namespace TerritorEx.Api.Repositories;
 public interface IAreaConsolidadaRepository
 {
     Task<IEnumerable<AreaConsolidada>> RecuperarTodos();
-    Task<IReadOnlyList<AreaConsolidada>> RecuperarPorTerritorioId(int territorioId);
+    Task<IReadOnlyCollection<AreaConsolidada>> RecuperarPorTerritorioId(int territorioId);
 }
 #endregion
 
@@ -30,7 +30,7 @@ public class AreaConsolidadaRepository : IAreaConsolidadaRepository
         return await sqlConnection.QueryAsync<AreaConsolidada>(sql);
     }
 
-    public async Task<IReadOnlyList<AreaConsolidada>> RecuperarPorTerritorioId(int territorioId)
+    public async Task<IReadOnlyCollection<AreaConsolidada>> RecuperarPorTerritorioId(int territorioId)
     {
         await using var sqlConnection = Utils.RecuperarConexao();
 
@@ -43,7 +43,7 @@ public class AreaConsolidadaRepository : IAreaConsolidadaRepository
                                FROM AreaConsolidada
                               WHERE TerritorioId = @territorioId;";
 
-        return (IReadOnlyList<AreaConsolidada>)await sqlConnection
+        return (IReadOnlyCollection<AreaConsolidada>)await sqlConnection
             .QueryAsync<AreaConsolidada>(sql, new { territorioId });
     }
 }

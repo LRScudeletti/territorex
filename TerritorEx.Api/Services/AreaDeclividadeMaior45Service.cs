@@ -9,7 +9,7 @@ namespace TerritorEx.Api.Services;
 public interface IAreaDeclividadeMaior45Service
 {
     Task<IEnumerable<AreaDeclividadeMaior45>> RecuperarTodos();
-    Task<IEnumerable<AreaDeclividadeMaior45>> RecuperarPorTerritorioId(int territorioId);
+    Task<IReadOnlyCollection<AreaDeclividadeMaior45>> RecuperarPorTerritorioId(int territorioId);
 }
 #endregion
 
@@ -19,9 +19,7 @@ public class AreaDeclividadeMaior45Service : IAreaDeclividadeMaior45Service
     private readonly IAreaDeclividadeMaior45Repository _areaDeclividadeMaior45Repository;
     private readonly IStringLocalizer<Resources> _localizer;
 
-    public AreaDeclividadeMaior45Service(
-        IAreaDeclividadeMaior45Repository areaDeclividadeMaior45Repository,
-        IStringLocalizer<Resources> localizer)
+    public AreaDeclividadeMaior45Service(IAreaDeclividadeMaior45Repository areaDeclividadeMaior45Repository, IStringLocalizer<Resources> localizer)
     {
         _areaDeclividadeMaior45Repository = areaDeclividadeMaior45Repository;
         _localizer = localizer;
@@ -32,11 +30,11 @@ public class AreaDeclividadeMaior45Service : IAreaDeclividadeMaior45Service
         return await _areaDeclividadeMaior45Repository.RecuperarTodos();
     }
 
-    public async Task<IEnumerable<AreaDeclividadeMaior45>> RecuperarPorTerritorioId(int territorioId)
+    public async Task<IReadOnlyCollection<AreaDeclividadeMaior45>> RecuperarPorTerritorioId(int territorioId)
     {
         var area = await _areaDeclividadeMaior45Repository.RecuperarPorTerritorioId(territorioId);
 
-        if (area == null)
+        if (!area.Any())
             throw new KeyNotFoundException(_localizer["area_nao_encontrada"]);
 
         return area;

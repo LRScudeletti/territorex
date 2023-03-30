@@ -9,7 +9,7 @@ namespace TerritorEx.Api.Services;
 public interface IAreaBordaChapadaService
 {
     Task<IEnumerable<AreaBordaChapada>> RecuperarTodos();
-    Task<IEnumerable<AreaBordaChapada>> RecuperarPorTerritorioId(int territorioId);
+    Task<IReadOnlyCollection<AreaBordaChapada>> RecuperarPorTerritorioId(int territorioId);
 }
 #endregion
 
@@ -19,9 +19,7 @@ public class AreaBordaChapadaService : IAreaBordaChapadaService
     private readonly IAreaBordaChapadaRepository _areaBordaChapadaRepository;
     private readonly IStringLocalizer<Resources> _localizer;
 
-    public AreaBordaChapadaService(
-        IAreaBordaChapadaRepository areaBordaChapadaRepository,
-        IStringLocalizer<Resources> localizer)
+    public AreaBordaChapadaService(IAreaBordaChapadaRepository areaBordaChapadaRepository, IStringLocalizer<Resources> localizer)
     {
         _areaBordaChapadaRepository = areaBordaChapadaRepository;
         _localizer = localizer;
@@ -32,11 +30,11 @@ public class AreaBordaChapadaService : IAreaBordaChapadaService
         return await _areaBordaChapadaRepository.RecuperarTodos();
     }
 
-    public async Task<IEnumerable<AreaBordaChapada>> RecuperarPorTerritorioId(int territorioId)
+    public async Task<IReadOnlyCollection<AreaBordaChapada>> RecuperarPorTerritorioId(int territorioId)
     {
         var area = await _areaBordaChapadaRepository.RecuperarPorTerritorioId(territorioId);
 
-        if (area == null)
+        if (!area.Any())
             throw new KeyNotFoundException(_localizer["area_nao_encontrada"]);
 
         return area;

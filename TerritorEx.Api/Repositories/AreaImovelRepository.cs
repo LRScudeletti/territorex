@@ -8,10 +8,10 @@ namespace TerritorEx.Api.Repositories;
 public interface IAreaImovelRepository
 {
     Task<IEnumerable<AreaImovel>> RecuperarTodos();
-    Task<IReadOnlyList<AreaImovel>> RecuperarPorTerritorioId(int territorioId);
+    Task<IReadOnlyCollection<AreaImovel>> RecuperarPorTerritorioId(int territorioId);
     Task<AreaImovel> RecuperarPorImovelId(string imovelId);
-    Task<IReadOnlyList<AreaImovel>> RecuperarPorTipoImovelId(int tipoImovelId);
-    Task<IReadOnlyList<AreaImovel>> RecuperarPorSituacaoImovelId(int situacaoImovelId);
+    Task<IReadOnlyCollection<AreaImovel>> RecuperarPorTipoImovelId(int tipoImovelId);
+    Task<IReadOnlyCollection<AreaImovel>> RecuperarPorSituacaoImovelId(int situacaoImovelId);
 }
 #endregion
 
@@ -36,7 +36,7 @@ public class AreaImovelRepository : IAreaImovelRepository
         return await sqlConnection.QueryAsync<AreaImovel>(query);
     }
 
-    public async Task<IReadOnlyList<AreaImovel>> RecuperarPorTerritorioId(int territorioId)
+    public async Task<IReadOnlyCollection<AreaImovel>> RecuperarPorTerritorioId(int territorioId)
     {
         await using var sqlConnection = Utils.RecuperarConexao();
 
@@ -52,7 +52,7 @@ public class AreaImovelRepository : IAreaImovelRepository
                                  FROM AreaImovel
                                 WHERE TerritorioId = @territorioId;";
 
-        return (IReadOnlyList<AreaImovel>)await sqlConnection
+        return (IReadOnlyCollection<AreaImovel>)await sqlConnection
             .QueryAsync<AreaImovel>(query, new { territorioId });
     }
 
@@ -75,7 +75,7 @@ public class AreaImovelRepository : IAreaImovelRepository
         return await sqlConnection.QuerySingleOrDefaultAsync<AreaImovel>(query, new { imovelId });
     }
 
-    public async Task<IReadOnlyList<AreaImovel>> RecuperarPorTipoImovelId(int tipoImovelId)
+    public async Task<IReadOnlyCollection<AreaImovel>> RecuperarPorTipoImovelId(int tipoImovelId)
     {
         await using var sqlConnection = Utils.RecuperarConexao();
 
@@ -95,7 +95,7 @@ public class AreaImovelRepository : IAreaImovelRepository
             .QueryAsync<AreaImovel>(query, new { tipoImovelId });
     }
 
-    public async Task<IReadOnlyList<AreaImovel>> RecuperarPorSituacaoImovelId(int situacaoImovelId)
+    public async Task<IReadOnlyCollection<AreaImovel>> RecuperarPorSituacaoImovelId(int situacaoImovelId)
     {
         await using var sqlConnection = Utils.RecuperarConexao();
 
@@ -111,7 +111,7 @@ public class AreaImovelRepository : IAreaImovelRepository
                                  FROM AreaImovel
                                 WHERE SituacaoImovelId = @situacaoImovelId;";
 
-        return (IReadOnlyList<AreaImovel>)await sqlConnection
+        return (IReadOnlyCollection<AreaImovel>)await sqlConnection
             .QueryAsync<AreaImovel>(query, new { situacaoImovelId });
     }
 }

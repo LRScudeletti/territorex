@@ -19,8 +19,7 @@ public class AreaAltitudeSuperior1800Service : IAreaAltitudeSuperior1800Service
     private readonly IAreaAltitudeSuperior1800Repository _areaAltitudeSuperior1800Repository;
     private readonly IStringLocalizer<Resources> _localizer;
 
-    public AreaAltitudeSuperior1800Service(IAreaAltitudeSuperior1800Repository areaAltitudeSuperior1800Repository, 
-        IStringLocalizer<Resources> localizer)
+    public AreaAltitudeSuperior1800Service(IAreaAltitudeSuperior1800Repository areaAltitudeSuperior1800Repository, IStringLocalizer<Resources> localizer)
     {
         _areaAltitudeSuperior1800Repository = areaAltitudeSuperior1800Repository;
         _localizer = localizer;

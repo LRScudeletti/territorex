@@ -9,10 +9,10 @@ namespace TerritorEx.Api.Services;
 public interface IAreaImovelService
 {
     Task<IEnumerable<AreaImovel>> RecuperarTodos();
-    Task<IEnumerable<AreaImovel>> RecuperarPorTerritorioId(int territorioId);
+    Task<IReadOnlyCollection<AreaImovel>> RecuperarPorTerritorioId(int territorioId);
     Task<AreaImovel> RecuperarPorImovelId(string imovelId);
-    Task<IEnumerable<AreaImovel>> RecuperarPorTipoImovelId(int tipoImovelId);
-    Task<IEnumerable<AreaImovel>> RecuperarPorSituacaoImovelId(int situacaoImovelId);
+    Task<IReadOnlyCollection<AreaImovel>> RecuperarPorTipoImovelId(int tipoImovelId);
+    Task<IReadOnlyCollection<AreaImovel>> RecuperarPorSituacaoImovelId(int situacaoImovelId);
 }
 #endregion
 
@@ -22,9 +22,7 @@ public class AreaImovelService : IAreaImovelService
     private readonly IAreaImovelRepository _areaImovelRepository;
     private readonly IStringLocalizer<Resources> _localizer;
 
-    public AreaImovelService(
-        IAreaImovelRepository areaImovelRepository, 
-        IStringLocalizer<Resources> localizer)
+    public AreaImovelService(IAreaImovelRepository areaImovelRepository, IStringLocalizer<Resources> localizer)
     {
         _areaImovelRepository = areaImovelRepository;
         _localizer = localizer;
@@ -35,11 +33,11 @@ public class AreaImovelService : IAreaImovelService
         return await _areaImovelRepository.RecuperarTodos();
     }
 
-    public async Task<IEnumerable<AreaImovel>> RecuperarPorTerritorioId(int territorioId)
+    public async Task<IReadOnlyCollection<AreaImovel>> RecuperarPorTerritorioId(int territorioId)
     {
         var area = await _areaImovelRepository.RecuperarPorTerritorioId(territorioId);
 
-        if (area == null)
+        if (!area.Any())
             throw new KeyNotFoundException(_localizer["area_nao_encontrada"]);
 
         return area;
@@ -55,21 +53,21 @@ public class AreaImovelService : IAreaImovelService
         return area;
     }
 
-    public async Task<IEnumerable<AreaImovel>> RecuperarPorTipoImovelId(int tipoImovelId)
+    public async Task<IReadOnlyCollection<AreaImovel>> RecuperarPorTipoImovelId(int tipoImovelId)
     {
         var area = await _areaImovelRepository.RecuperarPorTipoImovelId(tipoImovelId);
 
-        if (area == null)
+        if (!area.Any())
             throw new KeyNotFoundException(_localizer["area_nao_encontrada"]);
 
         return area;
     }
 
-    public async Task<IEnumerable<AreaImovel>> RecuperarPorSituacaoImovelId(int situacaoImovelId)
+    public async Task<IReadOnlyCollection<AreaImovel>> RecuperarPorSituacaoImovelId(int situacaoImovelId)
     {
         var area = await _areaImovelRepository.RecuperarPorSituacaoImovelId(situacaoImovelId);
 
-        if (area == null)
+        if (!area.Any())
             throw new KeyNotFoundException(_localizer["area_nao_encontrada"]);
 
         return area;
