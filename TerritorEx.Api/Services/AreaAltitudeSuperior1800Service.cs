@@ -9,7 +9,7 @@ namespace TerritorEx.Api.Services;
 public interface IAreaAltitudeSuperior1800Service
 {
     Task<IEnumerable<AreaAltitudeSuperior1800>> RecuperarTodos();
-    Task<IEnumerable<AreaAltitudeSuperior1800>> RecuperarPorTerritorioId(int territorioId);
+    Task<IReadOnlyCollection<AreaAltitudeSuperior1800>> RecuperarPorTerritorioId(int territorioId);
 }
 #endregion
 
@@ -19,8 +19,7 @@ public class AreaAltitudeSuperior1800Service : IAreaAltitudeSuperior1800Service
     private readonly IAreaAltitudeSuperior1800Repository _areaAltitudeSuperior1800Repository;
     private readonly IStringLocalizer<Resources> _localizer;
 
-    public AreaAltitudeSuperior1800Service(
-        IAreaAltitudeSuperior1800Repository areaAltitudeSuperior1800Repository, 
+    public AreaAltitudeSuperior1800Service(IAreaAltitudeSuperior1800Repository areaAltitudeSuperior1800Repository, 
         IStringLocalizer<Resources> localizer)
     {
         _areaAltitudeSuperior1800Repository = areaAltitudeSuperior1800Repository;
@@ -32,11 +31,11 @@ public class AreaAltitudeSuperior1800Service : IAreaAltitudeSuperior1800Service
         return await _areaAltitudeSuperior1800Repository.RecuperarTodos();
     }
 
-    public async Task<IEnumerable<AreaAltitudeSuperior1800>> RecuperarPorTerritorioId(int territorioId)
+    public async Task<IReadOnlyCollection<AreaAltitudeSuperior1800>> RecuperarPorTerritorioId(int territorioId)
     {
         var area = await _areaAltitudeSuperior1800Repository.RecuperarPorTerritorioId(territorioId);
 
-        if (area == null)
+        if (!area.Any())
             throw new KeyNotFoundException(_localizer["area_nao_encontrada"]);
 
         return area;
