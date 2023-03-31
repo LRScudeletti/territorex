@@ -198,6 +198,12 @@
   <data name="swagger_summary_area_nascente_olho_dagua_id" xml:space="preserve">
     <value>Lista as áreas com nascentes ou olhos d'água do território informado.</value>
   </data>
+  <data name="swagger_summary_area_pousio" xml:space="preserve">
+    <value>Lista as áreas com pousios.</value>
+  </data>
+  <data name="swagger_summary_area_pousio_id" xml:space="preserve">
+    <value>Lista as áreas com pousios do território informado.</value>
+  </data>
   <data name="swagger_summary_area_situacao" xml:space="preserve">
     <value>Lista as áreas com imóveis com o situação informada.</value>
   </data>
