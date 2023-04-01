@@ -18,6 +18,7 @@ public static class InjectorConfiguration
         services.AddScoped<IAreaManguezalRepository, AreaManguezalRepository>();
         services.AddScoped<IAreaNascenteOlhoDAguaRepository, AreaNascenteOlhoDAguaRepository>();
         services.AddScoped<IAreaPousioRepository, AreaPousioRepository>();
+        services.AddScoped<IAreaPreservacaoPermanenteRepository, AreaPreservacaoPermanenteRepository>();
         #endregion
 
         #region [ Services ]
@@ -31,6 +32,7 @@ public static class InjectorConfiguration
         services.AddScoped<IAreaManguezalService, AreaManguezalService>();
         services.AddScoped<IAreaNascenteOlhoDAguaService, AreaNascenteOlhoDAguaService>();
         services.AddScoped<IAreaPousioService, AreaPousioService>();
+        services.AddScoped<IAreaPreservacaoPermanenteService, AreaPreservacaoPermanenteService>();
         #endregion
     }
 }

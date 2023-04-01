@@ -204,6 +204,12 @@
   <data name="swagger_summary_area_pousio_id" xml:space="preserve">
     <value>Lists the fallow areas of the informed territory.</value>
   </data>
+  <data name="swagger_summary_area_preservacao_permanente" xml:space="preserve">
+    <value>Lists permanent preservation areas.</value>
+  </data>
+  <data name="swagger_summary_area_preservacao_permanente_id" xml:space="preserve">
+    <value>Lists the permanent preservation areas of the informed territory.</value>
+  </data>
   <data name="swagger_summary_area_situacao" xml:space="preserve">
     <value>Lists the areas with properties with the informed situation.</value>
   </data>
