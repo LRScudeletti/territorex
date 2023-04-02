@@ -123,6 +123,9 @@
   <data name="model_area_id" xml:space="preserve">
     <value>ID interno da área</value>
   </data>
+  <data name="nivel_nao_encontrado" xml:space="preserve">
+    <value>Nível não encontrado.</value>
+  </data>
   <data name="supported_languages" xml:space="preserve">
     <value>Idiomas suportados</value>
   </data>
@@ -210,10 +213,52 @@
   <data name="swagger_summary_area_preservacao_permanente_id" xml:space="preserve">
     <value>Lista as áreas de preservação permanente do território informado.</value>
   </data>
+  <data name="swagger_summary_area_reserva_legal" xml:space="preserve">
+    <value>Lista as áreas com reserva legal.</value>
+  </data>
+  <data name="swagger_summary_area_reserva_legal_id" xml:space="preserve">
+    <value>Lista as áreas com reserva legal do território informado.</value>
+  </data>
+  <data name="swagger_summary_area_restinga" xml:space="preserve">
+    <value>Lista as áreas com restinga.</value>
+  </data>
+  <data name="swagger_summary_area_restinga_id" xml:space="preserve">
+    <value>Lista as áreas com restinga do território informado.</value>
+  </data>
+  <data name="swagger_summary_area_servidao_administrativa" xml:space="preserve">
+    <value>Lista as áreas de servidão administrativa.</value>
+  </data>
+  <data name="swagger_summary_area_servidao_administrativa_id" xml:space="preserve">
+    <value>Lista as áreas de servidão administrativa do território informado.</value>
+  </data>
   <data name="swagger_summary_area_situacao" xml:space="preserve">
     <value>Lista as áreas com imóveis com o situação informada.</value>
   </data>
   <data name="swagger_summary_area_tipo" xml:space="preserve">
     <value>Lista as áreas com imóveis com o tipo informado.</value>
+  </data>
+  <data name="swagger_summary_area_topo_morro" xml:space="preserve">
+    <value>Lista as áreas de topo de morro.</value>
+  </data>
+  <data name="swagger_summary_area_topo_morro_id" xml:space="preserve">
+    <value>Lista as áreas de topo de morro do território informado.</value>
+  </data>
+  <data name="swagger_summary_area_vegetacao_nativa" xml:space="preserve">
+    <value>Lista as áreas com vegetação nativa.</value>
+  </data>
+  <data name="swagger_summary_area_vegetacao_nativa_id" xml:space="preserve">
+    <value>Lista as áreas com vegetação nativa do território informado.</value>
+  </data>
+  <data name="swagger_summary_area_vereda" xml:space="preserve">
+    <value>Lista as áreas com vereda.</value>
+  </data>
+  <data name="swagger_summary_area_vereda_id" xml:space="preserve">
+    <value>Lista as áreas com vereda do território informado.</value>
+  </data>
+  <data name="swagger_summary_nivel_territorio" xml:space="preserve">
+    <value>Lista os níveis de território.</value>
+  </data>
+  <data name="swagger_summary_nivel_territorio_id" xml:space="preserve">
+    <value>Lista o nível de território pelo id informado.</value>
   </data>
 </root>

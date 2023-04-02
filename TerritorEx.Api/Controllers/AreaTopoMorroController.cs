@@ -9,18 +9,18 @@ namespace TerritorEx.Api.Controllers;
 
 [ApiController]
 [Route("[controller]")]
-public class AreaPreservacaoPermanenteController : ControllerBase
+public class AreaTopoMorroController : ControllerBase
 {
-    private readonly IAreaPreservacaoPermanenteService _areaPreservacaoPermanenteService;
+    private readonly IAreaTopoMorroService _areaTopoMorroService;
 
-    public AreaPreservacaoPermanenteController(IAreaPreservacaoPermanenteService areaPreservacaoPermanenteService)
+    public AreaTopoMorroController(IAreaTopoMorroService areaTopoMorroService)
     {
-        _areaPreservacaoPermanenteService = areaPreservacaoPermanenteService;
+        _areaTopoMorroService = areaTopoMorroService;
     }
 
     #region [ Documentação Swagger RecuperarTodos ]
-    [SwaggerOperation(Summary = "swagger_summary_area_preservacao_permanente")]
-    [SwaggerResponse((int)HttpStatusCode.OK, "swagger_response_200", typeof(AreaPreservacaoPermanente))]
+    [SwaggerOperation(Summary = "swagger_summary_area_topo_morro")]
+    [SwaggerResponse((int)HttpStatusCode.OK, "swagger_response_200", typeof(AreaTopoMorro))]
     [SwaggerResponse((int)HttpStatusCode.BadRequest, "swagger_response_400", typeof(Mensagem))]
     [SwaggerResponse((int)HttpStatusCode.NotFound, "swagger_response_404", typeof(Mensagem))]
     [SwaggerResponse((int)HttpStatusCode.InternalServerError, "swagger_response_500", typeof(Mensagem))]
@@ -29,13 +29,13 @@ public class AreaPreservacaoPermanenteController : ControllerBase
     [HttpGet]
     public async Task<ActionResult> RecuperarTodos()
     {
-        var area = await _areaPreservacaoPermanenteService.RecuperarTodos();
+        var area = await _areaTopoMorroService.RecuperarTodos();
         return Ok(area);
     }
 
     #region [ Documentação Swagger RecuperarPorTerritorioId ]
-    [SwaggerOperation(Summary = "swagger_summary_area_preservacao_permanente_id")]
-    [SwaggerResponse((int)HttpStatusCode.OK, "swagger_response_200", typeof(AreaPreservacaoPermanente))]
+    [SwaggerOperation(Summary = "swagger_summary_area_topo_morro_id")]
+    [SwaggerResponse((int)HttpStatusCode.OK, "swagger_response_200", typeof(AreaTopoMorro))]
     [SwaggerResponse((int)HttpStatusCode.BadRequest, "swagger_response_400", typeof(Mensagem))]
     [SwaggerResponse((int)HttpStatusCode.NotFound, "swagger_response_404", typeof(Mensagem))]
     [SwaggerResponse((int)HttpStatusCode.InternalServerError, "swagger_response_500", typeof(Mensagem))]
@@ -44,7 +44,7 @@ public class AreaPreservacaoPermanenteController : ControllerBase
     [HttpGet("territorio={territorioId:int}")]
     public async Task<IActionResult> RecuperarPorTerritorioId(int territorioId)
     {
-        var area = await _areaPreservacaoPermanenteService.RecuperarPorTerritorioId(territorioId);
+        var area = await _areaTopoMorroService.RecuperarPorTerritorioId(territorioId);
         return Ok(area);
     }
 }

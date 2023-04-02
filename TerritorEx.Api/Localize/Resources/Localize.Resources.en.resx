@@ -123,6 +123,9 @@
   <data name="model_area_id" xml:space="preserve">
     <value>Area internal ID</value>
   </data>
+  <data name="nivel_nao_encontrado" xml:space="preserve">
+    <value>Level not found.</value>
+  </data>
   <data name="supported_languages" xml:space="preserve">
     <value>Supported languages</value>
   </data>
@@ -210,10 +213,52 @@
   <data name="swagger_summary_area_preservacao_permanente_id" xml:space="preserve">
     <value>Lists the permanent preservation areas of the informed territory.</value>
   </data>
+  <data name="swagger_summary_area_reserva_legal" xml:space="preserve">
+    <value>List the areas with legal reserve.</value>
+  </data>
+  <data name="swagger_summary_area_reserva_legal_id" xml:space="preserve">
+    <value>Lists areas with legal reserve of the informed territory.</value>
+  </data>
+  <data name="swagger_summary_area_restinga" xml:space="preserve">
+    <value>Lists areas with coastal sandy plains (restinga).</value>
+  </data>
+  <data name="swagger_summary_area_restinga_id" xml:space="preserve">
+    <value>Lists areas with coastal sandy plains (restinga) of the informed territory.</value>
+  </data>
+  <data name="swagger_summary_area_servidao_administrativa" xml:space="preserve">
+    <value>Lists areas of administrative easement.</value>
+  </data>
+  <data name="swagger_summary_area_servidao_administrativa_id" xml:space="preserve">
+    <value>Lists areas of administrative easement of the informed territory.</value>
+  </data>
   <data name="swagger_summary_area_situacao" xml:space="preserve">
     <value>Lists the areas with properties with the informed situation.</value>
   </data>
   <data name="swagger_summary_area_tipo" xml:space="preserve">
     <value>Lists the areas with properties with the informed type.</value>
+  </data>
+  <data name="swagger_summary_area_topo_morro" xml:space="preserve">
+    <value>Lists hilltop areas.</value>
+  </data>
+  <data name="swagger_summary_area_topo_morro_id" xml:space="preserve">
+    <value>Lists the hilltop areas of the informed territory.</value>
+  </data>
+  <data name="swagger_summary_area_vegetacao_nativa" xml:space="preserve">
+    <value>Lists areas with native vegetation.</value>
+  </data>
+  <data name="swagger_summary_area_vegetacao_nativa_id" xml:space="preserve">
+    <value>Lists the areas with native vegetation of the informed territory.</value>
+  </data>
+  <data name="swagger_summary_area_vereda" xml:space="preserve">
+    <value>Lists areas with wet and stable terrain (vereda).</value>
+  </data>
+  <data name="swagger_summary_area_vereda_id" xml:space="preserve">
+    <value>Lists areas with wet and stable terrain (vereda) of the informed territory.</value>
+  </data>
+  <data name="swagger_summary_nivel_territorio" xml:space="preserve">
+    <value>Lists the territory levels.</value>
+  </data>
+  <data name="swagger_summary_nivel_territorio_id" xml:space="preserve">
+    <value>Lists the territory level of the informed id.</value>
   </data>
 </root>

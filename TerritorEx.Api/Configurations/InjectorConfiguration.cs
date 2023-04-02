@@ -19,6 +19,13 @@ public static class InjectorConfiguration
         services.AddScoped<IAreaNascenteOlhoDAguaRepository, AreaNascenteOlhoDAguaRepository>();
         services.AddScoped<IAreaPousioRepository, AreaPousioRepository>();
         services.AddScoped<IAreaPreservacaoPermanenteRepository, AreaPreservacaoPermanenteRepository>();
+        services.AddScoped<IAreaReservaLegalRepository, AreaReservaLegalRepository>();
+        services.AddScoped<IAreaRestingaRepository, AreaRestingaRepository>();
+        services.AddScoped<IAreaServidaoAdministrativaRepository, AreaServidaoAdministrativaRepository>();
+        services.AddScoped<IAreaTopoMorroRepository, AreaTopoMorroRepository>();
+        services.AddScoped<IAreaVegetacaoNativaRepository, AreaVegetacaoNativaRepository>();
+        services.AddScoped<IAreaVeredaRepository, AreaVeredaRepository>();
+        services.AddScoped<INivelTerritorioRepository, NivelTerritorioRepository>();
         #endregion
 
         #region [ Services ]
@@ -33,6 +40,13 @@ public static class InjectorConfiguration
         services.AddScoped<IAreaNascenteOlhoDAguaService, AreaNascenteOlhoDAguaService>();
         services.AddScoped<IAreaPousioService, AreaPousioService>();
         services.AddScoped<IAreaPreservacaoPermanenteService, AreaPreservacaoPermanenteService>();
+        services.AddScoped<IAreaReservaLegalService, AreaReservaLegalService>();
+        services.AddScoped<IAreaRestingaService, AreaRestingaService>();
+        services.AddScoped<IAreaServidaoAdministrativaService, AreaServidaoAdministrativaService>();
+        services.AddScoped<IAreaTopoMorroService, AreaTopoMorroService>();
+        services.AddScoped<IAreaVegetacaoNativaService, AreaVegetacaoNativaService>();
+        services.AddScoped<IAreaVeredaService, AreaVeredaService>();
+        services.AddScoped<INivelTerritorioService, NivelTerritorioService>();
         #endregion
     }
 }
