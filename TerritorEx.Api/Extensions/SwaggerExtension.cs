@@ -64,10 +64,9 @@ public class CustomOperationFilter : IOperationFilter
         operation.Parameters.Add(new OpenApiParameter
         {
             Name = "accept-language",
-            In = ParameterLocation.Header,
-            Required = false,
             Description = _localizer["supported_languages"],
-
+            In = ParameterLocation.Header,
+            Required = true,
             Schema = new OpenApiSchema
             {
                 Type = "string",

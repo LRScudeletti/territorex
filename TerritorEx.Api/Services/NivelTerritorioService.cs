@@ -9,7 +9,7 @@ namespace TerritorEx.Api.Services;
 public interface INivelTerritorioService
 {
     Task<IEnumerable<NivelTerritorio>> RecuperarTodos();
-    Task<IReadOnlyCollection<NivelTerritorio>> RecuperarPorId(int territorioId);
+    Task<IReadOnlyCollection<NivelTerritorio>> RecuperarPorId(int niveTerritorioId);
 }
 #endregion
 
@@ -30,9 +30,9 @@ public class NivelTerritorioService : INivelTerritorioService
         return await _nivelTerritorioRepository.RecuperarTodos();
     }
 
-    public async Task<IReadOnlyCollection<NivelTerritorio>> RecuperarPorId(int territorioId)
+    public async Task<IReadOnlyCollection<NivelTerritorio>> RecuperarPorId(int niveTerritorioId)
     {
-        var area = await _nivelTerritorioRepository.RecuperarPorId(territorioId);
+        var area = await _nivelTerritorioRepository.RecuperarPorId(niveTerritorioId);
 
         if (!area.Any())
             throw new KeyNotFoundException(_localizer["nivel_nao_encontrado"]);

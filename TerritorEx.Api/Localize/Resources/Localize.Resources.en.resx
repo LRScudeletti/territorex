@@ -117,14 +117,14 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="area_nao_encontrada" xml:space="preserve">
+  <data name="area_territorio_nao_encontrada" xml:space="preserve">
     <value>Area not found.</value>
   </data>
-  <data name="model_area_id" xml:space="preserve">
-    <value>Area internal ID</value>
-  </data>
-  <data name="nivel_nao_encontrado" xml:space="preserve">
+  <data name="nivel_territorio_nao_encontrado" xml:space="preserve">
     <value>Level not found.</value>
+  </data>
+  <data name="situacao_imovel_nao_encontrada" xml:space="preserve">
+    <value>Property condition not found.</value>
   </data>
   <data name="supported_languages" xml:space="preserve">
     <value>Supported languages</value>
@@ -260,5 +260,41 @@
   </data>
   <data name="swagger_summary_nivel_territorio_id" xml:space="preserve">
     <value>Lists the territory level of the informed id.</value>
+  </data>
+  <data name="swagger_summary_situacao_imovel" xml:space="preserve">
+    <value>List the conditions of the properties.</value>
+  </data>
+  <data name="swagger_summary_situacao_imovel_id" xml:space="preserve">
+    <value>Lists the condition of the property of the informed id.</value>
+  </data>
+  <data name="swagger_summary_territorio" xml:space="preserve">
+    <value>Lists the territories.</value>
+  </data>
+  <data name="swagger_summary_territorio_hierarquia" xml:space="preserve">
+    <value>Lists the hierarchy of the informed territory.</value>
+  </data>
+  <data name="swagger_summary_territorio_id" xml:space="preserve">
+    <value>Lists the territory of the informed id.</value>
+  </data>
+  <data name="swagger_summary_territorio_nivel" xml:space="preserve">
+    <value>Lists the territories according of the informed level.</value>
+  </data>
+  <data name="swagger_summary_territorio_nome" xml:space="preserve">
+    <value>Lists the territories according of the informed name.</value>
+  </data>
+  <data name="swagger_summary_territorio_superior" xml:space="preserve">
+    <value>Lists the territories according of the informed superior territory.</value>
+  </data>
+  <data name="swagger_summary_tipo_imovel" xml:space="preserve">
+    <value>Lists property types.</value>
+  </data>
+  <data name="swagger_summary_tipo_imovel_id" xml:space="preserve">
+    <value>Lists the type of property oh the informed id.</value>
+  </data>
+  <data name="territorio_nao_encontrada" xml:space="preserve">
+    <value>Territory not found.</value>
+  </data>
+  <data name="tipo_imovel_nao_encontrado" xml:space="preserve">
+    <value>Property type not found.</value>
   </data>
 </root>

@@ -9,18 +9,18 @@ namespace TerritorEx.Api.Controllers;
 
 [ApiController]
 [Route("[controller]")]
-public class NivelTerritorioController : ControllerBase
+public class TipoImovelController : ControllerBase
 {
-    private readonly INivelTerritorioService _nivelTerritorioService;
+    private readonly ITipoImovelService _tipoImovelService;
 
-    public NivelTerritorioController(INivelTerritorioService nivelTerritorioService)
+    public TipoImovelController(ITipoImovelService tipoImovelService)
     {
-        _nivelTerritorioService = nivelTerritorioService;
+        _tipoImovelService = tipoImovelService;
     }
 
     #region [ Documentação Swagger RecuperarTodos ]
-    [SwaggerOperation(Summary = "swagger_summary_nivel_territorio")]
-    [SwaggerResponse((int)HttpStatusCode.OK, "swagger_response_200", typeof(NivelTerritorio))]
+    [SwaggerOperation(Summary = "swagger_summary_tipo_imovel")]
+    [SwaggerResponse((int)HttpStatusCode.OK, "swagger_response_200", typeof(TipoImovel))]
     [SwaggerResponse((int)HttpStatusCode.BadRequest, "swagger_response_400", typeof(Mensagem))]
     [SwaggerResponse((int)HttpStatusCode.NotFound, "swagger_response_404", typeof(Mensagem))]
     [SwaggerResponse((int)HttpStatusCode.InternalServerError, "swagger_response_500", typeof(Mensagem))]
@@ -29,22 +29,22 @@ public class NivelTerritorioController : ControllerBase
     [HttpGet]
     public async Task<ActionResult> RecuperarTodos()
     {
-        var area = await _nivelTerritorioService.RecuperarTodos();
+        var area = await _tipoImovelService.RecuperarTodos();
         return Ok(area);
     }
 
     #region [ Documentação Swagger RecuperarPorId ]
-    [SwaggerOperation(Summary = "swagger_summary_nivel_territorio_id")]
-    [SwaggerResponse((int)HttpStatusCode.OK, "swagger_response_200", typeof(NivelTerritorio))]
+    [SwaggerOperation(Summary = "swagger_summary_tipo_imovel_id")]
+    [SwaggerResponse((int)HttpStatusCode.OK, "swagger_response_200", typeof(TipoImovel))]
     [SwaggerResponse((int)HttpStatusCode.BadRequest, "swagger_response_400", typeof(Mensagem))]
     [SwaggerResponse((int)HttpStatusCode.NotFound, "swagger_response_404", typeof(Mensagem))]
     [SwaggerResponse((int)HttpStatusCode.InternalServerError, "swagger_response_500", typeof(Mensagem))]
     #endregion
 
-    [HttpGet("territorio={niveTerritorioId:int}")]
-    public async Task<IActionResult> RecuperarPorId(int niveTerritorioId)
+    [HttpGet("territorio={tipoImovelId:int}")]
+    public async Task<IActionResult> RecuperarPorId(int tipoImovelId)
     {
-        var area = await _nivelTerritorioService.RecuperarPorId(niveTerritorioId);
+        var area = await _tipoImovelService.RecuperarPorId(tipoImovelId);
         return Ok(area);
     }
 }

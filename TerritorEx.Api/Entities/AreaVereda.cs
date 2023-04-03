@@ -1,4 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Dapper.Contrib.Extensions;
 using System.Text.Json.Serialization;
 
 namespace TerritorEx.Api.Entities;

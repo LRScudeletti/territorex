@@ -117,14 +117,14 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="area_nao_encontrada" xml:space="preserve">
+  <data name="area_territorio_nao_encontrada" xml:space="preserve">
     <value>Área não encontrada.</value>
   </data>
-  <data name="model_area_id" xml:space="preserve">
-    <value>ID interno da área</value>
-  </data>
-  <data name="nivel_nao_encontrado" xml:space="preserve">
+  <data name="nivel_territorio_nao_encontrado" xml:space="preserve">
     <value>Nível não encontrado.</value>
+  </data>
+  <data name="situacao_imovel_nao_encontrada" xml:space="preserve">
+    <value>Situação de imóvel não encontrada.</value>
   </data>
   <data name="supported_languages" xml:space="preserve">
     <value>Idiomas suportados</value>
@@ -260,5 +260,41 @@
   </data>
   <data name="swagger_summary_nivel_territorio_id" xml:space="preserve">
     <value>Lista o nível de território pelo id informado.</value>
+  </data>
+  <data name="swagger_summary_situacao_imovel" xml:space="preserve">
+    <value>Lista as situações dos imóveis.</value>
+  </data>
+  <data name="swagger_summary_situacao_imovel_id" xml:space="preserve">
+    <value>Lista a situação do imóvel pelo id informado.</value>
+  </data>
+  <data name="swagger_summary_territorio" xml:space="preserve">
+    <value>Lista os territórios.</value>
+  </data>
+  <data name="swagger_summary_territorio_hierarquia" xml:space="preserve">
+    <value>Lista a hierarquia do território informado.</value>
+  </data>
+  <data name="swagger_summary_territorio_id" xml:space="preserve">
+    <value>Lista o território pelo id informado.</value>
+  </data>
+  <data name="swagger_summary_territorio_nivel" xml:space="preserve">
+    <value>Lista os territórios de acordo com o nível informado.</value>
+  </data>
+  <data name="swagger_summary_territorio_nome" xml:space="preserve">
+    <value>Lista os territórios de acordo com o nome informado.</value>
+  </data>
+  <data name="swagger_summary_territorio_superior" xml:space="preserve">
+    <value>Lista os territórios de acordo com o território superior informado.</value>
+  </data>
+  <data name="swagger_summary_tipo_imovel" xml:space="preserve">
+    <value>Lista os tipos dos imóveis.</value>
+  </data>
+  <data name="swagger_summary_tipo_imovel_id" xml:space="preserve">
+    <value>Lista o tipo do imóvel pelo id informado.</value>
+  </data>
+  <data name="territorio_nao_encontrada" xml:space="preserve">
+    <value>Território não encontrado.</value>
+  </data>
+  <data name="tipo_imovel_nao_encontrado" xml:space="preserve">
+    <value>Tipo de imóvel não encontrado.</value>
   </data>
 </root>

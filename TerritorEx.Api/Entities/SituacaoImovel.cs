@@ -3,20 +3,14 @@ using System.Text.Json.Serialization;
 
 namespace TerritorEx.Api.Entities;
 
-public class AreaVegetacaoNativa
+public class SituacaoImovel
 {
     [Key]
-    public int AreaId { get; set; }
+    public int SituacaoImovelId { get; set; }
 
-    public int TerritorioId { get; set; }
-
-    public int SicarId { get; set; }
+    public string Sigla { get; set; }
 
     public string Descricao { get; set; }
-
-    public double AreaHectare { get; set; }
-
-    public byte[] Shape { get; set; }
 
     [JsonIgnore]
     public string UsuarioAtualizacao { get; set; }
@@ -24,3 +18,4 @@ public class AreaVegetacaoNativa
     [JsonIgnore]
     public DateTime DataAtualizacao { get; set; }
 }
+

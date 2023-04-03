@@ -26,6 +26,9 @@ public static class InjectorConfiguration
         services.AddScoped<IAreaVegetacaoNativaRepository, AreaVegetacaoNativaRepository>();
         services.AddScoped<IAreaVeredaRepository, AreaVeredaRepository>();
         services.AddScoped<INivelTerritorioRepository, NivelTerritorioRepository>();
+        services.AddScoped<ISituacaoImovelRepository, SituacaoImovelRepository>();
+        services.AddScoped<ITipoImovelRepository, TipoImovelRepository>();
+        services.AddScoped<ITerritorioRepository, TerritorioRepository>();
         #endregion
 
         #region [ Services ]
@@ -47,6 +50,9 @@ public static class InjectorConfiguration
         services.AddScoped<IAreaVegetacaoNativaService, AreaVegetacaoNativaService>();
         services.AddScoped<IAreaVeredaService, AreaVeredaService>();
         services.AddScoped<INivelTerritorioService, NivelTerritorioService>();
+        services.AddScoped<ISituacaoImovelService, SituacaoImovelService>();
+        services.AddScoped<ITipoImovelService, TipoImovelService>();
+        services.AddScoped<ITerritorioService, TerritorioService>();
         #endregion
     }
 }
