@@ -5,6 +5,7 @@ using Microsoft.OpenApi.Models;
 using Swashbuckle.AspNetCore.SwaggerGen;
 using Swashbuckle.AspNetCore.SwaggerUI;
 using TerritorEx.Api.Extensions;
+using TerritorEx.Api.Extensions.Swagger;
 using TerritorEx.Api.Localize;
 
 namespace TerritorEx.Api.Configurations;
@@ -49,6 +50,7 @@ public static class SwaggerConfiguration
 
             options.IncludeXmlComments(xmlPath);
             options.OperationFilter<CustomOperationFilter>();
+            options.SchemaFilter<CustomSchemaFilter>();
         });
     }
 
