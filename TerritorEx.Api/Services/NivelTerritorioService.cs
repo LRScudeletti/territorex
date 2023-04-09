@@ -35,7 +35,7 @@ public class NivelTerritorioService : INivelTerritorioService
         var area = await _nivelTerritorioRepository.RecuperarPorId(niveTerritorioId);
 
         if (!area.Any())
-            throw new KeyNotFoundException(_localizer["nivel_nao_encontrado"]);
+            throw new KeyNotFoundException(_localizer["nivel_territorio_nao_encontrado"]);
 
         return area;
     }

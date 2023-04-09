@@ -35,7 +35,7 @@ public class AreaNascenteOlhoDAguaService : IAreaNascenteOlhoDAguaService
         var area = await _areaNascenteOlhoDAguaRepository.RecuperarPorTerritorioId(territorioId);
 
         if (area == null)
-            throw new KeyNotFoundException(_localizer["area_nao_encontrada"]);
+            throw new KeyNotFoundException(_localizer["area_territorio_nao_encontrado"]);
 
         return area;
     }

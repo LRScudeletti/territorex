@@ -35,7 +35,7 @@ public class AreaDeclividadeMaior45Service : IAreaDeclividadeMaior45Service
         var area = await _areaDeclividadeMaior45Repository.RecuperarPorTerritorioId(territorioId);
 
         if (!area.Any())
-            throw new KeyNotFoundException(_localizer["area_nao_encontrada"]);
+            throw new KeyNotFoundException(_localizer["area_territorio_nao_encontrado"]);
 
         return area;
     }

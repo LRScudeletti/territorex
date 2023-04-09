@@ -2,6 +2,7 @@
 using Microsoft.OpenApi.Any;
 using Microsoft.OpenApi.Models;
 using Swashbuckle.AspNetCore.SwaggerGen;
+using System.ComponentModel;
 using TerritorEx.Api.Localize;
 
 namespace TerritorEx.Api.Extensions;
@@ -21,9 +22,6 @@ public class CustomOperationFilter : IOperationFilter
 
     public void Apply(OpenApiOperation operation, OperationFilterContext context)
     {
-        var listSupportedCultures = _configuration.GetSection("Globalization:SupportedCultures").Get<List<string>>()
-            .Where(x => !string.IsNullOrWhiteSpace(x)).Distinct().ToList();
-
         var queryLang = _httpContextAccessor?.HttpContext!.Request.Query["lang"].FirstOrDefault();
         Thread.CurrentThread.SetCulture(queryLang);
 
@@ -58,6 +56,9 @@ public class CustomOperationFilter : IOperationFilter
             }
         }
 
+        var listSupportedCultures = _configuration.GetSection("Globalization:SupportedCultures").Get<List<string>>()
+            .Where(x => !string.IsNullOrWhiteSpace(x)).Distinct().ToList();
+
         if (!string.IsNullOrWhiteSpace(queryLang))
             listSupportedCultures.Move(x => x.ToLower().Trim() == queryLang.Trim().ToLower(), 0);
 
@@ -73,5 +74,53 @@ public class CustomOperationFilter : IOperationFilter
                 Enum = listSupportedCultures.Select(value => (IOpenApiAny)new OpenApiString(value)).ToList(),
             }
         });
+    }
+}
+
+internal class CustomSchemaFilter : ISchemaFilter
+{
+    private readonly IHttpContextAccessor _httpContextAccessor;
+    private readonly IStringLocalizer<Resources> _localizer;
+
+    public CustomSchemaFilter(IHttpContextAccessor httpContextAccessor, IStringLocalizer<Resources> localizer)
+    {
+        _httpContextAccessor = httpContextAccessor;
+        _localizer = localizer;
+    }
+
+    public void Apply(OpenApiSchema schema, SchemaFilterContext context)
+    {
+        var queryLang = _httpContextAccessor?.HttpContext!.Request.Query["lang"].FirstOrDefault();
+        Thread.CurrentThread.SetCulture(queryLang);
+
+        if (context.ParameterInfo != null)
+        {
+            var descriptionAttributes = context.ParameterInfo.GetCustomAttributes(typeof(DescriptionAttribute), false);
+
+            if (descriptionAttributes.Length > 0)
+            {
+                var descriptionAttribute = (DescriptionAttribute)descriptionAttributes[0];
+                schema.Description = _localizer[descriptionAttribute.Description];
+            }
+        }
+
+        if (context.MemberInfo != null)
+        {
+            var descriptionAttributes = context.MemberInfo.GetCustomAttributes(typeof(DescriptionAttribute), false);
+
+            if (descriptionAttributes.Length > 0)
+            {
+                schema.Description = _localizer[((DescriptionAttribute)descriptionAttributes[0]).Description];
+            }
+        }
+
+        if (context.Type == null) return;
+        {
+            var descriptionAttributes = context.Type.GetCustomAttributes(typeof(DescriptionAttribute), false);
+
+            if (descriptionAttributes.Length <= 0) return;
+
+            schema.Description = _localizer[((DescriptionAttribute)descriptionAttributes[0]).Description];
+        }
     }
 }

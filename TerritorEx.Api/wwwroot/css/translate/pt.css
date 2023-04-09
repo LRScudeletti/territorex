@@ -1,0 +1,21 @@
+﻿.swagger-ui .parameter__name.required:after {
+    color: #ff0000;
+    content: "obrigatório";
+    font-size: 10px;
+    padding: 5px;
+    position: relative;
+    top: -6px;
+}
+
+.swagger-ui .loading-container .loading:after {
+    color: #3b4151;
+    content: "aguarde";
+    font-family: sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    left: 50%;
+    position: absolute;
+    text-transform: uppercase;
+    top: 50%;
+    transform: translate(-50%,-50%)
+}

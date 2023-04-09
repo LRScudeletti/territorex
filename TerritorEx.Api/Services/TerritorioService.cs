@@ -40,7 +40,7 @@ public class TerritorioService : ITerritorioService
         var area = await _territorioRepository.RecuperarPorId(territorioId);
 
         if (!area.Any())
-            throw new KeyNotFoundException(_localizer["territorio_nao_encontrada"]);
+            throw new KeyNotFoundException(_localizer["territorio_nao_encontrado"]);
 
         return area;
     }
@@ -50,7 +50,7 @@ public class TerritorioService : ITerritorioService
         var area = await _territorioRepository.RecuperarPorNome(territorioNome);
 
         if (!area.Any())
-            throw new KeyNotFoundException(_localizer["territorio_nao_encontrada"]);
+            throw new KeyNotFoundException(_localizer["territorio_nao_encontrado"]);
 
         return area;
     }
@@ -60,7 +60,7 @@ public class TerritorioService : ITerritorioService
         var area = await _territorioRepository.RecuperarPorTerritorioSuperiorId(territorioSuperiotId);
 
         if (!area.Any())
-            throw new KeyNotFoundException(_localizer["territorio_nao_encontrada"]);
+            throw new KeyNotFoundException(_localizer["territorio_nao_encontrado"]);
 
         return area;
     }
@@ -70,7 +70,7 @@ public class TerritorioService : ITerritorioService
         var area = await _territorioRepository.RecuperarPorNivelId(nivelTerritorioId);
 
         if (!area.Any())
-            throw new KeyNotFoundException(_localizer["territorio_nao_encontrada"]);
+            throw new KeyNotFoundException(_localizer["territorio_nao_encontrado"]);
 
         return area;
     }
@@ -79,7 +79,7 @@ public class TerritorioService : ITerritorioService
     {
         var area = await _territorioRepository.RecuperarHierarquia(territorioId);
 
-        return area ?? throw new KeyNotFoundException(_localizer["territorio_nao_encontrada"]);
+        return area ?? throw new KeyNotFoundException(_localizer["territorio_nao_encontrado"]);
     }
 }
 #endregion

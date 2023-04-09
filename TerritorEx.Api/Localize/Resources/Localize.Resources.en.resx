@@ -117,11 +117,38 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="area_territorio_nao_encontrada" xml:space="preserve">
+  <data name="area_territorio_nao_encontrado" xml:space="preserve">
     <value>Area not found.</value>
   </data>
   <data name="nivel_territorio_nao_encontrado" xml:space="preserve">
     <value>Level not found.</value>
+  </data>
+  <data name="schema_area_altitude_superior_1800" xml:space="preserve">
+    <value>Areas with an altitude greater than 1,800 meters.</value>
+  </data>
+  <data name="schema_area_hectare" xml:space="preserve">
+    <value>Area size in hectares.</value>
+  </data>
+  <data name="schema_area_id" xml:space="preserve">
+    <value>Area internal ID.</value>
+  </data>
+  <data name="schema_data_atualizacao" xml:space="preserve">
+    <value>Last update date.</value>
+  </data>
+  <data name="schema_descricao" xml:space="preserve">
+    <value>Area description.</value>
+  </data>
+  <data name="schema_shape" xml:space="preserve">
+    <value>Geospatial information.</value>
+  </data>
+  <data name="schema_sicar_id" xml:space="preserve">
+    <value>Area ID (SICAR).</value>
+  </data>
+  <data name="schema_territorio_id" xml:space="preserve">
+    <value>Territory ID (IBGE).</value>
+  </data>
+  <data name="schema_usuario_atualizacao" xml:space="preserve">
+    <value>Last update user.</value>
   </data>
   <data name="situacao_imovel_nao_encontrada" xml:space="preserve">
     <value>Property condition not found.</value>
@@ -291,7 +318,7 @@
   <data name="swagger_summary_tipo_imovel_id" xml:space="preserve">
     <value>Lists the type of property oh the informed id.</value>
   </data>
-  <data name="territorio_nao_encontrada" xml:space="preserve">
+  <data name="territorio_nao_encontrado" xml:space="preserve">
     <value>Territory not found.</value>
   </data>
   <data name="tipo_imovel_nao_encontrado" xml:space="preserve">

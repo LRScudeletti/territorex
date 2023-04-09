@@ -117,11 +117,38 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="area_territorio_nao_encontrada" xml:space="preserve">
+  <data name="area_territorio_nao_encontrado" xml:space="preserve">
     <value>Área não encontrada.</value>
   </data>
   <data name="nivel_territorio_nao_encontrado" xml:space="preserve">
     <value>Nível não encontrado.</value>
+  </data>
+  <data name="schema_area_altitude_superior_1800" xml:space="preserve">
+    <value>Área com altitude superior a 1800 metros.</value>
+  </data>
+  <data name="schema_area_hectare" xml:space="preserve">
+    <value>Tamanho da área em hectares.</value>
+  </data>
+  <data name="schema_area_id" xml:space="preserve">
+    <value>ID interno da área.</value>
+  </data>
+  <data name="schema_data_atualizacao" xml:space="preserve">
+    <value>Data da última atualização.</value>
+  </data>
+  <data name="schema_descricao" xml:space="preserve">
+    <value>Descrição da área.</value>
+  </data>
+  <data name="schema_shape" xml:space="preserve">
+    <value>Informações geoespaciais.</value>
+  </data>
+  <data name="schema_sicar_id" xml:space="preserve">
+    <value>ID da área (SICAR).</value>
+  </data>
+  <data name="schema_territorio_id" xml:space="preserve">
+    <value>ID do território (IBGE).</value>
+  </data>
+  <data name="schema_usuario_atualizacao" xml:space="preserve">
+    <value>Usuário da última atualização.</value>
   </data>
   <data name="situacao_imovel_nao_encontrada" xml:space="preserve">
     <value>Situação de imóvel não encontrada.</value>
@@ -291,7 +318,7 @@
   <data name="swagger_summary_tipo_imovel_id" xml:space="preserve">
     <value>Lista o tipo do imóvel pelo id informado.</value>
   </data>
-  <data name="territorio_nao_encontrada" xml:space="preserve">
+  <data name="territorio_nao_encontrado" xml:space="preserve">
     <value>Território não encontrado.</value>
   </data>
   <data name="tipo_imovel_nao_encontrado" xml:space="preserve">

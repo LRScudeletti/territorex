@@ -35,7 +35,7 @@ public class AreaServidaoAdministrativaService : IAreaServidaoAdministrativaServ
         var area = await _areaServidaoAdministrativaRepository.RecuperarPorTerritorioId(territorioId);
 
         if (!area.Any())
-            throw new KeyNotFoundException(_localizer["area_nao_encontrada"]);
+            throw new KeyNotFoundException(_localizer["area_territorio_nao_encontrado"]);
 
         return area;
     }

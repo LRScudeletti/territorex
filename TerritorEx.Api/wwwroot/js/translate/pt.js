@@ -1,4 +1,5 @@
 var resource_globalization = {
+    "Required": "Obrigatório",
     "Name": "Nome",
     "Description": "Descrição",
     "SelectDefinition": "Selecione uma definição",

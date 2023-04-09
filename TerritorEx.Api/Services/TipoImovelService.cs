@@ -35,7 +35,7 @@ public class TipoImovelService : ITipoImovelService
         var area = await _tipoImovelRepository.RecuperarPorId(tipoImovelId);
 
         if (!area.Any())
-            throw new KeyNotFoundException(_localizer["tipo_imovel_nao_encontrada"]);
+            throw new KeyNotFoundException(_localizer["tipo_imovel_nao_encontrado"]);
 
         return area;
     }

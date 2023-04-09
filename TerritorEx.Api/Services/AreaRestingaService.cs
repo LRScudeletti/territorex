@@ -35,7 +35,7 @@ public class AreaRestingaService : IAreaRestingaService
         var area = await _areaRestingaRepository.RecuperarPorTerritorioId(territorioId);
 
         if (!area.Any())
-            throw new KeyNotFoundException(_localizer["area_nao_encontrada"]);
+            throw new KeyNotFoundException(_localizer["area_territorio_nao_encontrado"]);
 
         return area;
     }

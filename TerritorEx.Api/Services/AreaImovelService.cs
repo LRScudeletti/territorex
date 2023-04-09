@@ -38,7 +38,7 @@ public class AreaImovelService : IAreaImovelService
         var area = await _areaImovelRepository.RecuperarPorTerritorioId(territorioId);
 
         if (!area.Any())
-            throw new KeyNotFoundException(_localizer["area_nao_encontrada"]);
+            throw new KeyNotFoundException(_localizer["area_territorio_nao_encontrado"]);
 
         return area;
     }
@@ -48,7 +48,7 @@ public class AreaImovelService : IAreaImovelService
         var area = await _areaImovelRepository.RecuperarPorImovelId(imovelId);
 
         if (area == null)
-            throw new KeyNotFoundException(_localizer["area_nao_encontrada"]);
+            throw new KeyNotFoundException(_localizer["area_territorio_nao_encontrado"]);
 
         return area;
     }
@@ -58,7 +58,7 @@ public class AreaImovelService : IAreaImovelService
         var area = await _areaImovelRepository.RecuperarPorTipoImovelId(tipoImovelId);
 
         if (!area.Any())
-            throw new KeyNotFoundException(_localizer["area_nao_encontrada"]);
+            throw new KeyNotFoundException(_localizer["area_territorio_nao_encontrado"]);
 
         return area;
     }
@@ -68,7 +68,7 @@ public class AreaImovelService : IAreaImovelService
         var area = await _areaImovelRepository.RecuperarPorSituacaoImovelId(situacaoImovelId);
 
         if (!area.Any())
-            throw new KeyNotFoundException(_localizer["area_nao_encontrada"]);
+            throw new KeyNotFoundException(_localizer["area_territorio_nao_encontrado"]);
 
         return area;
     }

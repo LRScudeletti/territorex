@@ -5,7 +5,6 @@ using Microsoft.OpenApi.Models;
 using Swashbuckle.AspNetCore.SwaggerGen;
 using Swashbuckle.AspNetCore.SwaggerUI;
 using TerritorEx.Api.Extensions;
-using TerritorEx.Api.Extensions.Swagger;
 using TerritorEx.Api.Localize;
 
 namespace TerritorEx.Api.Configurations;
@@ -38,7 +37,8 @@ public static class SwaggerConfiguration
                     Contact = new OpenApiContact
                     {
                         Name = "Luiz Rogério Scudeletti",
-                        Url = new Uri("https://www.linkedin.com/in/rogerioscudeletti/")
+                        Url = new Uri("https://www.linkedin.com/in/rogerioscudeletti/"),
+                        Email = "rogerio.scudeletti@gmail.com"
                     }
                 });
             }
@@ -75,9 +75,11 @@ public static class SwaggerConfiguration
                 options.SwaggerEndpoint($"/swagger/v1-{l.Trim()}/swagger.json?lang={l.Trim()}", $"swagger-{l.Trim()}");
 
             options.HeadContent =
-                "<script src='./scripts/jquery-3.6.3.min.js'></script>" +
-                "<script src='./scripts/jquery.initialize.min.js'></script>" +
-                "<script src='./scripts/translate/translate.js'></script>";
+                "<script src='./js/jquery-3.6.3.min.js'></script>" +
+                "<script src='./js/jquery.initialize.min.js'></script>" +
+                "<script src='./js/translate/translate.js'></script>";
+
+            options.InjectStylesheet("./css/default.css");
 
             options.RoutePrefix = string.Empty;
         });

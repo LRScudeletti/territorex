@@ -185,11 +185,12 @@ $(document).ready(function () {
 
             if (lang != null && lang != "") {
                 var lbl = $(this);
-                var script = loadjs('./scripts/translate/' + lang + '.js')
+                var script = loadjs('./js/translate/' + lang + '.js')
                 script.onload = function () {
                     initialTranslation(lbl.find('span'));
                     allTranslation();
                 };
+                AddCss(lang);
             }
 
             $(sel).change(function () {
@@ -197,10 +198,11 @@ $(document).ready(function () {
                 var lang = getQueryStringParams($(this).val(), 'lang');
 
                 if (lang != null && lang != "") {
-                    var script = loadjs('./scripts/translate/' + lang + '.js')
+                    var script = loadjs('./js/translate/' + lang + '.js')
                     script.onload = function () {
                         initialTranslation($(sel).prev('span'));
                     };
+                    AddCss(lang);
                 }
             });
         });
@@ -211,5 +213,10 @@ $(document).ready(function () {
             initialTranslation(lbl.find('span'));
             allTranslation();
         });
+    }
+
+    function AddCss(lang) {
+        // Adicionando css globalizado
+        $('head').append('<link rel="stylesheet" href="./css/translate/' + lang + '.css" type="text/css" />');
     }
 });
