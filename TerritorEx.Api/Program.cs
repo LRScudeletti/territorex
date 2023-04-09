@@ -37,9 +37,9 @@ var configuration = builder.Configuration;
     if (!app.Environment.IsDevelopment())
         dbUpSuccess = DbUpConfiguration.AtualizarBancoDados();
 
+    app.UseStaticFiles();
     app.UseSwaggerUi();
 
-    app.UseStaticFiles();
     app.UseMiddleware<ErrorHandlerMiddleware>();
     app.UseHttpsRedirection();
     app.UseAuthorization();

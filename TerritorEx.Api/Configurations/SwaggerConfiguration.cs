@@ -31,7 +31,7 @@ public static class SwaggerConfiguration
 
                 options.SwaggerDoc($"v1-{l.Trim()}", new OpenApiInfo
                 {
-                    Title = $"Swagger ({l.Trim()})",
+                    Title = $"TerritorEx ({l.Trim()})",
                     Version = $"v1-{l.Trim()}",
                     Description = localizer["swagger_description"],
                     Contact = new OpenApiContact
@@ -72,7 +72,7 @@ public static class SwaggerConfiguration
                 listSupportedCultures.Move(x => x.ToLower().Trim() == defaultCulture.ToLower().Trim(), 0);
 
             foreach (var l in listSupportedCultures)
-                options.SwaggerEndpoint($"/swagger/v1-{l.Trim()}/swagger.json?lang={l.Trim()}", $"swagger-{l.Trim()}");
+                options.SwaggerEndpoint($"/swagger/v1-{l.Trim()}/swagger.json?lang={l.Trim()}", $"territorex-{l.Trim()}");
 
             options.HeadContent =
                 "<script src='./js/jquery-3.6.3.min.js'></script>" +

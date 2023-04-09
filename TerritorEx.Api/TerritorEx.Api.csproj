@@ -21,48 +21,33 @@
 		<PackageReference Include="Dapper" Version="2.0.123" />
 		<PackageReference Include="Dapper.Contrib" Version="2.0.78" />
 		<PackageReference Include="dbup-sqlserver" Version="5.0.8"></PackageReference>
-		<PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="7.0.3" />
-		<PackageReference Include="Microsoft.Data.SqlClient" Version="5.1.0" />
-		<PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.17.0" />
+		<PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="7.0.4" />
+		<PackageReference Include="Microsoft.Data.SqlClient" Version="5.1.1" />
+		<PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.18.1" />
 		<PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
 		<PackageReference Include="Swashbuckle.AspNetCore.Annotations" Version="6.5.0" />
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Content Remove="wwwroot\css\translate\en.css" />
-	  <Content Remove="wwwroot\css\translate\pt.css" />
-	  <Content Remove="wwwroot\js\jquery-3.6.3.min.js" />
-	  <Content Remove="wwwroot\js\jquery.initialize.min.js" />
-	  <Content Remove="wwwroot\js\translate\en.js" />
-	  <Content Remove="wwwroot\js\translate\pt.js" />
-	  <Content Remove="wwwroot\js\translate\translate.js" />
+		<EmbeddedResource Update="Localize\Resources\Localize.Resources.en.resx">
+			<Generator>PublicResXFileCodeGenerator</Generator>
+		</EmbeddedResource>
+		<EmbeddedResource Update="Localize\Resources\Localize.Resources.pt.resx">
+			<Generator>PublicResXFileCodeGenerator</Generator>
+		</EmbeddedResource>
 	</ItemGroup>
 
 	<ItemGroup>
-		<None Remove="Infrastructure\Scripts\1.0.0.0.sql" />
-		<None Remove="Infrastructure\Scripts\1.0.0.1.sql" />
-		<None Remove="Infrastructure\Scripts\1.0.0.2.sql" />
+		<Content Remove="wwwroot\*" />
+		<Content Remove="Infrastructure\Scripts\1.0.0.0.sql" />
+		<Content Remove="Infrastructure\Scripts\1.0.0.1.sql" />
+		<Content Remove="Infrastructure\Scripts\1.0.0.2.sql" />
 	</ItemGroup>
 
 	<ItemGroup>
-		<EmbeddedResource Include="wwwroot\css\translate\en.css" />
-		<EmbeddedResource Include="wwwroot\css\translate\pt.css" />
-		<EmbeddedResource Include="wwwroot\js\jquery-3.6.3.min.js" />
-		<EmbeddedResource Include="wwwroot\js\jquery.initialize.min.js" />
-		<EmbeddedResource Include="wwwroot\js\translate\translate.js" />
-		<EmbeddedResource Include="wwwroot\js\translate\en.js" />
-		<EmbeddedResource Include="wwwroot\js\translate\pt.js" />
+		<EmbeddedResource Include="wwwroot\*" />
 		<EmbeddedResource Include="Infrastructure\Scripts\1.0.0.0.sql" />
 		<EmbeddedResource Include="Infrastructure\Scripts\1.0.0.1.sql" />
 		<EmbeddedResource Include="Infrastructure\Scripts\1.0.0.2.sql" />
-	</ItemGroup>
-
-	<ItemGroup>
-	  <EmbeddedResource Update="Localize\Resources\Localize.Resources.en.resx">
-	    <Generator>PublicResXFileCodeGenerator</Generator>
-	  </EmbeddedResource>
-	  <EmbeddedResource Update="Localize\Resources\Localize.Resources.pt.resx">
-	    <Generator>PublicResXFileCodeGenerator</Generator>
-	  </EmbeddedResource>
 	</ItemGroup>
 </Project>

@@ -4,6 +4,11 @@ function loadjs(file) {
     script.src = file;
     script.id = "languagefile"
     document.head.appendChild(script);
+
+    $(document).ready(function () {
+        document.title = "TerritorEx API UI";
+    });
+
     return script;
 }
 
@@ -39,6 +44,11 @@ function allTranslation() {
 
     $.initialize('button.try-out__btn', function () {
         $(this).html(resource_globalization["TryItOut"]);
+    });
+
+    $.initialize('.info__contact', function () {
+        $(this).children('div').children('a').html(resource_globalization["Website"]);
+        $(this).children('a').html(resource_globalization["Email"]);
     });
 
     $.initialize('button.try-out__btn.cancel', function () {

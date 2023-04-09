@@ -35,7 +35,7 @@ public class AreaImovelController : ControllerBase
     }
 
     #region [ Documentação Swagger RecuperarPorTerritorioId ]
-    [SwaggerOperation(Summary = "swagger_summary_area_imovel_id")]
+    [SwaggerOperation(Summary = "swagger_summary_area_imovel_territorio")]
     [SwaggerResponse((int)HttpStatusCode.OK, "swagger_response_200", typeof(AreaImovel))]
     [SwaggerResponse((int)HttpStatusCode.BadRequest, "swagger_response_400", typeof(Mensagem))]
     [SwaggerResponse((int)HttpStatusCode.NotFound, "swagger_response_404", typeof(Mensagem))]
@@ -50,7 +50,7 @@ public class AreaImovelController : ControllerBase
     }
 
     #region [ Documentação Swagger RecuperarPorImovelId ]
-    [SwaggerOperation(Summary = "swagger_summary_area_imovel_imovel")]
+    [SwaggerOperation(Summary = "swagger_summary_area_imovel_id")]
     [SwaggerResponse((int)HttpStatusCode.OK, "swagger_response_200", typeof(AreaImovel))]
     [SwaggerResponse((int)HttpStatusCode.BadRequest, "swagger_response_400", typeof(Mensagem))]
     [SwaggerResponse((int)HttpStatusCode.NotFound, "swagger_response_404", typeof(Mensagem))]

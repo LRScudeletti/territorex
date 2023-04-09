@@ -1,5 +1,6 @@
 var resource_globalization = {
-    "Required": "Obrigatório",
+    "Website": "Linkedin: https://www.linkedin.com/in/rogerioscudeletti/",
+    "Email": "Email: rogerio.scudeletti@gmail.com",
     "Name": "Nome",
     "Description": "Descrição",
     "SelectDefinition": "Selecione uma definição",
@@ -7,6 +8,7 @@ var resource_globalization = {
     "Cancel": "Cancelar",
     "Execute": "Executar",
     "Clear": "Limpar",
+    "Required": "Obrigatório",
     "AvailableValues": "Valores disponíveis",
     "ExampleValue": "Valor de exemplo",
     "Schema": "Esquema",

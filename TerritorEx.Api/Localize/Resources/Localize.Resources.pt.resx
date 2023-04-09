@@ -211,10 +211,10 @@
     <value>Lista as áreas com imóveis.</value>
   </data>
   <data name="swagger_summary_area_imovel_id" xml:space="preserve">
-    <value>Lista as áreas com imóveis do território informado.</value>
-  </data>
-  <data name="swagger_summary_area_imovel_imovel" xml:space="preserve">
     <value>Lista a área do imóvel de acordo com código CAR informado.</value>
+  </data>
+  <data name="swagger_summary_area_imovel_territorio" xml:space="preserve">
+    <value>Lista as áreas com imóveis do território informado.</value>
   </data>
   <data name="swagger_summary_area_manguezal" xml:space="preserve">
     <value>Lista as áreas com manguezal.</value>

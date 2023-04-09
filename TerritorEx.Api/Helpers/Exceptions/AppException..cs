@@ -1,5 +1,6 @@
 ﻿using System.Globalization;
 
+// ReSharper disable UnusedMember.Global
 namespace TerritorEx.Api.Helpers.Exceptions;
 
 public abstract class AppException : Exception

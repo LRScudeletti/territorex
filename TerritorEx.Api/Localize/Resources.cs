@@ -1,5 +1,5 @@
 ﻿namespace TerritorEx.Api.Localize;
 
-public class Resources
+public abstract class Resources
 {
 }

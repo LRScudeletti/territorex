@@ -211,10 +211,10 @@
     <value>Lists the areas with properties.</value>
   </data>
   <data name="swagger_summary_area_imovel_id" xml:space="preserve">
-    <value>Lists the areas with properties of the informed territory.</value>
-  </data>
-  <data name="swagger_summary_area_imovel_imovel" xml:space="preserve">
     <value>Lists the area of the property according to the informed CAR code.</value>
+  </data>
+  <data name="swagger_summary_area_imovel_territorio" xml:space="preserve">
+    <value>Lists the areas with properties of the informed territory.</value>
   </data>
   <data name="swagger_summary_area_manguezal" xml:space="preserve">
     <value>List the areas with mangrove.</value>

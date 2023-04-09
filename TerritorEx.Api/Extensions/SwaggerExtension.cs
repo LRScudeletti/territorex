@@ -5,9 +5,10 @@ using Swashbuckle.AspNetCore.SwaggerGen;
 using System.ComponentModel;
 using TerritorEx.Api.Localize;
 
+// ReSharper disable ClassNeverInstantiated.Global
 namespace TerritorEx.Api.Extensions;
 
-public class CustomOperationFilter : IOperationFilter
+internal class CustomOperationFilter : IOperationFilter
 {
     private readonly IConfiguration _configuration;
     private readonly IHttpContextAccessor _httpContextAccessor;
