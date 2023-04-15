@@ -1,4 +1,4 @@
-﻿.topbar-wrapper img[alt="Swagger UI"], .topbar-wrapper span {
+﻿.topbar-wrapper img[alt="Swagger UI"] {
     visibility: collapse;
 }
 
@@ -6,4 +6,8 @@
     content: url('/img/logo.png');
     margin-top: -4px;
     margin-bottom: -18px;
+}
+
+.swagger-ui .topbar .download-url-wrapper .select-label {
+    max-width: 250px;
 }

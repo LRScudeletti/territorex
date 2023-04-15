@@ -36,9 +36,9 @@ public static class SwaggerConfiguration
                     Description = localizer["swagger_description"],
                     Contact = new OpenApiContact
                     {
-                        Name = "Luiz Rogério Scudeletti",
-                        Url = new Uri("https://www.linkedin.com/in/rogerioscudeletti/"),
-                        Email = "rogerio.scudeletti@gmail.com"
+                        Name = localizer["swagger_contact_email"],
+                        Url = new Uri(localizer["swagger_contact_url"]),
+                        Email = localizer["swagger_contact_email"]
                     }
                 });
             }
@@ -61,6 +61,7 @@ public static class SwaggerConfiguration
         app.UseSwagger();
         app.UseSwaggerUI(options =>
         {
+            options.DocumentTitle = "TerritorEx API";
             options.DocExpansion(DocExpansion.None);
 
             var listSupportedCultures = app.Configuration.GetSection("Globalization:SupportedCultures").Get<List<string>>()
@@ -75,11 +76,10 @@ public static class SwaggerConfiguration
                 options.SwaggerEndpoint($"/swagger/v1-{l.Trim()}/swagger.json?lang={l.Trim()}", $"territorex-{l.Trim()}");
 
             options.HeadContent =
-                "<script src='./js/jquery-3.6.3.min.js'></script>" +
+                "<link rel='stylesheet' href='./css/default.css'/>" +
+                "<script src='./js/jquery-3.6.3.min.js'></script> " +
                 "<script src='./js/jquery.initialize.min.js'></script>" +
                 "<script src='./js/translate/translate.js'></script>";
-
-            options.InjectStylesheet("./css/default.css");
 
             options.RoutePrefix = string.Empty;
         });

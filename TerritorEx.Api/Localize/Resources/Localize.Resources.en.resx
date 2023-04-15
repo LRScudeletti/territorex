@@ -156,6 +156,12 @@
   <data name="supported_languages" xml:space="preserve">
     <value>Supported languages</value>
   </data>
+  <data name="swagger_contact_email" xml:space="preserve">
+    <value>rogerio.scudeletti@gmail.com</value>
+  </data>
+  <data name="swagger_contact_url" xml:space="preserve">
+    <value>https://www.linkedin.com/in/rogerioscudeletti</value>
+  </data>
   <data name="swagger_description" xml:space="preserve">
     <value>TerritorEx system API documentation - Brazilian Rural Territory Analysis System.</value>
   </data>
@@ -213,8 +219,14 @@
   <data name="swagger_summary_area_imovel_id" xml:space="preserve">
     <value>Lists the area of the property according to the informed CAR code.</value>
   </data>
+  <data name="swagger_summary_area_imovel_situacao" xml:space="preserve">
+    <value>Lists the territories according of the informed situation.</value>
+  </data>
   <data name="swagger_summary_area_imovel_territorio" xml:space="preserve">
     <value>Lists the areas with properties of the informed territory.</value>
+  </data>
+  <data name="swagger_summary_area_imovel_tipo" xml:space="preserve">
+    <value>Lists the territories according of the informed type.</value>
   </data>
   <data name="swagger_summary_area_manguezal" xml:space="preserve">
     <value>List the areas with mangrove.</value>

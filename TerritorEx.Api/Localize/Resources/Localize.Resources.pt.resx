@@ -156,6 +156,12 @@
   <data name="supported_languages" xml:space="preserve">
     <value>Idiomas suportados</value>
   </data>
+  <data name="swagger_contact_email" xml:space="preserve">
+    <value>rogerio.scudeletti@gmail.com</value>
+  </data>
+  <data name="swagger_contact_url" xml:space="preserve">
+    <value>https://www.linkedin.com/in/rogerioscudeletti</value>
+  </data>
   <data name="swagger_description" xml:space="preserve">
     <value>Documentação da API do sistema TerritorEx - Sistema de Análise do Território Rural Brasileiro.</value>
   </data>
@@ -201,6 +207,12 @@
   <data name="swagger_summary_area_consolidada_id" xml:space="preserve">
     <value>Lista as áreas consolidadas do território informado.</value>
   </data>
+  <data name="swagger_summary_area_declividade_maior_45" xml:space="preserve">
+    <value>Lista as áreas com declicidade maior que 45 graus.</value>
+  </data>
+  <data name="swagger_summary_area_declividade_maior_45_id" xml:space="preserve">
+    <value>Lista as áreas com declicidade maior que 45 graus do território informado.</value>
+  </data>
   <data name="swagger_summary_area_hidrografia" xml:space="preserve">
     <value>Lista as áreas de hidrografia.</value>
   </data>
@@ -213,8 +225,14 @@
   <data name="swagger_summary_area_imovel_id" xml:space="preserve">
     <value>Lista a área do imóvel de acordo com código CAR informado.</value>
   </data>
+  <data name="swagger_summary_area_imovel_situacao" xml:space="preserve">
+    <value>Lista os territórios de acordo com a situação informada.</value>
+  </data>
   <data name="swagger_summary_area_imovel_territorio" xml:space="preserve">
     <value>Lista as áreas com imóveis do território informado.</value>
+  </data>
+  <data name="swagger_summary_area_imovel_tipo" xml:space="preserve">
+    <value>Lista os territórios de acordo com o tipo informado.</value>
   </data>
   <data name="swagger_summary_area_manguezal" xml:space="preserve">
     <value>Lista as áreas com manguezal.</value>

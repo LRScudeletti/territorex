@@ -38,16 +38,20 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<Content Remove="wwwroot\*" />
 		<Content Remove="Infrastructure\Scripts\1.0.0.0.sql" />
 		<Content Remove="Infrastructure\Scripts\1.0.0.1.sql" />
 		<Content Remove="Infrastructure\Scripts\1.0.0.2.sql" />
 	</ItemGroup>
 
 	<ItemGroup>
-		<EmbeddedResource Include="wwwroot\*" />
 		<EmbeddedResource Include="Infrastructure\Scripts\1.0.0.0.sql" />
 		<EmbeddedResource Include="Infrastructure\Scripts\1.0.0.1.sql" />
 		<EmbeddedResource Include="Infrastructure\Scripts\1.0.0.2.sql" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Content Update="wwwroot\**\*.*">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
 	</ItemGroup>
 </Project>
