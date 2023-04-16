@@ -124,13 +124,58 @@
     <value>Nível não encontrado.</value>
   </data>
   <data name="schema_area_altitude_superior_1800" xml:space="preserve">
-    <value>Área com altitude superior a 1800 metros.</value>
+    <value>Áreas com altitude superior a 1800 metros.</value>
+  </data>
+  <data name="schema_area_banhado" xml:space="preserve">
+    <value>Áreas com banhados.</value>
+  </data>
+  <data name="schema_area_borda_chapada" xml:space="preserve">
+    <value>Áreas com bordas chapadas.</value>
+  </data>
+  <data name="schema_area_consolidada" xml:space="preserve">
+    <value>Áreas consolidadas.</value>
+  </data>
+  <data name="schema_area_declividade_maior_45" xml:space="preserve">
+    <value>Áreas com declividade maior que 45 graus.</value>
   </data>
   <data name="schema_area_hectare" xml:space="preserve">
     <value>Tamanho da área em hectares.</value>
   </data>
+  <data name="schema_area_hidrografia" xml:space="preserve">
+    <value>Áreas de hidrografia.</value>
+  </data>
   <data name="schema_area_id" xml:space="preserve">
     <value>ID interno da área.</value>
+  </data>
+  <data name="schema_area_manguezal" xml:space="preserve">
+    <value>Áreas com manguezal.</value>
+  </data>
+  <data name="schema_area_nascente_olho_dagua" xml:space="preserve">
+    <value>Áreas com nascentes ou olhos d'água.</value>
+  </data>
+  <data name="schema_area_pousio" xml:space="preserve">
+    <value>Áreas com pousios.</value>
+  </data>
+  <data name="schema_area_preservacao_permanente" xml:space="preserve">
+    <value>Áreas de preservação permanente.</value>
+  </data>
+  <data name="schema_area_reserva_legal" xml:space="preserve">
+    <value>Áreas com reserva legal.</value>
+  </data>
+  <data name="schema_area_restinga" xml:space="preserve">
+    <value>Áreas com restinga.</value>
+  </data>
+  <data name="schema_area_servidao_administrativa" xml:space="preserve">
+    <value>Áreas de servidão administrativa.</value>
+  </data>
+  <data name="schema_area_topo_morro" xml:space="preserve">
+    <value>Áreas de topo de morro.</value>
+  </data>
+  <data name="schema_area_vegetacao_nativa" xml:space="preserve">
+    <value>Áreas com vegetação nativa.</value>
+  </data>
+  <data name="schema_area_vereda" xml:space="preserve">
+    <value>Áreas com vereda.</value>
   </data>
   <data name="schema_data_atualizacao" xml:space="preserve">
     <value>Data da última atualização.</value>
@@ -198,20 +243,14 @@
   <data name="swagger_summary_area_consolidada" xml:space="preserve">
     <value>Lista as áreas consolidadas.</value>
   </data>
-  <data name="swagger_summary_area_consolidada_declividade_maior_45" xml:space="preserve">
-    <value>Lista as áreas com declividade maior que 45 graus.</value>
-  </data>
-  <data name="swagger_summary_area_consolidada_declividade_maior_45_id" xml:space="preserve">
-    <value>Lista as áreas com declividade maior que 45 graus do território informado.</value>
-  </data>
   <data name="swagger_summary_area_consolidada_id" xml:space="preserve">
     <value>Lista as áreas consolidadas do território informado.</value>
   </data>
   <data name="swagger_summary_area_declividade_maior_45" xml:space="preserve">
-    <value>Lista as áreas com declicidade maior que 45 graus.</value>
+    <value>Lista as áreas com declividade maior que 45 graus.</value>
   </data>
   <data name="swagger_summary_area_declividade_maior_45_id" xml:space="preserve">
-    <value>Lista as áreas com declicidade maior que 45 graus do território informado.</value>
+    <value>Lista as áreas com declividade maior que 45 graus do território informado.</value>
   </data>
   <data name="swagger_summary_area_hidrografia" xml:space="preserve">
     <value>Lista as áreas de hidrografia.</value>

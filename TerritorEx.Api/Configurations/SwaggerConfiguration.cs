@@ -75,13 +75,16 @@ public static class SwaggerConfiguration
             foreach (var l in listSupportedCultures)
                 options.SwaggerEndpoint($"/swagger/v1-{l.Trim()}/swagger.json?lang={l.Trim()}", $"territorex-{l.Trim()}");
 
-            options.HeadContent =
-                "<link rel='stylesheet' href='./css/default.css'/>" +
-                "<script src='./js/jquery-3.6.3.min.js'></script> " +
-                "<script src='./js/jquery.initialize.min.js'></script>" +
-                "<script src='./js/translate/translate.js'></script>";
+            var assembly = Assembly.GetExecutingAssembly();
+            var fileVersionInfo = System.Diagnostics.FileVersionInfo.GetVersionInfo(assembly.Location).FileVersion;
 
-            options.RoutePrefix = string.Empty;
+            options.HeadContent =
+                "<link rel='stylesheet' href='./css/default.css?v=" + fileVersionInfo + "'/>" +
+                "<script src='./js/jquery-3.6.3.min.js?v=" + fileVersionInfo + "'></script>" +
+                "<script src='./js/jquery.initialize.min.js?v=" + fileVersionInfo + "'></script>" +
+                "<script src='./js/translate/translate.js?v=" + fileVersionInfo + "'></script>";
+
+                options.RoutePrefix = string.Empty;
         });
     }
 }

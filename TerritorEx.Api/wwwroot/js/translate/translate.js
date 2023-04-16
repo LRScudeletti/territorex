@@ -195,15 +195,16 @@ $(document).ready(function () {
 
             var sel = $(this).find("#select");
             var lang = getQueryStringParams(sel.val(), "lang");
+            var date = Date.parse(new Date);
 
             if (lang != null && lang !== "") {
                 var lbl = $(this);
-                var script = loadjs("./js/translate/" + lang + ".js");
+                var script = loadjs("./js/translate/" + lang + ".js?v=" + date);
                 script.onload = function () {
                     initialTranslation(lbl.find("span"));
                     allTranslation();
                 };
-                addCss(lang);
+                addCss(lang, date);
             }
 
             $(sel).change(function () {
@@ -211,11 +212,11 @@ $(document).ready(function () {
                 var lang = getQueryStringParams($(this).val(), "lang");
 
                 if (lang != null && lang !== "") {
-                    var script = loadjs("./js/translate/" + lang + ".js");
+                    var script = loadjs("./js/translate/" + lang + ".js?v=" + date);
                     script.onload = function () {
                         initialTranslation($(sel).prev("span"));
                     };
-                    addCss(lang);
+                    addCss(lang, date);
                 }
             });
         });
@@ -228,8 +229,8 @@ $(document).ready(function () {
         });
     }
 
-    function addCss(lang) {
+    function addCss(lang, date) {
         // Adicionando css globalizado
-        $("head").append('<link rel="stylesheet" href="./css/translate/' + lang + '.css" type="text/css" />');
+        $("head").append("<link rel='stylesheet' href='./css/translate/" + lang + ".css?v=" + date + "' type='text/css' />");
     }
 });

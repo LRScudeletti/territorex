@@ -126,11 +126,56 @@
   <data name="schema_area_altitude_superior_1800" xml:space="preserve">
     <value>Areas with an altitude greater than 1,800 meters.</value>
   </data>
+  <data name="schema_area_banhado" xml:space="preserve">
+    <value>Areas with swamps.</value>
+  </data>
+  <data name="schema_area_borda_chapada" xml:space="preserve">
+    <value>Areas with flat terrain.</value>
+  </data>
+  <data name="schema_area_consolidada" xml:space="preserve">
+    <value>Consolidated areas.</value>
+  </data>
+  <data name="schema_area_declividade_maior_45" xml:space="preserve">
+    <value>Areas with a slope greater than 45 degrees.</value>
+  </data>
   <data name="schema_area_hectare" xml:space="preserve">
     <value>Area size in hectares.</value>
   </data>
+  <data name="schema_area_hidrografia" xml:space="preserve">
+    <value>Hydrographic areas.</value>
+  </data>
   <data name="schema_area_id" xml:space="preserve">
     <value>Area internal ID.</value>
+  </data>
+  <data name="schema_area_manguezal" xml:space="preserve">
+    <value>Areas with mangrove.</value>
+  </data>
+  <data name="schema_area_nascente_olho_dagua" xml:space="preserve">
+    <value>Areas with water sources.</value>
+  </data>
+  <data name="schema_area_pousio" xml:space="preserve">
+    <value>Areas with fallow land.</value>
+  </data>
+  <data name="schema_area_preservacao_permanente" xml:space="preserve">
+    <value>Permanent preservation areas.</value>
+  </data>
+  <data name="schema_area_reserva_legal" xml:space="preserve">
+    <value>Areas with legal reserve.</value>
+  </data>
+  <data name="schema_area_restinga" xml:space="preserve">
+    <value>Areas with coastal sandy plains (restinga).</value>
+  </data>
+  <data name="schema_area_servidao_administrativa" xml:space="preserve">
+    <value>Areas of administrative easement.</value>
+  </data>
+  <data name="schema_area_topo_morro" xml:space="preserve">
+    <value>Hilltop areas.</value>
+  </data>
+  <data name="schema_area_vegetacao_nativa" xml:space="preserve">
+    <value>Areas with native vegetation.</value>
+  </data>
+  <data name="schema_area_vereda" xml:space="preserve">
+    <value>Areas with wet and stable terrain (vereda).</value>
   </data>
   <data name="schema_data_atualizacao" xml:space="preserve">
     <value>Last update date.</value>
