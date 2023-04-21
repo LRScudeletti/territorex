@@ -820,8 +820,8 @@ GO
 
 CREATE VIEW dbo.ViewTerritorioHierarquia AS
    SELECT TER.TerritorioId AS TerritorioId, TER.TerritorioNome AS TerritorioNome,
-          MIC.TerritorioId AS MicroregiaoId, MIC.TerritorioNome AS MicroregiaoNome,
-          MES.TerritorioId AS MesoregiaoId, MES.TerritorioNome AS MesoregiaoNome,
+          MIC.TerritorioId AS MicrroregiaoId, MIC.TerritorioNome AS MicrorregiaoNome,
+          MES.TerritorioId AS MesorregiaoId, MES.TerritorioNome AS MesorregiaoNome,
           FEU.TerritorioId AS UnidadeFederativaId, FEU.TerritorioNome AS UnidadeFederativaNome,
           REG.TerritorioId AS RegiaoId, REG.TerritorioNome AS RegiaoNome,
           FED.TerritorioId AS FederacaoId, FED.TerritorioNome AS FederacaoNome

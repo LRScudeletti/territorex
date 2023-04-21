@@ -147,6 +147,9 @@
   <data name="schema_area_id" xml:space="preserve">
     <value>ID interno da área.</value>
   </data>
+  <data name="schema_area_imovel" xml:space="preserve">
+    <value>Áreas com imóveis.</value>
+  </data>
   <data name="schema_area_manguezal" xml:space="preserve">
     <value>Áreas com manguezal.</value>
   </data>
@@ -177,11 +180,77 @@
   <data name="schema_area_vereda" xml:space="preserve">
     <value>Áreas com vereda.</value>
   </data>
+  <data name="schema_condicao" xml:space="preserve">
+    <value>Condição do imóvel.</value>
+  </data>
   <data name="schema_data_atualizacao" xml:space="preserve">
     <value>Data da última atualização.</value>
   </data>
   <data name="schema_descricao" xml:space="preserve">
     <value>Descrição da área.</value>
+  </data>
+  <data name="schema_descricao_nivel" xml:space="preserve">
+    <value>Descrição do nível do território.</value>
+  </data>
+  <data name="schema_descricao_situacao" xml:space="preserve">
+    <value>Descrição da situação do imóvel.</value>
+  </data>
+  <data name="schema_descricao_tipo" xml:space="preserve">
+    <value>Descrição do tipo do imóvel.</value>
+  </data>
+  <data name="schema_federacao_id" xml:space="preserve">
+    <value>ID da federação.</value>
+  </data>
+  <data name="schema_federacao_nome" xml:space="preserve">
+    <value>Nome da federação.</value>
+  </data>
+  <data name="schema_imovel_id" xml:space="preserve">
+    <value>ID do imóvel.</value>
+  </data>
+  <data name="schema_latitude" xml:space="preserve">
+    <value>Latitude do território.</value>
+  </data>
+  <data name="schema_longitude" xml:space="preserve">
+    <value>Longitude do território.</value>
+  </data>
+  <data name="schema_mesorregiao_id" xml:space="preserve">
+    <value>ID da mesorregião.</value>
+  </data>
+  <data name="schema_mesorregiao_nome" xml:space="preserve">
+    <value>Nome da mesorregião.</value>
+  </data>
+  <data name="schema_message" xml:space="preserve">
+    <value>Mensagens de log.</value>
+  </data>
+  <data name="schema_message_codigo" xml:space="preserve">
+    <value>Código do erro.</value>
+  </data>
+  <data name="schema_message_descricao" xml:space="preserve">
+    <value>Descrição do erro.</value>
+  </data>
+  <data name="schema_message_rastro" xml:space="preserve">
+    <value>Rastro do erro.</value>
+  </data>
+  <data name="schema_microrregiao_id" xml:space="preserve">
+    <value>ID da microrregião.</value>
+  </data>
+  <data name="schema_microrregiao_nome" xml:space="preserve">
+    <value>Nome da microrregião.</value>
+  </data>
+  <data name="schema_modulo_fiscal" xml:space="preserve">
+    <value>Módulo fiscal do imóvel.</value>
+  </data>
+  <data name="schema_nivel_territorio" xml:space="preserve">
+    <value>Níveis dos territórios.</value>
+  </data>
+  <data name="schema_nivel_territorio_id" xml:space="preserve">
+    <value>ID do nível do território.</value>
+  </data>
+  <data name="schema_regiao_id" xml:space="preserve">
+    <value>ID da região.</value>
+  </data>
+  <data name="schema_regiao_nome" xml:space="preserve">
+    <value>Nome da região.</value>
   </data>
   <data name="schema_shape" xml:space="preserve">
     <value>Informações geoespaciais.</value>
@@ -189,8 +258,47 @@
   <data name="schema_sicar_id" xml:space="preserve">
     <value>ID da área (SICAR).</value>
   </data>
+  <data name="schema_sigla_nivel" xml:space="preserve">
+    <value>Sigla do nível do território.</value>
+  </data>
+  <data name="schema_sigla_situacao" xml:space="preserve">
+    <value>Sigla da situação do imóvel.</value>
+  </data>
+  <data name="schema_sigla_tipo" xml:space="preserve">
+    <value>Sigla do tipo do imóvel.</value>
+  </data>
+  <data name="schema_situacao_imovel" xml:space="preserve">
+    <value>Situações dos imóveis.</value>
+  </data>
+  <data name="schema_situacao_imovel_id" xml:space="preserve">
+    <value>ID da situação do imóvel.</value>
+  </data>
+  <data name="schema_territorio" xml:space="preserve">
+    <value>Territórios.</value>
+  </data>
+  <data name="schema_territorio_hierarquia" xml:space="preserve">
+    <value>Hierarquia dos territórios.</value>
+  </data>
   <data name="schema_territorio_id" xml:space="preserve">
     <value>ID do território (IBGE).</value>
+  </data>
+  <data name="schema_territorio_nome" xml:space="preserve">
+    <value>Nome do território.</value>
+  </data>
+  <data name="schema_territorio_superior_id" xml:space="preserve">
+    <value>ID do território superior (IBGE).</value>
+  </data>
+  <data name="schema_tipo_imovel" xml:space="preserve">
+    <value>Tipos dos imóveis.</value>
+  </data>
+  <data name="schema_tipo_imovel_id" xml:space="preserve">
+    <value>ID do tipo do imóvel.</value>
+  </data>
+  <data name="schema_unidade_federativa_id" xml:space="preserve">
+    <value>ID da unidade federativa.</value>
+  </data>
+  <data name="schema_unidade_federativa_nome" xml:space="preserve">
+    <value>Nome da unidade federativa.</value>
   </data>
   <data name="schema_usuario_atualizacao" xml:space="preserve">
     <value>Usuário da última atualização.</value>
