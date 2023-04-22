@@ -18,7 +18,7 @@ var configuration = builder.Configuration;
     // Adicionando ao escopo
     services.Register();
 
-    services.AddLocalization(x => { x.ResourcesPath = @"Localize\Resources"; });
+    services.AddLocalization(x => { x.ResourcesPath = Path.Combine("Localize", "Resources"); });
     services.AddSwaggerGen(configuration);
     services.AddHttpContextAccessor();
     services.AddRouting(x => x.LowercaseUrls = true);
