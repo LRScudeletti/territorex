@@ -198,6 +198,9 @@
   <data name="schema_descricao_tipo" xml:space="preserve">
     <value>Descrição do tipo do imóvel.</value>
   </data>
+  <data name="schema_email_usuario" xml:space="preserve">
+    <value>Email</value>
+  </data>
   <data name="schema_federacao_id" xml:space="preserve">
     <value>ID da federação.</value>
   </data>
@@ -246,11 +249,20 @@
   <data name="schema_nivel_territorio_id" xml:space="preserve">
     <value>ID do nível do território.</value>
   </data>
+  <data name="schema_nome_usuario" xml:space="preserve">
+    <value>Nome</value>
+  </data>
+  <data name="schema_refresh_tokens" xml:space="preserve">
+    <value>Tokens de atualização</value>
+  </data>
   <data name="schema_regiao_id" xml:space="preserve">
     <value>ID da região.</value>
   </data>
   <data name="schema_regiao_nome" xml:space="preserve">
     <value>Nome da região.</value>
+  </data>
+  <data name="schema_senha_hash" xml:space="preserve">
+    <value>Hash da senha</value>
   </data>
   <data name="schema_shape" xml:space="preserve">
     <value>Informações geoespaciais.</value>
@@ -300,8 +312,14 @@
   <data name="schema_unidade_federativa_nome" xml:space="preserve">
     <value>Nome da unidade federativa.</value>
   </data>
+  <data name="schema_usuario" xml:space="preserve">
+    <value>Usuários</value>
+  </data>
   <data name="schema_usuario_atualizacao" xml:space="preserve">
     <value>Usuário da última atualização.</value>
+  </data>
+  <data name="sem_autorizacao" xml:space="preserve">
+    <value>Sem autorização.</value>
   </data>
   <data name="situacao_imovel_nao_encontrada" xml:space="preserve">
     <value>Situação de imóvel não encontrada.</value>
