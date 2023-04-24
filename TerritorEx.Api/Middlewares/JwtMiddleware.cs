@@ -14,11 +14,12 @@ public class JwtMiddleware
     //public async Task Invoke(HttpContext context, IUserService userService, IJwtUtils jwtUtils)
     //{
     //    var token = context.Request.Headers["Authorization"].FirstOrDefault()?.Split(" ").Last();
-    //    var userId = jwtUtils.ValidateJwtToken(token);
-    //    if (userId != null)
+    //    var usuarioId = jwtUtils.ValidateToken(token);
+    //    if (usuarioId != null)
     //    {
-    //        context.Items["User"] = userService.GetById(userId.Value);
+    //        context.Items["Usuario"] = userService.GetById(usuarioId.Value);
     //    }
+
     //    await _next(context);
     //}
 }

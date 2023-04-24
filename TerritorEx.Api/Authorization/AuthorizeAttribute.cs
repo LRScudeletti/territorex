@@ -1,5 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc.Filters;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Filters;
 using Microsoft.Extensions.Localization;
 using TerritorEx.Api.Entities;
 using TerritorEx.Api.Localize;
@@ -22,7 +22,7 @@ public class AuthorizeAttribute : Attribute, IAuthorizationFilter
         if (allowAnonymous)
             return;
 
-        var usuario = (Usuario)context.HttpContext.Items["User"];
+        var usuario = (Usuario)context.HttpContext.Items["Usuario"];
         if (usuario == null)
             context.Result = new JsonResult(new { message = _localizer["sem_autorizacao"] }) { StatusCode = StatusCodes.Status401Unauthorized };
     }

@@ -2,7 +2,6 @@
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
-using System.Security.Cryptography;
 using System.Text;
 using TerritorEx.Api.Entities;
 using TerritorEx.Api.Helpers;
@@ -11,37 +10,34 @@ namespace TerritorEx.Api.Authorization;
 
 public interface IJwtUtils
 {
-    public string GenerateJwtToken(Usuario usuario);
-    public int? ValidateJwtToken(string token);
-    public RefreshToken GenerateRefreshToken(string ipAddress);
+    public string GenerateToken(Usuario usuario);
+    public int? ValidateToken(string token);
 }
 
 public class JwtUtils : IJwtUtils
 {
-    private readonly DataContext _context;
     private readonly AppSettings _appSettings;
 
-    public JwtUtils(DataContext context, IOptions<AppSettings> appSettings)
+    public JwtUtils(IOptions<AppSettings> appSettings)
     {
-        _context = context;
         _appSettings = appSettings.Value;
     }
 
-    public string GenerateJwtToken(Usuario usuario)
+    public string GenerateToken(Usuario usuario)
     {
         var tokenHandler = new JwtSecurityTokenHandler();
         var key = Encoding.ASCII.GetBytes(_appSettings.Secret);
         var tokenDescriptor = new SecurityTokenDescriptor
         {
-            Subject = new ClaimsIdentity(new[] { new Claim("id", usuario.Email) }),
-            Expires = DateTime.UtcNow.AddMinutes(15),
+            Subject = new ClaimsIdentity(new[] { new Claim("id", usuario.UsuarioId.ToString()) }),
+            Expires = DateTime.UtcNow.AddDays(7),
             SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
         };
         var token = tokenHandler.CreateToken(tokenDescriptor);
         return tokenHandler.WriteToken(token);
     }
 
-    public int? ValidateJwtToken(string token)
+    public int? ValidateToken(string token)
     {
         if (token == null)
             return null;
@@ -60,37 +56,13 @@ public class JwtUtils : IJwtUtils
             }, out var validatedToken);
 
             var jwtToken = (JwtSecurityToken)validatedToken;
-            var userId = int.Parse(jwtToken.Claims.First(x => x.Type == "id").Value);
+            var usuarioId = int.Parse(jwtToken.Claims.First(x => x.Type == "id").Value);
 
-            return userId;
+            return usuarioId;
         }
         catch
         {
             return null;
-        }
-    }
-
-    public RefreshToken GenerateRefreshToken(string ipAddress)
-    {
-        var refreshToken = new RefreshToken
-        {
-            Token = GetUniqueToken(),
-            IpCriacao = ipAddress,
-            DataCriacao = DateTime.UtcNow,
-            DataExpiracao = DateTime.UtcNow.AddDays(7)
-        };
-
-        return refreshToken;
-
-        string GetUniqueToken()
-        {
-            var token = Convert.ToBase64String(RandomNumberGenerator.GetBytes(64));
-            var tokenIsUnique = !_context.Usuario.Any(u => u.RefreshTokens.Any(t => t.Token == token));
-
-            if (!tokenIsUnique)
-                return GetUniqueToken();
-
-            return token;
         }
     }
 }

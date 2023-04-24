@@ -57,7 +57,7 @@ public static class Utils
 
     private static void EnviarEMail(string mensagem)
     {
-        var smtpEMail = RecuperarParametroAppSettings("SmtpEmail");
+        var smtpEMail = RecuperarParametroAppSettings("Smtp:Email");
 
         MailMessage mailMessage = new()
         {
@@ -67,9 +67,9 @@ public static class Utils
             Body = mensagem
         };
 
-        using SmtpClient smtpClient = new(RecuperarParametroAppSettings("SmtpHost"));
+        using SmtpClient smtpClient = new(RecuperarParametroAppSettings("Smtp:Host"));
 
-        var credentialPass = RecuperarParametroAppSettings("SmtpPass");
+        var credentialPass = RecuperarParametroAppSettings("Smtp:Pass");
 
         var listaEmail = RecuperarParametroAppSettings("ErrorNotificationEmail");
 
@@ -78,7 +78,7 @@ public static class Utils
             mailMessage.To.Add(email);
 
         smtpClient.Credentials = new NetworkCredential(smtpEMail, credentialPass);
-        smtpClient.Port = Convert.ToInt32(RecuperarParametroAppSettings("SmtpPort"));
+        smtpClient.Port = Convert.ToInt32(RecuperarParametroAppSettings("Smtp:Port"));
         smtpClient.EnableSsl = true;
 
         try

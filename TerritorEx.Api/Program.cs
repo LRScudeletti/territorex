@@ -34,7 +34,7 @@ var configuration = builder.Configuration;
 
     // Só vai executar os scripts se o ambiente for produção
     var dbUpSuccess = true;
-    if (!app.Environment.IsDevelopment())
+    //if (!app.Environment.IsDevelopment())
         dbUpSuccess = DbUpConfiguration.AtualizarBancoDados();
 
     app.UseStaticFiles();

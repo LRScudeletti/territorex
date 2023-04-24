@@ -198,9 +198,6 @@
   <data name="schema_descricao_tipo" xml:space="preserve">
     <value>Description of the property type</value>
   </data>
-  <data name="schema_email_usuario" xml:space="preserve">
-    <value>Email</value>
-  </data>
   <data name="schema_federacao_id" xml:space="preserve">
     <value>Federation ID</value>
   </data>
@@ -249,9 +246,6 @@
   <data name="schema_nivel_territorio_id" xml:space="preserve">
     <value>Territory level ID</value>
   </data>
-  <data name="schema_nome_usuario" xml:space="preserve">
-    <value>Name</value>
-  </data>
   <data name="schema_refresh_tokens" xml:space="preserve">
     <value>Refresh tokens</value>
   </data>
@@ -260,9 +254,6 @@
   </data>
   <data name="schema_regiao_nome" xml:space="preserve">
     <value>Region name</value>
-  </data>
-  <data name="schema_senha_hash" xml:space="preserve">
-    <value>Password hash</value>
   </data>
   <data name="schema_shape" xml:space="preserve">
     <value>Geospatial information</value>
@@ -311,9 +302,6 @@
   </data>
   <data name="schema_unidade_federativa_nome" xml:space="preserve">
     <value>Federative unit name</value>
-  </data>
-  <data name="schema_usuario" xml:space="preserve">
-    <value>Users</value>
   </data>
   <data name="schema_usuario_atualizacao" xml:space="preserve">
     <value>Last update user</value>
