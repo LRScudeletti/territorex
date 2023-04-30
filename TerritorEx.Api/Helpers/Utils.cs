@@ -71,7 +71,7 @@ public static class Utils
 
         var credentialPass = RecuperarParametroAppSettings("Smtp:Pass");
 
-        var listaEmail = RecuperarParametroAppSettings("ErrorNotificationEmail");
+        var listaEmail = RecuperarParametroAppSettings("Emails:Notification");
 
         foreach (var email in listaEmail
                      .Split(new[] { ";" }, StringSplitOptions.RemoveEmptyEntries))

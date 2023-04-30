@@ -47,13 +47,12 @@
 	  <None Remove="Infrastructure\Scripts\1.0.0.0.sql" />
 	  <None Remove="Infrastructure\Scripts\1.0.0.1.sql" />
 	  <None Remove="Infrastructure\Scripts\1.0.0.2.sql" />
-	  <None Remove="Infrastructure\Scripts\1.0.0.3.sql" />
+	  <None Remove="Infrastructure\Scripts\Territorios.sql" />
 	</ItemGroup>
 
 	<ItemGroup>
 	  <EmbeddedResource Include="Infrastructure\Scripts\1.0.0.0.sql" />
 	  <EmbeddedResource Include="Infrastructure\Scripts\1.0.0.1.sql" />
 	  <EmbeddedResource Include="Infrastructure\Scripts\1.0.0.2.sql" />
-	  <EmbeddedResource Include="Infrastructure\Scripts\1.0.0.3.sql" />
 	</ItemGroup>
 </Project>
