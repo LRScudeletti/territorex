@@ -1,5 +1,4 @@
-﻿
-using System.Text.Json.Serialization;
+﻿using System.Text.Json.Serialization;
 using Dapper.Contrib.Extensions;
 
 namespace TerritorEx.Api.Entities
@@ -14,5 +13,11 @@ namespace TerritorEx.Api.Entities
 
         [JsonIgnore]
         public string PasswordHash { get; set; }
+
+        [JsonIgnore]
+        public string UsuarioAtualizacao { get; set; }
+
+        [JsonIgnore]
+        public DateTime DataAtualizacao { get; set; }
     }
 }
