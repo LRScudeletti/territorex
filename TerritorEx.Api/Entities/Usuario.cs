@@ -12,7 +12,7 @@ namespace TerritorEx.Api.Entities
         public string Email { get; set; }
 
         [JsonIgnore]
-        public string PasswordHash { get; set; }
+        public string SenhaHash { get; set; }
 
         [JsonIgnore]
         public string UsuarioAtualizacao { get; set; }

@@ -15,6 +15,8 @@ var configuration = builder.Configuration;
         x.JsonSerializerOptions.DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull;
     });
 
+    services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+
     // Adicionando ao escopo
     services.Register();
 

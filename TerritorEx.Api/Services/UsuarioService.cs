@@ -1,17 +1,17 @@
 ﻿using AutoMapper;
-using Microsoft.Extensions.Localization;
+using TerritorEx.Api.Authorization;
 using TerritorEx.Api.Entities;
 using TerritorEx.Api.Helpers.Exceptions;
-using TerritorEx.Api.Localize;
 using TerritorEx.Api.Models.Usuario;
 using TerritorEx.Api.Repositories;
-using static BCrypt.Net.BCrypt;
+using BCryptNet = BCrypt.Net.BCrypt;
 
 namespace TerritorEx.Api.Services;
 
 #region [ Interfaces ]
 public interface IUsuarioService
 {
+    AutenticarResponse Autenticar(AutenticarRequest autenticarRequest);
     Task Criar(CriarUsuario criarUsuario);
     Task<IEnumerable<Usuario>> RecuperarTodos();
     Task<Usuario> RecuperarPorId(int usuarioId);
@@ -24,26 +24,37 @@ public interface IUsuarioService
 #region [ Services ]
 public class UsuarioService : IUsuarioService
 {
-    private readonly UsuarioRepository _usuarioRepository;
+    private readonly IUsuarioRepository _usuarioRepository;
+    private readonly IJwtUtils _jwtUtils;
     private readonly IMapper _mapper;
-    private readonly IStringLocalizer<Resources> _localizer;
 
-    public UsuarioService(UsuarioRepository usuarioRepository, IMapper mapper, IStringLocalizer<Resources> localizer)
+    public UsuarioService(IUsuarioRepository usuarioRepository, IJwtUtils jwtUtils, IMapper mapper)
     {
         _usuarioRepository = usuarioRepository;
+        _jwtUtils = jwtUtils;
         _mapper = mapper;
-        _localizer = localizer;
+    }
+
+    public AutenticarResponse Autenticar(AutenticarRequest autenticarRequest)
+    {
+        var usuario =  _usuarioRepository.RecuperarPorEmail(autenticarRequest.Email);
+
+        if (usuario == null || !BCryptNet.Verify(autenticarRequest.Senha, usuario.SenhaHash))
+            throw new AppException("Username or password is incorrect");
+
+        var response = _mapper.Map<AutenticarResponse>(usuario);
+        response.Token = _jwtUtils.GenerateToken(usuario);
+        return response;
     }
 
     public async Task Criar(CriarUsuario criarUsuario)
     {
-        if (await _usuarioRepository.RecuperarPorEmail(criarUsuario.Email) != null)
+        if (await _usuarioRepository.RecuperarPorEmail(criarUsuario.Email!) != null)
             throw new AppException("User with the email '" + criarUsuario.Email + "' already exists");
 
         var usuario = _mapper.Map<Usuario>(criarUsuario);
 
-        // Criptografa a senha
-        usuario.PasswordHash = HashPassword(criarUsuario.Password);
+        usuario.SenhaHash = BCryptNet.HashPassword(criarUsuario.Senha);
 
         await _usuarioRepository.Criar(usuario);
     }
@@ -71,13 +82,12 @@ public class UsuarioService : IUsuarioService
     {
         var usuario = await _usuarioRepository.RecuperarPorId(usuarioId) ?? throw new KeyNotFoundException("User not found");
 
-        var emailChanged = !string.IsNullOrEmpty(atualizarUsuario.Email) && usuario.Email != atualizarUsuario.Email;
-       
-        if (emailChanged && await _usuarioRepository.RecuperarPorEmail(atualizarUsuario.Email!) != null)
+        var email = !string.IsNullOrEmpty(atualizarUsuario.Email) && usuario.Email != atualizarUsuario.Email;
+        if (email && await _usuarioRepository.RecuperarPorEmail(atualizarUsuario.Email!) != null)
             throw new AppException("User with the email '" + atualizarUsuario.Email + "' already exists");
 
-        if (!string.IsNullOrEmpty(atualizarUsuario.Password))
-            usuario.PasswordHash = HashPassword(atualizarUsuario.Password);
+        if (!string.IsNullOrEmpty(atualizarUsuario.Senha))
+            usuario.SenhaHash = BCryptNet.HashPassword(atualizarUsuario.Senha);
 
         _mapper.Map(atualizarUsuario, usuario);
 

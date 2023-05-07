@@ -11,6 +11,10 @@ public class AuthorizeAttribute : Attribute, IAuthorizationFilter
 {
     private readonly IStringLocalizer<Resources> _localizer;
 
+    public AuthorizeAttribute()
+    {
+    }
+
     public AuthorizeAttribute(IStringLocalizer<Resources> localizer)
     {
         _localizer = localizer;
