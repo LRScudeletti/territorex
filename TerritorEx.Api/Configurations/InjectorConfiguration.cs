@@ -1,5 +1,4 @@
-﻿using TerritorEx.Api.Authorization;
-using TerritorEx.Api.Repositories;
+﻿using TerritorEx.Api.Repositories;
 using TerritorEx.Api.Services;
 
 namespace TerritorEx.Api.Configurations;
@@ -8,8 +7,6 @@ public static class InjectorConfiguration
 {
     public static void Register(this IServiceCollection services)
     {
-        services.AddScoped<IJwtUtils, JwtUtils>();
-
         #region [ Repository ]
         services.AddScoped<IAreaAltitudeSuperior1800Repository, AreaAltitudeSuperior1800Repository>();
         services.AddScoped<IAreaBanhadoRepository, AreaBanhadoRepository>();
@@ -57,7 +54,6 @@ public static class InjectorConfiguration
         services.AddScoped<ISituacaoImovelService, SituacaoImovelService>();
         services.AddScoped<ITipoImovelService, TipoImovelService>();
         services.AddScoped<ITerritorioService, TerritorioService>();
-        services.AddScoped<IUsuarioService, UsuarioService>();
         #endregion
     }
 }

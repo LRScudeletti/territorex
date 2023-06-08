@@ -9,10 +9,9 @@ public interface IUsuarioRepository
 {
     Task Criar(Usuario usuario);
     Task<IEnumerable<Usuario>> RecuperarTodos();
-    Task<Usuario> RecuperarPorId(int usuarioId);
     Task<Usuario> RecuperarPorEmail(string email);
     Task Atualizar(Usuario usuario);
-    Task Remover(int usuarioId);
+    Task Remover(string email);
 }
 #endregion
 
@@ -33,7 +32,7 @@ public class UsuarioRepository : IUsuarioRepository
     {
         await using var sqlConnection = Utils.RecuperarConexao();
 
-        const string sql = @"SELECT UsuarioId,
+        const string sql = @"SELECT Email,
                                     Nome,
                                     Sobrenome,
                                     Email,
@@ -42,27 +41,15 @@ public class UsuarioRepository : IUsuarioRepository
         return await sqlConnection.QueryAsync<Usuario>(sql);
     }
 
-    public async Task<Usuario> RecuperarPorId(int usuarioId)
-    {
-        await using var sqlConnection = Utils.RecuperarConexao();
-
-        const string sql = @"SELECT UsuarioId,
-                                    Nome,
-                                    Sobrenome,
-                                    Email,  
-                              WHERE UsuarioId = @usuarioId;";
-
-        return await sqlConnection.QuerySingleOrDefaultAsync<Usuario>(sql, new { usuarioId });
-    }
-
     public async Task<Usuario> RecuperarPorEmail(string email)
     {
         await using var sqlConnection = Utils.RecuperarConexao();
 
-        const string sql = @"SELECT UsuarioId,
+        const string sql = @"SELECT Email,
                                     Nome,
                                     Sobrenome,
-                                    Email,  
+                                    Senha
+                               FROM Usuario
                               WHERE Email = @email;";
 
         return await sqlConnection.QuerySingleOrDefaultAsync<Usuario>(sql, new { email });
@@ -73,9 +60,9 @@ public class UsuarioRepository : IUsuarioRepository
         await using var sqlConnection = Utils.RecuperarConexao();
 
         const string sql = @"UPDATE Usuario 
-                                SET Nome = @Nome,
+                                SET Email = @Email, 
+                                    Nome = @Nome,
                                     Sobrenome = @Sobrenome,
-                                    Email = @Email, 
                                     PasswordHash = @PasswordHash,
                                     UsuarioAtualizacao = @UsuarioAtualizacao,   
                                     DataAtualizacao = @DataAtualizacao,   
@@ -84,13 +71,13 @@ public class UsuarioRepository : IUsuarioRepository
         await sqlConnection.ExecuteAsync(sql, usuario);
     }
 
-    public async Task Remover(int usuarioId)
+    public async Task Remover(string email)
     {
         await using var sqlConnection = Utils.RecuperarConexao();
 
-        const string sql = @"DELETE FROM Usuario WHERE UsuarioId = @usuarioId;";
+        const string sql = @"DELETE FROM Usuario WHERE Email = @email;";
 
-        await sqlConnection.ExecuteAsync(sql, new { usuarioId });
+        await sqlConnection.ExecuteAsync(sql, new { email });
     }
 }
 #endregion

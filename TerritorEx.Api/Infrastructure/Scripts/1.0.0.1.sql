@@ -45,10 +45,10 @@ GO
 
 ----------------------------
 -- Data alteração | Usuário | Nº Card | Descrição
--- 19/11/2022 | Luiz Rogério Scudeletti | Sem card | Criando índiceIX_Territorio_NivelId
+-- 19/11/2022 | Luiz Rogério Scudeletti | Sem card | Criando índice IX_Territorio_NivelId
 ----------------------------
 
-PRINT 'Criando índiceIX_Territorio_NivelId'
+PRINT 'Criando índice IX_Territorio_NivelId'
 
 IF NOT EXISTS (SELECT 1 FROM SYS.INDEXES WHERE OBJECT_ID = OBJECT_ID('Territorio') AND NAME = 'IX_Territorio_NivelId')
 BEGIN
@@ -58,10 +58,10 @@ GO
 
 ----------------------------
 -- Data alteração | Usuário | Nº Card | Descrição
--- 19/11/2022 | Luiz Rogério Scudeletti | Sem card | Criando índiceIX_Territorio_TerritorioSuperiorId
+-- 19/11/2022 | Luiz Rogério Scudeletti | Sem card | Criando índice IX_Territorio_TerritorioSuperiorId
 ----------------------------
 
-PRINT 'Criando índiceIX_Territorio_TerritorioSuperiorId'
+PRINT 'Criando índice IX_Territorio_TerritorioSuperiorId'
 
 IF NOT EXISTS (SELECT 1 FROM SYS.INDEXES WHERE OBJECT_ID = OBJECT_ID('Territorio') AND NAME = 'IX_Territorio_TerritorioSuperiorId')
 BEGIN
@@ -95,10 +95,10 @@ GO
 
 ----------------------------
 -- Data alteração | Usuário | Nº Card | Descrição
--- 19/11/2022 | Luiz Rogério Scudeletti | Sem card | Criando índiceIX_AreaAltitudeSuperior1800_TerritorioId
+-- 19/11/2022 | Luiz Rogério Scudeletti | Sem card | Criando índice IX_AreaAltitudeSuperior1800_TerritorioId
 ----------------------------
 
-PRINT 'Criando índiceIX_AreaAltitudeSuperior1800_TerritorioId'
+PRINT 'Criando índice IX_AreaAltitudeSuperior1800_TerritorioId'
 
 IF NOT EXISTS (SELECT 1 FROM SYS.INDEXES WHERE OBJECT_ID = OBJECT_ID('AreaAltitudeSuperior1800') AND NAME = 'IX_AreaAltitudeSuperior1800_TerritorioId')
 BEGIN
@@ -132,10 +132,10 @@ GO
 
 ----------------------------
 -- Data alteração | Usuário | Nº Card | Descrição
--- 19/11/2022 | Luiz Rogério Scudeletti | Sem card | Criando índiceIX_AreaBanhado_TerritorioId
+-- 19/11/2022 | Luiz Rogério Scudeletti | Sem card | Criando índice IX_AreaBanhado_TerritorioId
 ----------------------------
 
-PRINT 'Criando índiceIX_AreaBanhado_TerritorioId'
+PRINT 'Criando índice IX_AreaBanhado_TerritorioId'
 
 IF NOT EXISTS (SELECT 1 FROM SYS.INDEXES WHERE OBJECT_ID = OBJECT_ID('AreaBanhado') AND NAME = 'IX_AreaBanhado_TerritorioId')
 BEGIN
@@ -169,10 +169,10 @@ GO
 
 ----------------------------
 -- Data alteração | Usuário | Nº Card | Descrição
--- 19/11/2022 | Luiz Rogério Scudeletti | Sem card | Criando índiceIX_AreaBordaChapada_TerritorioId
+-- 19/11/2022 | Luiz Rogério Scudeletti | Sem card | Criando índice IX_AreaBordaChapada_TerritorioId
 ----------------------------
 
-PRINT 'Criando índiceIX_AreaBordaChapada_TerritorioId'
+PRINT 'Criando índice IX_AreaBordaChapada_TerritorioId'
 
 IF NOT EXISTS (SELECT 1 FROM SYS.INDEXES WHERE OBJECT_ID = OBJECT_ID('AreaBordaChapada') AND NAME = 'IX_AreaBordaChapada_TerritorioId')
 BEGIN
@@ -206,10 +206,10 @@ GO
 
 ----------------------------
 -- Data alteração | Usuário | Nº Card | Descrição
--- 19/11/2022 | Luiz Rogério Scudeletti | Sem card | Criando índiceIX_AreaConsolidada_TerritorioId
+-- 19/11/2022 | Luiz Rogério Scudeletti | Sem card | Criando índice IX_AreaConsolidada_TerritorioId
 ----------------------------
 
-PRINT 'Criando índiceIX_AreaConsolidada_TerritorioId'
+PRINT 'Criando índice IX_AreaConsolidada_TerritorioId'
 
 IF NOT EXISTS (SELECT 1 FROM SYS.INDEXES WHERE OBJECT_ID = OBJECT_ID('AreaConsolidada') AND NAME = 'IX_AreaConsolidada_TerritorioId')
 BEGIN
@@ -243,10 +243,10 @@ GO
 
 ----------------------------
 -- Data alteração | Usuário | Nº Card | Descrição
--- 19/11/2022 | Luiz Rogério Scudeletti | Sem card | Criando índiceIX_AreaDeclividadeMaior45_TerritorioId
+-- 19/11/2022 | Luiz Rogério Scudeletti | Sem card | Criando índice IX_AreaDeclividadeMaior45_TerritorioId
 ----------------------------
 
-PRINT 'Criando índiceIX_AreaDeclividadeMaior45_TerritorioId'
+PRINT 'Criando índice IX_AreaDeclividadeMaior45_TerritorioId'
 
 IF NOT EXISTS (SELECT 1 FROM SYS.INDEXES WHERE OBJECT_ID = OBJECT_ID('AreaDeclividadeMaior45') AND NAME = 'IX_AreaDeclividadeMaior45_TerritorioId')
 BEGIN
@@ -280,10 +280,10 @@ GO
 
 ----------------------------
 -- Data alteração | Usuário | Nº Card | Descrição
--- 19/11/2022 | Luiz Rogério Scudeletti | Sem card | Criando índiceIX_AreaHidrografia_TerritorioId
+-- 19/11/2022 | Luiz Rogério Scudeletti | Sem card | Criando índice IX_AreaHidrografia_TerritorioId
 ----------------------------
 
-PRINT 'Criando índiceIX_AreaHidrografia_TerritorioId'
+PRINT 'Criando índice IX_AreaHidrografia_TerritorioId'
 
 IF NOT EXISTS (SELECT 1 FROM SYS.INDEXES WHERE OBJECT_ID = OBJECT_ID('AreaHidrografia') AND NAME = 'IX_AreaHidrografia_TerritorioId')
 BEGIN
@@ -362,10 +362,10 @@ GO
 
 ----------------------------
 -- Data alteração | Usuário | Nº Card | Descrição
--- 19/11/2022 | Luiz Rogério Scudeletti | Sem card | Criando índiceIX_AreaImovel_ImovelId
+-- 19/11/2022 | Luiz Rogério Scudeletti | Sem card | Criando índice IX_AreaImovel_ImovelId
 ----------------------------
 
-PRINT 'Criando índiceIX_AreaImovel_ImovelId'
+PRINT 'Criando índice IX_AreaImovel_ImovelId'
 
 IF NOT EXISTS (SELECT 1 FROM SYS.INDEXES WHERE OBJECT_ID = OBJECT_ID('AreaImovel') AND NAME = 'IX_AreaImovel_ImovelId')
 BEGIN
@@ -375,10 +375,10 @@ GO
 
 ----------------------------
 -- Data alteração | Usuário | Nº Card | Descrição
--- 19/11/2022 | Luiz Rogério Scudeletti | Sem card | Criando índiceIX_AreaImovel_SituacaoImovelId
+-- 19/11/2022 | Luiz Rogério Scudeletti | Sem card | Criando índice IX_AreaImovel_SituacaoImovelId
 ----------------------------
 
-PRINT 'Criando índiceIX_AreaImovel_SituacaoImovelId'
+PRINT 'Criando índice IX_AreaImovel_SituacaoImovelId'
 
 IF NOT EXISTS (SELECT 1 FROM SYS.INDEXES WHERE OBJECT_ID = OBJECT_ID('AreaImovel') AND NAME = 'IX_AreaImovel_SituacaoImovelId')
 BEGIN
@@ -388,10 +388,10 @@ GO
 
 ----------------------------
 -- Data alteração | Usuário | Nº Card | Descrição
--- 19/11/2022 | Luiz Rogério Scudeletti | Sem card | Criando índiceIX_AreaImovel_TerritorioId
+-- 19/11/2022 | Luiz Rogério Scudeletti | Sem card | Criando índice IX_AreaImovel_TerritorioId
 ----------------------------
 
-PRINT 'Criando índiceIX_AreaImovel_TerritorioId'
+PRINT 'Criando índice IX_AreaImovel_TerritorioId'
 
 IF NOT EXISTS (SELECT 1 FROM SYS.INDEXES WHERE OBJECT_ID = OBJECT_ID('AreaImovel') AND NAME = 'IX_AreaImovel_TerritorioId')
 BEGIN
@@ -425,10 +425,10 @@ GO
 
 ----------------------------
 -- Data alteração | Usuário | Nº Card | Descrição
--- 19/11/2022 | Luiz Rogério Scudeletti | Sem card | Criando índiceIX_AreaManguezal_TerritorioId
+-- 19/11/2022 | Luiz Rogério Scudeletti | Sem card | Criando índice IX_AreaManguezal_TerritorioId
 ----------------------------
 
-PRINT 'Criando índiceIX_AreaManguezal_TerritorioId'
+PRINT 'Criando índice IX_AreaManguezal_TerritorioId'
 
 IF NOT EXISTS (SELECT 1 FROM SYS.INDEXES WHERE OBJECT_ID = OBJECT_ID('AreaManguezal') AND NAME = 'IX_AreaManguezal_TerritorioId')
 BEGIN
@@ -462,10 +462,10 @@ GO
 
 ----------------------------
 -- Data alteração | Usuário | Nº Card | Descrição
--- 19/11/2022 | Luiz Rogério Scudeletti | Sem card | Criando índiceIX_AreaNascenteOlhoDAgua_TerritorioId
+-- 19/11/2022 | Luiz Rogério Scudeletti | Sem card | Criando índice IX_AreaNascenteOlhoDAgua_TerritorioId
 ----------------------------
 
-PRINT 'Criando índiceIX_AreaNascenteOlhoDAgua_TerritorioId'
+PRINT 'Criando índice IX_AreaNascenteOlhoDAgua_TerritorioId'
 
 IF NOT EXISTS (SELECT 1 FROM SYS.INDEXES WHERE OBJECT_ID = OBJECT_ID('AreaNascenteOlhoDAgua') AND NAME = 'IX_AreaNascenteOlhoDAgua_TerritorioId')
 BEGIN
@@ -499,10 +499,10 @@ GO
 
 ----------------------------
 -- Data alteração | Usuário | Nº Card | Descrição
--- 19/11/2022 | Luiz Rogério Scudeletti | Sem card | Criando índiceIX_AreaPousio_TerritorioId
+-- 19/11/2022 | Luiz Rogério Scudeletti | Sem card | Criando índice IX_AreaPousio_TerritorioId
 ----------------------------
 
-PRINT 'Criando índiceIX_AreaPousio_TerritorioId'
+PRINT 'Criando índice IX_AreaPousio_TerritorioId'
 
 IF NOT EXISTS (SELECT 1 FROM SYS.INDEXES WHERE OBJECT_ID = OBJECT_ID('AreaPousio') AND NAME = 'IX_AreaPousio_TerritorioId')
 BEGIN
@@ -536,10 +536,10 @@ GO
 
 ----------------------------
 -- Data alteração | Usuário | Nº Card | Descrição
--- 19/11/2022 | Luiz Rogério Scudeletti | Sem card | Criando índiceIX_AreaPreservacaoPermanente_TerritorioId
+-- 19/11/2022 | Luiz Rogério Scudeletti | Sem card | Criando índice IX_AreaPreservacaoPermanente_TerritorioId
 ----------------------------
 
-PRINT 'Criando índiceIX_AreaPreservacaoPermanente_TerritorioId'
+PRINT 'Criando índice IX_AreaPreservacaoPermanente_TerritorioId'
 
 IF NOT EXISTS (SELECT 1 FROM SYS.INDEXES WHERE OBJECT_ID = OBJECT_ID('AreaPreservacaoPermanente') AND NAME = 'IX_AreaPreservacaoPermanente_TerritorioId')
 BEGIN
@@ -573,10 +573,10 @@ GO
 
 ----------------------------
 -- Data alteração | Usuário | Nº Card | Descrição
--- 19/11/2022 | Luiz Rogério Scudeletti | Sem card | Criando índiceIX_AreaReservaLegal_TerritorioId
+-- 19/11/2022 | Luiz Rogério Scudeletti | Sem card | Criando índice IX_AreaReservaLegal_TerritorioId
 ----------------------------
 
-PRINT 'Criando índiceIX_AreaReservaLegal_TerritorioId'
+PRINT 'Criando índice IX_AreaReservaLegal_TerritorioId'
 
 IF NOT EXISTS (SELECT 1 FROM SYS.INDEXES WHERE OBJECT_ID = OBJECT_ID('AreaReservaLegal') AND NAME = 'IX_AreaReservaLegal_TerritorioId')
 BEGIN
@@ -609,10 +609,10 @@ GO
 
 ----------------------------
 -- Data alteração | Usuário | Nº Card | Descrição
--- 19/11/2022 | Luiz Rogério Scudeletti | Sem card | Criando índiceIX_AreaRestinga_TerritorioId
+-- 19/11/2022 | Luiz Rogério Scudeletti | Sem card | Criando índice IX_AreaRestinga_TerritorioId
 ----------------------------
 
-PRINT 'Criando índiceIX_AreaRestinga_TerritorioId'
+PRINT 'Criando índice IX_AreaRestinga_TerritorioId'
 
 IF NOT EXISTS (SELECT 1 FROM SYS.INDEXES WHERE OBJECT_ID = OBJECT_ID('AreaRestinga') AND NAME = 'IX_AreaRestinga_TerritorioId')
 BEGIN
@@ -646,10 +646,10 @@ GO
 
 ----------------------------
 -- Data alteração | Usuário | Nº Card | Descrição
--- 19/11/2022 | Luiz Rogério Scudeletti | Sem card | Criando índiceIX_AreaServidaoAdministrativa_TerritorioId
+-- 19/11/2022 | Luiz Rogério Scudeletti | Sem card | Criando índice IX_AreaServidaoAdministrativa_TerritorioId
 ----------------------------
 
-PRINT 'Criando índiceIX_AreaServidaoAdministrativa_TerritorioId'
+PRINT 'Criando índice IX_AreaServidaoAdministrativa_TerritorioId'
 
 IF NOT EXISTS (SELECT 1 FROM SYS.INDEXES WHERE OBJECT_ID = OBJECT_ID('AreaServidaoAdministrativa') AND NAME = 'IX_AreaServidaoAdministrativa_TerritorioId')
 BEGIN
@@ -683,10 +683,10 @@ GO
 
 ----------------------------
 -- Data alteração | Usuário | Nº Card | Descrição
--- 19/11/2022 | Luiz Rogério Scudeletti | Sem card | Criando índiceIX_AreaTopoMorro_TerritorioId
+-- 19/11/2022 | Luiz Rogério Scudeletti | Sem card | Criando índice IX_AreaTopoMorro_TerritorioId
 ----------------------------
 
-PRINT 'Criando índiceIX_AreaTopoMorro_TerritorioId'
+PRINT 'Criando índice IX_AreaTopoMorro_TerritorioId'
 
 IF NOT EXISTS (SELECT 1 FROM SYS.INDEXES WHERE OBJECT_ID = OBJECT_ID('AreaTopoMorro') AND NAME = 'IX_AreaTopoMorro_TerritorioId')
 BEGIN
@@ -720,10 +720,10 @@ GO
 
 ----------------------------
 -- Data alteração | Usuário | Nº Card | Descrição
--- 19/11/2022 | Luiz Rogério Scudeletti | Sem card | Criando índiceIX_AreaUsoRestrito_TerritorioId
+-- 19/11/2022 | Luiz Rogério Scudeletti | Sem card | Criando índice IX_AreaUsoRestrito_TerritorioId
 ----------------------------
 
-PRINT 'Criando índiceIX_AreaUsoRestrito_TerritorioId'
+PRINT 'Criando índice IX_AreaUsoRestrito_TerritorioId'
 
 IF NOT EXISTS (SELECT 1 FROM SYS.INDEXES WHERE OBJECT_ID = OBJECT_ID('AreaUsoRestrito') AND NAME = 'IX_AreaUsoRestrito_TerritorioId')
 BEGIN
@@ -757,10 +757,10 @@ GO
 
 ----------------------------
 -- Data alteração | Usuário | Nº Card | Descrição
--- 19/11/2022 | Luiz Rogério Scudeletti | Sem card | Criando índiceIX_AreaVegetacaoNativa_TerritorioId
+-- 19/11/2022 | Luiz Rogério Scudeletti | Sem card | Criando índice IX_AreaVegetacaoNativa_TerritorioId
 ----------------------------
 
-PRINT 'Criando índiceIX_AreaVegetacaoNativa_TerritorioId'
+PRINT 'Criando índice IX_AreaVegetacaoNativa_TerritorioId'
 
 IF NOT EXISTS (SELECT 1 FROM SYS.INDEXES WHERE OBJECT_ID = OBJECT_ID('AreaVegetacaoNativa') AND NAME = 'IX_AreaVegetacaoNativa_TerritorioId')
 BEGIN
@@ -794,10 +794,10 @@ GO
 
 ----------------------------
 -- Data alteração | Usuário | Nº Card | Descrição
--- 19/11/2022 | Luiz Rogério Scudeletti | Sem card | Criando índiceIX_AreaVereda_TerritorioId
+-- 19/11/2022 | Luiz Rogério Scudeletti | Sem card | Criando índice IX_AreaVereda_TerritorioId
 ----------------------------
 
-PRINT 'Criando índiceIX_AreaVereda_TerritorioId'
+PRINT 'Criando índice IX_AreaVereda_TerritorioId'
 
 IF NOT EXISTS (SELECT 1 FROM SYS.INDEXES WHERE OBJECT_ID = OBJECT_ID('AreaVereda') AND NAME = 'IX_AreaVereda_TerritorioId')
 BEGIN
