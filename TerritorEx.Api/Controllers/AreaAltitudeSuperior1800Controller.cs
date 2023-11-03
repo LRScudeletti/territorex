@@ -1,8 +1,8 @@
 ﻿using System.Net;
 using Microsoft.AspNetCore.Mvc;
 using Swashbuckle.AspNetCore.Annotations;
-using TerritorEx.Api.Entities;
 using TerritorEx.Api.Helpers.Exceptions;
+using TerritorEx.Api.Models;
 using TerritorEx.Api.Services;
 
 namespace TerritorEx.Api.Controllers;
@@ -20,7 +20,7 @@ public class AreaAltitudeSuperior1800Controller : ControllerBase
 
     #region [ Documentação Swagger RecuperarTodos ]
     [SwaggerOperation(Summary = "swagger_summary_area_altitude_superior_1800")]
-    [SwaggerResponse((int)HttpStatusCode.OK, "swagger_response_200", typeof(AreaAltitudeSuperior1800))]
+    [SwaggerResponse((int)HttpStatusCode.OK, "swagger_response_200", typeof(AreaAltitudeSuperior1800Model))]
     [SwaggerResponse((int)HttpStatusCode.BadRequest, "swagger_response_400", typeof(Mensagem))]
     [SwaggerResponse((int)HttpStatusCode.NotFound, "swagger_response_404", typeof(Mensagem))]
     [SwaggerResponse((int)HttpStatusCode.InternalServerError, "swagger_response_500", typeof(Mensagem))]
@@ -35,7 +35,7 @@ public class AreaAltitudeSuperior1800Controller : ControllerBase
 
     #region [ Documentação Swagger RecuperarPorTerritorioId ]
     [SwaggerOperation(Summary = "swagger_summary_area_altitude_superior_1800_id")]
-    [SwaggerResponse((int)HttpStatusCode.OK, "swagger_response_200", typeof(AreaAltitudeSuperior1800))]
+    [SwaggerResponse((int)HttpStatusCode.OK, "swagger_response_200", typeof(AreaAltitudeSuperior1800Model))]
     [SwaggerResponse((int)HttpStatusCode.BadRequest, "swagger_response_400", typeof(Mensagem))]
     [SwaggerResponse((int)HttpStatusCode.NotFound, "swagger_response_404", typeof(Mensagem))]
     [SwaggerResponse((int)HttpStatusCode.InternalServerError, "swagger_response_500", typeof(Mensagem))]

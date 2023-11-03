@@ -1,7 +1,7 @@
 var resource_globalization = {
     "Name": "Nome",
     "Description": "Descrição",
-    "SelectDefinition": "Definição",
+    "SelectDefinition": "Idioma",
     "TryItOut": "Testar",
     "Cancel": "Cancelar",
     "Execute": "Executar",

@@ -42,7 +42,9 @@ var configuration = builder.Configuration;
     app.UseStaticFiles();
     app.UseSwaggerUi();
 
+    app.UseMiddleware<RateLimitMiddleware>();
     app.UseMiddleware<ErrorHandlerMiddleware>();
+
     app.UseHttpsRedirection();
     app.UseAuthorization();
 

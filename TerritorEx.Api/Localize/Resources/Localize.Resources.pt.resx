@@ -117,8 +117,14 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="app_sem_permissao_para_solicitacao" xml:space="preserve">
+    <value>O aplicativo não tem permissão para fazer esta solicitação.</value>
+  </data>
   <data name="area_territorio_nao_encontrado" xml:space="preserve">
     <value>Área não encontrada.</value>
+  </data>
+  <data name="dns_nao_encontrado" xml:space="preserve">
+    <value>Não foi possível obter o DNS.</value>
   </data>
   <data name="nivel_territorio_nao_encontrado" xml:space="preserve">
     <value>Nível não encontrado.</value>
