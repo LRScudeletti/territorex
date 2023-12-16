@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
 	<PropertyGroup>
-		<TargetFramework>net7.0</TargetFramework>
+		<TargetFramework>net8.0</TargetFramework>
 		<ImplicitUsings>enable</ImplicitUsings>
 		<UserSecretsId>6fb0eab8-a6db-4b66-9fc8-9047e6c99021</UserSecretsId>
 		<DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
