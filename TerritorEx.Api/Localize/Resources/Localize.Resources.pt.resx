@@ -253,7 +253,7 @@
     <value>ID do nível do território.</value>
   </data>
   <data name="schema_refresh_tokens" xml:space="preserve">
-    <value>Tokens de atualização</value>
+    <value>Tokens de atualização.</value>
   </data>
   <data name="schema_regiao_id" xml:space="preserve">
     <value>ID da região.</value>

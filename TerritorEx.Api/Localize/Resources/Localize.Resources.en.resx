@@ -121,202 +121,202 @@
     <value>The application does not have permission to make this request.</value>
   </data>
   <data name="area_territorio_nao_encontrado" xml:space="preserve">
-    <value>Area not found</value>
+    <value>Area not found.</value>
   </data>
   <data name="dns_nao_encontrado" xml:space="preserve">
     <value>Unable to obtain DNS.</value>
   </data>
   <data name="nivel_territorio_nao_encontrado" xml:space="preserve">
-    <value>Level not found</value>
+    <value>Level not found.</value>
   </data>
   <data name="schema_area_altitude_superior_1800" xml:space="preserve">
-    <value>Areas with an altitude greater than 1,800 meters</value>
+    <value>Areas with an altitude greater than 1,800 meters.</value>
   </data>
   <data name="schema_area_banhado" xml:space="preserve">
-    <value>Areas with swamps</value>
+    <value>Areas with swamps.</value>
   </data>
   <data name="schema_area_borda_chapada" xml:space="preserve">
-    <value>Areas with flat terrain</value>
+    <value>Areas with flat terrain.</value>
   </data>
   <data name="schema_area_consolidada" xml:space="preserve">
-    <value>Consolidated areas</value>
+    <value>Consolidated areas.</value>
   </data>
   <data name="schema_area_declividade_maior_45" xml:space="preserve">
-    <value>Areas with a slope greater than 45 degrees</value>
+    <value>Areas with a slope greater than 45 degrees.</value>
   </data>
   <data name="schema_area_hectare" xml:space="preserve">
-    <value>Area size in hectares</value>
+    <value>Area size in hectares.</value>
   </data>
   <data name="schema_area_hidrografia" xml:space="preserve">
-    <value>Hydrographic areas</value>
+    <value>Hydrographic areas.</value>
   </data>
   <data name="schema_area_id" xml:space="preserve">
-    <value>Area internal ID</value>
+    <value>Area internal ID.</value>
   </data>
   <data name="schema_area_imovel" xml:space="preserve">
-    <value>Areas with properties</value>
+    <value>Areas with properties.</value>
   </data>
   <data name="schema_area_manguezal" xml:space="preserve">
-    <value>Areas with mangrove</value>
+    <value>Areas with mangrove.</value>
   </data>
   <data name="schema_area_nascente_olho_dagua" xml:space="preserve">
-    <value>Areas with water sources</value>
+    <value>Areas with water sources.</value>
   </data>
   <data name="schema_area_pousio" xml:space="preserve">
-    <value>Areas with fallow land</value>
+    <value>Areas with fallow land.</value>
   </data>
   <data name="schema_area_preservacao_permanente" xml:space="preserve">
-    <value>Permanent preservation areas</value>
+    <value>Permanent preservation areas.</value>
   </data>
   <data name="schema_area_reserva_legal" xml:space="preserve">
-    <value>Areas with legal reserve</value>
+    <value>Areas with legal reserve.</value>
   </data>
   <data name="schema_area_restinga" xml:space="preserve">
-    <value>Areas with coastal sandy plains (restinga)</value>
+    <value>Areas with coastal sandy plains (restinga).</value>
   </data>
   <data name="schema_area_servidao_administrativa" xml:space="preserve">
-    <value>Areas of administrative easement</value>
+    <value>Areas of administrative easement.</value>
   </data>
   <data name="schema_area_topo_morro" xml:space="preserve">
-    <value>Hilltop areas</value>
+    <value>Hilltop areas.</value>
   </data>
   <data name="schema_area_vegetacao_nativa" xml:space="preserve">
-    <value>Areas with native vegetation</value>
+    <value>Areas with native vegetation.</value>
   </data>
   <data name="schema_area_vereda" xml:space="preserve">
-    <value>Areas with wet and stable terrain (vereda)</value>
+    <value>Areas with wet and stable terrain (vereda).</value>
   </data>
   <data name="schema_condicao" xml:space="preserve">
-    <value>Condition of the property</value>
+    <value>Condition of the property.</value>
   </data>
   <data name="schema_data_atualizacao" xml:space="preserve">
-    <value>Last update date</value>
+    <value>Last update date.</value>
   </data>
   <data name="schema_descricao" xml:space="preserve">
-    <value>Area description</value>
+    <value>Area description.</value>
   </data>
   <data name="schema_descricao_nivel" xml:space="preserve">
-    <value>Territory level description</value>
+    <value>Territory level description.</value>
   </data>
   <data name="schema_descricao_situacao" xml:space="preserve">
-    <value>Description of the situation of the property</value>
+    <value>Description of the situation of the property.</value>
   </data>
   <data name="schema_descricao_tipo" xml:space="preserve">
-    <value>Description of the property type</value>
+    <value>Description of the property type.</value>
   </data>
   <data name="schema_federacao_id" xml:space="preserve">
-    <value>Federation ID</value>
+    <value>Federation ID.</value>
   </data>
   <data name="schema_federacao_nome" xml:space="preserve">
-    <value>Federation name</value>
+    <value>Federation name.</value>
   </data>
   <data name="schema_imovel_id" xml:space="preserve">
-    <value>Property ID</value>
+    <value>Property ID.</value>
   </data>
   <data name="schema_latitude" xml:space="preserve">
-    <value>Latitude of the territory</value>
+    <value>Latitude of the territory.</value>
   </data>
   <data name="schema_longitude" xml:space="preserve">
-    <value>Longitude of the territory</value>
+    <value>Longitude of the territory.</value>
   </data>
   <data name="schema_mesorregiao_id" xml:space="preserve">
-    <value>Mesoregion ID</value>
+    <value>Mesoregion ID.</value>
   </data>
   <data name="schema_mesorregiao_nome" xml:space="preserve">
-    <value>Mesoregion name</value>
+    <value>Mesoregion name.</value>
   </data>
   <data name="schema_message" xml:space="preserve">
-    <value>Log messages</value>
+    <value>Log messages.</value>
   </data>
   <data name="schema_message_codigo" xml:space="preserve">
-    <value>Error code</value>
+    <value>Error code.</value>
   </data>
   <data name="schema_message_descricao" xml:space="preserve">
-    <value>Error description</value>
+    <value>Error description.</value>
   </data>
   <data name="schema_message_rastro" xml:space="preserve">
-    <value>Error trace</value>
+    <value>Error trace.</value>
   </data>
   <data name="schema_microrregiao_id" xml:space="preserve">
-    <value>Microregion ID</value>
+    <value>Microregion ID.</value>
   </data>
   <data name="schema_microrregiao_nome" xml:space="preserve">
-    <value>Microregion name</value>
+    <value>Microregion name.</value>
   </data>
   <data name="schema_modulo_fiscal" xml:space="preserve">
-    <value>Property tax module</value>
+    <value>Property tax module.</value>
   </data>
   <data name="schema_nivel_territorio" xml:space="preserve">
-    <value>Territory levels</value>
+    <value>Territory levels.</value>
   </data>
   <data name="schema_nivel_territorio_id" xml:space="preserve">
-    <value>Territory level ID</value>
+    <value>Territory level ID.</value>
   </data>
   <data name="schema_refresh_tokens" xml:space="preserve">
-    <value>Refresh tokens</value>
+    <value>Refresh tokens.</value>
   </data>
   <data name="schema_regiao_id" xml:space="preserve">
-    <value>Region ID</value>
+    <value>Region ID.</value>
   </data>
   <data name="schema_regiao_nome" xml:space="preserve">
-    <value>Region name</value>
+    <value>Region name.</value>
   </data>
   <data name="schema_shape" xml:space="preserve">
-    <value>Geospatial information</value>
+    <value>Geospatial information.</value>
   </data>
   <data name="schema_sicar_id" xml:space="preserve">
-    <value>Area ID (SICAR)</value>
+    <value>Area ID (SICAR).</value>
   </data>
   <data name="schema_sigla_nivel" xml:space="preserve">
-    <value>Territory level acronym</value>
+    <value>Territory level acronym.</value>
   </data>
   <data name="schema_sigla_situacao" xml:space="preserve">
-    <value>Acronym of the situation of the property</value>
+    <value>Acronym of the situation of the property.</value>
   </data>
   <data name="schema_sigla_tipo" xml:space="preserve">
-    <value>Acronym of the property type</value>
+    <value>Acronym of the property type.</value>
   </data>
   <data name="schema_situacao_imovel" xml:space="preserve">
-    <value>Properties situations</value>
+    <value>Properties situations.</value>
   </data>
   <data name="schema_situacao_imovel_id" xml:space="preserve">
-    <value>Property status ID</value>
+    <value>Property status ID.</value>
   </data>
   <data name="schema_territorio" xml:space="preserve">
-    <value>Territories</value>
+    <value>Territories.</value>
   </data>
   <data name="schema_territorio_hierarquia" xml:space="preserve">
-    <value>Hierarchy of territories</value>
+    <value>Hierarchy of territories.</value>
   </data>
   <data name="schema_territorio_id" xml:space="preserve">
-    <value>Territory ID (IBGE)</value>
+    <value>Territory ID (IBGE).</value>
   </data>
   <data name="schema_territorio_nome" xml:space="preserve">
-    <value>Territory name</value>
+    <value>Territory name.</value>
   </data>
   <data name="schema_territorio_superior_id" xml:space="preserve">
-    <value>Upper territory ID (IBGE)</value>
+    <value>Upper territory ID (IBGE).</value>
   </data>
   <data name="schema_tipo_imovel" xml:space="preserve">
-    <value>Properties types</value>
+    <value>Properties types.</value>
   </data>
   <data name="schema_tipo_imovel_id" xml:space="preserve">
-    <value>Property type ID</value>
+    <value>Property type ID.</value>
   </data>
   <data name="schema_unidade_federativa_id" xml:space="preserve">
-    <value>Federative unit ID</value>
+    <value>Federative unit ID.</value>
   </data>
   <data name="schema_unidade_federativa_nome" xml:space="preserve">
-    <value>Federative unit name</value>
+    <value>Federative unit name.</value>
   </data>
   <data name="schema_usuario_atualizacao" xml:space="preserve">
-    <value>Last update user</value>
+    <value>Last update user.</value>
   </data>
   <data name="sem_autorizacao" xml:space="preserve">
-    <value>Unauthorized</value>
+    <value>Unauthorized.</value>
   </data>
   <data name="situacao_imovel_nao_encontrada" xml:space="preserve">
-    <value>Property condition not found</value>
+    <value>Property condition not found.</value>
   </data>
   <data name="supported_languages" xml:space="preserve">
     <value>Supported languages</value>
@@ -328,177 +328,177 @@
     <value>https://www.linkedin.com/in/rogerioscudeletti</value>
   </data>
   <data name="swagger_description" xml:space="preserve">
-    <value>TerritorEx system API documentation - Brazilian Rural Territory Analysis System</value>
+    <value>TerritorEx system API documentation - Brazilian Rural Territory Analysis System.</value>
   </data>
   <data name="swagger_response_200" xml:space="preserve">
-    <value>Request successfully completed</value>
+    <value>Request successfully completed.</value>
   </data>
   <data name="swagger_response_400" xml:space="preserve">
-    <value>An error occurred with the request</value>
+    <value>An error occurred with the request.</value>
   </data>
   <data name="swagger_response_404" xml:space="preserve">
-    <value>No areas found</value>
+    <value>No areas found.</value>
   </data>
   <data name="swagger_response_500" xml:space="preserve">
-    <value>Internal server error</value>
+    <value>Internal server error.</value>
   </data>
   <data name="swagger_summary_area_altitude_superior_1800" xml:space="preserve">
-    <value>Lists areas with an altitude greater than 1,800 meters</value>
+    <value>Lists areas with an altitude greater than 1,800 meters.</value>
   </data>
   <data name="swagger_summary_area_altitude_superior_1800_id" xml:space="preserve">
-    <value>Lists the areas with an altitude greater than 1,800 meters from the informed territory</value>
+    <value>Lists the areas with an altitude greater than 1,800 meters from the informed territory.</value>
   </data>
   <data name="swagger_summary_area_banhado" xml:space="preserve">
-    <value>Lists areas with swamps</value>
+    <value>Lists areas with swamps.</value>
   </data>
   <data name="swagger_summary_area_banhado_id" xml:space="preserve">
-    <value>Lists the swamp areas of the informed territory</value>
+    <value>Lists the swamp areas of the informed territory.</value>
   </data>
   <data name="swagger_summary_area_borda_chapada" xml:space="preserve">
-    <value>List areas with flat terrain</value>
+    <value>List areas with flat terrain.</value>
   </data>
   <data name="swagger_summary_area_borda_chapada_id" xml:space="preserve">
-    <value>List areas with flat terrain of the informed territory</value>
+    <value>List areas with flat terrain of the informed territory.</value>
   </data>
   <data name="swagger_summary_area_consolidada" xml:space="preserve">
-    <value>Lists the consolidated areas</value>
+    <value>Lists the consolidated areas.</value>
   </data>
   <data name="swagger_summary_area_consolidada_id" xml:space="preserve">
-    <value>Lists the consolidated areas of the informed territory</value>
+    <value>Lists the consolidated areas of the informed territory.</value>
   </data>
   <data name="swagger_summary_area_declividade_maior_45" xml:space="preserve">
-    <value>Lists areas with a slope greater than 45 degrees</value>
+    <value>Lists areas with a slope greater than 45 degrees.</value>
   </data>
   <data name="swagger_summary_area_declividade_maior_45_id" xml:space="preserve">
-    <value>Lists areas with a slope greater than 45 degrees of the informed territory</value>
+    <value>Lists areas with a slope greater than 45 degrees of the informed territory.</value>
   </data>
   <data name="swagger_summary_area_hidrografia" xml:space="preserve">
-    <value>Lists hydrographic areas</value>
+    <value>Lists hydrographic areas.</value>
   </data>
   <data name="swagger_summary_area_hidrografia_id" xml:space="preserve">
-    <value>Lists the hydrographic areas of the informed territory</value>
+    <value>Lists the hydrographic areas of the informed territory.</value>
   </data>
   <data name="swagger_summary_area_imovel" xml:space="preserve">
-    <value>Lists the areas with properties</value>
+    <value>Lists the areas with properties.</value>
   </data>
   <data name="swagger_summary_area_imovel_id" xml:space="preserve">
-    <value>Lists the area of the property according to the informed CAR code</value>
+    <value>Lists the area of the property according to the informed CAR code.</value>
   </data>
   <data name="swagger_summary_area_imovel_situacao" xml:space="preserve">
-    <value>Lists the territories according of the informed situation</value>
+    <value>Lists the territories according of the informed situation.</value>
   </data>
   <data name="swagger_summary_area_imovel_territorio" xml:space="preserve">
-    <value>Lists the areas with properties of the informed territory</value>
+    <value>Lists the areas with properties of the informed territory.</value>
   </data>
   <data name="swagger_summary_area_imovel_tipo" xml:space="preserve">
-    <value>Lists the territories according of the informed type</value>
+    <value>Lists the territories according of the informed type.</value>
   </data>
   <data name="swagger_summary_area_manguezal" xml:space="preserve">
-    <value>List the areas with mangrove</value>
+    <value>List the areas with mangrove.</value>
   </data>
   <data name="swagger_summary_area_manguezal_id" xml:space="preserve">
-    <value>List the areas with mangrove of the informed territory</value>
+    <value>List the areas with mangrove of the informed territory.</value>
   </data>
   <data name="swagger_summary_area_nascente_olho_dagua" xml:space="preserve">
-    <value>Lists areas with water sources</value>
+    <value>Lists areas with water sources.</value>
   </data>
   <data name="swagger_summary_area_nascente_olho_dagua_id" xml:space="preserve">
-    <value>Lists the areas with water sources of the informed territory</value>
+    <value>Lists the areas with water sources of the informed territory.</value>
   </data>
   <data name="swagger_summary_area_pousio" xml:space="preserve">
-    <value>Lists areas with fallow land</value>
+    <value>Lists areas with fallow land.</value>
   </data>
   <data name="swagger_summary_area_pousio_id" xml:space="preserve">
-    <value>Lists the fallow areas of the informed territory</value>
+    <value>Lists the fallow areas of the informed territory.</value>
   </data>
   <data name="swagger_summary_area_preservacao_permanente" xml:space="preserve">
-    <value>Lists permanent preservation areas</value>
+    <value>Lists permanent preservation areas.</value>
   </data>
   <data name="swagger_summary_area_preservacao_permanente_id" xml:space="preserve">
-    <value>Lists the permanent preservation areas of the informed territory</value>
+    <value>Lists the permanent preservation areas of the informed territory.</value>
   </data>
   <data name="swagger_summary_area_reserva_legal" xml:space="preserve">
-    <value>List the areas with legal reserve</value>
+    <value>List the areas with legal reserve.</value>
   </data>
   <data name="swagger_summary_area_reserva_legal_id" xml:space="preserve">
-    <value>Lists areas with legal reserve of the informed territory</value>
+    <value>Lists areas with legal reserve of the informed territory.</value>
   </data>
   <data name="swagger_summary_area_restinga" xml:space="preserve">
-    <value>Lists areas with coastal sandy plains (restinga)</value>
+    <value>Lists areas with coastal sandy plains (restinga).</value>
   </data>
   <data name="swagger_summary_area_restinga_id" xml:space="preserve">
-    <value>Lists areas with coastal sandy plains (restinga) of the informed territory</value>
+    <value>Lists areas with coastal sandy plains (restinga) of the informed territory.</value>
   </data>
   <data name="swagger_summary_area_servidao_administrativa" xml:space="preserve">
-    <value>Lists areas of administrative easement</value>
+    <value>Lists areas of administrative easement.</value>
   </data>
   <data name="swagger_summary_area_servidao_administrativa_id" xml:space="preserve">
-    <value>Lists areas of administrative easement of the informed territory</value>
+    <value>Lists areas of administrative easement of the informed territory.</value>
   </data>
   <data name="swagger_summary_area_situacao" xml:space="preserve">
-    <value>Lists the areas with properties with the informed situation</value>
+    <value>Lists the areas with properties with the informed situation.</value>
   </data>
   <data name="swagger_summary_area_tipo" xml:space="preserve">
-    <value>Lists the areas with properties with the informed type</value>
+    <value>Lists the areas with properties with the informed type.</value>
   </data>
   <data name="swagger_summary_area_topo_morro" xml:space="preserve">
-    <value>Lists hilltop areas</value>
+    <value>Lists hilltop areas.</value>
   </data>
   <data name="swagger_summary_area_topo_morro_id" xml:space="preserve">
-    <value>Lists the hilltop areas of the informed territory</value>
+    <value>Lists the hilltop areas of the informed territory.</value>
   </data>
   <data name="swagger_summary_area_vegetacao_nativa" xml:space="preserve">
-    <value>Lists areas with native vegetation</value>
+    <value>Lists areas with native vegetation.</value>
   </data>
   <data name="swagger_summary_area_vegetacao_nativa_id" xml:space="preserve">
-    <value>Lists the areas with native vegetation of the informed territory</value>
+    <value>Lists the areas with native vegetation of the informed territory.</value>
   </data>
   <data name="swagger_summary_area_vereda" xml:space="preserve">
-    <value>Lists areas with wet and stable terrain (vereda)</value>
+    <value>Lists areas with wet and stable terrain (vereda).</value>
   </data>
   <data name="swagger_summary_area_vereda_id" xml:space="preserve">
-    <value>Lists areas with wet and stable terrain (vereda) of the informed territory</value>
+    <value>Lists areas with wet and stable terrain (vereda) of the informed territory.</value>
   </data>
   <data name="swagger_summary_nivel_territorio" xml:space="preserve">
-    <value>Lists the territory levels</value>
+    <value>Lists the territory levels.</value>
   </data>
   <data name="swagger_summary_nivel_territorio_id" xml:space="preserve">
-    <value>Lists the territory level of the informed id</value>
+    <value>Lists the territory level of the informed id.</value>
   </data>
   <data name="swagger_summary_situacao_imovel" xml:space="preserve">
-    <value>List the conditions of the properties</value>
+    <value>List the conditions of the properties.</value>
   </data>
   <data name="swagger_summary_situacao_imovel_id" xml:space="preserve">
-    <value>Lists the condition of the property of the informed id</value>
+    <value>Lists the condition of the property of the informed id.</value>
   </data>
   <data name="swagger_summary_territorio" xml:space="preserve">
-    <value>Lists the territories</value>
+    <value>Lists the territories.</value>
   </data>
   <data name="swagger_summary_territorio_hierarquia" xml:space="preserve">
-    <value>Lists the hierarchy of the informed territory</value>
+    <value>Lists the hierarchy of the informed territory.</value>
   </data>
   <data name="swagger_summary_territorio_id" xml:space="preserve">
-    <value>Lists the territory of the informed id</value>
+    <value>Lists the territory of the informed id.</value>
   </data>
   <data name="swagger_summary_territorio_nivel" xml:space="preserve">
-    <value>Lists the territories according of the informed level</value>
+    <value>Lists the territories according of the informed level.</value>
   </data>
   <data name="swagger_summary_territorio_nome" xml:space="preserve">
-    <value>Lists the territories according of the informed name</value>
+    <value>Lists the territories according of the informed name.</value>
   </data>
   <data name="swagger_summary_territorio_superior" xml:space="preserve">
-    <value>Lists the territories according of the informed superior territory</value>
+    <value>Lists the territories according of the informed superior territory.</value>
   </data>
   <data name="swagger_summary_tipo_imovel" xml:space="preserve">
-    <value>Lists property types</value>
+    <value>Lists property types.</value>
   </data>
   <data name="swagger_summary_tipo_imovel_id" xml:space="preserve">
-    <value>Lists the type of property oh the informed id</value>
+    <value>Lists the type of property oh the informed id.</value>
   </data>
   <data name="territorio_nao_encontrado" xml:space="preserve">
-    <value>Territory not found</value>
+    <value>Territory not found.</value>
   </data>
   <data name="tipo_imovel_nao_encontrado" xml:space="preserve">
-    <value>Property type not found</value>
+    <value>Property type not found.</value>
   </data>
 </root>
