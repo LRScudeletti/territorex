@@ -9,15 +9,9 @@ namespace TerritorEx.Api.Controllers;
 
 [ApiController]
 [Route("[controller]")]
-public class AreaAltitudeSuperior1800Controller : ControllerBase
+public class AreaAltitudeSuperior1800Controller(IAreaAltitudeSuperior1800Service areaAltitudeSuperior1800Service)
+    : ControllerBase
 {
-    private readonly IAreaAltitudeSuperior1800Service _areaAltitudeSuperior1800Service;
-
-    public AreaAltitudeSuperior1800Controller(IAreaAltitudeSuperior1800Service areaAltitudeSuperior1800Service)
-    {
-        _areaAltitudeSuperior1800Service = areaAltitudeSuperior1800Service;
-    }
-
     #region [ Documentação Swagger RecuperarTodos ]
     [SwaggerOperation(Summary = "swagger_summary_area_altitude_superior_1800")]
     [SwaggerResponse((int)HttpStatusCode.OK, "swagger_response_200", typeof(AreaAltitudeSuperior1800Model))]
@@ -29,7 +23,7 @@ public class AreaAltitudeSuperior1800Controller : ControllerBase
     [HttpGet]
     public async Task<ActionResult> RecuperarTodos()
     {
-        var area = await _areaAltitudeSuperior1800Service.RecuperarTodos();
+        var area = await areaAltitudeSuperior1800Service.RecuperarTodos();
         return Ok(area);
     }
 
@@ -44,7 +38,7 @@ public class AreaAltitudeSuperior1800Controller : ControllerBase
     [HttpGet("territorio={territorioId:int}")]
     public async Task<IActionResult> RecuperarPorTerritorioId(int territorioId)
     {
-        var area = await _areaAltitudeSuperior1800Service.RecuperarPorTerritorioId(territorioId);
+        var area = await areaAltitudeSuperior1800Service.RecuperarPorTerritorioId(territorioId);
         return Ok(area);
     }
 }

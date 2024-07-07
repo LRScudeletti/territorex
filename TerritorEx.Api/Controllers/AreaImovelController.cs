@@ -35,7 +35,7 @@ public class AreaImovelController(IAreaImovelService areaImovelService) : Contro
     [SwaggerResponse((int)HttpStatusCode.InternalServerError, "swagger_response_500", typeof(Mensagem))]
     #endregion
 
-    [HttpGet("territorio={territorioId}")]
+    [HttpGet("territorio={territorioId:int}")]
     public async Task<IActionResult> RecuperarPorTerritorioId(int territorioId)
     {
         var area = await areaImovelService.RecuperarPorTerritorioId(territorioId);
@@ -65,7 +65,7 @@ public class AreaImovelController(IAreaImovelService areaImovelService) : Contro
     [SwaggerResponse((int)HttpStatusCode.InternalServerError, "swagger_response_500", typeof(Mensagem))]
     #endregion
 
-    [HttpGet("tipo={tipoImovelId}")]
+    [HttpGet("tipo={tipoImovelId:int}")]
     public async Task<IActionResult> RecuperarPorTipoImovelId(int tipoImovelId)
     {
         var area = await areaImovelService.RecuperarPorTipoImovelId(tipoImovelId);
@@ -80,7 +80,7 @@ public class AreaImovelController(IAreaImovelService areaImovelService) : Contro
     [SwaggerResponse((int)HttpStatusCode.InternalServerError, "swagger_response_500", typeof(Mensagem))]
     #endregion
 
-    [HttpGet("situacao={situacaoImovelId}")]
+    [HttpGet("situacao={situacaoImovelId:int}")]
     public async Task<IActionResult> RecuperarPorSituacaoImovelId(int situacaoImovelId)
     {
         var area = await areaImovelService.RecuperarPorSituacaoImovelId(situacaoImovelId);

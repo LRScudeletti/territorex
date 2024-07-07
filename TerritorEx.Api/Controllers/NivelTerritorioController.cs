@@ -9,15 +9,8 @@ namespace TerritorEx.Api.Controllers;
 
 [ApiController]
 [Route("[controller]")]
-public class NivelTerritorioController : ControllerBase
+public class NivelTerritorioController(INivelTerritorioService nivelTerritorioService) : ControllerBase
 {
-    private readonly INivelTerritorioService _nivelTerritorioService;
-
-    public NivelTerritorioController(INivelTerritorioService nivelTerritorioService)
-    {
-        _nivelTerritorioService = nivelTerritorioService;
-    }
-
     #region [ Documentação Swagger RecuperarTodos ]
     [SwaggerOperation(Summary = "swagger_summary_nivel_territorio")]
     [SwaggerResponse((int)HttpStatusCode.OK, "swagger_response_200", typeof(NivelTerritorio))]
@@ -29,7 +22,7 @@ public class NivelTerritorioController : ControllerBase
     [HttpGet]
     public async Task<ActionResult> RecuperarTodos()
     {
-        var area = await _nivelTerritorioService.RecuperarTodos();
+        var area = await nivelTerritorioService.RecuperarTodos();
         return Ok(area);
     }
 
@@ -44,7 +37,7 @@ public class NivelTerritorioController : ControllerBase
     [HttpGet("territorio={niveTerritorioId:int}")]
     public async Task<IActionResult> RecuperarPorId(int niveTerritorioId)
     {
-        var area = await _nivelTerritorioService.RecuperarPorId(niveTerritorioId);
+        var area = await nivelTerritorioService.RecuperarPorId(niveTerritorioId);
         return Ok(area);
     }
 }

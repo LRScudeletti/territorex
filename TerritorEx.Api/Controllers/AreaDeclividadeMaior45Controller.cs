@@ -9,15 +9,9 @@ namespace TerritorEx.Api.Controllers;
 
 [ApiController]
 [Route("[controller]")]
-public class AreaDeclividadeMaior45Controller : ControllerBase
+public class AreaDeclividadeMaior45Controller(IAreaDeclividadeMaior45Service areaDeclividadeMaior45Service)
+    : ControllerBase
 {
-    private readonly IAreaDeclividadeMaior45Service _areaDeclividadeMaior45Service;
-
-    public AreaDeclividadeMaior45Controller(IAreaDeclividadeMaior45Service areaDeclividadeMaior45Service)
-    {
-        _areaDeclividadeMaior45Service = areaDeclividadeMaior45Service;
-    }
-
     #region [ Documentação Swagger RecuperarTodos ]
     [SwaggerOperation(Summary = "swagger_summary_area_declividade_maior_45")]
     [SwaggerResponse((int)HttpStatusCode.OK, "swagger_response_200", typeof(AreaDeclividadeMaior45))]
@@ -29,7 +23,7 @@ public class AreaDeclividadeMaior45Controller : ControllerBase
     [HttpGet]
     public async Task<ActionResult> RecuperarTodos()
     {
-        var area = await _areaDeclividadeMaior45Service.RecuperarTodos();
+        var area = await areaDeclividadeMaior45Service.RecuperarTodos();
         return Ok(area);
     }
 
@@ -44,7 +38,7 @@ public class AreaDeclividadeMaior45Controller : ControllerBase
     [HttpGet("territorio={territorioId:int}")]
     public async Task<ActionResult> RecuperarPorTerritorioId(int territorioId)
     {
-        var area = await _areaDeclividadeMaior45Service.RecuperarPorTerritorioId(territorioId);
+        var area = await areaDeclividadeMaior45Service.RecuperarPorTerritorioId(territorioId);
         return Ok(area);
     }
 }

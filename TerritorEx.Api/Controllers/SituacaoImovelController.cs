@@ -9,15 +9,8 @@ namespace TerritorEx.Api.Controllers;
 
 [ApiController]
 [Route("[controller]")]
-public class SituacaoImovelController : ControllerBase
+public class SituacaoImovelController(ISituacaoImovelService situacaoImovelService) : ControllerBase
 {
-    private readonly ISituacaoImovelService _situacaoImovelService;
-
-    public SituacaoImovelController(ISituacaoImovelService situacaoImovelService)
-    {
-        _situacaoImovelService = situacaoImovelService;
-    }
-
     #region [ Documentação Swagger RecuperarTodos ]
     [SwaggerOperation(Summary = "swagger_summary_situacao_imovel")]
     [SwaggerResponse((int)HttpStatusCode.OK, "swagger_response_200", typeof(SituacaoImovel))]
@@ -29,7 +22,7 @@ public class SituacaoImovelController : ControllerBase
     [HttpGet]
     public async Task<ActionResult> RecuperarTodos()
     {
-        var area = await _situacaoImovelService.RecuperarTodos();
+        var area = await situacaoImovelService.RecuperarTodos();
         return Ok(area);
     }
 
@@ -44,7 +37,7 @@ public class SituacaoImovelController : ControllerBase
     [HttpGet("territorio={situacaoImovelId:int}")]
     public async Task<IActionResult> RecuperarPorId(int situacaoImovelId)
     {
-        var area = await _situacaoImovelService.RecuperarPorId(situacaoImovelId);
+        var area = await situacaoImovelService.RecuperarPorId(situacaoImovelId);
         return Ok(area);
     }
 }

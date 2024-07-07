@@ -9,15 +9,8 @@ namespace TerritorEx.Api.Controllers;
 
 [ApiController]
 [Route("[controller]")]
-public class AreaBordaChapadaController : ControllerBase
+public class AreaBordaChapadaController(IAreaBordaChapadaService areaBordaChapadaService) : ControllerBase
 {
-    private readonly IAreaBordaChapadaService _areaBordaChapadaService;
-
-    public AreaBordaChapadaController(IAreaBordaChapadaService areaBordaChapadaService)
-    {
-        _areaBordaChapadaService = areaBordaChapadaService;
-    }
-
     #region [ Documentação Swagger RecuperarTodos ]
     [SwaggerOperation(Summary = "swagger_summary_area_borda_chapada")]
     [SwaggerResponse((int)HttpStatusCode.OK, "swagger_response_200", typeof(AreaBordaChapada))]
@@ -29,7 +22,7 @@ public class AreaBordaChapadaController : ControllerBase
     [HttpGet]
     public async Task<ActionResult> RecuperarTodos()
     {
-        var area = await _areaBordaChapadaService.RecuperarTodos();
+        var area = await areaBordaChapadaService.RecuperarTodos();
         return Ok(area);
     }
 
@@ -44,7 +37,7 @@ public class AreaBordaChapadaController : ControllerBase
     [HttpGet("territorio={territorioId:int}")]
     public async Task<ActionResult> RecuperarPorTerritorioId(int territorioId)
     {
-        var area = await _areaBordaChapadaService.RecuperarPorTerritorioId(territorioId);
+        var area = await areaBordaChapadaService.RecuperarPorTerritorioId(territorioId);
         return Ok(area);
     }
 }

@@ -9,15 +9,8 @@ namespace TerritorEx.Api.Controllers;
 
 [ApiController]
 [Route("[controller]")]
-public class AreaConsolidadaController : ControllerBase
+public class AreaConsolidadaController(IAreaConsolidadaService areaConsolidadaService) : ControllerBase
 {
-    private readonly IAreaConsolidadaService _areaConsolidadaService;
-
-    public AreaConsolidadaController(IAreaConsolidadaService areaConsolidadaService)
-    {
-        _areaConsolidadaService = areaConsolidadaService;
-    }
-
     #region [ Documentação Swagger RecuperarTodos ]
     [SwaggerOperation(Summary = "swagger_summary_area_consolidada")]
     [SwaggerResponse((int)HttpStatusCode.OK, "swagger_response_200", typeof(AreaConsolidada))]
@@ -29,7 +22,7 @@ public class AreaConsolidadaController : ControllerBase
     [HttpGet]
     public async Task<ActionResult> RecuperarTodos()
     {
-        var area = await _areaConsolidadaService.RecuperarTodos();
+        var area = await areaConsolidadaService.RecuperarTodos();
         return Ok(area);
     }
 
@@ -44,7 +37,7 @@ public class AreaConsolidadaController : ControllerBase
     [HttpGet("territorio={territorioId:int}")]
     public async Task<IActionResult> RecuperarPorTerritorioId(int territorioId)
     {
-        var area = await _areaConsolidadaService.RecuperarPorTerritorioId(territorioId);
+        var area = await areaConsolidadaService.RecuperarPorTerritorioId(territorioId);
         return Ok(area);
     }
 }

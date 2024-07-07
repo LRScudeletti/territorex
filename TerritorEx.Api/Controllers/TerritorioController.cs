@@ -10,15 +10,8 @@ namespace TerritorEx.Api.Controllers;
 
 [ApiController]
 [Route("[controller]")]
-public class TerritorioController : ControllerBase
+public class TerritorioController(ITerritorioService territorioService) : ControllerBase
 {
-    private readonly ITerritorioService _territorioService;
-
-    public TerritorioController(ITerritorioService territorioService)
-    {
-        _territorioService = territorioService;
-    }
-
     #region [ Documentação Swagger RecuperarTodos ]
     [SwaggerOperation(Summary = "swagger_summary_territorio")]
     [SwaggerResponse((int)HttpStatusCode.OK, "swagger_response_200", typeof(Territorio))]
@@ -30,7 +23,7 @@ public class TerritorioController : ControllerBase
     [HttpGet]
     public async Task<ActionResult> RecuperarTodos()
     {
-        var area = await _territorioService.RecuperarTodos();
+        var area = await territorioService.RecuperarTodos();
         return Ok(area);
     }
 
@@ -45,7 +38,7 @@ public class TerritorioController : ControllerBase
     [HttpGet("territorio={territorioId:int}")]
     public async Task<IActionResult> RecuperarPorId(int territorioId)
     {
-        var area = await _territorioService.RecuperarPorId(territorioId);
+        var area = await territorioService.RecuperarPorId(territorioId);
         return Ok(area);
     }
 
@@ -60,7 +53,7 @@ public class TerritorioController : ControllerBase
     [HttpGet("nome={territorioNome}")]
     public async Task<IActionResult> RecuperarPorNome(string territorioNome)
     {
-        var area = await _territorioService.RecuperarPorNome(territorioNome);
+        var area = await territorioService.RecuperarPorNome(territorioNome);
         return Ok(area);
     }
 
@@ -75,7 +68,7 @@ public class TerritorioController : ControllerBase
     [HttpGet("superior={territorioSuperiorId:int}")]
     public async Task<IActionResult> RecuperarPorTerritorioSuperiorId(int territorioSuperiorId)
     {
-        var area = await _territorioService.RecuperarPorTerritorioSuperiorId(territorioSuperiorId);
+        var area = await territorioService.RecuperarPorTerritorioSuperiorId(territorioSuperiorId);
         return Ok(area);
     }
 
@@ -90,7 +83,7 @@ public class TerritorioController : ControllerBase
     [HttpGet("nivel={nivelTerritorioId:int}")]
     public async Task<IActionResult> RecuperarPorNivelTerritorioId(int nivelTerritorioId)
     {
-        var area = await _territorioService.RecuperarPorNivelTerritorioId(nivelTerritorioId);
+        var area = await territorioService.RecuperarPorNivelTerritorioId(nivelTerritorioId);
         return Ok(area);
     }
 
@@ -105,7 +98,7 @@ public class TerritorioController : ControllerBase
     [HttpGet("hierarquia={territorioId:int}")]
     public async Task<IActionResult> RecuperarHierarquia(int territorioId)
     {
-        var area = await _territorioService.RecuperarHierarquia(territorioId);
+        var area = await territorioService.RecuperarHierarquia(territorioId);
         return Ok(area);
     }
 }

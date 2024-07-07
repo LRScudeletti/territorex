@@ -9,15 +9,8 @@ namespace TerritorEx.Api.Controllers;
 
 [ApiController]
 [Route("[controller]")]
-public class AreaRestingaController : ControllerBase
+public class AreaRestingaController(IAreaRestingaService areaRestingaService) : ControllerBase
 {
-    private readonly IAreaRestingaService _areaRestingaService;
-
-    public AreaRestingaController(IAreaRestingaService areaRestingaService)
-    {
-        _areaRestingaService = areaRestingaService;
-    }
-
     #region [ Documentação Swagger RecuperarTodos ]
     [SwaggerOperation(Summary = "swagger_summary_area_restinga")]
     [SwaggerResponse((int)HttpStatusCode.OK, "swagger_response_200", typeof(AreaRestinga))]
@@ -29,7 +22,7 @@ public class AreaRestingaController : ControllerBase
     [HttpGet]
     public async Task<ActionResult> RecuperarTodos()
     {
-        var area = await _areaRestingaService.RecuperarTodos();
+        var area = await areaRestingaService.RecuperarTodos();
         return Ok(area);
     }
 
@@ -44,7 +37,7 @@ public class AreaRestingaController : ControllerBase
     [HttpGet("territorio={territorioId:int}")]
     public async Task<IActionResult> RecuperarPorTerritorioId(int territorioId)
     {
-        var area = await _areaRestingaService.RecuperarPorTerritorioId(territorioId);
+        var area = await areaRestingaService.RecuperarPorTerritorioId(territorioId);
         return Ok(area);
     }
 }

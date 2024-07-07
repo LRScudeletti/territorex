@@ -9,15 +9,8 @@ namespace TerritorEx.Api.Controllers;
 
 [ApiController]
 [Route("[controller]")]
-public class AreaManguezalController : ControllerBase
+public class AreaManguezalController(IAreaManguezalService areaManguezalService) : ControllerBase
 {
-    private readonly IAreaManguezalService _areaManguezalService;
-
-    public AreaManguezalController(IAreaManguezalService areaManguezalService)
-    {
-        _areaManguezalService = areaManguezalService;
-    }
-
     #region [ Documentação Swagger RecuperarTodos ]
     [SwaggerOperation(Summary = "swagger_summary_area_manguezal")]
     [SwaggerResponse((int)HttpStatusCode.OK, "swagger_response_200", typeof(AreaManguezal))]
@@ -29,7 +22,7 @@ public class AreaManguezalController : ControllerBase
     [HttpGet]
     public async Task<ActionResult> RecuperarTodos()
     {
-        var area = await _areaManguezalService.RecuperarTodos();
+        var area = await areaManguezalService.RecuperarTodos();
         return Ok(area);
     }
 
@@ -44,7 +37,7 @@ public class AreaManguezalController : ControllerBase
     [HttpGet("territorio={territorioId:int}")]
     public async Task<ActionResult> RecuperarPorTerritorioId(int territorioId)
     {
-        var area = await _areaManguezalService.RecuperarPorTerritorioId(territorioId);
+        var area = await areaManguezalService.RecuperarPorTerritorioId(territorioId);
         return Ok(area);
     }
 }

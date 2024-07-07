@@ -9,15 +9,8 @@ namespace TerritorEx.Api.Controllers;
 
 [ApiController]
 [Route("[controller]")]
-public class AreaVegetacaoNativaController : ControllerBase
+public class AreaVegetacaoNativaController(IAreaVegetacaoNativaService areaVegetacaoNativaService) : ControllerBase
 {
-    private readonly IAreaVegetacaoNativaService _areaVegetacaoNativaService;
-
-    public AreaVegetacaoNativaController(IAreaVegetacaoNativaService areaVegetacaoNativaService)
-    {
-        _areaVegetacaoNativaService = areaVegetacaoNativaService;
-    }
-
     #region [ Documentação Swagger RecuperarTodos ]
     [SwaggerOperation(Summary = "swagger_summary_area_vegetacao_nativa")]
     [SwaggerResponse((int)HttpStatusCode.OK, "swagger_response_200", typeof(AreaVegetacaoNativa))]
@@ -29,7 +22,7 @@ public class AreaVegetacaoNativaController : ControllerBase
     [HttpGet]
     public async Task<ActionResult> RecuperarTodos()
     {
-        var area = await _areaVegetacaoNativaService.RecuperarTodos();
+        var area = await areaVegetacaoNativaService.RecuperarTodos();
         return Ok(area);
     }
 
@@ -44,7 +37,7 @@ public class AreaVegetacaoNativaController : ControllerBase
     [HttpGet("territorio={territorioId:int}")]
     public async Task<IActionResult> RecuperarPorTerritorioId(int territorioId)
     {
-        var area = await _areaVegetacaoNativaService.RecuperarPorTerritorioId(territorioId);
+        var area = await areaVegetacaoNativaService.RecuperarPorTerritorioId(territorioId);
         return Ok(area);
     }
 }

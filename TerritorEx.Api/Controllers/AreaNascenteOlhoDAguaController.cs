@@ -9,15 +9,9 @@ namespace TerritorEx.Api.Controllers;
 
 [ApiController]
 [Route("[controller]")]
-public class AreaNascenteOlhoDAguaController : ControllerBase
+public class AreaNascenteOlhoDAguaController(IAreaNascenteOlhoDAguaService areaNascenteOlhoDAguaService)
+    : ControllerBase
 {
-    private readonly IAreaNascenteOlhoDAguaService _areaNascenteOlhoDAguaService;
-
-    public AreaNascenteOlhoDAguaController(IAreaNascenteOlhoDAguaService areaNascenteOlhoDAguaService)
-    {
-        _areaNascenteOlhoDAguaService = areaNascenteOlhoDAguaService;
-    }
-
     #region [ Documentação Swagger RecuperarTodos ]
     [SwaggerOperation(Summary = "swagger_summary_area_nascente_olho_dagua")]
     [SwaggerResponse((int)HttpStatusCode.OK, "swagger_response_200", typeof(AreaNascenteOlhoDAgua))]
@@ -29,7 +23,7 @@ public class AreaNascenteOlhoDAguaController : ControllerBase
     [HttpGet]
     public async Task<ActionResult> RecuperarTodos()
     {
-        var area = await _areaNascenteOlhoDAguaService.RecuperarTodos();
+        var area = await areaNascenteOlhoDAguaService.RecuperarTodos();
         return Ok(area);
     }
 
@@ -44,7 +38,7 @@ public class AreaNascenteOlhoDAguaController : ControllerBase
     [HttpGet("territorio={territorioId:int}")]
     public async Task<ActionResult> RecuperarPorTerritorioId(int territorioId)
     {
-        var area = await _areaNascenteOlhoDAguaService.RecuperarPorTerritorioId(territorioId);
+        var area = await areaNascenteOlhoDAguaService.RecuperarPorTerritorioId(territorioId);
         return Ok(area);
     }
 }

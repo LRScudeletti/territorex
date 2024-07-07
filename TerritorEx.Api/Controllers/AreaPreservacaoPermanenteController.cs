@@ -9,15 +9,9 @@ namespace TerritorEx.Api.Controllers;
 
 [ApiController]
 [Route("[controller]")]
-public class AreaPreservacaoPermanenteController : ControllerBase
+public class AreaPreservacaoPermanenteController(IAreaPreservacaoPermanenteService areaPreservacaoPermanenteService)
+    : ControllerBase
 {
-    private readonly IAreaPreservacaoPermanenteService _areaPreservacaoPermanenteService;
-
-    public AreaPreservacaoPermanenteController(IAreaPreservacaoPermanenteService areaPreservacaoPermanenteService)
-    {
-        _areaPreservacaoPermanenteService = areaPreservacaoPermanenteService;
-    }
-
     #region [ Documentação Swagger RecuperarTodos ]
     [SwaggerOperation(Summary = "swagger_summary_area_preservacao_permanente")]
     [SwaggerResponse((int)HttpStatusCode.OK, "swagger_response_200", typeof(AreaPreservacaoPermanente))]
@@ -29,7 +23,7 @@ public class AreaPreservacaoPermanenteController : ControllerBase
     [HttpGet]
     public async Task<ActionResult> RecuperarTodos()
     {
-        var area = await _areaPreservacaoPermanenteService.RecuperarTodos();
+        var area = await areaPreservacaoPermanenteService.RecuperarTodos();
         return Ok(area);
     }
 
@@ -44,7 +38,7 @@ public class AreaPreservacaoPermanenteController : ControllerBase
     [HttpGet("territorio={territorioId:int}")]
     public async Task<IActionResult> RecuperarPorTerritorioId(int territorioId)
     {
-        var area = await _areaPreservacaoPermanenteService.RecuperarPorTerritorioId(territorioId);
+        var area = await areaPreservacaoPermanenteService.RecuperarPorTerritorioId(territorioId);
         return Ok(area);
     }
 }

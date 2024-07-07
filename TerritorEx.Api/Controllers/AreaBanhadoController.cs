@@ -9,15 +9,8 @@ namespace TerritorEx.Api.Controllers;
 
 [ApiController]
 [Route("[controller]")]
-public class AreaBanhadoController : ControllerBase
+public class AreaBanhadoController(IAreaBanhadoService areabanhadoService) : ControllerBase
 {
-    private readonly IAreaBanhadoService _areabanhadoService;
-
-    public AreaBanhadoController(IAreaBanhadoService areabanhadoService)
-    {
-        _areabanhadoService = areabanhadoService;
-    }
-
     #region [ Documentação Swagger RecuperarTodos ]
     [SwaggerOperation(Summary = "swagger_summary_area_banhado")]
     [SwaggerResponse((int)HttpStatusCode.OK, "swagger_response_200", typeof(AreaBanhado))]
@@ -29,7 +22,7 @@ public class AreaBanhadoController : ControllerBase
     [HttpGet]
     public async Task<ActionResult> RecuperarTodos()
     {
-        var area = await _areabanhadoService.RecuperarTodos();
+        var area = await areabanhadoService.RecuperarTodos();
         return Ok(area);
     }
 
@@ -44,7 +37,7 @@ public class AreaBanhadoController : ControllerBase
     [HttpGet("territorio={territorioId:int}")]
     public async Task<IActionResult> RecuperarPorTerritorioId(int territorioId)
     {
-        var area = await _areabanhadoService.RecuperarPorTerritorioId(territorioId);
+        var area = await areabanhadoService.RecuperarPorTerritorioId(territorioId);
         return Ok(area);
     }
 }
