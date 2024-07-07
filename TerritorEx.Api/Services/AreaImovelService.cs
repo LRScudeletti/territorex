@@ -17,58 +17,50 @@ public interface IAreaImovelService
 #endregion
 
 #region [ Services ]
-public class AreaImovelService : IAreaImovelService
+public class AreaImovelService(IAreaImovelRepository areaImovelRepository, IStringLocalizer<Resources> localizer)
+    : IAreaImovelService
 {
-    private readonly IAreaImovelRepository _areaImovelRepository;
-    private readonly IStringLocalizer<Resources> _localizer;
-
-    public AreaImovelService(IAreaImovelRepository areaImovelRepository, IStringLocalizer<Resources> localizer)
-    {
-        _areaImovelRepository = areaImovelRepository;
-        _localizer = localizer;
-    }
-
     public async Task<IEnumerable<AreaImovel>> RecuperarTodos()
     {
-        return await _areaImovelRepository.RecuperarTodos();
+        return await areaImovelRepository.RecuperarTodos();
     }
 
     public async Task<IReadOnlyCollection<AreaImovel>> RecuperarPorTerritorioId(int territorioId)
     {
-        var area = await _areaImovelRepository.RecuperarPorTerritorioId(territorioId);
+        var area = await areaImovelRepository.RecuperarPorTerritorioId(territorioId);
 
-        if (!area.Any())
-            throw new KeyNotFoundException(_localizer["area_territorio_nao_encontrado"]);
+        if (area.Count == 0)
+            throw new KeyNotFoundException(localizer["area_territorio_nao_encontrado"]);
 
         return area;
     }
 
     public async Task<AreaImovel> RecuperarPorImovelId(string imovelId)
     {
-        var area = await _areaImovelRepository.RecuperarPorImovelId(imovelId);
+        var area = await areaImovelRepository.RecuperarPorImovelId(imovelId);
 
         if (area == null)
-            throw new KeyNotFoundException(_localizer["area_territorio_nao_encontrado"]);
+            throw new KeyNotFoundException(localizer["area_territorio_nao_encontrado"]);
 
         return area;
     }
 
     public async Task<IReadOnlyCollection<AreaImovel>> RecuperarPorTipoImovelId(int tipoImovelId)
     {
-        var area = await _areaImovelRepository.RecuperarPorTipoImovelId(tipoImovelId);
+        var area = await areaImovelRepository.RecuperarPorTipoImovelId(tipoImovelId);
 
-        if (!area.Any())
-            throw new KeyNotFoundException(_localizer["area_territorio_nao_encontrado"]);
+        if (area.Count == 0)
+            throw new KeyNotFoundException(localizer["area_territorio_nao_encontrado"]);
 
         return area;
     }
 
     public async Task<IReadOnlyCollection<AreaImovel>> RecuperarPorSituacaoImovelId(int situacaoImovelId)
     {
-        var area = await _areaImovelRepository.RecuperarPorSituacaoImovelId(situacaoImovelId);
+        var area = await areaImovelRepository.RecuperarPorSituacaoImovelId(situacaoImovelId);
 
-        if (!area.Any())
-            throw new KeyNotFoundException(_localizer["area_territorio_nao_encontrado"]);
+        if (area.Count == 0)
+            throw new KeyNotFoundException(localizer["area_territorio_nao_encontrado"]);
 
         return area;
     }

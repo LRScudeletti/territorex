@@ -6,22 +6,13 @@ using TerritorEx.Api.Helpers.Exceptions;
 
 namespace TerritorEx.Api.Middlewares;
 
-public class ErrorHandlerMiddleware
+public class ErrorHandlerMiddleware(RequestDelegate next, ILogger<ErrorHandlerMiddleware> logger)
 {
-    private readonly RequestDelegate _next;
-    private readonly ILogger<ErrorHandlerMiddleware> _logger;
-
-    public ErrorHandlerMiddleware(RequestDelegate next, ILogger<ErrorHandlerMiddleware> logger)
-    {
-        _next = next;
-        _logger = logger;
-    }
-
     public async Task Invoke(HttpContext context)
     {
         try
         {
-            await _next(context);
+            await next(context);
         }
         catch (Exception exception)
         {
@@ -40,7 +31,7 @@ public class ErrorHandlerMiddleware
                     break;
                 default:
                     // Erro não tratado
-                    _logger.LogError(exception, message: exception.Message);
+                    logger.LogError(exception, message: exception.Message);
                     response.StatusCode = (int)HttpStatusCode.InternalServerError;
                     break;
             }

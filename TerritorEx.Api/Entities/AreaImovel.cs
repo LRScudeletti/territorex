@@ -1,6 +1,8 @@
 ﻿using Dapper.Contrib.Extensions;
 using System.ComponentModel;
 using System.Text.Json.Serialization;
+using Microsoft.SqlServer.Types;
+using TerritorEx.Api.Helpers;
 
 namespace TerritorEx.Api.Entities;
 
@@ -33,7 +35,8 @@ public class AreaImovel
     public double ModuloFiscal { get; set; }
 
     [Description("schema_shape")]
-    public byte[] Shape { get; set; }
+    [JsonConverter(typeof(SqlGeometryConverter))]
+    public SqlGeometry Shape { get; set; }
 
     [JsonIgnore]
     [Description("schema_usuario_atualizacao")]

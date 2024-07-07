@@ -9,15 +9,8 @@ namespace TerritorEx.Api.Controllers;
 
 [ApiController]
 [Route("[controller]")]
-public class AreaImovelController : ControllerBase
+public class AreaImovelController(IAreaImovelService areaImovelService) : ControllerBase
 {
-    private readonly IAreaImovelService _areaImovelService;
-
-    public AreaImovelController(IAreaImovelService areaImovelService)
-    {
-        _areaImovelService = areaImovelService;
-    }
-
     #region [ Documentação Swagger RecuperarTodos ]
     [SwaggerOperation(Summary = "swagger_summary_area_imovel")]
     [SwaggerResponse((int)HttpStatusCode.OK, "swagger_response_200", typeof(AreaImovel))]
@@ -29,7 +22,7 @@ public class AreaImovelController : ControllerBase
     [HttpGet]
     public async Task<ActionResult> RecuperarTodos()
     {
-        var area = await _areaImovelService.RecuperarTodos();
+        var area = await areaImovelService.RecuperarTodos();
 
         return Ok(area);
     }
@@ -42,10 +35,10 @@ public class AreaImovelController : ControllerBase
     [SwaggerResponse((int)HttpStatusCode.InternalServerError, "swagger_response_500", typeof(Mensagem))]
     #endregion
 
-    [HttpGet("territorio={territorioId:int}")]
+    [HttpGet("territorio={territorioId}")]
     public async Task<IActionResult> RecuperarPorTerritorioId(int territorioId)
     {
-        var area = await _areaImovelService.RecuperarPorTerritorioId(territorioId);
+        var area = await areaImovelService.RecuperarPorTerritorioId(territorioId);
         return Ok(area);
     }
 
@@ -60,7 +53,7 @@ public class AreaImovelController : ControllerBase
     [HttpGet("imovel={imovelId}")]
     public async Task<IActionResult> RecuperarPorImovelId(string imovelId)
     {
-        var area = await _areaImovelService.RecuperarPorImovelId(imovelId);
+        var area = await areaImovelService.RecuperarPorImovelId(imovelId);
         return Ok(area);
     }
 
@@ -72,10 +65,10 @@ public class AreaImovelController : ControllerBase
     [SwaggerResponse((int)HttpStatusCode.InternalServerError, "swagger_response_500", typeof(Mensagem))]
     #endregion
 
-    [HttpGet("tipo={tipoImovelId:int}")]
+    [HttpGet("tipo={tipoImovelId}")]
     public async Task<IActionResult> RecuperarPorTipoImovelId(int tipoImovelId)
     {
-        var area = await _areaImovelService.RecuperarPorTipoImovelId(tipoImovelId);
+        var area = await areaImovelService.RecuperarPorTipoImovelId(tipoImovelId);
         return Ok(area);
     }
 
@@ -87,10 +80,10 @@ public class AreaImovelController : ControllerBase
     [SwaggerResponse((int)HttpStatusCode.InternalServerError, "swagger_response_500", typeof(Mensagem))]
     #endregion
 
-    [HttpGet("situacao={situacaoImovelId:int}")]
+    [HttpGet("situacao={situacaoImovelId}")]
     public async Task<IActionResult> RecuperarPorSituacaoImovelId(int situacaoImovelId)
     {
-        var area = await _areaImovelService.RecuperarPorSituacaoImovelId(situacaoImovelId);
+        var area = await areaImovelService.RecuperarPorSituacaoImovelId(situacaoImovelId);
         return Ok(area);
     }
 }

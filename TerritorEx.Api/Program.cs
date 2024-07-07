@@ -15,8 +15,6 @@ var configuration = builder.Configuration;
         x.JsonSerializerOptions.DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull;
     });
 
-    services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
-
     // Adicionando ao escopo
     services.Register();
 
@@ -42,7 +40,7 @@ var configuration = builder.Configuration;
     app.UseStaticFiles();
     app.UseSwaggerUi();
 
-    app.UseMiddleware<RateLimitMiddleware>();
+    //app.UseMiddleware<RateLimitMiddleware>();
     app.UseMiddleware<ErrorHandlerMiddleware>();
 
     app.UseHttpsRedirection();
